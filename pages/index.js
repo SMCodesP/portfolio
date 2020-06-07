@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 
 import Navigation from '../components/Navigation/'
 import About from '../components/About/'
+import OwnerInfos from '../components/OwnerInfos'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -31,6 +32,7 @@ export default function Home() {
 
 			<Navigation />
 			<About />
+			<OwnerInfos />
 			
 			<GlobalStyle />
 
