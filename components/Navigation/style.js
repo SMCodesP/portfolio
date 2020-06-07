@@ -70,7 +70,7 @@ export const Page = styled.li`
 `
 export const OptionsFixed = styled.div`
 	width: 100%;
-	transition: height .3s;
+	transition: height .4s;
 	height: ${(props) => props.fixed
 		? '80px'
 		: '0'
@@ -83,7 +83,7 @@ export const OptionsFixed = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background: #ffffff;
+	background: #EDEDED;
 	padding: 0 10%;
 	
 	${Title} {
