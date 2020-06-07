@@ -3,7 +3,9 @@ import styled from 'styled-components'
 export const Container = styled.header`
 	width: 100%;
 	height: 100vh;
-	background: #333333;
+	background: url('hello.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -15,17 +17,9 @@ export const ContainerNavigate = styled.div`
 	background: url('/hello.png'), #333333;
 	background-color: #333333;
 	opacity: 0.4;
-	position: absolute;
+	position: static;
 	background-repeat: no-repeat;
 	background-size: cover;
-`
-
-export const Options = styled.div`
-	width: 80%;
-	position: relative;
-	margin-top: 88px;
-	display: flex;
-	justify-content: space-between;
 `
 
 export const Title = styled.h1`
@@ -39,6 +33,14 @@ export const Title = styled.h1`
 
 export const ListingPage = styled.ul`
 	display: flex;
+`
+
+export const Options = styled.div`
+	width: 80%;
+	position: relative;
+	margin-top: 88px;
+	display: flex;
+	justify-content: space-between;
 `
 
 export const Page = styled.li`
@@ -56,18 +58,54 @@ export const Page = styled.li`
 	transition: font-weight .2s, transform .2s;
 
 	&:hover {
-		font-weight: 600;
+		font-weight: ${(props) => props.locate
+			? '600'
+			: '900'
+		};
 		transform: ${(props) => props.locate
 			? 'scale(1)'
-			: 'scale(1.15)'
+			: 'scale(1.2)'
+		};
+	}
+`
+export const OptionsFixed = styled.div`
+	width: 100%;
+	transition: height .3s;
+	height: ${(props) => props.fixed
+		? '80px'
+		: '0'
+	};
+	display: ${(props) => props.fixed
+		? 'flex'
+		: 'none'
+	};
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #ffffff;
+	padding: 0 10%;
+	
+	${Title} {
+		color: #333333 !important;
+		display: ${(props) => props.fixed
+			? 'flex'
+			: 'none'
+		};
+	}
+
+	${Page} {
+		color: #333333 !important;
+		display: ${(props) => props.fixed
+			? 'flex'
+			: 'none'
 		};
 	}
 `
 
 export const ContainerWelcome = styled.div`
 	width: 80%;
-	margin-top: 150px;
-	position: relative;
+	margin-top: 100px;
 `
 
 export const Welcome = styled.h1`
