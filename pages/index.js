@@ -32,7 +32,7 @@ export default function Home() {
 
 			<Navigation />
 			<About />
-			<OwnerInfos />
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			
 			<GlobalStyle />
 
