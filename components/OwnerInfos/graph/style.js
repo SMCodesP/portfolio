@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ContainerItem = styled.div`
 	background: #fafafa;
 	border-radius: 5px;
-	width: 70%;
+	width: 85%;
 	padding: 10px;
 `
 

@@ -3,23 +3,12 @@ import styled from 'styled-components'
 export const Container = styled.header`
 	width: 100%;
 	height: 100vh;
-	background: url('hello.png');
+	background: url('/hello.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100% 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-`
-
-export const ContainerNavigate = styled.div`
-	width: 100%;
-	height: 100vh;
-	background: url('/hello.png'), #333333;
-	background-color: #333333;
-	opacity: 0.4;
-	position: static;
-	background-repeat: no-repeat;
-	background-size: cover;
 `
 
 export const Title = styled.h1`

@@ -5,7 +5,7 @@ import Navigation from '../components/Navigation/'
 import About from '../components/About/'
 import OwnerInfos from '../components/OwnerInfos'
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 
 	* {
 		margin: 0;
@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 `
-export default function Home() {
+const Home = () => {
   return (
     <div className="container">
       <Head>
@@ -39,3 +39,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;

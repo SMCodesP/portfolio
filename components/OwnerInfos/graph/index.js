@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
 	BarChart,
 	Bar,
@@ -5,8 +6,9 @@ import {
 	YAxis,
 	Tooltip,
 	CartesianGrid,
-	Legend
-} from 'recharts';
+	Legend,
+	Cell
+} from 'recharts'
 
 import {
 	ContainerItem,
@@ -17,49 +19,67 @@ import {
 } from './style'
 
 export default function Graph() {
-	function getIntroOfPage(label) {
-		const pages = {
-			'back-end': 'Meus conhecimentos no back-end abrange »',
-			'front-end': 'Meus conhecimentos no front-end abrange as seguintes tecnologias »',
-			'apis': 'Meus conhecimentos em APIs de uso específico engloba »',
-		}
+	const [activeIndex, setActiveIndex] = useState(null)
 
-		return pages[label.toLowerCase()]
-	}
-
-	function getListItem(label) {
-		const lists = {
-			'back-end': [
-				'Java',
-				'Python',
+	const data = [
+		{
+			name: 'Back-end',
+			description: 'Meus projetos back-end abrange »',
+			itens: [
+				'PHP',
 				'JavaScript/Node.js'
 			],
-			'front-end': [
+			Projetos: 14,
+			max: 100,
+		},
+		{
+			name: 'Front-end',
+			description: 'Meus projetos de front-end abrange as seguintes tecnologias »',
+			itens: [
 				'React.js',
 				'ReactNative',
 				'JQuery & Boostrap'
 			],
-			'apis': [
+			Projetos: 9,
+			max: 100,
+		},
+		{
+			name: 'APIs',
+			description: 'Meus projetos que abrage APIs de uso específico engloba »',
+			itens: [
 				'SpigoMC',
-				'BukkitMC'
-			]
-		}
-		return lists[label.toLowerCase()] || []
-	}
+				'BukkitMC',
+				'NPM',
+				'GitLab'
+			],
+			Projetos: 7,
+			max: 100,
+		},
+		{
+			name: 'Mobile',
+			description: 'Meus projetos que teve uso de app mobile »',
+			itens: [
+				'ReactNative'
+			],
+			Projetos: 2,
+			max: 100,
+		},
+	]
 
 	function CustomTooltip({ payload, label, active }) {
+		const product = data.find((product) => product.name === label)
 		if (active) {
 			return (
 				<ContainerItem>
 					<ItemTitle>
-						{`${label} : ${payload[0].value}`}
+						{`${label}: ${payload[0].value}`}
 					</ItemTitle>
 					<ItemDescription>
-						{getIntroOfPage(label)}
+						{product.description || ''}
 					</ItemDescription>
 					<ItemListTechs>
-						{getListItem(label).map((itemPage) => (
-							<ItemTech>
+						{product.itens.map((itemPage, index) => (
+							<ItemTech key={index}>
 								{itemPage}
 							</ItemTech>
 						))}
@@ -70,35 +90,48 @@ export default function Graph() {
 
 		return null;
 	}
-	const data = [
-		{
-			name: 'Back-end',
-			exp: 69,
-			pv: 2400,
-			amt: 2400
-		},
-		{
-			name: 'APIs',
-			exp: 40,
-			pv: 2400,
-			amt: 2400
-		},
-		{
-			name: 'Front-end',
-			exp: 56,
-			pv: 2400,
-			amt: 2400
-		},
-	]
+
+	function mouseEnterInCategory(_, index = null) {
+		setActiveIndex(index)
+	}
+
+	function mouseLeaveInCategory() {
+		setActiveIndex(null)
+	}
+
 	return (
-		<BarChart width={600} height={350} data={data}>
-			<XAxis dataKey="name" />
+		<BarChart id='client-graph' width={600} height={350} data={data}>
+			<XAxis dataKey='name' />
 			<YAxis />
 			<Tooltip content={<CustomTooltip />}/>
-			<CartesianGrid stroke="#fff" strokeDasharray="9 9" />
-	    <Legend width={100} wrapperStyle={{ top: 40, right: 20, backgroundColor: '#f5f5f5', border: '1px solid #d5d5d5', borderRadius: 3, lineHeight: '40px' }} />
-			<Bar dataKey="exp" fill="#8884d8"
-				barSize={30} />
+			<CartesianGrid stroke='#fff' strokeDasharray='9 9' />
+			<Legend
+				width={100}
+				wrapperStyle={{
+					top: 20,
+					right: 20,
+					backgroundColor: '#f0f0f0',
+					border: '1px solid #a5a5a5',
+					borderRadius: 5,
+					lineHeight: '40px'
+				}}
+			/>
+			<Bar
+				dataKey='Projetos'
+				stackId='a'
+				onMouseEnter={mouseEnterInCategory}
+				onMouseLeave={mouseLeaveInCategory}
+			>
+				{
+					data.map((_, index) => (
+						<Cell
+							cursor='pointer'
+							fill={index === activeIndex ? '#333333' : '#33333355'}
+							key={`cell-${index}`}
+						/>
+					))
+				}
+			</Bar>
 		</BarChart>
 	)
 }

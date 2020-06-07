@@ -14,7 +14,7 @@ import {
 	OptionsFixed
 } from './style'
 
-export default function Navigation() {
+const Navigation = () => {
 	const [options, setOptions] = useState(false);
 
 	useEffect(() => {
@@ -68,3 +68,5 @@ export default function Navigation() {
 		</Container>
 	)
 }
+
+export default Navigation
