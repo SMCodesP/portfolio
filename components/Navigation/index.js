@@ -18,8 +18,7 @@ export default function Navigation() {
 	const [options, setOptions] = useState(false);
 
 	useEffect(() => {
-		$(window).on('scroll', () => {
-
+		function verificationIsDeviceOnPushingAnimation() {
 			let $title = $('#title'),
 				titleHeight = $title[0].offsetTop+$title[0].scrollHeight,
 				windowTop = $(window).scrollTop()
@@ -29,7 +28,10 @@ export default function Navigation() {
 			} else {
 				setOptions(false)
 			}
-		})
+		}
+
+		$(window).on('scroll',  verificationIsDeviceOnPushingAnimation)
+		verificationIsDeviceOnPushingAnimation()
 	}, [])
 
 	return (
