@@ -7,16 +7,15 @@ export const ContainerOwner = styled.div`
 	background: #CECECE;
 	display: grid;
 	grid-template: 1fr / 2fr 3fr;
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	color: #333333;
 `
 
-// Container to reserved is information the container
 export const ContainerOwnerInfos = styled.div`
 	display: grid;
 `
 
 export const TitleContainer = styled.h1`
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
-	color: #333333;
 	font-weight: bold;
 	font-size: 24px;
 `
@@ -27,7 +26,6 @@ export const ImageContainer = styled.img`
 	border-radius: 20px;
 `
 
-// Container infos owner
 export const ContainerInfos = styled.nav`
 	margin-top: 75px;
 	display: flex;
@@ -40,15 +38,10 @@ export const InfosItem = styled.div`
 `
 
 export const InfosKey = styled.h2`
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 20px;
 	font-weight: bold;
-	color: #333333;
 `
 
 export const InfosValue = styled.p`
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 18px;
-	font-weight: regular;
-	color: #333333;
 `

@@ -23,6 +23,8 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {this.props.styleTags}
+					<meta name="google-site-verification" content="4ILjFBD06aeKbQjxzO3UGLHKHE-TEm-CgOYtA97XaoE" />
+					<script data-ad-client="ca-pub-1285349366711226" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </Head>
         <body>
           <Main />

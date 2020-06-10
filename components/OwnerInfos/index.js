@@ -16,7 +16,7 @@ export default function OwnerInfos() {
 		<ContainerOwner>
 			<ContainerOwnerInfos>
 				<TitleContainer>Skills</TitleContainer>
-				<ImageContainer src='/user.jpg' />
+				<ImageContainer src='/user.webp' />
 			</ContainerOwnerInfos>
 			<ContainerInfos>
 				<InfosItem>
