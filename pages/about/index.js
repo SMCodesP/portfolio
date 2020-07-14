@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 
-import Navigation from '../components/Navigation/'
-import About from '../components/About/'
-import OwnerInfos from '../components/OwnerInfos/'
-import Histories from '../components/Histories/'
+import Navigation from '../../components/Navigation/'
+import About from '../../components/About/'
+import OwnerInfos from '../../components/OwnerInfos/'
+import Histories from '../../components/Histories/'
 
 const GlobalStyle = createGlobalStyle`
 	* {
@@ -40,11 +40,11 @@ const Home = () => {
   return (
     <div className="container">
       <Head>
-        <title>SMCodes - Início</title>
+        <title>SMCodes - Sobre</title>
 				<link rel="icon" href="/favicon.png" />
       </Head>
 
-			<Navigation page="/" />
+			<Navigation page="about" />
 			<About />
 			<OwnerInfos />
 			<Histories />

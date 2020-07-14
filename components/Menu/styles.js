@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.header`
-	width: 100%;
-	height: 100vh;
-	background: url('/hello.webp');
-	background-repeat: no-repeat;
-	background-size: 100% 100vh;
+export const Options = styled.div`
+	width: 80%;
+	margin-top: 88px;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-family: 'Libre Franklin', sans-serif;
+	justify-content: space-between;
 `
 
 export const Title = styled.h1`
@@ -23,13 +18,6 @@ export const ListingPage = styled.ul`
 	display: flex;
 `
 
-export const Options = styled.div`
-	width: 80%;
-	margin-top: 88px;
-	display: flex;
-	justify-content: space-between;
-`
-
 export const Page = styled.li`
 	line-height: 26px;
 	user-select: none;
@@ -38,22 +26,18 @@ export const Page = styled.li`
 	color: #fff;
 	font-size: 18px;
 	font-weight: ${(props) => props.locate
-		? '600'
+		? '900'
 		: ''};
 	margin: 0 8px 0 8px;
 	transition: font-weight .2s, transform .2s;
 
 	&:hover {
-		font-weight: ${(props) => props.locate
-			? '600'
-			: '900'
-		};
 		transform: ${(props) => props.locate
 			? 'scale(1)'
-			: 'scale(1.2)'
-		};
+			: 'scale(1.1)'};
 	}
 `
+
 export const OptionsFixed = styled.div`
 	width: 100%;
 	transition: height .4s;
@@ -87,32 +71,4 @@ export const OptionsFixed = styled.div`
 			: 'none'
 		};
 	}
-`
-
-export const ContainerWelcome = styled.div`
-	width: 80%;
-	margin-top: 100px;
-`
-
-export const Welcome = styled.h1`
-	font-weight: 400;
-	color: #fff;
-	font-size: 64px;
-
-	& > strong {
-		font-weight: 600 !important;
-	}
-`
-
-export const SubWelcome = styled.h2`
-	color: #fff;
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 40px;
-	margin-bottom: 75px;
-`
-
-export const WorkLast = styled.a`
-	color: #fff;
-	font-size: 18px;
 `
