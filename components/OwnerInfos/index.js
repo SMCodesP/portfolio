@@ -15,7 +15,7 @@ export default function OwnerInfos() {
 	return (
 		<ContainerOwner>
 			<ContainerOwnerInfos>
-				<TitleContainer>Skills</TitleContainer>
+				<TitleContainer>Projetos</TitleContainer>
 				<ImageContainer src='/user.webp' />
 			</ContainerOwnerInfos>
 			<ContainerInfos>

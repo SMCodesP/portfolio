@@ -21,9 +21,15 @@ export const TitleContainer = styled.h1`
 `
 
 export const ImageContainer = styled.img`
-	width: 290px;
-	height: 305;
+	margin-top: -45px;
+	width: 230px;
 	border-radius: 20px;
+	cursor: pointer;
+	transition: filter 1s;
+
+	&:hover {
+		filter: brightness(65%);
+	}
 `
 
 export const ContainerInfos = styled.nav`
