@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import Navigation from '../components/Navigation/'
 import Products from '../components/Products'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
 
 			<Navigation page="/" />
 			<Products items={3} />
+			<Footer />
 
     </div>
   )
