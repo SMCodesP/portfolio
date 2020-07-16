@@ -1,15 +1,15 @@
 import Head from 'next/head'
 
-import Menu from '../../components/Menu/'
-import About from '../../components/About/'
-import OwnerInfos from '../../components/OwnerInfos/'
-import Histories from '../../components/Histories/'
+import Menu from '../components/Menu/'
+import About from '../components/About/'
+import OwnerInfos from '../components/OwnerInfos/'
+import Histories from '../components/Histories/'
 
-const Home = () => {
+const About = () => {
   return (
     <div className="container">
       <Head>
-        <title>SMCodes - Início</title>
+				<title>SMCodes - Sobre</title>
 				<link rel="icon" href="/favicon.jpeg" />
       </Head>
 
@@ -23,4 +23,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default About;

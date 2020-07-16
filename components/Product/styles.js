@@ -36,6 +36,10 @@ export const Image = styled.img`
 	max-height: 128px;
 	transition: transform .2s;
 	cursor: none;
+
+	&:hover {
+		transform: scale(1.25) !important;
+	}
 `
 
 export const ContainerImage = styled.div`
