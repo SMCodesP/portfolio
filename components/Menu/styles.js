@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 
 export const Options = styled.div`
-	width: 80%;
-	margin-top: 88px;
+	width: 100%;
+	padding: 25px 90px;
 	display: flex;
 	justify-content: space-between;
+	background: ${({ background = "transparent" }) => background};
 `
 
 export const Title = styled.h1`
-	color: #fff;
+	color: ${({ color = "#fff" }) => color};
 	font-size: 26px;
 	font-weight: 600;
 	line-height: 26px;
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 `
 
 export const ListingPage = styled.ul`
@@ -19,11 +21,12 @@ export const ListingPage = styled.ul`
 `
 
 export const Page = styled.li`
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	line-height: 26px;
 	user-select: none;
 	list-style: none;
 	cursor: pointer;
-	color: #fff;
+	color: ${({ color = "#fff" }) => color};
 	font-size: 18px;
 	font-weight: ${(props) => props.locate
 		? '900'
@@ -53,9 +56,10 @@ export const OptionsFixed = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background: #EDEDED;
+	background: #e7daff;
 	padding: 0 10%;
-	
+	z-index: 2;
+
 	${Title} {
 		color: #333333 !important;
 		display: ${(props) => props.fixed

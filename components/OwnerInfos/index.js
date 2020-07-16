@@ -21,7 +21,7 @@ export default function OwnerInfos() {
 			<ContainerInfos>
 				<InfosItem>
 					<InfosKey>Perfil</InfosKey>
-					<InfosValue>Desenvolvedor Front-end, Back-end  & APIs</InfosValue>	
+					<InfosValue>Desenvolvedor Front-end, Back-end & APIs</InfosValue>
 				</InfosItem>
 				<br/>
 				<Graph />

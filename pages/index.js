@@ -2,9 +2,6 @@ import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 
 import Navigation from '../components/Navigation/'
-import About from '../components/About/'
-import OwnerInfos from '../components/OwnerInfos/'
-import Histories from '../components/Histories/'
 
 const GlobalStyle = createGlobalStyle`
 	* {
@@ -45,10 +42,7 @@ const Home = () => {
       </Head>
 
 			<Navigation page="/" />
-			<About />
-			<OwnerInfos />
-			<Histories />
-			
+
 			<GlobalStyle />
     </div>
   )

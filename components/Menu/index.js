@@ -10,7 +10,7 @@ import {
 	OptionsFixed
 } from './styles'
 
-function Menu({ page: isPage }) {
+function Menu({ page: isPage, background, color }) {
 	const [options, setOptions] = useState(false)
 	const list = [
 		{
@@ -40,13 +40,12 @@ function Menu({ page: isPage }) {
 	]
 
 	useEffect(() => {
-		console.log(isPage)
 		function verificationIsDeviceOnPushingAnimation() {
 			let $title = $('#title'),
 				titleHeight = $title[0].offsetTop+$title[0].scrollHeight,
 				windowTop = $(window).scrollTop()
 
-			if (windowTop > titleHeight) {
+			if (windowTop > titleHeight + 30) {
 				setOptions(true)
 			} else {
 				setOptions(false)
@@ -73,13 +72,14 @@ function Menu({ page: isPage }) {
 					))}
 				</ListingPage>
 			</OptionsFixed>
-			<Options id='title'>
-				<Title>SMCodes</Title>
+			<Options id='title' background={background}>
+				<Title color={color}>SMCodes</Title>
 				<ListingPage>
 					{list.map((page) => (
 						<Link key={page.name} href={page.name}>
 							<Page
 								locate={(isPage == page.name)}
+								color={color}
 							>
 								{page.displayed}
 							</Page>

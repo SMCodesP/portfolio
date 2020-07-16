@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 
-import Navigation from '../../components/Navigation/'
+import Menu from '../../components/Menu/'
 import About from '../../components/About/'
 import OwnerInfos from '../../components/OwnerInfos/'
 import Histories from '../../components/Histories/'
@@ -40,15 +40,17 @@ const Home = () => {
   return (
     <div className="container">
       <Head>
-        <title>SMCodes - Sobre</title>
+        <title>SMCodes - Início</title>
 				<link rel="icon" href="/favicon.png" />
       </Head>
 
-			<Navigation page="about" />
+			<div style={{ width: "100%" }}>
+				<Menu page="about" background="#EDEDED" color="#333333" />
+			</div>
 			<About />
 			<OwnerInfos />
 			<Histories />
-			
+
 			<GlobalStyle />
     </div>
   )
