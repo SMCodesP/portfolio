@@ -38,18 +38,6 @@ export default function Products({ items }) {
 				</ContainerMoreItems>
 			</ContainerItems>
 			<ContainerItems>
-				<CategoryTitle>Mobile</CategoryTitle>
-				<ContainerProducts items={items}>
-					<Product />
-					<Product />
-					<Product />
-				</ContainerProducts>
-				<ContainerMoreItems>
-					<MoreItem>Ver mais</MoreItem>
-					<FiArrowRight color="#e02041" size={24} />
-				</ContainerMoreItems>
-			</ContainerItems>
-			<ContainerItems>
 				<CategoryTitle>Back-end</CategoryTitle>
 				<ContainerProducts items={items}>
 					<Product />

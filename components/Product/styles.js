@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { getColor } from 'get-color-sm';
 
 export const ContainerPurchase = styled.div`
 	width: 100%;
@@ -40,7 +39,7 @@ export const Container = styled.div`
 	border-bottom: 1px solid #bbb;
 	border-left: 1px solid #bbb;
 	border-right: 1px solid #bbb;
-	--color-var: #${getColor};
+	--color-var: #${(props) => props.color};
 	border-top: 4px solid var(--color-var);
 
 	&:hover {
@@ -143,7 +142,7 @@ export const PurchaseButton = styled.button`
 	font-size: 16px;
 	color: #fafafa;
 	cursor: pointer;
-	transition: margin-top .1s, filter .3s;
+	transition: filter .2s;
 `
 
 export const BottomBorder = styled.div`
@@ -159,13 +158,14 @@ export const BottomBorder = styled.div`
 	}
 	&:active ${PurchaseButton} {
 		position: relative;
-		margin-top: 3px;
+		margin-top: 4px;
 	}
 	&:active:after {
 		height: 0;
 	}
 
 	&:after {
+		transition: filter .2s;
 		content: '';
 		display: block;
 		height: 4px;
@@ -173,8 +173,6 @@ export const BottomBorder = styled.div`
 		width: 100%;
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
-		transition: height .1s;
 	}
-
 `
 
