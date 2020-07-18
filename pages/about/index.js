@@ -1,10 +1,10 @@
 import Head from 'next/head'
 
-import Menu from '../components/Menu/'
-import AboutComponent from '../components/About/'
-import OwnerInfos from '../components/OwnerInfos/'
-import Histories from '../components/Histories/'
-import Footer from '../components/Footer/'
+import Menu from '../../components/Menu/'
+import AboutComponent from '../../components/About/'
+import OwnerInfos from '../../components/OwnerInfos/'
+import Histories from '../../components/Histories/'
+import Footer from '../../components/Footer/'
 
 const About = () => {
   return (
