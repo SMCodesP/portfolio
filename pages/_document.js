@@ -3,18 +3,22 @@ import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
 	static getInitialProps({ renderPage }) {
-		const sheet = new ServerStyleSheet();
-		const page = renderPage((App) => (props) =>
-			sheet.collectStyles(<App {...props} />),
-		);
-		const styleTags = sheet.getStyleElement();
+    const sheet = new ServerStyleSheet();
 
-		return { ...page, styleTags };
+    function handleCollectStyles(App) {
+      return props => {
+        return sheet.collectStyles(<App {...props} />);
+      };
+    }
+
+    const page = renderPage(App => handleCollectStyles(App));
+    const styleTags = sheet.getStyleElement();
+    return { ...page, styleTags };
 	}
 
 	render() {
 		return (
-			<Html lang="pt-BR">
+			<html lang="pt-BR">
 				<Head>
 					{this.props.styleTags}
 					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -37,7 +41,7 @@ export default class MyDocument extends Document {
 					<Main />
 					<NextScript />
 				</body>
-			</Html>
+			</html>
 		);
 	}
 }

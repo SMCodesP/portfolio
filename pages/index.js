@@ -4,6 +4,8 @@ import Navigation from '../components/Navigation/'
 import Products from '../components/Products'
 import Footer from '../components/Footer'
 
+import GlobalStyle from './GlobalStyle'
+
 const Home = () => {
   return (
     <div className="container">
@@ -17,6 +19,7 @@ const Home = () => {
 			<Products items={3} />
 			<Footer />
 
+			<GlobalStyle />
     </div>
   )
 }

@@ -6,6 +6,8 @@ import OwnerInfos from '../../components/OwnerInfos/'
 import Histories from '../../components/Histories/'
 import Footer from '../../components/Footer/'
 
+import GlobalStyle from '../GlobalStyle'
+
 const About = () => {
   return (
     <div className="container">
@@ -22,6 +24,8 @@ const About = () => {
 			<OwnerInfos />
 			<Histories />
 			<Footer />
+
+			<GlobalStyle />
 
     </div>
   )
