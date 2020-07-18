@@ -11,7 +11,12 @@ const About = () => {
     <div className="container">
       <Head>
 				<title>SMCodes - Sobre</title>
+				<meta property="og:title" content="SMCodes - Sobre" key="title" />
+				<meta name="twitter:title" content="SMCodes - Sobre" />
 				<link rel="icon" href="/favicon.jpeg" />
+				<meta name="description" content="Página about de SMCodes, venha me conhecer um pouco." />
+				<meta name="author" content="Samuel Pereira da Silva" />
+				<meta property="og:image" content="/favicon.jpeg" />
       </Head>
 
 			<div style={{ width: "100%" }}>
