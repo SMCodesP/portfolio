@@ -8,6 +8,7 @@ import {
 	Title,
 	DescriptionList,
 	DescriptionItem,
+	BottomBorder,
 	ContainerPurchase,
 	PriceTitle,
 	PurchaseButton,
@@ -22,7 +23,9 @@ function Product() {
 				<NewInfo>Novo</NewInfo>
 			</ContainerImage>
 			<ContainerPurchase>
-				<PurchaseButton>Comprar</PurchaseButton>
+				<BottomBorder>
+					<PurchaseButton>Comprar</PurchaseButton>
+				</BottomBorder>
 				<PriceTitle>R$ 4,99</PriceTitle>
 			</ContainerPurchase>
 			<DescriptionList>

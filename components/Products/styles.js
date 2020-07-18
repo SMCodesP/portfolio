@@ -14,25 +14,39 @@ export const ContainerItems = styled.div`
 	width: 100%;
 `
 
-export const ContainerMoreItems = styled.div`
-	align-self: flex-end;
-	display: flex;
-	flex-direction: row;
-	cursor: pointer;
-	transition: filter .5s;
-
-	&:hover {
-		filter: brightness(65%);
-	}
-`
-
 export const MoreItem = styled.p`
 	text-align: end;
 	color: #e02041;
 	font-size: 22px;
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 600;
-	padding: 0 15px 0 0;
+	transition: margin-right .2s;
+	margin-right: 5px;
+`
+
+export const ContainerMoreItems = styled.div`
+	align-self: flex-end;
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+	transition: filter .5s, opacity .2s;
+	user-select: none;
+
+	& svg {
+		transition: padding-left .2s;
+	}
+
+	&:hover ${MoreItem} {
+		margin-right: 10px;
+	}
+
+	&:hover svg {
+		padding-left: 5px;
+	}
+
+	&:active {
+		opacity: 0;
+	}
 `
 
 export const ContainerProducts = styled.div`

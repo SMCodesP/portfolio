@@ -13,6 +13,25 @@ export const ContainerPurchase = styled.div`
 	transition: height .2s, opacity .4s;
 `
 
+export const Title = styled.p`
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	color: #fafafa;
+	border-radius: 50px;
+	line-height: 20px;
+	padding: 5px 25px;
+	position: relative;
+	top: 15px;
+	cursor: default;
+	transition: filter .2s;
+	text-shadow: 1px 1px 5px #333;
+
+	&:hover {
+		filter: brightness(70%);
+	}
+`
+
 export const Container = styled.div`
 	background: #fafafa;
 	border-radius: 10px;
@@ -21,7 +40,8 @@ export const Container = styled.div`
 	border-bottom: 1px solid #bbb;
 	border-left: 1px solid #bbb;
 	border-right: 1px solid #bbb;
-	border-top: 4px solid #${getColor};
+	--color-var: #${getColor};
+	border-top: 4px solid var(--color-var);
 
 	&:hover {
 		margin: -20px 0 0 0;
@@ -30,6 +50,10 @@ export const Container = styled.div`
 	&:hover ${ContainerPurchase} {
 		opacity: 1;
 		height: 50px;
+	}
+
+	${Title} {
+		background: var(--color-var);
 	}
 `;
 
@@ -82,25 +106,6 @@ export const NewInfo = styled.p`
 	}
 `
 
-export const Title = styled.p`
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
-	font-weight: 500;
-	font-size: 18px;
-	color: #fafafa;
-	background: #7159c1;
-	border-radius: 50px;
-	line-height: 20px;
-	padding: 5px 25px;
-	position: relative;
-	top: 15px;
-	cursor: default;
-	transition: filter .2s;
-
-	&:hover {
-		filter: brightness(70%);
-	}
-`
-
 export const DescriptionList = styled.ul`
 	padding: 25px;
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
@@ -111,7 +116,10 @@ export const DescriptionList = styled.ul`
 	line-height: 22px;
 `
 
-export const DescriptionItem = styled.li``
+export const DescriptionItem = styled.li`
+	padding: 3px;
+	text-shadow: 0 0 2px #333;
+`
 
 export const PriceTitle = styled.p`
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
@@ -122,9 +130,11 @@ export const PriceTitle = styled.p`
 	align-self: flex-end;
 `
 
+// #2cb13h
 export const PurchaseButton = styled.button`
 	background: #4ed359;
-	border-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 	width: 100%;
 	padding: 10px 0;
 	border: 0;
@@ -133,17 +143,38 @@ export const PurchaseButton = styled.button`
 	font-size: 16px;
 	color: #fafafa;
 	cursor: pointer;
-	transition: filter .4s;
-	border-bottom: 3px solid #2cb137;
+	transition: margin-top .1s, filter .3s;
+`
 
-	&:hover {
+export const BottomBorder = styled.div`
+	width: 100%;
+
+	&:hover ${PurchaseButton},
+	&:hover:after  {
 		filter: brightness(70%);
 	}
-
-	&:active {
-		position: relative;
-		top: 3px;
-		border-bottom: 0 !important;
+	&:active ${PurchaseButton},
+	&:active:hover {
+		filter: brightness(105%);
 	}
+	&:active ${PurchaseButton} {
+		position: relative;
+		margin-top: 3px;
+	}
+	&:active:after {
+		height: 0;
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		height: 4px;
+		background: #2cb137;
+		width: 100%;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		transition: height .1s;
+	}
+
 `
 
