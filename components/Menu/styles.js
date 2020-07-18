@@ -8,7 +8,7 @@ export const Options = styled.div`
 	background: ${({ background = "transparent" }) => background};
 `
 
-export const Title = styled.h1`
+export const Title = styled.p`
 	color: ${({ color = "#fff" }) => color};
 	font-size: 26px;
 	font-weight: 600;

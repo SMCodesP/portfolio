@@ -26,7 +26,7 @@ export const ContainerMoreItems = styled.div`
 	}
 `
 
-export const MoreItem = styled.h3`
+export const MoreItem = styled.p`
 	text-align: end;
 	color: #e02041;
 	font-size: 22px;
@@ -45,7 +45,7 @@ export const ContainerProducts = styled.div`
 	position: relative;
 `
 
-export const CategoryTitle = styled.h1`
+export const CategoryTitle = styled.p`
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 900;
 	font-size: 32px;

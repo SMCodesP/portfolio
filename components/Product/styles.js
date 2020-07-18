@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getColor } from 'get-color-sm';
 
 export const ContainerPurchase = styled.div`
 	width: 100%;
@@ -14,10 +15,13 @@ export const ContainerPurchase = styled.div`
 
 export const Container = styled.div`
 	background: #fafafa;
-	box-shadow: 0 0 3px #333;
 	border-radius: 10px;
 	transition: margin .2s, height .2s;
 	padding-bottom: 10px;
+	border-bottom: 1px solid #bbb;
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+	border-top: 4px solid #${getColor};
 
 	&:hover {
 		margin: -20px 0 0 0;
@@ -78,7 +82,7 @@ export const NewInfo = styled.p`
 	}
 `
 
-export const Title = styled.h1`
+export const Title = styled.p`
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 500;
 	font-size: 18px;
@@ -109,7 +113,7 @@ export const DescriptionList = styled.ul`
 
 export const DescriptionItem = styled.li``
 
-export const PriceTitle = styled.h2`
+export const PriceTitle = styled.p`
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 500;
 	font-size: 20px;
