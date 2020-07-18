@@ -21,10 +21,10 @@ export default class MyDocument extends Document {
 					<meta charSet="utf-8" />
 					<link rel="icon" href="/favicon.jpeg" />
 					<meta name="description" content="Página about de SMCodes, venha me conhecer um pouco." />
-					<meta property="og:description" content="Seu futuro digital começa aqui!" />
-					<meta name="description" content="Seu futuro digital começa aqui!" />
-					<meta name="Description" content="Seu futuro digital começa aqui!" />
-					<meta name="twitter:description" content="Seu futuro digital começa aqui!" />
+					<meta property="og:description" content="Venha construir sua presença digital!" />
+					<meta name="description" content="Venha construir sua presença digital!" />
+					<meta name="Description" content="Venha construir sua presença digital!" />
+					<meta name="twitter:description" content="Venha construir sua presença digital!" />
 					<meta name="googlebot" content="all" />
 					<meta name="og:site_name" content="SMCodes" />
 					<meta property="og:type" content="website" />
