@@ -19,6 +19,12 @@ export default class MyDocument extends Document {
           {this.props.styleTags}
 					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 					<meta charSet="utf-8" />
+				<link rel="icon" href="/favicon.jpeg" />
+				<meta name="description" content="Página about de SMCodes, venha me conhecer um pouco." />
+				<meta name="author" content="Samuel Pereira da Silva" />
+				<meta property="og:image" content="/favicon.jpeg" />
+				<meta name="keywords" content="HTML,CSS,JavaScript,Java,Plugin minecraft,Minecraft,Minecraft servidor,ReactNative,ReactJS,Discord.js,Node.js,Kotlin,SMCodes,Portfolio" />
+				<meta name="copyright" content="© 2020 SMCodes" />
         </Head>
         <body>
           <Main />
