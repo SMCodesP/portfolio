@@ -23,7 +23,7 @@ function Product() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
-		}, 25000)
+		}, 10000)
 	}, [])
 
 	return (

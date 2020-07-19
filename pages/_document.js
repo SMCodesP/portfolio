@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
 					{this.props.styleTags}
 					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 					<meta charSet="utf-8" />
-					<link rel="icon" href="/favicon.jpeg" />
+					<link rel="icon" href="/favicon.jpg" />
 					<meta name="description" content="Página about de SMCodes, venha me conhecer um pouco." />
 					<meta property="og:description" content="Venha construir sua presença digital!" />
 					<meta name="description" content="Venha construir sua presença digital!" />
