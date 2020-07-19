@@ -1,20 +1,26 @@
 import styled, { keyframes } from 'styled-components';
 
-const FadeInAnimation = keyframes`  
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
-
-const ContainerFade = keyframes`
-	from {
+const FadeInAnimation = keyframes` 
+  from {
 		opacity: 0;
-		transform: translateY(55px);
+		transform: translateY(30px);
 	}
-	to {
+  to {
 		opacity: 1;
 		transform: translateY(0);
 	}
 `;
+
+const ContainerFade = keyframes`
+  from {
+		opacity: 0;
+		transform: translateY(55px);
+	}
+  to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+`
 
 export const ContainerPurchase = styled.div`
 	width: 100%;
@@ -57,7 +63,7 @@ export const Container = styled.div`
 	border-right: 1px solid #bbb;
 	--color-var: #${(props) => props.color};
 	border-top: 4px solid var(--color-var);
-	animation: ${ContainerFade} 1s linear;
+	animation: ${ContainerFade} 2.5s linear;
 
 	&:hover {
 		margin: -20px 0 0 0;
@@ -80,7 +86,7 @@ export const Image = styled.img`
 	max-height: 128px;
 	transition: transform .2s;
 	cursor: none;
-	animation: ${FadeInAnimation} 2s linear;
+	animation: ${FadeInAnimation} 1s linear;
 
 	&:hover {
 		transform: scale(1.25) !important;
@@ -98,7 +104,7 @@ export const ContainerImage = styled.div`
 	border-bottom: 1px solid #aaaaaa;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
-	animation: ${FadeInAnimation} 2s linear;
+	animation: ${FadeInAnimation} 1s linear;
 
 	&:hover ${Image} {
 		transform: scale(1.1);
@@ -117,7 +123,7 @@ export const NewInfo = styled.p`
 	border-bottom: 4px solid #c00020;
 	transition: filter .2s, padding-right .2s;
 	cursor: pointer;
-	animation: ${FadeInAnimation} 2s linear;
+	animation: ${FadeInAnimation} 1s linear;
 
 	&:hover {
 		padding-right: 20px;
@@ -133,13 +139,13 @@ export const DescriptionList = styled.ul`
 	color: #333333;
 	list-style-position: inside;
 	line-height: 22px;
-	animation: ${FadeInAnimation} 2s linear;
+	animation: ${FadeInAnimation} 1s linear;
 `
 
 export const DescriptionItem = styled.li`
 	padding: 3px;
 	text-shadow: 0 0 2px #333;
-	animation: ${FadeInAnimation} 2s linear;
+	animation: ${FadeInAnimation} 1s linear;
 `
 
 export const PriceTitle = styled.p`
@@ -149,7 +155,7 @@ export const PriceTitle = styled.p`
 	color: #222;
 	padding: 5px;
 	align-self: flex-end;
-	animation: ${FadeInAnimation} 2s linear;
+	animation: ${FadeInAnimation} 1s linear;
 `
 
 // #2cb13h
@@ -166,12 +172,12 @@ export const PurchaseButton = styled.button`
 	color: #fafafa;
 	cursor: pointer;
 	transition: filter .2s;
-	animation: ${FadeInAnimation} 2s linear;
+	animation: ${FadeInAnimation} 1s linear;
 `
 
 export const BottomBorder = styled.div`
 	width: 100%;
-	animation: ${FadeInAnimation} 2s linear;
+	animation: ${FadeInAnimation} 1s linear;
 
 	&:hover ${PurchaseButton},
 	&:hover:after  {
