@@ -16,7 +16,7 @@ const Home = () => {
       </Head>
 
 			<Navigation page="/" />
-			<Products items={3} />
+			<Products items={4} />
 			<Footer />
 
 			<GlobalStyle />

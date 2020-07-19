@@ -18,7 +18,7 @@ const About = () => {
       </Head>
 
 			<div style={{ width: "100%" }}>
-				<Menu page="about" background="#EDEDED" color="#333333" />
+				<Menu page="/about" background="#EDEDED" color="#333333" />
 			</div>
 			<AboutComponent />
 			<OwnerInfos />

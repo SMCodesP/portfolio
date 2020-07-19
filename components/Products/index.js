@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { FiArrowRight } from "react-icons/fi";
 
 import Product from '../Product'
@@ -11,14 +12,24 @@ import {
 } from './styles'
 
 export default function Products({ items }) {
+	const [products, setProducts] = useState([])
+
+	useEffect(() => {
+		if (products.length < 4) {
+			setTimeout(() => {
+				setProducts([...products, products.length]);
+			}, 500)
+		}
+	}, [products]);
+
 	return (
 		<Container>
 			<ContainerItems>
 				<CategoryTitle>Minecraft plugins</CategoryTitle>
 				<ContainerProducts items={items}>
-					<Product />
-					<Product />
-					<Product />
+					{products.map((item, index) => (
+						<Product key={index} />
+					))}
 				</ContainerProducts>
 				<ContainerMoreItems>
 					<MoreItem>Ver mais</MoreItem>
@@ -28,9 +39,9 @@ export default function Products({ items }) {
 			<ContainerItems>
 				<CategoryTitle>Web</CategoryTitle>
 				<ContainerProducts items={items}>
-					<Product />
-					<Product />
-					<Product />
+					{products.map((item, index) => (
+						<Product key={index} />
+					))}
 				</ContainerProducts>
 				<ContainerMoreItems>
 					<MoreItem>Ver mais</MoreItem>
@@ -40,9 +51,21 @@ export default function Products({ items }) {
 			<ContainerItems>
 				<CategoryTitle>Back-end</CategoryTitle>
 				<ContainerProducts items={items}>
-					<Product />
-					<Product />
-					<Product />
+					{products.map((item, index) => (
+						<Product key={index} />
+					))}
+				</ContainerProducts>
+				<ContainerMoreItems>
+					<MoreItem>Ver mais</MoreItem>
+					<FiArrowRight color="#e02041" size={24} />
+				</ContainerMoreItems>
+			</ContainerItems>
+			<ContainerItems>
+				<CategoryTitle>Outros</CategoryTitle>
+				<ContainerProducts items={items}>
+					{products.map((item, index) => (
+						<Product key={index} />
+					))}
 				</ContainerProducts>
 				<ContainerMoreItems>
 					<MoreItem>Ver mais</MoreItem>
