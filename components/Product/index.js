@@ -27,8 +27,8 @@ function Product({loading}) {
 						speed={1}
 						viewBox="0 0 160 225"
 						title="Carregando..."
-						backgroundColor="#EDEDED"
-						foregroundColor="#e02041"
+						backgroundColor="#f35374"
+						foregroundColor="#c00020"
 					>
 						<circle cx="77" cy="40" r="22" />
 						<rect x="22" y="75" rx="0" ry="0" width="113" height="12" />
