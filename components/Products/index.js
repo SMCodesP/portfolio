@@ -36,30 +36,6 @@ export default function Products({ items }) {
 					<FiArrowRight color="#e02041" size={24} />
 				</ContainerMoreItems>
 			</ContainerItems>
-			<ContainerItems>
-				<CategoryTitle>Web</CategoryTitle>
-				<ContainerProducts items={items}>
-					{products.map((item, index) => (
-						<Product key={index} />
-					))}
-				</ContainerProducts>
-				<ContainerMoreItems>
-					<MoreItem>Ver mais</MoreItem>
-					<FiArrowRight color="#e02041" size={24} />
-				</ContainerMoreItems>
-			</ContainerItems>
-			<ContainerItems>
-				<CategoryTitle>Outros</CategoryTitle>
-				<ContainerProducts items={items}>
-					{products.map((item, index) => (
-						<Product key={index} />
-					))}
-				</ContainerProducts>
-				<ContainerMoreItems>
-					<MoreItem>Ver mais</MoreItem>
-					<FiArrowRight color="#e02041" size={24} />
-				</ContainerMoreItems>
-			</ContainerItems>
 		</Container>
 	)
 }

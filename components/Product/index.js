@@ -23,7 +23,7 @@ function Product() {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
-		}, 10000)
+		}, 25000)
 	}, [])
 
 	return (
@@ -31,12 +31,11 @@ function Product() {
 			{loading ? (
 				<div style={{ cursor: 'pointer' }}>
 					<ContentLoader
-						speed={1}
+						speed={4}
 						viewBox="0 0 160 225"
 						title="Carregando..."
-						animate={false}
 						backgroundColor="#EDEDED"
-						foregroundColor="#e7daff"
+						foregroundColor="#e02041"
 					>
 						<circle cx="77" cy="40" r="22" />
 						<rect x="22" y="75" rx="0" ry="0" width="113" height="12" />
