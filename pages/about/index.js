@@ -17,7 +17,7 @@ const About = () => {
 				<meta name="twitter:title" content="SMCodes - Sobre" />
       </Head>
 
-			<div style={{ width: "100%" }}>
+			<div style={{width: "100%"}}>
 				<Menu page="/about" background="#EDEDED" color="#333333" />
 			</div>
 			<AboutComponent />
