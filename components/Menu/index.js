@@ -18,23 +18,23 @@ function Menu({ page: isPage, background, color }) {
 			displayed: "Início",
 		},
 		{
-			name: "about",
+			name: "/about",
 			displayed: "Sobre",
 		},
 		{
-			name: "sites",
+			name: "/sites",
 			displayed: "Sites",
 		},
 		{
-			name: "plugins",
+			name: "/plugins",
 			displayed: "Plugins",
 		},
 		{
-			name: "apis",
+			name: "/apis",
 			displayed: "APIs",
 		},
 		{
-			name: "outros",
+			name: "/outros",
 			displayed: "Outros",
 		},
 	]
