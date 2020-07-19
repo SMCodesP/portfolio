@@ -12,10 +12,17 @@ import {
 } from './styles'
 
 export default function Products({ items }) {
-	const [products, setProducts] = useState([])
+	const [loading, setLoading] = useState(true);
+	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
-		if (products.length < 3) {
+		setTimeout(() => {
+			setLoading(false)
+		}, 25000)
+	}, [])
+
+	useEffect(() => {
+		if (products.length < 1) {
 			setTimeout(() => {
 				setProducts([...products, products.length]);
 			}, 500)
@@ -28,7 +35,7 @@ export default function Products({ items }) {
 				<CategoryTitle>Minecraft plugins</CategoryTitle>
 				<ContainerProducts items={items}>
 					{products.map((item, index) => (
-						<Product key={index} />
+						<Product key={index} loading={loading} />
 					))}
 				</ContainerProducts>
 				<ContainerMoreItems>
@@ -40,7 +47,7 @@ export default function Products({ items }) {
 				<CategoryTitle>Web</CategoryTitle>
 				<ContainerProducts items={items}>
 					{products.map((item, index) => (
-						<Product key={index} />
+						<Product key={index} loading={loading} />
 					))}
 				</ContainerProducts>
 				<ContainerMoreItems>

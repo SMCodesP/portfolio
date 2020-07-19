@@ -16,22 +16,15 @@ import {
 	PurchaseButton,
 } from './styles';
 
-function Product() {
-	const [loading, setLoading] = useState(true);
+function Product({loading}) {
 	const color = getColor();
-
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false)
-		}, 25000)
-	}, [])
 
 	return (
 		<Container color={color}>
 			{loading ? (
 				<div style={{ cursor: 'pointer' }}>
 					<ContentLoader
-						speed={4}
+						speed={1}
 						viewBox="0 0 160 225"
 						title="Carregando..."
 						backgroundColor="#EDEDED"
