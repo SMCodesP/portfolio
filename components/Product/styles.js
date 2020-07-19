@@ -14,7 +14,7 @@ const FadeInAnimation = keyframes`
 const ContainerFade = keyframes`
   from {
 		opacity: 0;
-		transform: translateY(55px);
+		transform: translateY(65px);
 	}
   to {
 		opacity: 1;
@@ -63,7 +63,7 @@ export const Container = styled.div`
 	border-right: 1px solid #bbb;
 	--color-var: #${(props) => props.color};
 	border-top: 4px solid var(--color-var);
-	animation: ${ContainerFade} 2.5s linear;
+	animation: ${ContainerFade} 1s linear;
 
 	&:hover {
 		margin: -20px 0 0 0;

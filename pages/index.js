@@ -38,7 +38,7 @@ const Home = () => {
       </Head>
 
 			<Navigation page="/" />
-			<Products items={4} />
+			<Products items={3} />
 			<ContainerLicense>
 				<Title>Sistema de licença</Title>
 				<Description>
