@@ -33,6 +33,8 @@ function Product() {
 					<ContentLoader
 						speed={1}
 						viewBox="0 0 160 225"
+						title="Carregando..."
+						animate={false}
 						backgroundColor="#EDEDED"
 						foregroundColor="#e7daff"
 					>
