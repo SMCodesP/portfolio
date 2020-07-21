@@ -30,6 +30,7 @@ export default function Histories() {
               style={{
                 filter: loading ? 'blur(4px)' : ''
               }}
+              alt="Print de um programa de gerenciação de bot, feito por SMCodes."
               src={src}
             />
           )}
@@ -43,6 +44,7 @@ export default function Histories() {
               style={{
                 filter: loading ? 'blur(4px)' : ''
               }}
+              alt="Print de um app mobile de uma revendedora de hospedagem, feito por SMCodes."
               src={src}
             />
           )}
