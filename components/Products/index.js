@@ -18,7 +18,7 @@ export default function Products({ items }) {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
-		}, 25000)
+		}, 20000)
 	}, [])
 
 	useEffect(() => {

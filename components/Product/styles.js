@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
+import Skeleton from 'react-loading-skeleton';
 
-const FadeInAnimation = keyframes` 
+const FadeInAnimation = keyframes`
   from {
 		opacity: 0;
 		transform: translateY(30px);
@@ -86,7 +87,7 @@ export const Image = styled.img`
 	max-height: 128px;
 	transition: transform .2s;
 	cursor: none;
-	animation: ${FadeInAnimation} 1s linear;
+	animation: ${FadeInAnimation} 1s linear, filter .2s;
 
 	&:hover {
 		transform: scale(1.25) !important;
