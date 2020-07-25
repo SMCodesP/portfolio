@@ -25,13 +25,13 @@ to {
 
 const animationBackgroundLoading = keyframes`
 0% {
-	filter: brightness(125%);
+	filter: brightness(110%);
 }
 50% {
-	filter: brightness(50%);
+	filter: brightness(90%);
 }
 100% {
-	filter: brightness(125%);
+	filter: brightness(110%);
 }
 `
 
@@ -105,14 +105,6 @@ width: ${(props) => (props.width) ? props.width : 92}px;
 height: 25px;
 margin: 10px 0 0 0;
 
-&::before {
-  content: '';
-  display: block;
-	height: 25px;
-  width: 75px;
-  background: linear-gradient(to right, transparent 0%, #fafafa 50%, transparent 100%);
-  animation: ${loading} 2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
-}
 `
 
 export const Container = styled.div`
