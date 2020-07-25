@@ -15,30 +15,31 @@ import {
   ContainerPurchase,
   PriceTitle,
   PurchaseButton,
+  TitleSkeleton,
+  ImageSkeleton,
+  DescriptionSkeleton,
 } from './styles'
 
 function Product({loading}) {
   const color = getColor();
 
   return (
-    <Container color={color}>
+    <Container color={color} loading={loading}>
       {loading ? (
-        <div style={{ cursor: 'pointer' }}>
-					<ContentLoader
-						speed={1}
-						viewBox="0 0 160 225"
-						backgroundColor="#EDEDED"
-						foregroundColor="#e7daff"
-					>
-						<circle cx="77" cy="40" r="22" />
-						<rect x="22" y="75" rx="0" ry="0" width="113" height="12" />
-						<rect x="38" y="90" rx="0" ry="0" width="82" height="10" />
-
-						{[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
-							<rect key={item} x="22" y={120+(index * 14)} rx="0" ry="0" width={Math.floor(Math.random() * 70 + 5)} height="8" />
-						))}
-					</ContentLoader>
-        </div>
+        <>
+          <ContainerImage>
+            <TitleSkeleton />
+            <ImageSkeleton />
+          </ContainerImage>
+          <DescriptionList>
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
+          </DescriptionList>
+        </>
       ) : (
         <>
           <ContainerImage>

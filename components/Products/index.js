@@ -18,11 +18,11 @@ export default function Products({ items }) {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
-		}, 20000)
+		}, 220000)
 	}, [])
 
 	useEffect(() => {
-		if (products.length < 1) {
+		if (products.length < 3) {
 			setTimeout(() => {
 				setProducts([...products, products.length]);
 			}, 500)
