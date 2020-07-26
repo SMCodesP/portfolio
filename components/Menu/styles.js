@@ -145,7 +145,7 @@ export const Page = styled.li`
 export const Options = styled.div`
 	width: 100%;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 	background: ${({ background = "transparent" }) => background};
 	transition: all .2s;
 	padding: 25px 90px;
