@@ -51,7 +51,7 @@ export const IconMenu = styled.button`
 		left: 18px;
 		right: 18px;
 		height: 8px;
-		background: white;
+		background: #e02041;
 		border-radius: 0.57143rem;
 	}
 
@@ -62,7 +62,7 @@ export const IconMenu = styled.button`
 		left: 0;
 		width: 100%;
 		height: 8px;
-		background-color: #fff;
+		background-color: #e02041;
 		border-radius: 0.57143rem;
 		content:"";
 	}
@@ -199,6 +199,14 @@ export const Options = styled.div`
 
 		${Title} {
 			display: none;
+		}
+	}
+
+	@media(max-width: 430px) {
+		padding: 5px 10px 5px 10px !important;
+
+		${ListingPage} {
+			margin: 20px 5px !important;
 		}
 	}
 `

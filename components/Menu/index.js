@@ -65,7 +65,7 @@ function Menu({ page: isPage, background, color }) {
 		}
 
 		function verificationIsDeviceInMobile() {
-			if ($(window).width() <= 800) {
+			if ($(window).width() <= 750) {
 				setIsMobile(true);
 			} else {
 				setIsMobile(false);

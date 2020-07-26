@@ -192,7 +192,7 @@ animation: ${FadeInAnimation} 1s linear;
 
 export const DescriptionItem = styled.li`
 padding: 3px;
-text-shadow: 0 0 2px #333;
+text-shadow: 0 0 1px #333;
 animation: ${FadeInAnimation} 1s linear;
 `
 

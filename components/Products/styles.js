@@ -65,7 +65,7 @@ export const ContainerProducts = styled.div`
 export const CategoryTitle = styled.p`
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 900;
-	font-size: 32px;
+	font-size: 24pt;
 	color: #333;
 `
 
