@@ -15,12 +15,16 @@ export const Container = styled.header`
 export const ContainerWelcome = styled.div`
 	width: 80%;
 	margin-top: 100px;
+
+	@media (max-width: 500px) {
+		margin-top: 10px;
+	}
 `
 
 export const Welcome = styled.h1`
 	font-weight: 400;
 	color: #fff;
-	font-size: 64px;
+	font-size: 40pt;
 
 	& > strong {
 		font-weight: 600 !important;
@@ -29,13 +33,18 @@ export const Welcome = styled.h1`
 
 export const SubWelcome = styled.h2`
 	color: #fff;
-	font-size: 24px;
+	font-size: 17pt;
 	font-weight: 400;
 	line-height: 40px;
-	margin-bottom: 75px;
 `
 
 export const WorkLast = styled.a`
 	color: #fff;
-	font-size: 18px;
+	font-size: 15pt;
+	display: block;
+	margin-top: 75px;
+
+	@media (max-width: 925px) {
+		margin-top: 35px;
+	}
 `

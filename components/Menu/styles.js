@@ -152,7 +152,7 @@ export const Options = styled.div`
 
 	@media(max-width: 750px) {
 		flex-direction: column;
-		padding: 10px 70px 10px 70px!important;
+		padding: 10px 70px 10px 70px;
 		z-index: 999;
 		transition: all .2s;
 
@@ -192,7 +192,15 @@ export const Options = styled.div`
 				opacity: 0;
 			`}
 		}
-  	}
+  }
+
+	@media(max-width: 530px) {
+		padding: 15px 25px 15px 25px !important;
+
+		${Title} {
+			display: none;
+		}
+	}
 `
 
 export const OpenIsMenuMobile = styled.div`
@@ -232,6 +240,13 @@ export const OptionsFixed = styled.div`
 			? 'flex'
 			: 'none'
 		};
+	}
+
+	@media(max-width: 530px) {
+		justify-content: center;
+		${Title} {
+			display: none;
+		}
 	}
 `
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
 	width: 100%;
 	margin-top: 50px;
-	padding: 90px 75px;
+	padding: 90px 30px;
 	display: flex;
 	flex-direction: column;
 `
@@ -12,6 +12,7 @@ export const ContainerItems = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	margin-top: 10px;
 `
 
 export const MoreItem = styled.p`
@@ -51,12 +52,14 @@ export const ContainerMoreItems = styled.div`
 
 export const ContainerProducts = styled.div`
 	width: 100%;
+	overflow-y: auto;
 	padding: 20px;
 	margin-top: 5px;
 	display: grid;
 	grid-template-columns: repeat(${({ items = 2 }) => items}, 1fr);
 	gap: 30px 10px;
 	position: relative;
+	margin-bottom: 15px;
 `
 
 export const CategoryTitle = styled.p`

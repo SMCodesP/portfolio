@@ -105,6 +105,8 @@ margin: 10px 0 0 0;
 
 export const Container = styled.div`
 background: #fafafa;
+max-width: 400px;
+min-width: 350px;
 border-radius: 10px;
 transition: margin .2s, height .2s;
 padding-bottom: 10px;

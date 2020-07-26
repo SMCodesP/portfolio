@@ -10,7 +10,7 @@ import styled from 'styled-components';
 export const ContainerLicense = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin: 25px 115px 100px 115px;
+	margin: 25px 2% 100px 2%;
 	border-radius: 10px;
 	background-color: #1fc8db;
   background-image: linear-gradient(to bottom, #e02041, #c00020);
