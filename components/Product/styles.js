@@ -25,22 +25,13 @@ to {
 
 const animationBackgroundLoading = keyframes`
 0% {
-	filter: brightness(110%);
+	filter: brightness(105%);
 }
 50% {
-	filter: brightness(90%);
+	filter: brightness(95%);
 }
 100% {
-	filter: brightness(110%);
-}
-`
-
-const loading = keyframes`
-from {
-	margin-left: -40px;
-}
-to   {
-	margin-left: 100%;
+	filter: brightness(105%);
 }
 `
 
@@ -49,11 +40,8 @@ width: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
-margin: 15px 0;
-opacity: 0;
-padding: 10px 70px;
-height: 0;
-transition: height .2s, opacity .5s;
+padding: 5px 70px;
+transition: height 2s, opacity 1s;
 `
 
 export const Title = styled.p`
@@ -76,9 +64,9 @@ text-shadow: 1px 1px 5px #333;
 `
 
 export const TitleSkeleton = styled.div`
-background-color: #e6e6e6;
+background-color: #e0e0e0;
 border-radius: 5px;
-width: 65%;
+width: 45%;
 height: 30px;
 padding: 5px 25px;
 position: relative;
@@ -99,8 +87,16 @@ height: 128px;
 border-radius: 50%;
 `
 
+export const ButtonSkeleton = styled.div`
+	width: 100%;
+	height: 45px;
+	padding: 15px 0;
+	border-radius: 5px;
+	background-color: #e0e0e0;
+`
+
 export const DescriptionSkeleton = styled.div`
-background-color: #e6e6e6;
+background-color: #e0e0e0;
 width: ${(props) => (props.width) ? props.width : 92}px;
 height: 25px;
 margin: 10px 0 0 0;
@@ -118,14 +114,10 @@ border-right: 1px solid #bbb;
 --color-var: #${(props) => props.color};
 border-top: 4px solid var(--color-var);
 animation: ${ContainerFade} 1s linear;
+cursor: ${(props) => (props.loading) ? 'pointer' : 'default'};
 
 &:hover {
 	${props => props.loading ? `margin: -20px 0 0 0` : ''};
-}
-
-&:hover ${ContainerPurchase} {
-	opacity: 1;
-	height: 50px;
 }
 
 ${Title} {
@@ -186,7 +178,7 @@ animation: ${FadeInAnimation} 1s linear;
 `
 
 export const DescriptionList = styled.ul`
-padding: 25px;
+padding: 25px 25px 10px 25px;
 font-family: 'Libre Franklin', 'Roboto', sans-serif;
 font-weight: 500;
 font-size: 16px;

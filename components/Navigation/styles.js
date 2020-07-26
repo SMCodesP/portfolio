@@ -12,8 +12,6 @@ export const Container = styled.header`
 	font-family: 'Libre Franklin', sans-serif;
 `
 
-
-
 export const ContainerWelcome = styled.div`
 	width: 80%;
 	margin-top: 100px;

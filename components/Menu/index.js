@@ -1,43 +1,55 @@
 import { useState, useEffect, memo } from 'react'
 import Link from 'next/link'
 import $ from 'jquery'
+import { FiAlignRight } from 'react-icons/fi';
 
 import {
 	Options,
 	Title,
 	ListingPage,
 	Page,
-	OptionsFixed
+	OptionsFixed,
+	HeadMenuFixed,
+	IconMenu
 } from './styles'
 
 function Menu({ page: isPage, background, color }) {
 	const [options, setOptions] = useState(false)
+	const [activedMobile, setActivedMobile] = useState(false)
+	const [isMobile, setIsMobile] = useState(false)
+	const [isClose, setIsClose] = useState(false)
+
 	const list = [
 		{
-			name: "/",
-			displayed: "Início",
+			name: '/',
+			displayed: 'Início',
 		},
 		{
-			name: "/about",
-			displayed: "Sobre",
+			name: '/about',
+			displayed: 'Sobre',
 		},
 		{
-			name: "/sites",
-			displayed: "Sites",
+			name: '/sites',
+			displayed: 'Sites',
 		},
 		{
-			name: "/plugins",
-			displayed: "Plugins",
+			name: '/plugins',
+			displayed: 'Plugins',
 		},
 		{
-			name: "/apis",
-			displayed: "APIs",
+			name: '/apis',
+			displayed: 'APIs',
 		},
 		{
-			name: "/outros",
-			displayed: "Outros",
+			name: '/outros',
+			displayed: 'Outros',
 		},
 	]
+
+	function closeOrOpenInMobile() {
+		setActivedMobile(!activedMobile)
+		setIsClose(!isClose);
+	}
 
 	useEffect(() => {
 		function verificationIsDeviceOnPushingAnimation() {
@@ -52,28 +64,62 @@ function Menu({ page: isPage, background, color }) {
 			}
 		}
 
-		$(window).on('scroll',  verificationIsDeviceOnPushingAnimation)
+		function verificationIsDeviceInMobile() {
+			if ($(window).width() <= 800) {
+				setIsMobile(true);
+			} else {
+				setIsMobile(false);
+			}
+		}
+
+		$(window).on('scroll', verificationIsDeviceOnPushingAnimation)
+		$(window).on('resize', verificationIsDeviceInMobile)
+
+		verificationIsDeviceInMobile()
 		verificationIsDeviceOnPushingAnimation()
 	}, [])
 
 	return (
 		<>
-			<OptionsFixed fixed={options}>
+			<OptionsFixed fixed={options} actived={activedMobile}>
 				<Title>SMCodes</Title>
-				<ListingPage>
-					{list.map((page) => (
-						<Link key={page.name} href={page.name}>
-							<Page
-								locate={(isPage == page.name)}
-							>
-								{page.displayed}
-							</Page>
-						</Link>
-					))}
-				</ListingPage>
+				{(isMobile && options) ? (
+					<IconMenu
+						onClick={() => {
+							closeOrOpenInMobile()
+						}}
+						closed={isClose}
+					>
+						<span></span>
+					</IconMenu>
+				) : (
+					<ListingPage>
+						{list.map((page) => (
+							<Link key={page.name} href={page.name}>
+								<Page
+									locate={(isPage == page.name)}
+								>
+									{page.displayed}
+								</Page>
+							</Link>
+						))}
+					</ListingPage>
+				)}
 			</OptionsFixed>
-			<Options id='title' background={background}>
-				<Title color={color}>SMCodes</Title>
+			<Options id='title' background={background} actived={activedMobile}>
+				<HeadMenuFixed>
+					{isMobile && (
+						<IconMenu
+							onClick={() => {
+								closeOrOpenInMobile()
+							}}
+							closed={isClose}
+						>
+							<span></span>
+						</IconMenu>
+					)}
+					<Title color={color}>SMCodes</Title>
+				</HeadMenuFixed>
 				<ListingPage>
 					{list.map((page) => (
 						<Link key={page.name} href={page.name}>

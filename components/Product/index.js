@@ -18,6 +18,7 @@ import {
   TitleSkeleton,
   ImageSkeleton,
   DescriptionSkeleton,
+  ButtonSkeleton,
 } from './styles'
 
 function Product({loading}) {
@@ -32,13 +33,16 @@ function Product({loading}) {
             <ImageSkeleton />
           </ContainerImage>
           <DescriptionList>
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242)} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
           </DescriptionList>
+          <ContainerPurchase>
+            <ButtonSkeleton />
+          </ContainerPurchase>
         </>
       ) : (
         <>
@@ -62,12 +66,6 @@ function Product({loading}) {
             </ProgressiveImage>
             <NewInfo>Novo</NewInfo>
           </ContainerImage>
-          <ContainerPurchase>
-            <BottomBorder>
-              <PurchaseButton>Comprar</PurchaseButton>
-            </BottomBorder>
-            <PriceTitle>R$ 4,99</PriceTitle>
-          </ContainerPurchase>
           <DescriptionList>
             <DescriptionItem>Minecraft version » 1.8.x</DescriptionItem>
             <DescriptionItem>API » Bukkit Spigot</DescriptionItem>
@@ -76,6 +74,12 @@ function Product({loading}) {
             <DescriptionItem>Criador » SMCodes</DescriptionItem>
             <DescriptionItem>A pedido de » Ninguém</DescriptionItem>
           </DescriptionList>
+          <ContainerPurchase>
+            <BottomBorder>
+              <PurchaseButton>Comprar</PurchaseButton>
+            </BottomBorder>
+            <PriceTitle>R$ 4,99</PriceTitle>
+          </ContainerPurchase>
         </>
       )}
     </Container>
