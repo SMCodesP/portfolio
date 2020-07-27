@@ -12,7 +12,7 @@ import {
   TitleImage,
   Image,
   GlobalStyle,
-} from './styles'
+} from '../../components/ImagePageStyle/styles'
 
 const About = () => {
 
