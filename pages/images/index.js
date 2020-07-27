@@ -43,11 +43,10 @@ const About = () => {
             <ListImages>
               {images.map((image, index) => (
                 <div
-                  style={{  padding: 50 }}
+                  style={{ padding: 50 }}
+                  key={index}
                 >
-                  <ContainerImage
-                    key={index}
-                  >
+                  <ContainerImage>
                     <Zoom
                       overlayBgColorEnd="#44475a"
                       overlayBgColorStart="#282a3677"
@@ -61,7 +60,7 @@ const About = () => {
                         {(src, loading, srcSetData) => (
                           <Image
                             style={{
-                              filter: loading ? 'blur(2px)' : ''
+                              filter: loading ? 'blur(4px)' : ''
                             }}
                             sizes={srcSetData}
                             src={src}
@@ -77,8 +76,6 @@ const About = () => {
             </ListImages>
           </ContainerImages>
         </Container>
-
-
       </div>
       <GlobalStyle />
     </>
