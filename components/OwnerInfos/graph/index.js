@@ -22,7 +22,7 @@ import {
 export default function Graph() {
 	const [activeIndex, setActiveIndex] = useState(null)
   const [isMobile, setIsMobile] = useState(false)
-  const [size, setSize] = useState($(window).width())
+  const [size, setSize] = useState(0)
 
 	const data = [
 		{
