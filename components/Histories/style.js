@@ -5,6 +5,15 @@ export const ContainerHistories = styled.div`
 	display: flex;
 	margin-top: 10px;
 	padding: 75px;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 600px) {
+    padding: 15px;
+  }
 `
 
 export const MainHistories = styled.div`
@@ -22,14 +31,23 @@ export const HistoriesSubTitle = styled.h2`
 	font-size: 20px;
 	margin-bottom: 40px;
 	font-weight: 500;
+
+  @media (max-width: 600px) {
+	  margin-bottom: 10px;
+  }
 `
 
 export const HistoriesText = styled.p`
-	width: 80%;
-	font-size: 17px;
-	margin: 15px 25px;
+	width: 100%;
+	font-size: 13pt;
+	margin: 10px 0;
+  padding: 20px;
 	text-indent: 1.30em;
 	line-height: 20px;
+
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 `
 
 export const ContainerImages = styled.div`
@@ -37,6 +55,14 @@ export const ContainerImages = styled.div`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 9px;
+
+  @media (max-width: 1100px) {
+    margin-top: 40px;
+  }
+
+  @media (max-width: 625px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const ImageExample = styled.img`

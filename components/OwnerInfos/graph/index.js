@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import $ from 'jquery'
 import {
 	BarChart,
 	Bar,
@@ -20,6 +21,8 @@ import {
 
 export default function Graph() {
 	const [activeIndex, setActiveIndex] = useState(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [size, setSize] = useState($(window).width())
 
 	const data = [
 		{
@@ -91,6 +94,21 @@ export default function Graph() {
 		return null;
 	}
 
+  useEffect(() => {
+    function verificationIsDeviceInMobile() {
+      setSize($(window).width())
+			if ($(window).width() <= 1100) {
+				setIsMobile(true);
+			} else {
+				setIsMobile(false);
+			}
+		}
+
+		$(window).on('resize', verificationIsDeviceInMobile)
+
+		verificationIsDeviceInMobile()
+  }, [])
+
 	function mouseEnterInCategory(_, index = null) {
 		setActiveIndex(index)
 	}
@@ -100,7 +118,7 @@ export default function Graph() {
 	}
 
 	return (
-		<BarChart id='client-graph' width={600} height={350} data={data}>
+    <BarChart id='client-graph' width={isMobile ? size/1.25 : size/2} height={isMobile ? size/1.7 : 350} data={data}>
 			<XAxis dataKey='name' />
 			<YAxis />
 			<Tooltip content={<CustomTooltip />}/>
