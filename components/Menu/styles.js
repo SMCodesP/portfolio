@@ -1,4 +1,6 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { FiUser } from 'react-icons/fi'
+import Switch from "react-switch";
 
 export const ListingPage = styled.ul`
 	height: auto;
@@ -121,9 +123,11 @@ export const IconMenu = styled.button`
 export const Page = styled.li`
 	height: auto;
 	opacity: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
-	line-height: 26px;
 	user-select: none;
 	list-style: none;
 	cursor: pointer;
@@ -139,6 +143,30 @@ export const Page = styled.li`
 		transform: ${(props) => props.locate
 			? 'scale(1)'
 			: 'scale(1.1)'};
+	}
+`
+
+export const User = styled(FiUser).attrs({
+	color: "#e02041",
+	size: 20
+})`
+	line-height: 10px;
+	margin-top: -5px;
+	stroke-width: 3px;
+	box-sizing: content-box;
+	border-radius: 50%;
+	background: #cccccc;
+	padding: 10px;
+`
+
+const UserOn = keyframes`
+	from {
+		opacity: 0;
+    	margin: 0 0 0 -35px;
+	}
+	to {
+		opacity: 1;
+    	margin: 85px 0 0 -35px;
 	}
 `
 
@@ -263,3 +291,65 @@ export const HeadMenuFixed = styled.div`
 	flex-direction: row-reverse;
 	justify-content: space-between;
 `
+
+export const UserMenu = styled.div`
+	border-radius: 10px;
+	background: #fafafa;
+	width: 100%;
+    align-self: flex-end;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+`
+
+export const UserIcon = styled.img`
+	width: 64px;
+	height: 64px;
+	cursor: pointer;
+	transition: filter .3s;
+
+	&:hover {
+		filter: brightness(80%);
+	}
+`
+
+export const Username = styled.p`
+	color: #333333;
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	font-size: 14pt;
+	font-weight: medium;
+	margin: 5px 0;
+`
+
+export const Line = styled.hr`
+	width: 100%;
+	margin-top: 15px;
+	color: #e02041;
+`
+
+export const ListOptions = styled.ul`
+	margin: 25px;
+	width: 100%;
+	padding: 0 15px;
+`
+
+export const Option = styled.li`
+	padding: 10px;
+	border-radius: 5px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background: #e8e8e8;
+`
+
+export const OptionTitle = styled.p`
+	color: #333333;
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	font-size: 14pt;
+`
+
+export const OptionSelect = styled(Switch)``

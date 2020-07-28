@@ -1,16 +1,27 @@
-import { useState, useEffect, memo } from 'react'
+import { useState, useEffect, useRef, memo } from 'react'
 import Link from 'next/link'
 import $ from 'jquery'
-import { FiAlignRight } from 'react-icons/fi';
+import { FiAlignRight, FiUser } from 'react-icons/fi';
+import Popup from "reactjs-popup";
+import Modal from 'react-modal';
 
 import {
 	Options,
 	Title,
 	ListingPage,
 	Page,
+	User,
 	OptionsFixed,
 	HeadMenuFixed,
-	IconMenu
+	IconMenu,
+	UserMenu,
+	UserIcon,
+	Username,
+	Line,
+	ListOptions,
+	Option,
+	OptionTitle,
+	OptionSelect,
 } from './styles'
 
 function Menu({ page: isPage, background, color }) {
@@ -18,6 +29,10 @@ function Menu({ page: isPage, background, color }) {
 	const [activedMobile, setActivedMobile] = useState(false)
 	const [isMobile, setIsMobile] = useState(false)
 	const [isClose, setIsClose] = useState(false)
+	const [userOpen, setUserOpen] = useState(false);
+	const [theme, setTheme] = useState(false);
+	const [showModal, setShowModal] = useState(false);
+	const menuUser = useRef(null);
 
 	const list = [
 		{
@@ -74,24 +89,43 @@ function Menu({ page: isPage, background, color }) {
 
 		$(window).on('scroll', verificationIsDeviceOnPushingAnimation)
 		$(window).on('resize', verificationIsDeviceInMobile)
+		$(window).on('click', (test) => {
+			if (test.target.id != "noClose") {
+				setUserOpen(false)
+			}
+		})
 
 		verificationIsDeviceInMobile()
 		verificationIsDeviceOnPushingAnimation()
 	}, [])
+
+	const customStyles = {
+		content : {
+			top: '50%',
+			left: '50%',
+			right: 'auto',
+			bottom: 'auto',
+			marginRight: '-50%',
+			transform: 'translate(-50%, -50%)',
+			width: '70%'
+		}
+	};
 
 	return (
 		<>
 			<OptionsFixed fixed={options} actived={activedMobile}>
 				<Title>SMCodes</Title>
 				{(isMobile && options) ? (
-					<IconMenu
-						onClick={() => {
-							closeOrOpenInMobile()
-						}}
-						closed={isClose}
-					>
-						<span></span>
-					</IconMenu>
+					<div>
+						<IconMenu
+							onClick={() => {
+								closeOrOpenInMobile()
+							}}
+							closed={isClose}
+						>
+							<span></span>
+						</IconMenu>
+					</div>
 				) : (
 					<ListingPage>
 						{list.map((page) => (
@@ -131,8 +165,51 @@ function Menu({ page: isPage, background, color }) {
 							</Page>
 						</Link>
 					))}
+					<Page
+						color="#e02041"
+					>
+						<User
+							color="#e02041"
+							size={40}
+							onClick={() => setShowModal(true)}
+						/>
+					</Page>
 				</ListingPage>
 			</Options>
+
+
+	        <Modal 
+		       	isOpen={showModal}
+		  		onRequestClose={() => setShowModal(false)}
+		       	contentLabel="Minimal Modal Example"
+		       	style={customStyles}
+	        >
+				<UserMenu>
+					<IconMenu
+						onClick={() => setShowModal(false)}
+						closed={true}
+						style={{
+							alignSelf: 'flex-end'
+						}}
+					>
+						<span></span>
+					</IconMenu>
+					<UserIcon
+						src="/unknown.webp"
+					/>
+					<Username>Unknown</Username>
+					<Line />
+					<ListOptions>
+						<Option>
+							<OptionTitle>{theme ? 'Light' : 'Dark'} theme</OptionTitle>
+							<OptionSelect
+								onChange={() => setTheme(!theme)}
+								checked={theme}
+							/>
+						</Option>
+					</ListOptions>
+				</UserMenu>
+	        </Modal>
 		</>
 	)
 }
