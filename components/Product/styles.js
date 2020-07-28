@@ -1,26 +1,16 @@
 import styled, { keyframes } from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
-
-const FadeInAnimation = keyframes`
-from {
-	opacity: 0;
-	transform: translateY(30px);
-}
-to {
-	opacity: 1;
-	transform: translateY(0);
-}
-`;
+import { shade } from 'polished';
 
 const ContainerFade = keyframes`
-from {
-	opacity: 0;
-	transform: translateY(65px);
-}
-to {
-	opacity: 1;
-	transform: translateY(0);
-}
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 `
 
 const animationBackgroundLoading = keyframes`
@@ -48,7 +38,7 @@ export const Title = styled.p`
 font-family: 'Libre Franklin', 'Roboto', sans-serif;
 font-weight: 500;
 font-size: 18px;
-color: #fafafa;
+color: ${({theme}) => theme.colors.background};
 border-radius: 50px;
 line-height: 20px;
 padding: 5px 25px;
@@ -56,7 +46,7 @@ position: relative;
 top: 15px;
 cursor: default;
 transition: filter .2s;
-text-shadow: 1px 1px 5px #333;
+text-shadow: 1px 1px 1px ${({theme}) => theme.colors.text};
 
 &:hover {
 	filter: brightness(70%);
@@ -64,7 +54,7 @@ text-shadow: 1px 1px 5px #333;
 `
 
 export const TitleSkeleton = styled.div`
-background-color: #e0e0e0;
+background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
 border-radius: 5px;
 width: 45%;
 height: 30px;
@@ -81,10 +71,10 @@ animation: ${animationBackgroundLoading} 5s infinite;
 `
 
 export const ImageSkeleton = styled.div`
-background-color: #e0e0e0;
-width: 128px;
-height: 128px;
-border-radius: 50%;
+	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
+	width: 128px;
+	height: 128px;
+	border-radius: 50%;
 `
 
 export const ButtonSkeleton = styled.div`
@@ -92,27 +82,27 @@ export const ButtonSkeleton = styled.div`
 	height: 45px;
 	padding: 15px 0;
 	border-radius: 5px;
-	background-color: #e0e0e0;
+	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
 `
 
 export const DescriptionSkeleton = styled.div`
-background-color: #e0e0e0;
-width: ${(props) => (props.width) ? props.width : 92}px;
-height: 25px;
-margin: 10px 0 0 0;
+	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
+	width: ${(props) => (props.width) ? props.width : 92}px;
+	height: 25px;
+	margin: 10px 0 0 0;
 
 `
 
 export const Container = styled.div`
-background: #fafafa;
+background: ${({theme}) => theme.colors.background};
 max-width: 400px;
 min-width: 350px;
 border-radius: 10px;
 transition: margin .2s, height .2s;
 padding-bottom: 10px;
-border-bottom: 1px solid #bbb;
-border-left: 1px solid #bbb;
-border-right: 1px solid #bbb;
+border-bottom: 1px solid ${({theme}) => theme.colors.primary};
+border-left: 1px solid ${({theme}) => theme.colors.primary};
+border-right: 1px solid ${({theme}) => theme.colors.primary};
 --color-var: #${(props) => props.color};
 border-top: 4px solid var(--color-var);
 animation: ${ContainerFade} 1s linear;
@@ -134,7 +124,6 @@ max-width: 128px;
 max-height: 128px;
 transition: transform .2s;
 cursor: none;
-animation: ${FadeInAnimation} 1s linear, filter .2s;
 
 &:hover {
 	transform: scale(1.25) !important;
@@ -145,14 +134,13 @@ export const ContainerImage = styled.div`
 display: flex;
 flex-direction: column-reverse;
 width: 100%;
-background: #eee;
+background: ${({theme}) => theme.colors.secundaryBackground};
 justify-content: center;
 align-items: center;
 padding: 10px 0 0 0;
-border-bottom: 1px solid #aaaaaa;
+border-bottom: 1px solid ${({theme}) => theme.colors.primary};
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
-animation: ${FadeInAnimation} 1s linear;
 
 &:hover ${Image} {
 	transform: scale(1.1);
@@ -160,18 +148,17 @@ animation: ${FadeInAnimation} 1s linear;
 `
 
 export const NewInfo = styled.p`
-color: #fafafa;
+color: ${({theme}) => theme.colors.background};
 align-self: flex-end;
-background: #e02041;
+background: ${({theme}) => theme.colors.primary};
 padding: 6px 6px 6px 10px;
 border-bottom-left-radius: 10px;
 font-family: 'Libre Franklin', 'Roboto', sans-serif;
 font-size: 14px;
 font-weight: 700;
-border-bottom: 4px solid #c00020;
+border-bottom: 4px solid ${({theme}) => shade(0.4, theme.colors.primary)};
 transition: filter .2s, padding-right .2s;
 cursor: pointer;
-animation: ${FadeInAnimation} 1s linear;
 
 &:hover {
 	padding-right: 20px;
@@ -184,26 +171,23 @@ padding: 25px 25px 10px 25px;
 font-family: 'Libre Franklin', 'Roboto', sans-serif;
 font-weight: 500;
 font-size: 16px;
-color: #333333;
+color: ${({theme}) => theme.colors.text};
 list-style-position: inside;
 line-height: 22px;
-animation: ${FadeInAnimation} 1s linear;
 `
 
 export const DescriptionItem = styled.li`
 padding: 3px;
-text-shadow: 0 0 1px #333;
-animation: ${FadeInAnimation} 1s linear;
+text-shadow: 0 0 1px ${({theme}) => theme.colors.text};
 `
 
 export const PriceTitle = styled.p`
 font-family: 'Libre Franklin', 'Roboto', sans-serif;
 font-weight: 500;
 font-size: 20px;
-color: #222;
+color: ${({theme}) => theme.colors.text};
 padding: 5px;
 align-self: flex-end;
-animation: ${FadeInAnimation} 1s linear;
 `
 
 // #2cb13h
@@ -217,15 +201,13 @@ border: 0;
 font-family: 'Libre Franklin', 'Roboto', sans-serif;
 font-weight: 500;
 font-size: 16px;
-color: #fafafa;
+color: ${({theme}) => theme.colors.background};
 cursor: pointer;
 transition: filter .2s;
-animation: ${FadeInAnimation} 1s linear;
 `
 
 export const BottomBorder = styled.div`
 width: 100%;
-animation: ${FadeInAnimation} 1s linear;
 
 &:hover ${PurchaseButton},
 &:hover:after  {

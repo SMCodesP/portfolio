@@ -1,9 +1,12 @@
-import { useState, useEffect, useRef, memo } from 'react'
+import { useState, useEffect, useRef, memo, useContext } from 'react'
 import Link from 'next/link'
 import $ from 'jquery'
 import { FiAlignRight, FiUser } from 'react-icons/fi';
-import Popup from "reactjs-popup";
 import Modal from 'react-modal';
+import { ThemeContext } from 'styled-components'
+import { shade, lighten } from 'polished'
+
+import ThemesContext from '../../contexts/themes'
 
 import {
 	Options,
@@ -30,8 +33,11 @@ function Menu({ page: isPage, background, color }) {
 	const [isMobile, setIsMobile] = useState(false)
 	const [isClose, setIsClose] = useState(false)
 	const [userOpen, setUserOpen] = useState(false);
-	const [theme, setTheme] = useState(false);
 	const [showModal, setShowModal] = useState(false);
+
+	const {colors, ...theme} = useContext(ThemeContext)
+	const {toggleTheme} = useContext(ThemesContext)
+
 	const menuUser = useRef(null);
 
 	const list = [
@@ -89,25 +95,29 @@ function Menu({ page: isPage, background, color }) {
 
 		$(window).on('scroll', verificationIsDeviceOnPushingAnimation)
 		$(window).on('resize', verificationIsDeviceInMobile)
-		$(window).on('click', (test) => {
-			if (test.target.id != "noClose") {
-				setUserOpen(false)
-			}
-		})
 
 		verificationIsDeviceInMobile()
 		verificationIsDeviceOnPushingAnimation()
 	}, [])
 
 	const customStyles = {
-		content : {
+		content: {
 			top: '50%',
 			left: '50%',
 			right: 'auto',
 			bottom: 'auto',
 			marginRight: '-50%',
 			transform: 'translate(-50%, -50%)',
-			width: '70%'
+			width: '70%',
+			background: shade(0.4, colors.background),
+      		border: 0,
+      		padding: '10px',
+      		borderRadius: '5px',
+      		zIndex: 999
+		},
+		overlay: {
+			backgroundColor: `${colors.secundaryBackground}aa`,
+      		zIndex: 9999
 		}
 	};
 
@@ -166,12 +176,12 @@ function Menu({ page: isPage, background, color }) {
 						</Link>
 					))}
 					<Page
-						color="#e02041"
+						color={colors.text}
+						onClick={() => setShowModal(true)}
 					>
 						<User
-							color="#e02041"
+							color={colors.text}
 							size={40}
-							onClick={() => setShowModal(true)}
 						/>
 					</Page>
 				</ListingPage>
@@ -179,6 +189,7 @@ function Menu({ page: isPage, background, color }) {
 
 
 	        <Modal 
+	        	closeTimeoutMS={500}
 		       	isOpen={showModal}
 		  		onRequestClose={() => setShowModal(false)}
 		       	contentLabel="Minimal Modal Example"
@@ -201,10 +212,10 @@ function Menu({ page: isPage, background, color }) {
 					<Line />
 					<ListOptions>
 						<Option>
-							<OptionTitle>{theme ? 'Light' : 'Dark'} theme</OptionTitle>
+							<OptionTitle>Dracula theme</OptionTitle>
 							<OptionSelect
-								onChange={() => setTheme(!theme)}
-								checked={theme}
+								onChange={toggleTheme}
+								checked={(theme.title.toLowerCase() == 'dark')}
 							/>
 						</Option>
 					</ListOptions>

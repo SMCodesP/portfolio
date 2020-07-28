@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { FiArrowRight } from "react-icons/fi";
+import { ThemeContext } from 'styled-components';
 
 import Product from '../Product'
 import {
@@ -13,21 +14,14 @@ import {
 
 export default function Products({ items }) {
 	const [loading, setLoading] = useState(true);
-	const [products, setProducts] = useState([]);
+	const [products, setProducts] = useState([1]);
+	const {colors} = useContext(ThemeContext);
 
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
-		}, 20000)
+		}, 10000)
 	}, [])
-
-	useEffect(() => {
-		if (products.length < 3) {
-			setTimeout(() => {
-				setProducts([...products, products.length]);
-			}, 500)
-		}
-	}, [products]);
 
 	return (
 		<Container>
@@ -40,7 +34,7 @@ export default function Products({ items }) {
 				</ContainerProducts>
 				<ContainerMoreItems>
 					<MoreItem>Ver mais</MoreItem>
-					<FiArrowRight color="#e02041" size={24} />
+					<FiArrowRight color={colors.secundary} size={24} />
 				</ContainerMoreItems>
 			</ContainerItems>
 			<ContainerItems>
@@ -52,7 +46,7 @@ export default function Products({ items }) {
 				</ContainerProducts>
 				<ContainerMoreItems>
 					<MoreItem>Ver mais</MoreItem>
-					<FiArrowRight color="#e02041" size={24} />
+					<FiArrowRight color={colors.secundary} size={24} />
 				</ContainerMoreItems>
 			</ContainerItems>
 		</Container>

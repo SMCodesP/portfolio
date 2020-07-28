@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 import { FiUser } from 'react-icons/fi'
 import Switch from "react-switch";
+import { shade } from 'polished'
 
 export const ListingPage = styled.ul`
 	height: auto;
@@ -17,7 +18,7 @@ export const Title = styled.p`
 	height: auto;
 	opacity: 1;
 
-	color: ${({ color = "#fff" }) => color};
+	color: ${({ color, theme }) => color || theme.colors.text};
 	font-size: 26px;
 	font-weight: 600;
 	line-height: 26px;
@@ -131,7 +132,7 @@ export const Page = styled.li`
 	user-select: none;
 	list-style: none;
 	cursor: pointer;
-	color: ${({ color = "#fff" }) => color};
+	color: ${({ color, theme }) => color || theme.colors.text};
 	font-size: 18px;
 	font-weight: ${(props) => props.locate
 		? '900'
@@ -146,16 +147,16 @@ export const Page = styled.li`
 	}
 `
 
-export const User = styled(FiUser).attrs({
-	color: "#e02041",
+export const User = styled(FiUser).attrs(({theme}) => ({
+	color: theme.colors.text,
 	size: 20
-})`
+}))`
 	line-height: 10px;
 	margin-top: -5px;
 	stroke-width: 3px;
 	box-sizing: content-box;
 	border-radius: 50%;
-	background: #cccccc;
+	background: ${({theme}) => shade(0.08, theme.colors.background)};
 	padding: 10px;
 `
 
@@ -175,6 +176,7 @@ export const Options = styled.div`
 	display: flex;
 	justify-content: space-between;
 	background: ${({ background = "transparent" }) => background};
+	border-bottom: 2px solid ${({theme}) => shade(0.1, theme.colors.background)};
 	transition: all .2s;
 	padding: 25px 90px;
 
@@ -254,7 +256,11 @@ export const OptionsFixed = styled.div`
 	position: fixed;
 	justify-content: space-between;
 	align-items: center;
-	background: #e7daff;
+	background: ${({theme}) => theme.colors.primary};
+	border-bottom: ${(props) => props.fixed
+		? `2px solid ${shade(0.2, props.theme.colors.primary)}`
+		: ''
+	};
 	padding: 0 80px;
 	z-index: 2;
 
@@ -294,7 +300,7 @@ export const HeadMenuFixed = styled.div`
 
 export const UserMenu = styled.div`
 	border-radius: 10px;
-	background: #fafafa;
+	background: ${({theme}) => theme.colors.background};
 	width: 100%;
     align-self: flex-end;
 
@@ -316,7 +322,7 @@ export const UserIcon = styled.img`
 `
 
 export const Username = styled.p`
-	color: #333333;
+	color: ${({theme}) => theme.colors.text};
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
 	font-weight: medium;
@@ -343,11 +349,11 @@ export const Option = styled.li`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	background: #e8e8e8;
+	background: ${({theme}) => theme.colors.secundaryBackground};
 `
 
 export const OptionTitle = styled.p`
-	color: #333333;
+	color: ${({theme}) => theme.colors.secundaryText};
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
 `

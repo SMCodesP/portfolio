@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
 	width: 80%;
 	height: 96px;
-	background: #707070;
+	background: ${({theme}) => theme.colors.secundaryBackground};
 	position: relative;
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import $ from 'jquery'
 import {
 	BarChart,
@@ -10,6 +10,8 @@ import {
 	Legend,
 	Cell
 } from 'recharts'
+import { shade } from 'polished'
+import { ThemeContext } from 'styled-components'
 
 import {
 	ContainerItem,
@@ -21,8 +23,9 @@ import {
 
 export default function Graph() {
 	const [activeIndex, setActiveIndex] = useState(null)
-  const [isMobile, setIsMobile] = useState(false)
-  const [size, setSize] = useState(0)
+	const [isMobile, setIsMobile] = useState(false)
+	const [size, setSize] = useState(0)
+	const {colors} = useContext(ThemeContext)
 
 	const data = [
 		{
@@ -88,26 +91,27 @@ export default function Graph() {
 						))}
 					</ItemListTechs>
 				</ContainerItem>
-			);
+			)
 		}
 
-		return null;
+		return null
 	}
 
-  useEffect(() => {
-    function verificationIsDeviceInMobile() {
-      setSize($(window).width())
+	useEffect(() => {
+		function verificationIsDeviceInMobile() {
+	  		setSize($(window).width())
+
 			if ($(window).width() <= 1100) {
-				setIsMobile(true);
+				setIsMobile(true)
 			} else {
-				setIsMobile(false);
+				setIsMobile(false)
 			}
 		}
 
 		$(window).on('resize', verificationIsDeviceInMobile)
 
 		verificationIsDeviceInMobile()
-  }, [])
+	}, [])
 
 	function mouseEnterInCategory(_, index = null) {
 		setActiveIndex(index)
@@ -118,18 +122,18 @@ export default function Graph() {
 	}
 
 	return (
-    <BarChart id='client-graph' width={isMobile ? size/1.25 : size/2} height={isMobile ? size/1.7 : 350} data={data}>
+	    <BarChart id='client-graph' width={isMobile ? size/1.25 : size/2} height={isMobile ? size/1.7 : 350} data={data}>
 			<XAxis dataKey='name' />
 			<YAxis />
 			<Tooltip content={<CustomTooltip />}/>
-			<CartesianGrid stroke='#fff' strokeDasharray='9 9' />
+			<CartesianGrid stroke={colors.background} strokeDasharray='9 9' />
 			<Legend
 				width={100}
 				wrapperStyle={{
 					top: 20,
 					right: 20,
-					backgroundColor: '#f0f0f0',
-					border: '1px solid #a5a5a5',
+					backgroundColor: colors.background,
+					border: `1px solid ${shade(0.5, colors.background)}`,
 					borderRadius: 5,
 					lineHeight: '40px'
 				}}
@@ -140,15 +144,13 @@ export default function Graph() {
 				onMouseEnter={mouseEnterInCategory}
 				onMouseLeave={mouseLeaveInCategory}
 			>
-				{
-					data.map((_, index) => (
-						<Cell
-							cursor='pointer'
-							fill={index === activeIndex ? '#333333' : '#33333355'}
-							key={`cell-${index}`}
-						/>
-					))
-				}
+				{data.map((_, index) => (
+					<Cell
+						cursor='pointer'
+						fill={index === activeIndex ? '#333333' : '#33333355'}
+						key={`cell-${index}`}
+					/>
+				))}
 			</Bar>
 		</BarChart>
 	)

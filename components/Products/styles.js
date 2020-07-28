@@ -17,7 +17,7 @@ export const ContainerItems = styled.div`
 
 export const MoreItem = styled.p`
 	text-align: end;
-	color: #e02041;
+	color: ${({theme}) => theme.colors.secundary};
 	font-size: 22px;
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 600;
@@ -35,6 +35,7 @@ export const ContainerMoreItems = styled.div`
 
 	& svg {
 		transition: padding-left .2s;
+		stroke-width: 3px;
 	}
 
 	&:hover ${MoreItem} {
@@ -66,6 +67,6 @@ export const CategoryTitle = styled.p`
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 900;
 	font-size: 24pt;
-	color: #333;
+	color: ${({theme}) => theme.colors.text};
 `
 
