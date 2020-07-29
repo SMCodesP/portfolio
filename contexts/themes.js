@@ -8,10 +8,13 @@ import light from '../styles/themes/light'
 
 const ThemesContext = createContext({})
 
-function ThemesProvider({ children, initialTheme }) {
-	const [theme, setTheme] = usePersistedState('theme', initialTheme)
+function ThemesProvider({ children }) {
+	const [theme, setTheme] = usePersistedState('theme', light)
 
-	const toggleTheme = () => setTheme((theme.title.toLowerCase() === 'light') ? dark : light)
+	const toggleTheme = () => {
+    setTheme((theme.title.toLowerCase() === 'light') ? dark : light)
+    localStorage.setItem('theme', JSON.stringify((theme.title.toLowerCase() === "light") ? dark : light))
+  }
 
 	return (
 		<ThemesContext.Provider

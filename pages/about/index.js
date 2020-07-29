@@ -17,7 +17,7 @@ import {parseCookies} from '../../utils/parseCookies'
 
 function RenderInThemes() {
 	const { colors } = useContext(ThemeContext);
-	
+
 	return (
 		<div className="container">
 			<Head>
@@ -41,20 +41,12 @@ function RenderInThemes() {
 	)
 }
 
-const About = ({ initialTheme = JSON.stringify(light) }) => {
+const About = () => {
 	return (
-		<ThemesProvider initialTheme={JSON.parse(initialTheme)}>
+		<ThemesProvider>
 			<RenderInThemes />
 		</ThemesProvider>
 	)
-}
-
-About.getInitialProps = ({ req }) => {
-	const cookies = parseCookies(req);
-
-	return {
-		initialTheme: cookies.theme
-	};
 }
 
 export default About;

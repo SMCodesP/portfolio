@@ -4,11 +4,11 @@ import Cookie from 'js-cookie';
 function usePersistedState(key, initialState) {
 	const [state, setState] = useState(initialState)
 
-	useEffect(() => {
-    	Cookie.set(key, JSON.stringify(state), {
-    		expires: 365 * 10
-    	});
-	}, [key, state])
+  useEffect(() => {
+		if (localStorage.getItem(key)) {
+      setState(JSON.parse(localStorage.getItem(key)))
+    }
+  }, [])
 
 	return [state, setState]
 }

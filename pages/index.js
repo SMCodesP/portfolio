@@ -35,10 +35,10 @@ export const Description = styled.p`
 	padding: 15px;
 `
 
-const Home = ({initialTheme = JSON.stringify(light) }) => {
+const Home = ({initialTheme}) => {
 
 	return (
-		<ThemesProvider initialTheme={JSON.parse(initialTheme)}>
+		<ThemesProvider>
 			<div className="container">
 				<Head>
 					<title>SMCodes - Início</title>
@@ -62,12 +62,5 @@ const Home = ({initialTheme = JSON.stringify(light) }) => {
 	)
 }
 
-Home.getInitialProps = ({ req }) => {
-	const cookies = parseCookies(req);
-
-	return {
-		initialTheme: cookies.theme
-	};
-}
-
 export default Home;
+
