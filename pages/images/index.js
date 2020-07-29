@@ -18,14 +18,47 @@ const About = () => {
 
   const images = [
     {
-      name: 'This image about page example join',
-      source: '/pages/about.webp',
-      source_min: '/pages/about_min.webp'
+      name: 'This image access per website in computer homepage example join with theme dark',
+      source: '/pages/documentation/large/computer/dark/home.webp',
+      source_min: '/pages/documentation/small/computer/dark/home.webp',
     },
     {
-      name: 'This image homepage example join',
-      source: '/pages/home.webp',
-      source_min: '/pages/home_min.webp',
+      name: 'This image access per website in computer homepage example join with theme light',
+      source: '/pages/documentation/large/computer/light/home.webp',
+      source_min: '/pages/documentation/small/computer/light/home.webp',
+		},
+
+    {
+      name: 'This image access per website in computer about me example join with theme dark',
+      source: '/pages/documentation/large/computer/dark/about.webp',
+      source_min: '/pages/documentation/small/computer/dark/about.webp',
+    },
+    {
+      name: 'This image access per website in computer about me example join with theme light',
+      source: '/pages/documentation/large/computer/light/about.webp',
+      source_min: '/pages/documentation/small/computer/light/about.webp',
+		},
+
+
+    {
+      name: 'This image access per mobile phone homepage example join with theme dark',
+      source: '/pages/documentation/large/mobile/dark/home.webp',
+      source_min: '/pages/documentation/small/mobile/dark/home.webp',
+    },
+    {
+      name: 'This image access per mobile phone homepage example join with theme light',
+      source: '/pages/documentation/large/mobile/light/home.webp',
+      source_min: '/pages/documentation/small/mobile/light/home.webp',
+    },
+    {
+      name: 'This image access per mobile phone about me example join with theme dark',
+      source: '/pages/documentation/large/mobile/dark/about.webp',
+      source_min: '/pages/documentation/small/mobile/dark/about.webp',
+    },
+    {
+      name: 'This image access per mobile phone about me example join with theme light',
+      source: '/pages/documentation/large/mobile/light/about.webp',
+      source_min: '/pages/documentation/small/mobile/light/about.webp',
     },
   ];
 
@@ -55,14 +88,13 @@ const About = () => {
                       <ProgressiveImage
                         src={image.source}
                         placeholder={image.source_min}
-                        srcSetData={image.resolution}
                       >
                         {(src, loading, srcSetData) => (
                           <Image
                             style={{
-                              filter: loading ? 'blur(4px)' : ''
+															filter: loading ? 'blur(5px)' : '',
+															width: loading ? '250px' : '',
                             }}
-                            sizes={srcSetData}
                             src={src}
                             alt="SMCodes picture example"
                           />
