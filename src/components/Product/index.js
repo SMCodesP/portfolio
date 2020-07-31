@@ -25,7 +25,7 @@ function Product({loading, product}) {
   const color = getColor();
 
   return (
-    <Container color={color} loading={loading}>
+    <Container color={color} loading={loading.toString()}>
       {loading ? (
         <>
           <ContainerImage>
@@ -67,8 +67,8 @@ function Product({loading, product}) {
             <NewInfo>Novo</NewInfo>
           </ContainerImage>
           <DescriptionList>
-						{product.descriptionList.map((description) => (
-            	<DescriptionItem>{description}</DescriptionItem>
+						{product.descriptionList.map((description, index) => (
+            	<DescriptionItem key={index}>{description}</DescriptionItem>
 						))}
           </DescriptionList>
           <ContainerPurchase>

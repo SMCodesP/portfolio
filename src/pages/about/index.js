@@ -11,11 +11,8 @@ import Histories from '../../components/Histories/'
 import Footer from '../../components/Footer/'
 
 import GlobalStyle from '../../styles/GlobalStyle'
-import light from '../../styles/themes/light'
 
-import {parseCookies} from '../../utils/parseCookies'
-
-function RenderInThemes() {
+const About = () => {
 	const { colors } = useContext(ThemeContext);
 
 	return (
@@ -27,7 +24,7 @@ function RenderInThemes() {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/about" background={colors.secundaryBackground} color={colors.text} />
+				<Menu page="/about" />
 			</div>
 
 			<AboutComponent />
@@ -38,14 +35,6 @@ function RenderInThemes() {
 			<GlobalStyle />
 
 		</div>
-	)
-}
-
-const About = () => {
-	return (
-		<ThemesProvider>
-			<RenderInThemes />
-		</ThemesProvider>
 	)
 }
 

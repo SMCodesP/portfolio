@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import Skeleton from 'react-loading-skeleton';
 import { shade, getLuminance } from 'polished';
 
 const ContainerFade = keyframes`
@@ -88,7 +87,6 @@ background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
 width: ${(props) => (props.width) ? props.width : 92}px;
 height: 25px;
 margin: 10px 0 0 0;
-
 `
 
 export const Container = styled.div`
@@ -104,10 +102,10 @@ border-right: 1px solid ${({theme}) => theme.colors.primary};
 --color-var: #${(props) => props.color};
 border-top: 4px solid var(--color-var);
 animation: ${ContainerFade} 1s linear;
-cursor: ${(props) => (props.loading) ? 'pointer' : 'default'};
+cursor: ${(props) => (props.loading === "true") ? 'pointer' : 'default'};
 
 &:hover {
-	${props => props.loading ? `margin: -20px 0 0 0` : ''};
+	${props => (props.loading === "true") ? `margin: -20px 0 0 0` : ''};
 }
 
 ${Title} {

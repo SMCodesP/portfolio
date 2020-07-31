@@ -31,8 +31,8 @@ export default function Products({ items, product, limit }) {
 					{product.items.map((item, index) => {
 						if (limit && index > 2) {
 							return (
-								<>
-								</>
+								<div key={index}>
+								</div>
 							)
 						} else {
 							return (

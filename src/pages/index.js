@@ -3,8 +3,6 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import { shade } from 'polished'
 
-import {ThemesProvider} from '../contexts/themes'
-
 import Navigation from '../components/Navigation/'
 import Products from '../components/Products'
 import Footer from '../components/Footer'
@@ -228,7 +226,6 @@ const Home = ({initialTheme}) => {
 	]
 
 	return (
-		<ThemesProvider>
 			<div className="container">
 				<Head>
 					<title>SMCodes - Início</title>
@@ -257,7 +254,6 @@ const Home = ({initialTheme}) => {
 
 				<GlobalStyle />
 			</div>
-		</ThemesProvider>
 	)
 }
 
