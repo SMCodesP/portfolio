@@ -13,7 +13,6 @@ import Footer from '../../components/Footer/'
 import GlobalStyle from '../../styles/GlobalStyle'
 
 const About = () => {
-	const { colors } = useContext(ThemeContext);
 
 	return (
 		<div className="container">
