@@ -176,7 +176,7 @@ export const Options = styled.div`
 	display: flex;
 	justify-content: space-between;
 	background: ${({ background = "transparent" }) => background};
-	border-bottom: 2px solid ${({theme}) => shade(0.1, theme.colors.background)};
+	border-bottom: 2px solid ${({theme}) => shade(0.5, theme.colors.background)};
 	transition: all .2s;
 	padding: 25px 90px;
 

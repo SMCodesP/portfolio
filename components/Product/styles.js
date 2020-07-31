@@ -113,8 +113,8 @@ cursor: ${(props) => (props.loading) ? 'pointer' : 'default'};
 ${Title} {
 	background: var(--color-var);
 	color: ${(props) => (getLuminance(`#${props.color}`) < 0.4)
-			? props.theme.colors.light
-			: props.theme.colors.dark} !important;
+		? props.theme.colors.light
+		: props.theme.colors.dark} !important;
 }
 `;
 
