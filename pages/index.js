@@ -36,6 +36,196 @@ export const Description = styled.p`
 `
 
 const Home = ({initialTheme}) => {
+	const products = [
+		{
+			title: 'Minecraft plugins',
+			link: '/plugins',
+			items: [
+				{
+					title: 'DDL-Furnace',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Esquentar minérios',
+						'Inovação » Construir fornalhas com dificuldade',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				},
+				{
+					title: 'DDL-Warps',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Gerenciamento de warps',
+						'Inovação » Sistema em GUI automatizado',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				},
+				{
+					title: 'DDL-Warps',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Gerenciamento de warps',
+						'Inovação » Sistema em GUI automatizado',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				},
+				{
+					title: 'DDL-Warps',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Gerenciamento de warps',
+						'Inovação » Sistema em GUI automatizado',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				},
+				{
+					title: 'DDL-Warps',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Gerenciamento de warps',
+						'Inovação » Sistema em GUI automatizado',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				},
+				{
+					title: 'DDL-Economy',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Sistema de economia',
+						'Inovação » Uma api inovadora e com gerenciamento web',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				},
+				{
+					title: 'DDL-Tags',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Sistema de tags',
+						'Inovação » Uma api robusta e um gerenciamento web',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				}
+			]
+		},
+		{
+			title: 'Web',
+			link: '/sites',
+			items: [
+				{
+					title: 'DDL-Furnace',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Esquentar minérios',
+						'Inovação » Construir fornalhas com dificuldade',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				},
+				{
+					title: 'DDL-Warps',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Gerenciamento de warps',
+						'Inovação » Sistema em GUI automatizado',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				},
+				{
+					title: 'DDL-Economy',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Sistema de economia',
+						'Inovação » Uma api inovadora e com gerenciamento web',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				},
+				{
+					title: 'DDL-Tags',
+					image: {
+						large: '/splash.png',
+						small: '/splash_min.png'
+					},
+					descriptionList: [
+						'Minecraft version » 1.8.x',
+						'API » Bukkit Spigot',
+						'Funcionalidade » Sistema de tags',
+						'Inovação » Uma api robusta e um gerenciamento web',
+						'Criador » SMCodes',
+						'A pedido de » Ninguém'
+					],
+					price: 4.99
+				}
+			]
+		},
+	]
 
 	return (
 		<ThemesProvider>
@@ -47,7 +237,16 @@ const Home = ({initialTheme}) => {
 				</Head>
 
 				<Navigation page="/" />
-				<Products items={3} id="navigation" />
+				<br />
+				{products.map((product, index) => (
+					<Products
+						key={index}
+						items={3}
+						product={product}
+						id="navigation"
+						limit={true}
+					/>
+				))}
 				<ContainerLicense>
 					<Title>Sistema de licença</Title>
 					<Description>

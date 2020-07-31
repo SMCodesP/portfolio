@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useState, useEffect, useContext } from 'react';
 import { FiArrowRight } from "react-icons/fi";
 import { ThemeContext } from 'styled-components';
@@ -12,9 +13,8 @@ import {
 	MoreItem,
 } from './styles'
 
-export default function Products({ items }) {
+export default function Products({ items, product, limit }) {
 	const [loading, setLoading] = useState(true);
-	const [products, setProducts] = useState([1]);
 	const {colors} = useContext(ThemeContext);
 
 	useEffect(() => {
@@ -26,28 +26,29 @@ export default function Products({ items }) {
 	return (
 		<Container>
 			<ContainerItems>
-				<CategoryTitle>Minecraft plugins</CategoryTitle>
+				<CategoryTitle>{product.title}</CategoryTitle>
 				<ContainerProducts items={items}>
-					{products.map((item, index) => (
-						<Product key={index} loading={loading} />
-					))}
+					{product.items.map((item, index) => {
+						if (limit && index > 2) {
+							return (
+								<>
+								</>
+							)
+						} else {
+							return (
+								<Product key={index} product={item} loading={loading} />
+							)
+						}
+					})}
 				</ContainerProducts>
-				<ContainerMoreItems>
-					<MoreItem>Ver mais</MoreItem>
-					<FiArrowRight color={colors.secundary} size={24} />
-				</ContainerMoreItems>
-			</ContainerItems>
-			<ContainerItems>
-				<CategoryTitle>Web</CategoryTitle>
-				<ContainerProducts items={items}>
-					{products.map((item, index) => (
-						<Product key={index} loading={loading} />
-					))}
-				</ContainerProducts>
-				<ContainerMoreItems>
-					<MoreItem>Ver mais</MoreItem>
-					<FiArrowRight color={colors.secundary} size={24} />
-				</ContainerMoreItems>
+				{limit && (
+					<Link href={product.link}>
+						<ContainerMoreItems>
+							<MoreItem>Ver mais</MoreItem>
+							<FiArrowRight color={colors.secundary} size={24} />
+						</ContainerMoreItems>
+					</Link>
+				)}
 			</ContainerItems>
 		</Container>
 	)

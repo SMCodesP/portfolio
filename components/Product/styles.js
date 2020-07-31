@@ -95,8 +95,8 @@ export const DescriptionSkeleton = styled.div`
 
 export const Container = styled.div`
 background: ${({theme}) => theme.colors.background};
-max-width: 400px;
-min-width: 350px;
+max-width: 100%;
+min-width: 100%;
 border-radius: 10px;
 transition: margin .2s, height .2s;
 padding-bottom: 10px;

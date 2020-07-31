@@ -2,8 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 	width: 100%;
-	margin-top: 50px;
-	padding: 90px 30px;
+	padding: 15px 30px;
 	display: flex;
 	flex-direction: column;
 `
@@ -61,6 +60,14 @@ export const ContainerProducts = styled.div`
 	gap: 30px 10px;
 	position: relative;
 	margin-bottom: 15px;
+
+	@media (max-width: 975px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: 615px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
 `
 
 export const CategoryTitle = styled.p`

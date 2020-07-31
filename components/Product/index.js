@@ -21,7 +21,7 @@ import {
   ButtonSkeleton,
 } from './styles'
 
-function Product({loading}) {
+function Product({loading, product}) {
   const color = getColor();
 
   return (
@@ -33,12 +33,12 @@ function Product({loading}) {
             <ImageSkeleton />
           </ContainerImage>
           <DescriptionList>
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
-            <DescriptionSkeleton width={Math.floor(Math.random() * 242) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
+            <DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
           </DescriptionList>
           <ContainerPurchase>
             <ButtonSkeleton />
@@ -47,10 +47,10 @@ function Product({loading}) {
       ) : (
         <>
           <ContainerImage>
-            <Title>DDL-Furnace</Title>
+            <Title>{product.title}</Title>
             <ProgressiveImage
-              src="/splash.png"
-              placeholder="/splash_min.png"
+              src={product.image.large}
+              placeholder={product.image.small}
             >
               {(src, loading) => (
                 <ImageLogo
@@ -60,25 +60,22 @@ function Product({loading}) {
                     filter: loading ? 'blur(4px)' : ''
                   }}
                   src={src}
-                  alt="DDL-Furnace logo image"
+                  alt={`${product.title} logo image`}
                 />
               )}
             </ProgressiveImage>
             <NewInfo>Novo</NewInfo>
           </ContainerImage>
           <DescriptionList>
-            <DescriptionItem>Minecraft version » 1.8.x</DescriptionItem>
-            <DescriptionItem>API » Bukkit Spigot</DescriptionItem>
-            <DescriptionItem>Funcionalidade » Esquentar minérios</DescriptionItem>
-            <DescriptionItem>Inovação » Construir fornalhas com dificuldade</DescriptionItem>
-            <DescriptionItem>Criador » SMCodes</DescriptionItem>
-            <DescriptionItem>A pedido de » Ninguém</DescriptionItem>
+						{product.descriptionList.map((description) => (
+            	<DescriptionItem>{description}</DescriptionItem>
+						))}
           </DescriptionList>
           <ContainerPurchase>
             <BottomBorder>
               <PurchaseButton>Comprar</PurchaseButton>
             </BottomBorder>
-            <PriceTitle>R$ 4,99</PriceTitle>
+            <PriceTitle>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</PriceTitle>
           </ContainerPurchase>
         </>
       )}
