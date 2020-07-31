@@ -12,5 +12,8 @@ export default {
 		text: '#333333',
 		secundaryText: '#222222',
 		tertiaryText: '#e0e0e0',
+
+		light: '#fafafa',
+		dark: '#282a36'
 	}
 }

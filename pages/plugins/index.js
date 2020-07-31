@@ -100,23 +100,10 @@ function Sites() {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/sites" background={colors.secundaryBackground} color={colors.text} />
+				<Menu page="/plugins" background={colors.secundaryBackground} color={colors.text} />
 			</div>
 
-			<Container>
-				<ProgressiveImage
-					src='/splash.png'
-					placeholder='/splash_min.png'
-				>
-					{(src, loading) => (
-						<ImageLogo
-							src={src}
-							loading={loading}
-							alt='Purchase minecraft plugin logo image'
-						/>
-					)}
-				</ProgressiveImage>
-			</Container>
+			<Container />
 
 			{products.map((product, index) => (
 				<Products

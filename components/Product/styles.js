@@ -1,16 +1,16 @@
 import styled, { keyframes } from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
-import { shade } from 'polished';
+import { shade, getLuminance } from 'polished';
 
 const ContainerFade = keyframes`
-	from {
-		opacity: 0;
-		transform: translateY(50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+from {
+	opacity: 0;
+	transform: translateY(50px);
+}
+to {
+	opacity: 1;
+	transform: translateY(0);
+}
 `
 
 const animationBackgroundLoading = keyframes`
@@ -38,7 +38,6 @@ export const Title = styled.p`
 font-family: 'Libre Franklin', 'Roboto', sans-serif;
 font-weight: 500;
 font-size: 18px;
-color: ${({theme}) => theme.colors.background};
 border-radius: 50px;
 line-height: 20px;
 padding: 5px 25px;
@@ -46,7 +45,6 @@ position: relative;
 top: 15px;
 cursor: default;
 transition: filter .2s;
-text-shadow: 1px 1px 1px ${({theme}) => theme.colors.text};
 
 &:hover {
 	filter: brightness(70%);
@@ -71,25 +69,25 @@ animation: ${animationBackgroundLoading} 5s infinite;
 `
 
 export const ImageSkeleton = styled.div`
-	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
-	width: 128px;
-	height: 128px;
-	border-radius: 50%;
+background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
+width: 128px;
+height: 128px;
+border-radius: 50%;
 `
 
 export const ButtonSkeleton = styled.div`
-	width: 100%;
-	height: 45px;
-	padding: 15px 0;
-	border-radius: 5px;
-	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
+width: 100%;
+height: 45px;
+padding: 15px 0;
+border-radius: 5px;
+background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
 `
 
 export const DescriptionSkeleton = styled.div`
-	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
-	width: ${(props) => (props.width) ? props.width : 92}px;
-	height: 25px;
-	margin: 10px 0 0 0;
+background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
+width: ${(props) => (props.width) ? props.width : 92}px;
+height: 25px;
+margin: 10px 0 0 0;
 
 `
 
@@ -114,6 +112,9 @@ cursor: ${(props) => (props.loading) ? 'pointer' : 'default'};
 
 ${Title} {
 	background: var(--color-var);
+	color: ${(props) => (getLuminance(`#${props.color}`) < 0.4)
+			? props.theme.colors.light
+			: props.theme.colors.dark} !important;
 }
 `;
 

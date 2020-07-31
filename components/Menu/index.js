@@ -147,6 +147,15 @@ function Menu({ page: isPage, background, color }) {
 								</Page>
 							</Link>
 						))}
+						<Page
+							color={colors.text}
+							onClick={() => setShowModal(true)}
+						>
+							<User
+								color={colors.text}
+								size={40}
+							/>
+						</Page>
 					</ListingPage>
 				)}
 			</OptionsFixed>
@@ -186,15 +195,13 @@ function Menu({ page: isPage, background, color }) {
 					</Page>
 				</ListingPage>
 			</Options>
-
-
-	        <Modal 
-	        	closeTimeoutMS={500}
-		       	isOpen={showModal}
-		  		onRequestClose={() => setShowModal(false)}
-		       	contentLabel="Minimal Modal Example"
-		       	style={customStyles}
-	        >
+			<Modal
+				closeTimeoutMS={500}
+				isOpen={showModal}
+				onRequestClose={() => setShowModal(false)}
+				contentLabel="Minimal Modal Example"
+				style={customStyles}
+			>
 				<UserMenu>
 					<IconMenu
 						onClick={() => setShowModal(false)}
@@ -220,7 +227,7 @@ function Menu({ page: isPage, background, color }) {
 						</Option>
 					</ListOptions>
 				</UserMenu>
-	        </Modal>
+	    </Modal>
 		</>
 	)
 }
