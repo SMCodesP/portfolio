@@ -30,10 +30,6 @@ export default function Products({ items, product, limit }) {
 				<ContainerProducts items={items}>
 					{product.items.map((item, index) => {
 						if (limit && index > 2) {
-							return (
-								<div key={index}>
-								</div>
-							)
 						} else {
 							return (
 								<Product key={index} product={item} loading={loading} />

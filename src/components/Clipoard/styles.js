@@ -36,7 +36,8 @@ export const ContainerSuccess = styled.div`
 	border-bottom-right-radius: 5px;
 
 	& span {
-		background-color: ${({theme}) => darken(0.1, theme.colors.background)};
+		background-color: ${({theme}) => darken(0.4, theme.colors.background)};
+		background-image: linear-gradient(to bottom, ${({theme}) => darken(0.08, theme.colors.background)}, ${({theme}) => darken(0.5, theme.colors.background)});
 		width: 0;
 		height: 5px;
   	animation: ${spanWidth} 5000ms linear;

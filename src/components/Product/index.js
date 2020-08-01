@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { getColor } from 'get-color-sm';
 import ProgressiveImage from "react-progressive-graceful-image";
-import ContentLoader from 'react-content-loader';
+import Markdown from 'react-mark';
 
 import {
   Container,
@@ -68,7 +68,7 @@ function Product({loading, product}) {
           </ContainerImage>
           <DescriptionList>
 						{product.descriptionList.map((description, index) => (
-            	<DescriptionItem key={index}>{description}</DescriptionItem>
+            	<Markdown key={index}>{description}</Markdown>
 						))}
           </DescriptionList>
           <ContainerPurchase>

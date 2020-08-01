@@ -25,12 +25,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Esquentar minérios',
-						'Inovação » Construir fornalhas com dificuldade',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Esquentar minérios',
+						'**Inovação »** Construir fornalhas com dificuldade',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
@@ -41,12 +41,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Gerenciamento de warps',
-						'Inovação » Sistema em GUI automatizado',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Gerenciamento de warps',
+						'**Inovação »** Sistema em GUI automatizado',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
@@ -57,12 +57,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Gerenciamento de warps',
-						'Inovação » Sistema em GUI automatizado',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Gerenciamento de warps',
+						'**Inovação »** Sistema em GUI automatizado',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
@@ -73,12 +73,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Gerenciamento de warps',
-						'Inovação » Sistema em GUI automatizado',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Gerenciamento de warps',
+						'**Inovação »** Sistema em GUI automatizado',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
@@ -89,12 +89,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Gerenciamento de warps',
-						'Inovação » Sistema em GUI automatizado',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Gerenciamento de warps',
+						'**Inovação »** Sistema em GUI automatizado',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
@@ -105,12 +105,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Sistema de economia',
-						'Inovação » Uma api inovadora e com gerenciamento web',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Sistema de economia',
+						'**Inovação »** Uma api inovadora e com gerenciamento web',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
@@ -121,12 +121,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Sistema de tags',
-						'Inovação » Uma api robusta e um gerenciamento web',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Sistema de tags',
+						'**Inovação »** Uma api robusta e um gerenciamento web',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				}
@@ -143,12 +143,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Esquentar minérios',
-						'Inovação » Construir fornalhas com dificuldade',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Esquentar minérios',
+						'**Inovação »** Construir fornalhas com dificuldade',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
@@ -159,12 +159,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Gerenciamento de warps',
-						'Inovação » Sistema em GUI automatizado',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Gerenciamento de warps',
+						'**Inovação »** Sistema em GUI automatizado',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
@@ -175,12 +175,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Sistema de economia',
-						'Inovação » Uma api inovadora e com gerenciamento web',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Sistema de economia',
+						'**Inovação »** Uma api inovadora e com gerenciamento web',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
@@ -191,12 +191,12 @@ const Home = ({initialTheme}) => {
 						small: '/splash_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Sistema de tags',
-						'Inovação » Uma api robusta e um gerenciamento web',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Sistema de tags',
+						'**Inovação »** Uma api robusta e um gerenciamento web',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				}

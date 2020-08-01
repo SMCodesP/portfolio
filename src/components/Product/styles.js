@@ -168,15 +168,19 @@ cursor: pointer;
 export const DescriptionList = styled.ul`
 padding: 25px 25px 10px 25px;
 font-family: 'Libre Franklin', 'Roboto', sans-serif;
-font-weight: 500;
+user-select: text !important;
 font-size: 16px;
 color: ${({theme}) => theme.colors.text};
 list-style-position: inside;
-line-height: 22px;
+line-height: 18px;
+
+& div {
+	padding: 4px;
+}
 `
 
 export const DescriptionItem = styled.li`
-padding: 3px;
+padding: 8px 3px;
 text-shadow: 0 0 1px ${({theme}) => theme.colors.text};
 `
 
