@@ -12,13 +12,28 @@ import {
 	ContainerColumn,
 	Discord,
 	Link,
-	GoTo
+	GoTo,
+	ProjectThis,
+	Forked,
+	Documentation,
 } from './styles'
 
 export default () => (
 	<>
 		<BorderCustom />
 		<Container>
+			<ProjectThis>
+				<Link href="https://github.com/SMCodesP/portfolio" target="_blank">
+					<Forked
+						title="Link para esse projeto no meu github"
+					/>
+				</Link>
+				<Link href="https://smcodesp.github.io/portfolio/" target="_blank">
+					<Documentation
+						title="Link para a documentação desse projeto no github pages"
+					/>
+				</Link>
+			</ProjectThis>
 			<FooterContainer>
 				<Title>Feito com ❤️ por SMCodes</Title>
 				<SubTitle>Este site não possuí quaisquer vínculos com a Mojang AB.</SubTitle>

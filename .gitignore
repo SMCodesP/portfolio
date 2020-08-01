@@ -33,3 +33,10 @@ yarn-error.log*
 
 
 .vercel
+
+# Editor
+
+*.komodoproject
+Porfolio.komodoproject
+/*.komodoproject
+/Porfolio.komodoproject

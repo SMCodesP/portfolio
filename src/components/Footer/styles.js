@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
+import {darken} from 'polished';
+import {FiBook} from 'react-icons/fi'
 import {AiOutlineGithub, AiFillLinkedin} from 'react-icons/ai'
-import { FaDiscord } from "react-icons/fa";
+import {GoGitPullRequest} from 'react-icons/go';
+import {FaDiscord} from 'react-icons/fa';
 
 export const BorderCustom = styled.div`
 	background-color: ${({theme}) => darken(0.2, theme.colors.secundaryBackground)};
@@ -108,5 +110,36 @@ export const GoTo = styled.p`
 	&:hover {
 		filter: brightness(75%);
 		border-bottom: 1px solid ${({theme}) => theme.colors.text};
+	}
+`
+
+export const ProjectThis = styled(SocialNetworking)`
+	align-items: center;
+	justify-content: flex-start;
+`
+
+export const Forked = styled(GoGitPullRequest).attrs(({theme}) => ({
+	color: theme.colors.text,
+	size: 28
+}))`
+	cursor: pointer;
+	transition: filter .2s;
+	margin: 0 5px;
+
+	&:hover {
+		filter: brightness(40%);
+	}
+`
+
+export const Documentation = styled(FiBook).attrs(({theme}) => ({
+	color: theme.colors.text,
+	size: 28
+}))`
+	cursor: pointer;
+	transition: filter .2s;
+	margin: 0 5px;
+
+	&:hover {
+		filter: brightness(40%);
 	}
 `
