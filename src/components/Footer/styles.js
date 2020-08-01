@@ -3,6 +3,13 @@ import { darken } from 'polished';
 import {AiOutlineGithub, AiFillLinkedin} from 'react-icons/ai'
 import { FaDiscord } from "react-icons/fa";
 
+export const BorderCustom = styled.div`
+	background-color: ${({theme}) => darken(0.2, theme.colors.secundaryBackground)};
+	background-image: linear-gradient(to top, ${({theme}) => darken(0.03, theme.colors.secundaryBackground)}, ${({theme}) => darken(0.2, theme.colors.secundaryBackground)});
+	height: 5px;
+	width: 100%;
+`
+
 export const Container = styled.footer`
 	width: 100%;
 	height: 75px;
@@ -10,7 +17,6 @@ export const Container = styled.footer`
 	position: relative;
 	left: 0;
 	bottom: 0;
-	border-top: 3px solid ${({theme}) => darken(0.2, theme.colors.secundaryBackground)};
 	display: flex;
 	justify-content: center;
 `

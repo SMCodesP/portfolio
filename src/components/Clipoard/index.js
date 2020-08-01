@@ -8,12 +8,17 @@ import {
 
 export default ({text, children, success}) => {
 	const [actived, setActived] = useState(false)
-	const [opacity, setOpacity] = useState(false)
+	const [display, setDisplay] = useState(false)
 
 	useEffect(() => {
-		if (actived === true) {
+		if (actived) {
 			setTimeout(() => {
 				setActived(false)
+				clearTimeout()
+				setTimeout(() => {
+					setDisplay(false)
+					clearTimeout()
+				}, 500)
 			}, 5000)
 		}
 	}, [actived])
@@ -22,17 +27,22 @@ export default ({text, children, success}) => {
 		<>
 			<CopyToClipboard
 				text={text}
-				onCopy={() => setActived(true)}
+				onCopy={() => {
+					setActived(true)
+					setDisplay(true)
+				}}
 			>
 				{children}
 			</CopyToClipboard>
 
-			<Container actived={actived}>
-				<ContainerSuccess>
-					{success}
-					{actived && (<span></span>)}
-				</ContainerSuccess>
-			</Container>
+			{display && (
+				<Container actived={actived}>
+					<ContainerSuccess>
+						{success}
+						{actived && (<span></span>)}
+					</ContainerSuccess>
+				</Container>
+			)}
 		</>
 	)
 }

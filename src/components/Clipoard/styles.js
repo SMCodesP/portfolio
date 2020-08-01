@@ -58,6 +58,6 @@ export const Container = styled.div`
 	transition: opacity .5s;
 
 	opacity: ${({actived}) => actived ? 1 : 0};
-	animation: ${opacityContainer} 300ms linear;
+	animation: ${opacityContainer} 500ms linear;
 `
 
