@@ -13,7 +13,9 @@ import GlobalStyle from '../../styles/GlobalStyle'
 
 import {
 	Container,
-	ImageLogo
+	ImageLogo,
+	Title,
+	SubTitle
 } from '../../styles/pages/plugins'
 
 function Sites() {
@@ -103,7 +105,22 @@ function Sites() {
 				<Menu page="/plugins" background={colors.secundaryBackground} color={colors.text} />
 			</div>
 
-			<Container />
+			<Container>
+        <ProgressiveImage
+          src="/construct.webp"
+          placeholder="/construct_min.webp"
+        >
+          {(src, loading) => (
+            <ImageLogo
+							loading={loading}
+              src={src}
+              alt="Construction picture image logo"
+            />
+          )}
+        </ProgressiveImage>
+				<Title>SMPlugins</Title>
+				<SubTitle>Plugins otimizados para seu servidor.</SubTitle>
+			</Container>
 
 			{products.map((product, index) => (
 				<Products

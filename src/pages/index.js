@@ -1,37 +1,16 @@
-import { useRef } from 'react'
 import Head from 'next/head'
-import styled from 'styled-components'
-import { shade } from 'polished'
 
 import Navigation from '../components/Navigation/'
 import Products from '../components/Products'
 import Footer from '../components/Footer'
 
-import {parseCookies} from '../utils/parseCookies'
-
 import GlobalStyle from '../styles/GlobalStyle'
-import light from '../styles/themes/light'
 
-export const ContainerLicense = styled.div`
-	display: flex;
-	flex-direction: column;
-	margin: 25px 2% 100px 2%;
-	border-radius: 10px;
-	background-color: ${({theme}) => theme.colors.secundaryBackground};
-	background-image: linear-gradient(-135deg, ${({theme}) => theme.colors.primary}, ${({theme}) => shade(0.2, theme.colors.primary)});
-	color: ${({theme}) => shade(0.7, theme.colors.tertiary)};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
-	padding: 25px;
-`;
-
-export const Title = styled.p`
-	font-size: 22px;
-	font-weight: 600;
-`
-
-export const Description = styled.p`
-	padding: 15px;
-`
+import {
+	ContainerLicense,
+	Description,
+	Title,
+} from '../styles/pages/index'
 
 const Home = ({initialTheme}) => {
 	const products = [
