@@ -50,7 +50,7 @@ function Product({loading, product}) {
             <Title>{product.title}</Title>
             <ProgressiveImage
               src={product.image.large}
-              placeholder={product.image.small}
+							placeholder={product.image.small}
             >
               {(src, loading) => (
                 <ImageLogo
