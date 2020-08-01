@@ -28,64 +28,64 @@ function Sites() {
 				{
 					title: 'DDL-Furnace',
 					image: {
-						large: '/splash.png',
-						small: '/splash_min.png'
+						large: '/furnace.png',
+						small: '/furnace_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Esquentar minérios',
-						'Inovação » Construir fornalhas com dificuldade',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Esquentar minérios',
+						'**Inovação »** Construir fornalhas com dificuldade',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
 				{
 					title: 'DDL-Warps',
 					image: {
-						large: '/splash.png',
-						small: '/splash_min.png'
+						large: '/barrier.png',
+						small: '/barrier_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Gerenciamento de warps',
-						'Inovação » Sistema em GUI automatizado',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Gerenciamento de warps',
+						'**Inovação »** Sistema em GUI automatizado',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
 				{
 					title: 'DDL-Economy',
 					image: {
-						large: '/splash.png',
-						small: '/splash_min.png'
+						large: '/gold.png',
+						small: '/gold_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Sistema de economia',
-						'Inovação » Uma api inovadora e com gerenciamento web',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Sistema de economia',
+						'**Inovação »** Uma api inovadora e com gerenciamento web',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				},
 				{
 					title: 'DDL-Tags',
 					image: {
-						large: '/splash.png',
-						small: '/splash_min.png'
+						large: '/name_tag.png',
+						small: '/name_tag_min.png'
 					},
 					descriptionList: [
-						'Minecraft version » 1.8.x',
-						'API » Bukkit Spigot',
-						'Funcionalidade » Sistema de tags',
-						'Inovação » Uma api robusta e um gerenciamento web',
-						'Criador » SMCodes',
-						'A pedido de » Ninguém'
+						'**Minecraft version »** 1.8.x',
+						'**API »** Bukkit Spigot',
+						'**Funcionalidade »** Sistema de tags',
+						'**Inovação »** Uma api robusta e um gerenciamento web',
+						'**Criador »** SMCodes',
+						'**A pedido de »** Ninguém'
 					],
 					price: 4.99
 				}
