@@ -18,7 +18,7 @@ import {
 	SubTitle
 } from '../../styles/pages/plugins'
 
-function Sites() {
+export default () => {
 	const {colors} = useContext(ThemeContext);
 
 	const products = [
@@ -102,7 +102,7 @@ function Sites() {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/plugins" background={colors.secundaryBackground} color={colors.text} />
+				<Menu page="/plugins" />
 			</div>
 
 			<Container>
@@ -136,13 +136,5 @@ function Sites() {
 			<GlobalStyle />
 
 		</div>
-	)
-}
-
-export default () => {
-	return (
-		<ThemesProvider>
-			<Sites />
-		</ThemesProvider>
 	)
 }
