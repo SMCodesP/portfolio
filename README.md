@@ -21,11 +21,15 @@
 <br />
 
 This project was created for me to learn next.js technology for static websites, my goal is to have a good SEO, in no other project of mine I focused on SEO so a personal project is excellent to encourage me to working with SEO methods. So I I will have to rank my site in a good way, to have a good active and captivated audience.
+
 <br />
 <br />
-I would really like someone to contribute to this project, because I have a lot of doubts about next.js, several items that are not optimized enough in my opinion, as the menu animation is not compatible with all devices and when I reached this conclusion, i realized that on very specific devices they are not compatible with states, even using google chrome the device does not run
+
+I would really like someone to contribute to this project, because I have a lot of doubts about next.js, several items that are not optimized enough in my opinion, as the menu animation is not compatible with all devices and when I reached this conclusion, i realized that on very specific devices they are not compatible with states, even using google chrome the device does not run.
+
 <br />
 <br />
+
 <h2>Installation</h2>
 <h3>Download</h3>
 
