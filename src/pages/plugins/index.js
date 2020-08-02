@@ -37,22 +37,22 @@ export default () => {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/plugins" />
+				<Menu page="/plugins" background={colors.background} />
 			</div>
 
 			<Container>
-        <ProgressiveImage
-          src="/construct.webp"
-          placeholder="/construct_min.webp"
-        >
-          {(src, loading) => (
-            <ImageLogo
+				<ProgressiveImage
+					src="/construct.webp"
+					placeholder="/construct_min.webp"
+				>
+					{(src, loading) => (
+						<ImageLogo
 							loading={loading}
-              src={src}
-              alt="Construction picture image logo"
-            />
-          )}
-        </ProgressiveImage>
+							src={src}
+							alt="Construction picture image logo"
+						/>
+					)}
+				</ProgressiveImage>
 				<Title>SMPlugins</Title>
 				<SubTitle>Plugins otimizados para seu servidor.</SubTitle>
 			</Container>

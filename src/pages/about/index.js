@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import Head from 'next/head'
-import { ThemeContext } from 'styled-components'
+import {ThemeContext} from 'styled-components'
 
 import {ThemesProvider} from '../../contexts/themes'
 
@@ -13,6 +13,7 @@ import Footer from '../../components/Footer/'
 import GlobalStyle from '../../styles/GlobalStyle'
 
 const About = () => {
+	const {colors} = useContext(ThemeContext);
 
 	return (
 		<div className="container">
@@ -28,7 +29,7 @@ const About = () => {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/about" />
+				<Menu page="/about" background={colors.background} />
 			</div>
 
 			<AboutComponent />

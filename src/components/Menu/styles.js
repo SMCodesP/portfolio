@@ -175,7 +175,10 @@ export const Options = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	background: ${({ background = "transparent" }) => background};
+	background-color: ${({ background = "transparent" }) => background};
+	${({background, theme}) => background ? `
+		background-image : url('http://api.thumbr.it/whitenoise-361x370.png?background=${background.substring(1, toString(background).length)}&noise=${theme.colors.text.substring(1, toString(theme.colors.text).length)}&density=5&opacity=15');
+	` : ``}
 	border-bottom: 2px solid ${({theme}) => shade(0.5, theme.colors.background)};
 	transition: all .2s;
 	padding: 25px 90px;
