@@ -5,9 +5,6 @@ import ProgressiveImage from 'react-progressive-graceful-image'
 import Markdown from 'react-mark';
 import ReactHtmlParser from 'react-html-parser'; 
 
-import {ThemesProvider} from '../../contexts/themes'
-
-import Products from '../../components/Products'
 import Footer from '../../components/Footer'
 import Menu from '../../components/Menu/'
 
@@ -26,8 +23,6 @@ import {
 } from '../../styles/pages/details'
 
 export default function Product({readmeHTML, product}) {
-	const {colors} = useContext(ThemeContext);
-
 	return (
 		<div>
 			<Head>

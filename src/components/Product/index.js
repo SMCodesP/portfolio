@@ -89,7 +89,7 @@ function Product({loading, product, productIndex}) {
 						)}
           </ContainerPurchase>
 					<DetailsContainer>
-						<Link href={`/plugin/${productIndex}`}>
+						<Link href="/plugin/[id]" as={`/plugin/${productIndex}`}>
 							<Details>Detalhes</Details>
 						</Link>
 						<span />
