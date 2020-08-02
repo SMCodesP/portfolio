@@ -24,7 +24,7 @@ import {
 	Details
 } from './styles'
 
-function Product({loading, product}) {
+function Product({loading, product, productIndex}) {
   const color = getColor();
 
   return (
@@ -89,7 +89,7 @@ function Product({loading, product}) {
 						)}
           </ContainerPurchase>
 					<DetailsContainer>
-						<Link href={`/plugin/${product.id}`}>
+						<Link href={`/plugin/${productIndex}`}>
 							<Details>Detalhes</Details>
 						</Link>
 						<span />

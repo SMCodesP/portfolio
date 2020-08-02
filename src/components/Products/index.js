@@ -32,7 +32,7 @@ export default function Products({ items, product, limit }) {
 						if (limit && index > 2) {
 						} else {
 							return (
-								<Product key={index} index={index} product={item} loading={loading} />
+								<Product key={index} productIndex={index} product={item} loading={loading} />
 							)
 						}
 					})}
