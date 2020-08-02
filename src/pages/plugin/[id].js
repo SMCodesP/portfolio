@@ -25,7 +25,7 @@ import {
 	Price,
 } from '../../styles/pages/details'
 
-export default function Product({readmeHTML, product}) {
+function Product({readmeHTML, product}) {
 	const {colors} = useContext(ThemeContext);
 
 	return (
@@ -60,8 +60,12 @@ export default function Product({readmeHTML, product}) {
 						))}
 					</DescriptionList>
 					<ContainerButton>
+						{(product.price <= 0 ) ? (
+							<PurchaseButton>Baixar</PurchaseButton>
+						) : (
 							<Price>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</Price>
-						<PurchaseButton>Comprar</PurchaseButton>
+							<PurchaseButton>Comprar</PurchaseButton>
+						)}
 					</ContainerButton>
 				</ProductPurchase>
 				<ProductInformations>
@@ -78,7 +82,7 @@ export default function Product({readmeHTML, product}) {
 }
 
 export async function getStaticProps({params}) {
-	const product = products[0].items[0]
+	const product = products[0].items[Number(params.id)]
 	
 	const res = await fetch(product.text)
 	const readme = await res.text()
@@ -95,3 +99,20 @@ export async function getStaticProps({params}) {
 		}
 	}
 }
+
+export async function getStaticPaths() {
+	const paths = products[0].items.map((product, index) => {
+		return {
+			params: {
+				id: index.toString()
+			},
+		}
+	})
+	
+	return {
+		paths: paths,
+		fallback: false,
+	}
+}
+
+export default Product

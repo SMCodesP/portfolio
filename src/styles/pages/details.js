@@ -4,11 +4,16 @@ export const Container = styled.div`
 	display: flex;
 	width: 100%;
 	padding: 25px;
+	
+	@media (max-width: 1000px) {
+		flex-direction: column;
+	}
 `
 
 export const ProductPurchase = styled.div`
+	flex: 1;
 	height: 100%;
-	margin: 0 10px;
+	margin: 10px;
 	border-radius: 10px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	display: flex;
@@ -19,11 +24,12 @@ export const ProductPurchase = styled.div`
 
 export const ProductInformations = styled.div`
 	flex: 2;
-	margin: 0 10px;
+	margin: 10px;
 	border-radius: 10px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	color: ${({theme}) => theme.colors.text};
 	padding: 30px 25px;
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	
 	& h1,
 	& h2,
@@ -33,9 +39,7 @@ export const ProductInformations = styled.div`
 	& h6 {
 		margin: 5px;
 	}
-	
-	
-	
+
 	& p {
 		margin: 10px;
 	}
@@ -72,26 +76,35 @@ export const DescriptionList = styled.ul`
 `
 
 export const ContainerButton = styled.div`
-	width: 100%;
+	width: 55%;
 	margin: 15px 0;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: flex-end;
 `
 
 export const PurchaseButton = styled.button`
 	background: #e02041;
 	border: 0;
 	border-radius: 5px;
-	width: 55%;
 	height: 46px;
+	width: 100%;
 	color: ${({theme}) => theme.colors.text};
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
-	font-size: 14pt;
+	font-size: 15pt;
 	font-weight: 500;
 	cursor: pointer;
+	margin: 10px 0;
 	transition: filter .2s;
 	
 	&:hover {
 		filter: brightness(75%);
 	}
+`
+
+export const Price = styled.p`
+	color: ${({theme}) => theme.colors.secundaryText};
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	font-size: 14pt;
 `

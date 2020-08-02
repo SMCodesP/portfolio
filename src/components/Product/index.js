@@ -89,7 +89,7 @@ function Product({loading, product}) {
 						)}
           </ContainerPurchase>
 					<DetailsContainer>
-						<Link href="/details">
+						<Link href={`/plugin/${product.id}`}>
 							<Details>Detalhes</Details>
 						</Link>
 						<span />
