@@ -50,7 +50,7 @@ export const ImageLogo = styled.img`
 	height: 152px;
 	border-radius: 10px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
-	${({loading}) => loading && 'filter: blur(5px);'}
+	${({loading}) => (loading == "true") && 'filter: blur(5px);'}
 	padding: 15px;
 	transition: padding .2s, filter .2s;
 	cursor: pointer;

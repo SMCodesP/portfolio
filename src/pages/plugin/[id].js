@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import {useContext, useEffect, useState} from 'react'
+import {ThemeContext} from 'styled-components'
 import ReactHtmlParser from 'react-html-parser'; 
 import ProgressiveImage from 'react-progressive-graceful-image'
 import Markdown from 'react-mark';
@@ -22,6 +23,8 @@ import {
 } from '../../styles/pages/details'
 
 function Product({readmeHTML, product}) {
+	const {colors} = useContext(ThemeContext);
+	
 	return (
 		<div>
 			<Head>
@@ -36,7 +39,7 @@ function Product({readmeHTML, product}) {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/details" />
+				<Menu page="/details" background={colors.background} />
 			</div>
 
 			<Container>
@@ -47,7 +50,7 @@ function Product({readmeHTML, product}) {
 					>
 						{(src, loading) => (
 							<ImageLogo
-								loading={loading}
+								loading={loading.toString()}
 								src={src}
 								alt="Product logo image"
 							/>

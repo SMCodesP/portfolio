@@ -23,6 +23,8 @@ import {
 } from '../../styles/pages/details'
 
 export default function Product({readmeHTML, product}) {
+	const {colors} = useContext(ThemeContext);
+	
 	return (
 		<div>
 			<Head>
@@ -37,7 +39,7 @@ export default function Product({readmeHTML, product}) {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/details" />
+				<Menu page="/details" background={colors.background} />
 			</div>
 
 			<Container>
@@ -48,7 +50,7 @@ export default function Product({readmeHTML, product}) {
 					>
 						{(src, loading) => (
 							<ImageLogo
-								loading={loading}
+								loading={loading.toString()}
 								src={src}
 								alt="Product logo image"
 							/>

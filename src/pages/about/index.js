@@ -2,8 +2,6 @@ import { useContext } from 'react'
 import Head from 'next/head'
 import {ThemeContext} from 'styled-components'
 
-import {ThemesProvider} from '../../contexts/themes'
-
 import Menu from '../../components/Menu/'
 import AboutComponent from '../../components/About/'
 import OwnerInfos from '../../components/OwnerInfos/'

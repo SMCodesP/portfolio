@@ -3,8 +3,6 @@ import Head from 'next/head'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
 
-import {ThemesProvider} from '../../contexts/themes'
-
 import Products from '../../components/Products'
 import Footer from '../../components/Footer'
 import Menu from '../../components/Menu/'
