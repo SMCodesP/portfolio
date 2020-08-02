@@ -32,8 +32,13 @@ function Product({readmeHTML, product}) {
 		<div>
 			<Head>
 				<title>SMCodes - {product.title}</title>
-				<meta property="og:title" content="SMCodes - Plugins" key="title" />
-				<meta name="twitter:title" content="SMCodes - Plugins" />
+				<meta property="og:title" content={`SMCodes - ${product.title}`} key="title" />
+				<meta name="twitter:title" content={`SMCodes - ${product.title}`} />
+				<meta name="description" content={`Venha comprar um plugin de minecraft, ${product.title} com funcionalidades únicas e com uma alta velocidade.`} />
+				<meta property="og:description" content={`Venha comprar um plugin de minecraft, ${product.title} com funcionalidades únicas e com uma alta velocidade.`} />
+				<meta name="description" content={`Venha comprar um plugin de minecraft, ${product.title} com funcionalidades únicas e com uma alta velocidade.`} />
+				<meta name="Description" content={`Venha comprar um plugin de minecraft, ${product.title} com funcionalidades únicas e com uma alta velocidade.`} />
+				<meta name="twitter:description" content={`Venha comprar um plugin de minecraft, ${product.title} com funcionalidades únicas e com uma alta velocidade.`} />
 			</Head>
 
 			<div style={{width: "100%"}}>

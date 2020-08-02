@@ -29,6 +29,11 @@ export default () => {
 				<title>SMCodes - Plugins</title>
 				<meta property="og:title" content="SMCodes - Plugins" key="title" />
 				<meta name="twitter:title" content="SMCodes - Plugins" />
+				<meta name="description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
+				<meta property="og:description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
+				<meta name="description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
+				<meta name="Description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
+				<meta name="twitter:description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
 			</Head>
 
 			<div style={{width: "100%"}}>
