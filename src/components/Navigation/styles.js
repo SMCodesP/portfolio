@@ -54,7 +54,7 @@ const DownUp = keyframes`
 		transform: translateY(0);
 	}
 	50% {
-		transform: translateY(25px);
+		transform: translateY(5vh);
 	}
 	100% {
 		transform: translateY(0);
@@ -63,8 +63,7 @@ const DownUp = keyframes`
 
 export const Down = styled(FiArrowDown)`
 	animation: ${DownUp} 2s linear infinite;
-	height: 15vh;
-	margin-top: 175px;
+	margin-top: 15vh;
 	cursor: pointer;
 	transition: filter .5s;
 
@@ -72,7 +71,7 @@ export const Down = styled(FiArrowDown)`
 		filter: brightness(60%);
 	}
 
-	@media (max-width: 925px) {
+	@media (max-height: 550px) {
 		display: none;
 	}
 `
