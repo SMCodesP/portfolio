@@ -60,7 +60,7 @@ export default function Product({readmeHTML, product}) {
 						))}
 					</DescriptionList>
 					<ContainerButton>
-							<Price>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</Price>
+						<Price>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</Price>
 						<PurchaseButton>Comprar</PurchaseButton>
 					</ContainerButton>
 				</ProductPurchase>

@@ -63,8 +63,10 @@ function Product({readmeHTML, product}) {
 						{(product.price <= 0 ) ? (
 							<PurchaseButton>Baixar</PurchaseButton>
 						) : (
-							<Price>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</Price>
-							<PurchaseButton>Comprar</PurchaseButton>
+							<>
+								<Price>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</Price>
+								<PurchaseButton>Comprar</PurchaseButton>
+							</>
 						)}
 					</ContainerButton>
 				</ProductPurchase>
