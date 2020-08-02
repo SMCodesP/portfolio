@@ -240,3 +240,37 @@ width: 100%;
 }
 `
 
+export const Details = styled.p`
+	cursor: pointer;
+	color: ${({theme}) => theme.colors.text};
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	font-size: 14pt;
+	transition: filter .5s, text-decoration .5s;
+	display: flex;
+	filter: brightness(125%);
+	flex-direction: column;
+	
+	&:after {
+		width: 0;
+		height: 2px;
+		background: ${({theme}) => theme.colors.text};
+		content: '';
+		transition: width .3s;
+		margin-top: -1px;
+	}
+	
+	&:hover {
+		filter: brightness(50%);
+	}
+	
+	&:hover:after {
+		width: 100%;
+	}
+`
+
+export const DetailsContainer = styled.div`
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 5px 15px;
+`

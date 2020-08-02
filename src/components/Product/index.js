@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import { memo } from 'react';
 import { getColor } from 'get-color-sm';
-import ProgressiveImage from "react-progressive-graceful-image";
+import ProgressiveImage from 'react-progressive-graceful-image';
 import Markdown from 'react-mark';
 
 import {
@@ -19,6 +20,8 @@ import {
   ImageSkeleton,
   DescriptionSkeleton,
   ButtonSkeleton,
+	DetailsContainer,
+	Details
 } from './styles'
 
 function Product({loading, product}) {
@@ -72,11 +75,25 @@ function Product({loading, product}) {
 						))}
           </DescriptionList>
           <ContainerPurchase>
-            <BottomBorder>
-              <PurchaseButton>Comprar</PurchaseButton>
-            </BottomBorder>
-            <PriceTitle>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</PriceTitle>
+						{(product.price <= 0) ? (
+							<BottomBorder>
+								<PurchaseButton>Baixar</PurchaseButton>
+							</BottomBorder>
+						) : (
+							<>
+								<BottomBorder>
+									<PurchaseButton>Comprar</PurchaseButton>
+								</BottomBorder>
+								<PriceTitle>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</PriceTitle>
+							</>
+						)}
           </ContainerPurchase>
+					<DetailsContainer>
+						<Link href="/details">
+							<Details>Detalhes</Details>
+						</Link>
+						<span />
+					</DetailsContainer>
         </>
       )}
     </Container>
