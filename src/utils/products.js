@@ -5,7 +5,7 @@ export default [
 		items: [
 			{
 				id: "1",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/2d6459cfaf4214cbb32f78183088612e369068d5/README.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
 				title: 'DDL-Furnace',
 				image: {
 					large: '/furnace.png',
@@ -23,7 +23,7 @@ export default [
 			},
 			{
 				id: "2",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/2d6459cfaf4214cbb32f78183088612e369068d5/README.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
 				title: 'DDL-Warps',
 				image: {
 					large: '/barrier.png',
@@ -41,7 +41,7 @@ export default [
 			},
 			{
 				id: "3",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/2d6459cfaf4214cbb32f78183088612e369068d5/README.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-economy.md',
 				title: 'DDL-Economy',
 				image: {
 					large: '/gold.png',
@@ -59,7 +59,7 @@ export default [
 			},
 			{
 				id: "4",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/2d6459cfaf4214cbb32f78183088612e369068d5/README.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
 				title: 'DDL-Tags',
 				image: {
 					large: '/name_tag.png',
@@ -83,7 +83,7 @@ export default [
 		items: [
 			{
 				id: "5",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/2d6459cfaf4214cbb32f78183088612e369068d5/README.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
 				title: 'DDL-Furnace',
 				image: {
 					large: '/furnace.png',
@@ -101,7 +101,7 @@ export default [
 			},
 			{
 				id: "6",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/2d6459cfaf4214cbb32f78183088612e369068d5/README.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
 				title: 'DDL-Warps',
 				image: {
 					large: '/barrier.png',
@@ -119,7 +119,7 @@ export default [
 			},
 			{
 				id: "7",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/2d6459cfaf4214cbb32f78183088612e369068d5/README.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
 				title: 'DDL-Economy',
 				image: {
 					large: '/gold.png',
@@ -137,7 +137,7 @@ export default [
 			},
 			{
 				id: "8",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/2d6459cfaf4214cbb32f78183088612e369068d5/README.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
 				title: 'DDL-Tags',
 				image: {
 					large: '/name_tag.png',
