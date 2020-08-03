@@ -21,6 +21,11 @@ export const Container = styled.footer`
 	bottom: 0;
 	display: flex;
 	justify-content: center;
+
+	@media (max-width: 680px) {
+		flex-direction: column;
+		height: auto;
+	}
 `
 
 export const FooterContainer = styled.div`
@@ -33,6 +38,14 @@ export const FooterContainer = styled.div`
 	color: ${({theme}) => theme.colors.text};
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
+
+	@media (max-width: 680px) {
+		text-align: center;
+		width: 100%;
+		position: initial;
+		margin: 10px 0 0 0;
+		height: auto;
+	}
 `
 
 export const Title = styled.p`
@@ -50,6 +63,10 @@ export const SocialNetworking = styled.div`
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-end;
+
+	@media (max-width: 680px) {
+		padding: 15px 15px 10px 15px;
+	}
 `
 
 export const Github = styled(AiOutlineGithub).attrs(({theme}) => ({
@@ -116,6 +133,9 @@ export const GoTo = styled.p`
 export const ProjectThis = styled(SocialNetworking)`
 	align-items: center;
 	justify-content: flex-start;
+	position: absolute;
+	left: 0;
+	bottom: 0;
 `
 
 export const Forked = styled(GoGitPullRequest).attrs(({theme}) => ({

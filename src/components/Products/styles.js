@@ -52,7 +52,8 @@ export const ContainerMoreItems = styled.div`
 
 export const ContainerProducts = styled.div`
 	width: 100%;
-	overflow-y: auto;
+	overflow-x: auto; /* Hide horizontal scrollbar */
+	overflow-y: hidden; /* Add vertical scrollbar */
 	padding: 20px;
 	margin-top: 5px;
 	display: grid;
