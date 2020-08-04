@@ -33,10 +33,11 @@ const Home = ({initialTheme}) => {
 				<Navigation page="/" />
 				<br />
 				<AdSense.Google
-				  client='ca-pub-1285349366711226'
-				  slot='7806394673'
-				  style={{ width: 500, height: 300, float: 'left' }}
-				  format=''
+					client='ca-pub-1285349366711226'
+					slot='6711561708'
+  					style={{ display: 'block' }}
+					format='auto'
+					responsive='true'
 				/>
 
 				<br />
