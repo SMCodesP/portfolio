@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect} from 'react'
+import {createContext, useContext} from 'react'
 import {ThemeProvider} from 'styled-components'
 
 import usePersistedState from '../utils/usePersistedState'
@@ -12,9 +12,9 @@ function ThemesProvider({ children }) {
 	const [theme, setTheme] = usePersistedState('theme', light)
 
 	const toggleTheme = () => {
-    setTheme((theme.title.toLowerCase() === 'light') ? dark : light)
-    localStorage.setItem('theme', JSON.stringify((theme.title.toLowerCase() === "light") ? dark : light))
-  }
+	    setTheme((theme.title.toLowerCase() === 'light') ? dark : light)
+	    localStorage.setItem('theme', JSON.stringify((theme.title.toLowerCase() === "light") ? dark : light))
+  	}
 
 	return (
 		<ThemesContext.Provider

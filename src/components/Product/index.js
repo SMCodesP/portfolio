@@ -11,8 +11,6 @@ import {
   NewInfo,
   Title,
   DescriptionList,
-  DescriptionItem,
-  BottomBorder,
   ContainerPurchase,
   PriceTitle,
   PurchaseButton,

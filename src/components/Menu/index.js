@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef, memo, useContext } from 'react'
 import Link from 'next/link'
 import $ from 'jquery'
-import { FiAlignRight, FiUser } from 'react-icons/fi';
 import Modal from 'react-modal';
 import { ThemeContext } from 'styled-components'
-import { shade, lighten } from 'polished'
+import { shade } from 'polished'
 
 import ThemesContext from '../../contexts/themes'
 

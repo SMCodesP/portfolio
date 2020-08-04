@@ -179,11 +179,6 @@ export const DescriptionList = styled.ul`
 	}
 `
 
-export const DescriptionItem = styled.li`
-	padding: 8px 3px;
-	text-shadow: 0 0 1px ${({theme}) => theme.colors.text};
-`
-
 export const PriceTitle = styled.p`
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 500;
