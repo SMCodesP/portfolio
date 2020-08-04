@@ -49,7 +49,20 @@ export const WorkLast = styled.a`
 	}
 `
 
+const DownUp = keyframes`
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(5vh);
+	}
+	100% {
+		transform: translateY(0);
+	}
+`
+
 export const Down = styled(FiArrowDown)`
+	animation: ${DownUp} 3s linear infinite;
 	margin-top: 15vh;
 	cursor: pointer;
 	transition: filter .5s;
