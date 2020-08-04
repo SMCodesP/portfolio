@@ -16,6 +16,7 @@
     "next": "9.4.4",
     "polished": "^3.6.5",
     "react": "16.13.1",
+    "react-adsense": "^0.1.0",
     "react-content-loader": "^5.1.0",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "16.13.1",
