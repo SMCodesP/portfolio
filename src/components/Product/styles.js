@@ -41,7 +41,7 @@ export const Title = styled.p`
 	line-height: 20px;
 	padding: 5px 25px;
 	position: relative;
-	top: 15px;
+	top: calc(20px + (5px / 2));
 	cursor: default;
 	transition: filter .2s;
 
@@ -92,7 +92,7 @@ export const DescriptionSkeleton = styled.div`
 export const Container = styled.div`
 	background: ${({theme}) => theme.colors.background};
 	max-width: 100%;
-	min-width: 350px;
+	min-width: 320px;
 	border-radius: 10px;
 	transition: margin .2s, height .2s;
 	padding-bottom: 10px;
@@ -119,13 +119,13 @@ export const Container = styled.div`
 export const Image = styled.img`
 	margin: -5px 0 5px 0;
 	border-radius: 15px;
-	max-width: 128px;
-	max-height: 128px;
+	max-width: 106px;
+	max-height: 106px;
 	transition: transform .2s;
 	cursor: none;
 
 	&:hover {
-		transform: scale(1.25) !important;
+		transform: scale(1.1) !important;
 	}
 `
 
@@ -136,13 +136,13 @@ export const ContainerImage = styled.div`
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	justify-content: center;
 	align-items: center;
-	padding: 10px 0 0 0;
+	padding: 20px 0 10px 0;
 	border-bottom: 1px solid ${({theme}) => theme.colors.primary};
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 
 	&:hover ${Image} {
-		transform: scale(1.1);
+		transform: scale(1.05);
 	}
 `
 
@@ -195,48 +195,20 @@ export const PriceTitle = styled.p`
 
 // #2cb13h
 export const PurchaseButton = styled.button`
-	background: #4ed359;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	width: 100%;
-	padding: 10px 0;
+	background: #e02041;
 	border: 0;
+	border-radius: 5px;
+	height: 46px;
+	width: 100%;
+	color: ${({theme}) => theme.colors.text};
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	font-size: 15pt;
 	font-weight: 500;
-	font-size: 16px;
-	color: ${({theme}) => theme.colors.background};
 	cursor: pointer;
 	transition: filter .2s;
-`
-
-export const BottomBorder = styled.div`
-	width: 100%;
-
-	&:hover ${PurchaseButton},
-	&:hover:after  {
-		filter: brightness(70%);
-	}
-	&:active ${PurchaseButton},
-	&:active:hover {
-		filter: brightness(105%);
-	}
-	&:active ${PurchaseButton} {
-		position: relative;
-		margin-top: 4px;
-	}
-	&:active:after {
-		height: 0;
-	}
-
-	&:after {
-		transition: filter .2s;
-		content: '';
-		display: block;
-		height: 4px;
-		background: #2cb137;
-		width: 100%;
-		border-bottom-left-radius: 10px;
-		border-bottom-right-radius: 10px;
+	
+	&:hover {
+		filter: brightness(75%);
 	}
 `
 

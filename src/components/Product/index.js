@@ -76,14 +76,12 @@ function Product({loading, product, productIndex}) {
           </DescriptionList>
           <ContainerPurchase>
 						{(product.price <= 0) ? (
-							<BottomBorder>
-								<PurchaseButton>Baixar</PurchaseButton>
-							</BottomBorder>
+              <a href={product.button_link} tartget="_blank" style={{ width: '100%' }} download>
+                <PurchaseButton>Baixar</PurchaseButton>
+              </a>
 						) : (
 							<>
-								<BottomBorder>
-									<PurchaseButton>Comprar</PurchaseButton>
-								</BottomBorder>
+								<PurchaseButton>Comprar</PurchaseButton>
 								<PriceTitle>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</PriceTitle>
 							</>
 						)}
