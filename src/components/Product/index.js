@@ -53,13 +53,25 @@ function Product({loading, product, productIndex}) {
               src={product.image.large}
 							placeholder={product.image.small}
             >
-              {(src, loading) => (
+              {(src, loading) => product.image.size ? (
+                <ImageLogo
+                  style={{
+                    width: product.image.size.width || 128,
+                    height: product.image.size.height || 128,
+                    filter: loading ? 'blur(5px)' : ''
+                  }}
+                  not_auto={true}
+                  src={src}
+                  alt={`${product.title} logo image`}
+                />
+              ) : (
                 <ImageLogo
                   style={{
                     width: loading ? 128 : 'auto',
                     height: loading ? 128 : 'auto',
-                    filter: loading ? 'blur(4px)' : ''
+                    filter: loading ? 'blur(5px)' : ''
                   }}
+                  not_auto={false}
                   src={src}
                   alt={`${product.title} logo image`}
                 />

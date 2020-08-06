@@ -110,7 +110,7 @@ function Menu({ page: isPage, background, color }) {
 			width: '70%',
 			background: shade(0.4, colors.background),
       		border: 0,
-      		padding: '10px',
+      		padding: '3px',
       		borderRadius: '5px',
       		zIndex: 999
 		},
@@ -195,7 +195,7 @@ function Menu({ page: isPage, background, color }) {
 				</ListingPage>
 			</Options>
 			<Modal
-				closeTimeoutMS={500}
+				closeTimeoutMS={50}
 				isOpen={showModal}
 				onRequestClose={() => setShowModal(false)}
 				contentLabel="Minimal Modal Example"

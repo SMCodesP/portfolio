@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { FiUser } from 'react-icons/fi'
+import { IoMdSettings } from 'react-icons/io';
 import Switch from "react-switch";
 import { shade } from 'polished'
 
@@ -147,7 +147,7 @@ export const Page = styled.li`
 	}
 `
 
-export const User = styled(FiUser).attrs(({theme}) => ({
+export const User = styled(IoMdSettings).attrs(({theme}) => ({
 	color: theme.colors.text,
 	size: 20
 }))`
@@ -156,8 +156,12 @@ export const User = styled(FiUser).attrs(({theme}) => ({
 	stroke-width: 3px;
 	box-sizing: content-box;
 	border-radius: 50%;
-	background: ${({theme}) => shade(0.08, theme.colors.background)};
-	padding: 10px;
+	transition: transform 1s;
+
+	&:hover {
+    	transform: none;
+		transform: rotate(180deg);
+	}
 `
 
 const UserOn = keyframes`
@@ -302,11 +306,10 @@ export const HeadMenuFixed = styled.div`
 `
 
 export const UserMenu = styled.div`
-	border-radius: 10px;
+	border-radius: 5px;
 	background: ${({theme}) => theme.colors.background};
 	width: 100%;
     align-self: flex-end;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -333,9 +336,14 @@ export const Username = styled.p`
 `
 
 export const Line = styled.hr`
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 2px solid ${({theme}) => shade(0.4, theme.colors.background)};
+	filter: blur(1px);
+    margin: 1em 0;
+    padding: 0;
 	width: 100%;
-	margin-top: 15px;
-	color: #e02041;
 `
 
 export const ListOptions = styled.ul`
@@ -359,6 +367,12 @@ export const OptionTitle = styled.p`
 	color: ${({theme}) => theme.colors.secundaryText};
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
+	line-height: 15pt;
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
 `
 
 export const OptionSelect = styled(Switch)``

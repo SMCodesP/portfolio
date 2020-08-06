@@ -41,7 +41,7 @@ export const Title = styled.p`
 	line-height: 20px;
 	padding: 5px 25px;
 	position: relative;
-	top: calc(20px + (5px / 2));
+	top: 25px;
 	cursor: default;
 	transition: filter .2s;
 
@@ -57,7 +57,7 @@ export const TitleSkeleton = styled.div`
 	height: 30px;
 	padding: 5px 25px;
 	position: relative;
-	top: 15px;
+	top: 25px;
 	cursor: default;
 	transition: filter 2s;
 	animation: ${animationBackgroundLoading} 5s infinite;
@@ -91,6 +91,7 @@ export const DescriptionSkeleton = styled.div`
 
 export const Container = styled.div`
 	background: ${({theme}) => theme.colors.background};
+	height: fit-content;
 	max-width: 100%;
 	min-width: 320px;
 	border-radius: 10px;
@@ -118,9 +119,10 @@ export const Container = styled.div`
 
 export const Image = styled.img`
 	margin: -5px 0 5px 0;
-	border-radius: 15px;
-	max-width: 106px;
-	max-height: 106px;
+	${({not_auto}) => not_auto ? '' : `
+		max-width: 132px;
+		max-height: 132px;
+	`}
 	transition: transform .2s;
 	cursor: none;
 
@@ -188,7 +190,6 @@ export const PriceTitle = styled.p`
 	align-self: flex-end;
 `
 
-// #2cb13h
 export const PurchaseButton = styled.button`
 	background: #e02041;
 	border: 0;

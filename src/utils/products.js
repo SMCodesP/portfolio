@@ -83,7 +83,7 @@ export default [
 		items: [
 			{
 				id: "5",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/README.md',
 				title: 'SMPortfolio',
 				image: {
 					large: '/favicon.jpg',
@@ -102,6 +102,30 @@ export default [
 					'**Criador »** SMCodes',
 				],
 				button_link: 'https://github.com/SMCodesP/portfolio/archive/master.zip',
+				price: 0
+			},
+			{
+				id: "6",
+				text: 'https://raw.githubusercontent.com/SMCodesP/DDL-NSA/master/README.md',
+				title: 'DDL-NSA',
+				image: {
+					large: '/products/ddl-nsa/large.webp',
+					small: '/products/ddl-nsa/small.webp',
+					size: {
+						width: 256,
+						height: 128
+					}
+				},
+				descriptionList: [
+					'**Páginas »** 4',
+					'**Open source »** Sim',
+					'**Licença »** [MIT](https://github.com/SMCodesP/DDL-NSA/blob/master/LICENSE.md)',
+					'**Preview »** [Clique aqui](https://samuel-nsa.netlify.app/)',
+					'**Repositório »** [Clique aqui](https://github.com/SMCodesP/DDL-NSA)',
+					'**Site feito para »** `Estudos`',
+					'**Criador »** SMCodes',
+				],
+				button_link: 'https://github.com/SMCodesP/DDL-NSA/archive/master.zip',
 				price: 0
 			},
 		]

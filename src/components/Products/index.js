@@ -20,7 +20,7 @@ export default function Products({ items, product, limit }) {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
-		}, 500)
+		}, 2000)
 	}, [])
 
 	return (
