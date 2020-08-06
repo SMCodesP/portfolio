@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import AdSense from 'react-adsense'
 
 import Navigation from '../components/Navigation/'
 import Products from '../components/Products'
@@ -31,14 +30,6 @@ const Home = ({initialTheme}) => {
 				</Head>
 
 				<Navigation page="/" />
-				<br />
-				<AdSense.Google
-					client='ca-pub-1285349366711226'
-					slot='6711561708'
-  					style={{ display: 'block' }}
-					format='auto'
-					responsive='true'
-				/>
 
 				<br />
 				{products.map((product, index) => (
