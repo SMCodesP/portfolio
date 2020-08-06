@@ -13,7 +13,7 @@ import {
 	MoreItem,
 } from './styles'
 
-export default function Products({ items, product, limit }) {
+export default function Products({ items, category, limit }) {
 	const [loading, setLoading] = useState(true);
 	const {colors} = useContext(ThemeContext);
 
@@ -26,9 +26,9 @@ export default function Products({ items, product, limit }) {
 	return (
 		<Container>
 			<ContainerItems>
-				<CategoryTitle>{product.title}</CategoryTitle>
+				<CategoryTitle>{category.title}</CategoryTitle>
 				<ContainerProducts items={items}>
-					{product.items.map((item, index) => {
+					{category.items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).map((item, index) => {
 						if (limit && index > 2) {
 						} else {
 							return (
@@ -38,7 +38,7 @@ export default function Products({ items, product, limit }) {
 					})}
 				</ContainerProducts>
 				{limit && (
-					<Link href={product.link}>
+					<Link href={category.link}>
 						<ContainerMoreItems>
 							<MoreItem>Ver mais</MoreItem>
 							<FiArrowRight color={colors.secundary} size={24} />

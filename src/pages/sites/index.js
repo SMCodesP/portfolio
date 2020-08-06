@@ -55,11 +55,11 @@ export default () => {
 				<SubTitle>Sites otimizados e seguros de acordo com sua usabilidade.</SubTitle>
 			</Container>
 
-			{[products[1]].map((product, index) => (
+			{[products[1]].map((category, index) => (
 				<Products
 					key={index}
 					items={3}
-					product={product}
+					category={category}
 					id="navigation"
 					limit={false}
 				/>

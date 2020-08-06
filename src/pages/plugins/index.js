@@ -55,11 +55,11 @@ export default () => {
 				<SubTitle>Plugins otimizados para seu servidor.</SubTitle>
 			</Container>
 
-			{[products[0]].map((product, index) => (
+			{[products[0]].map((category, index) => (
 				<Products
 					key={index}
 					items={3}
-					product={product}
+					category={category}
 					id="navigation"
 					limit={false}
 				/>

@@ -32,11 +32,11 @@ const Home = ({initialTheme}) => {
 				<Navigation page="/" />
 
 				<br />
-				{products.map((product, index) => (
+				{products.map((category, index) => (
 					<Products
 						key={index}
 						items={3}
-						product={product}
+						category={category}
 						id="navigation"
 						limit={true}
 					/>

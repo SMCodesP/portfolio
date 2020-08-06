@@ -6,6 +6,7 @@ export default [
 			{
 				id: "1",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
+				timestamp: 1595462400,
 				title: 'DDL-Furnace',
 				image: {
 					large: '/furnace.png',
@@ -24,6 +25,7 @@ export default [
 			{
 				id: "2",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
+				timestamp: 1595462400,
 				title: 'DDL-Warps',
 				image: {
 					large: '/barrier.png',
@@ -42,6 +44,7 @@ export default [
 			{
 				id: "3",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-economy.md',
+				timestamp: 1596672000,
 				title: 'DDL-Economy',
 				image: {
 					large: '/gold.png',
@@ -60,6 +63,7 @@ export default [
 			{
 				id: "4",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
+				timestamp: 1595462400,
 				title: 'DDL-Tags',
 				image: {
 					large: '/name_tag.png',
@@ -84,6 +88,7 @@ export default [
 			{
 				id: "5",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/README.md',
+				timestamp: 1596672000,
 				title: 'SMPortfolio',
 				image: {
 					large: '/favicon.jpg',
@@ -107,6 +112,7 @@ export default [
 			{
 				id: "6",
 				text: 'https://raw.githubusercontent.com/SMCodesP/DDL-NSA/master/README.md',
+				timestamp: 1595462400,
 				title: 'DDL-NSA',
 				image: {
 					large: '/products/ddl-nsa/large.webp',

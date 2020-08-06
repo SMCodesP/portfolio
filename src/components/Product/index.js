@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { getColor } from 'get-color-sm';
 import ProgressiveImage from 'react-progressive-graceful-image';
 import Markdown from 'react-mark';
+import moment from 'moment';
 
 import {
   Container,
@@ -77,7 +78,9 @@ function Product({loading, product, productIndex}) {
                 />
               )}
             </ProgressiveImage>
-            <NewInfo>Novo</NewInfo>
+            {(moment.unix(moment().unix()).diff(moment.unix(product.timestamp), 'days') <= 7) && (
+              <NewInfo title="Esse produto teve seu lançamento em menos de uma semana, então foi categorizado como novo.">Novo</NewInfo>
+            )}
           </ContainerImage>
           <DescriptionList>
 						{product.descriptionList.map((description, index) => (
