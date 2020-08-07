@@ -241,4 +241,8 @@ export const DetailsContainer = styled.div`
 	justify-content: flex-end;
 	align-items: center;
 	padding: 5px 15px;
+
+	& a {
+		text-decoration: none;
+	}
 `

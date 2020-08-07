@@ -28,6 +28,7 @@ export const ProductInformations = styled.div`
 	border-radius: 10px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	color: ${({theme}) => theme.colors.text};
+	height: fit-content;
 	padding: 30px 25px;
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	
@@ -40,24 +41,31 @@ export const ProductInformations = styled.div`
 		margin: 5px;
 	}
 
+	& li,
+	& ol {
+		margin: 10px 25px;
+	}
+
 	& p {
 		margin: 10px;
 	}
 `
 
 export const ImageLogo = styled.img`
-	width: 152px;
-	height: 152px;
-	border-radius: 10px;
+	${({not_auto}) => not_auto ? '' : `
+		max-width: 132px;
+		max-height: 132px;
+	`}
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	${({loading}) => (loading == "true") && 'filter: blur(5px);'}
 	padding: 15px;
-	transition: padding .2s, filter .2s;
+	transition: padding .2s, filter .2s, border-radius .4s;
 	cursor: pointer;
 	
 	&:hover {
-		padding: 10px;
-		filter: brightness(75%);
+		padding: 5px;
+		border-radius: 10px;
+		filter: brightness(60%);
 	}
 `
 
@@ -69,6 +77,7 @@ export const DescriptionList = styled.ul`
 	color: ${({theme}) => theme.colors.text};
 	list-style-position: inside;
 	line-height: 18px;
+	align-self: flex-start;
 	
 	& div {
 		padding: 4px;
