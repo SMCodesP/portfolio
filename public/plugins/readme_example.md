@@ -39,7 +39,7 @@ Esse plugin tem a função de (função), para (motivo).
     ```yaml
     InitialMoney: 200.0
     ```
-- Recomandamos que só troque essa configuração se souber oque está fazendo, caso não for usar recursos avançados, como integrações de terceiros ou modificações não troque do padrão.
+- Recomendamos que só troque essa configuração se souber oque está fazendo, caso não for usar recursos avançados, como integrações de terceiros ou modificações não troque do padrão.
     
     Caso coloque **-1** a troca de cache vai ser real time, não recomendamos caso use uma hospedagem de baixa conexão, o padrão vem com 3 minutos de delay, não é recomendável para uma integração de dashboard.
 
@@ -49,3 +49,6 @@ Esse plugin tem a função de (função), para (motivo).
     ```
 
 ### **Warn** » Nossa API citada está em manutenção, então caso queira fazer uma extensão ao plugin porfavor contate a um suporte
+
+
+Copyright © 2020 [Samuel Pereira da Silva](https://github.com/SMCodesP)
