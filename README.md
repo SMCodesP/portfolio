@@ -49,7 +49,7 @@ You can start locally in production mode for a preview, using this command
 
 **Warn:** This command need execute after build
 
-### Deploy</h3>
+### Deploy
 
 #### Send these commands
 

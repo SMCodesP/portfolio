@@ -50,6 +50,10 @@ export const ProductInformations = styled.div`
 	& p {
 		margin: 15px 25px;
 	}
+
+	& img {
+		max-width: 100%;
+	}
 `
 
 export const ImageLogo = styled.img`
