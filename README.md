@@ -4,7 +4,7 @@
 [![Online version](https://img.shields.io/badge/Online%20mode-1.1-6272a4?style=for-the-badge)](https://spetacularnetwork.xyz)
 [![Created by](https://img.shields.io/badge/Discord-SMCodes%234207-ff79c6)](https://discord.com/users/360247173356584960)
 
-![Preview](/readme.png)
+![Preview](https://raw.githubusercontent.com/SMCodesP/portfolio/master/readme.png)
 
 ### Click [here](https://spetacularnetwork.xyz/images) view more images about for website
 ---
