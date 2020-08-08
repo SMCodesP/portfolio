@@ -3,7 +3,7 @@ import {useContext, useEffect, useState} from 'react'
 import {ThemeContext} from 'styled-components'
 import ReactHtmlParser from 'react-html-parser'; 
 import ProgressiveImage from 'react-progressive-graceful-image'
-import Markdown from 'react-mark';
+import ReactMarkdown from 'react-markdown';
 
 import Footer from '../../components/Footer'
 import Menu from '../../components/Menu/'
@@ -22,7 +22,7 @@ import {
 	Price,
 } from '../../styles/pages/details'
 
-function Product({readmeHTML, product}) {
+function Product({readme, product}) {
 	const {colors} = useContext(ThemeContext);
 	
 	return (
@@ -58,7 +58,7 @@ function Product({readmeHTML, product}) {
 					</ProgressiveImage>
 					<DescriptionList>
 						{product.descriptionList.map((description, index) => (
-							<Markdown key={index}>{description}</Markdown>
+							<ReactMarkdown key={index} source={description} />
 						))}
 					</DescriptionList>
 					<ContainerButton>
@@ -73,7 +73,7 @@ function Product({readmeHTML, product}) {
 					</ContainerButton>
 				</ProductPurchase>
 				<ProductInformations>
-					{ReactHtmlParser(readmeHTML)}
+					<ReactMarkdown source={readme} />
 				</ProductInformations>
 			</Container>
 			
@@ -90,15 +90,10 @@ export async function getStaticProps({params}) {
 	
 	const res = await fetch(product.text)
 	const readme = await res.text()
-	const readmeGit = await fetch('https://api.github.com/markdown/raw', {
-		method: 'POST',
-		body: readme
-	});
-	const readmeHTML = await readmeGit.text()	
 
   return {
 		props: {
-			readmeHTML,
+			readme,
 			product: product
 		}
 	}

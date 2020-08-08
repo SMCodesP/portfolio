@@ -1,4 +1,5 @@
-<p align="center"><img width="128" src="https://www.spetacularnetwork.xyz/gold.png" /></p>
+![Icone](https://spetacularnetwork.xyz/gold.png)
+
 
 # **DDL-Economy**
 
@@ -14,7 +15,7 @@ Esse plugin tem a função de criação de economia com integrações a dashboar
 
 ### Opcionais
 
-- DDL-Tagss
+- DDL-Tags
 
 # Config
 
@@ -24,26 +25,26 @@ Esse plugin tem a função de criação de economia com integrações a dashboar
 
 - ddl.smcodes.money.general (Essa permissão deixa o player com permissões básicas, podendo ser burlada usando outras permissões, ele deixa o player executar os seguintes comandos » {
 
-    - **<span style="text-decoration:underline">money</span>** (Esse comando faz com que o player visualize seu próprio money);
+    - ***money*** (Esse comando faz com que o player visualize seu próprio money);
 
-    - **<span style="text-decoration:underline">money {player}</span>** (Esse comando tem a função de visualizar money de outros players);
+    - ***money {player}*** (Esse comando tem a função de visualizar money de outros players);
 
-    - **<span style="text-decoration:underline">money top</span>** (visualizar o top 10 jogadores mais ricos);
+    - ***money top*** (visualizar o top 10 jogadores mais ricos);
     
-    - **<span style="text-decoration:underline">money pay {player} {quantia}</span>** (Essa comando faz com que o player de uma quantia de seu money a outro)
+    - ***money pay {player} {quantia}*** (Essa comando faz com que o player de uma quantia de seu money a outro)
   
   }).
 
 
 - ddl.smcodes.money.admin (Essa permissão da acesso ao player comandos restritos comao » ({
 
-    - **<span style="text-decoration:underline">money set {player} {quantia}</span>** (Esse comando serve para o player ter acesso a setar money a outros player)
+    - ***money set {player} {quantia}*** (Esse comando serve para o player ter acesso a setar money a outros player)
 
-    - **<span style="text-decoration:underline">money remove {player} {quantia}</span>** (Essa permissão serve para remover uma quantia de money a um player)
+    - ***money remove {player} {quantia}*** (Essa permissão serve para remover uma quantia de money a um player)
 
-    - **<span style="text-decoration:underline">money add {player} {quantia}</span>** (Com esse comando pode-se adicionar uma quantia de money a outro player sem a perda de money em ambas partes)
+    - ***money add {player} {quantia}*** (Com esse comando pode-se adicionar uma quantia de money a outro player sem a perda de money em ambas partes)
 
-    - **<span style="text-decoration:underline">money spy</span>** (Com esse comando o player pode esconder sua quantia de money, **Atenção**: caso o player execute esse comando não será visto no money top e nem pode obter tag)
+    - ***money spy*** (Com esse comando o player pode esconder sua quantia de money, **Atenção**: caso o player execute esse comando não será visto no money top e nem pode obter tag)
 
   }))
 
@@ -94,7 +95,6 @@ Esse plugin tem a função de criação de economia com integrações a dashboar
 
 ### **Warn** » Nossa API citada está em manutenção, então caso queira fazer uma extensão ao plugin porfavor contate a um suporte
 
-<br />
-<br />
+
 
 Copyright © 2020 [Samuel Pereira da Silva](https://github.com/SMCodesP)

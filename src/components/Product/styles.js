@@ -168,13 +168,13 @@ export const NewInfo = styled.p`
 `
 
 export const DescriptionList = styled.ul`
-	padding: 25px 25px 10px 25px;
+	padding: 40px 40px 20px 40px;
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	user-select: text !important;
 	font-size: 16px;
 	color: ${({theme}) => theme.colors.text};
 	list-style-position: inside;
-	line-height: 18px;
+	line-height: 22px;
 
 	& div {
 		padding: 4px;

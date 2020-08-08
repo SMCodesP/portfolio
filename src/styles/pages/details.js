@@ -30,6 +30,7 @@ export const ProductInformations = styled.div`
 	color: ${({theme}) => theme.colors.text};
 	height: fit-content;
 	padding: 30px 25px;
+	line-height: 20pt;
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	
 	& h1,
@@ -38,16 +39,16 @@ export const ProductInformations = styled.div`
 	& h4,
 	& h5,
 	& h6 {
-		margin: 5px;
+		margin: 10px 15px;
 	}
 
 	& li,
 	& ol {
-		margin: 10px 25px;
+		margin: 15px 20px;
 	}
 
 	& p {
-		margin: 10px;
+		margin: 15px 25px;
 	}
 `
 
@@ -78,6 +79,7 @@ export const DescriptionList = styled.ul`
 	list-style-position: inside;
 	line-height: 18px;
 	align-self: flex-start;
+	line-height: 20pt;
 	
 	& div {
 		padding: 4px;

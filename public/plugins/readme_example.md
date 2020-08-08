@@ -1,4 +1,5 @@
-<p align="center"><img width="128" src="https://www.spetacularnetwork.xyz/barrier.png" /></p>
+![Icone](https://www.spetacularnetwork.xyz/barrier.png)
+
 
 # **Plugin Name**
 
