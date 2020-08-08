@@ -29,14 +29,14 @@ Esse plugin tem a função de criação de economia com integrações a dashboar
 
     - ***money {player}*** (Esse comando tem a função de visualizar money de outros players);
 
-    - ***money top*** (visualizar o top 10 jogadores mais ricos);
+    - ***money top*** (Visualizar o top 10 jogadores mais ricos);
     
     - ***money pay {player} {quantia}*** (Essa comando faz com que o player de uma quantia de seu money a outro)
   
   }).
 
 
-- ddl.smcodes.money.admin (Essa permissão da acesso ao player comandos restritos comao » ({
+- ddl.smcodes.money.admin (Essa permissão da acesso ao player comandos restritos comado » ({
 
     - ***money set {player} {quantia}*** (Esse comando serve para o player ter acesso a setar money a outros player)
 
@@ -50,7 +50,7 @@ Esse plugin tem a função de criação de economia com integrações a dashboar
 
 ### **Permissões exclusiva**
 
-**Mebro**
+**Membro**
 
 - ddl.smcodes.money.view (Essa permissão deixa o player visualizar seu money);
 
