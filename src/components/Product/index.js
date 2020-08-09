@@ -2,8 +2,9 @@ import Link from 'next/link';
 import { memo } from 'react';
 import { getColor } from 'get-color-sm';
 import ProgressiveImage from 'react-progressive-graceful-image';
-import ReactMarkdown from 'react-markdown';
 import moment from 'moment';
+
+import RenderMarkdown from '../RenderMarkdown/'
 
 import {
 	Container,
@@ -84,7 +85,7 @@ function Product({loading, product, productIndex}) {
 					</ContainerImage>
 					<DescriptionList>
 						{product.descriptionList.map((description, index) => (
-							<ReactMarkdown key={index} source={description} />
+							<RenderMarkdown key={index} text={description} />
 						))}
 					</DescriptionList>
 					<ContainerPurchase>

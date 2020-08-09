@@ -64,17 +64,10 @@ export const ProductInformations = styled.div`
 		filter: brightness(60%);
 	}
 
-	& code {
-		background: ${({theme}) => theme.colors.background};
-		padding: 5px;
-		margin: 0 2px;
+	& pre {
 		border-radius: 5px;
-		cursor: pointer;
-		transition: filter .4s;
-	}
-
-	& code:hover {
-		filter: brightness(75%);
+		white-space: pre-wrap;
+		padding: 1.5em 2.5em !important;
 	}
 `
 

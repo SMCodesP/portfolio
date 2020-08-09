@@ -4,7 +4,7 @@ export default [
 		link: '/plugins',
 		items: [
 			{
-				id: "1",
+				id: "0",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-furnace.md',
 				timestamp: 1595462400,
 				title: 'DDL-Furnace',
@@ -24,7 +24,7 @@ export default [
 				price: 4.99
 			},
 			{
-				id: "2",
+				id: "1",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-tags.md',
 				timestamp: 1595462400,
 				title: 'DDL-Tags',
@@ -44,7 +44,7 @@ export default [
 				price: 4.99
 			},
 			{
-				id: "3",
+				id: "2",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-economy.md',
 				timestamp: 1596672000,
 				title: 'DDL-Economy',
@@ -64,7 +64,7 @@ export default [
 				price: 4.99
 			},
 			{
-				id: "4",
+				id: "3",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
 				timestamp: 1595462400,
 				title: 'DDL-Warps',
@@ -90,7 +90,7 @@ export default [
 		link: '/sites',
 		items: [
 			{
-				id: "5",
+				id: "4",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/README.md',
 				timestamp: 1596672000,
 				title: 'SMPortfolio',
@@ -115,7 +115,7 @@ export default [
 				price: 0
 			},
 			{
-				id: "6",
+				id: "5",
 				text: 'https://raw.githubusercontent.com/SMCodesP/DDL-NSA/master/README.md',
 				timestamp: 1595462400,
 				title: 'DDL-NSA',

@@ -2,10 +2,10 @@ import Head from 'next/head'
 import {useContext, useEffect, useState} from 'react'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
-import ReactMarkdown from 'react-markdown';
 
-import Footer from '../../components/Footer'
+import Footer from '../../components/Footer/'
 import Menu from '../../components/Menu/'
+import RenderMarkdown from '../../components/RenderMarkdown/'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 
@@ -118,7 +118,7 @@ function Product({readme, product}) {
 					</ProgressiveImage>
 					<DescriptionList>
 						{product.descriptionList.map((description, index) => (
-							<ReactMarkdown key={index} source={description} />
+							<RenderMarkdown key={index} text={description} />
 						))}
 					</DescriptionList>
 					<ContainerButton>
@@ -133,7 +133,7 @@ function Product({readme, product}) {
 					</ContainerButton>
 				</ProductPurchase>
 				<ProductInformations>
-					<ReactMarkdown source={readme} />
+					<RenderMarkdown text={readme} />
 				</ProductInformations>
 				{display && (
 					<ContainerClipboard actived={actived}>
@@ -154,12 +154,12 @@ function Product({readme, product}) {
 }
 
 export async function getStaticProps({params}) {
-	const product = products[1].items[Number(params.id)]
+	const product = products[1].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1)[Number(params.id)]
 	
 	const res = await fetch(product.text)
 	const readme = await res.text()
 
-  return {
+	return {
 		props: {
 			readme,
 			product: product
