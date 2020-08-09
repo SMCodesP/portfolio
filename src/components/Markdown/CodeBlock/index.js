@@ -3,8 +3,8 @@ import {useContext} from 'react'
 import {ThemeContext} from 'styled-components'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
-import docco from 'react-syntax-highlighter/dist/cjs/styles/hljs/docco';
-import dracula from 'react-syntax-highlighter/dist/cjs/styles/hljs/dracula';
+import docco from '../../../styles/SyntaxHighlightingThemes/docco';
+import dracula from '../../../styles/SyntaxHighlightingThemes/dracula';
 
 import {
 	Container
