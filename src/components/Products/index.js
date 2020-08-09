@@ -41,7 +41,7 @@ export default function Products({ items, category, limit }) {
 					<Link href={category.link}>
 						<ContainerMoreItems>
 							<MoreItem>Ver mais</MoreItem>
-							<FiArrowRight color={colors.secundary} size={24} />
+							<FiArrowRight color={colors.secundary} size={28} />
 						</ContainerMoreItems>
 					</Link>
 				)}

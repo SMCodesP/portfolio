@@ -17,20 +17,26 @@ export const ContainerItems = styled.div`
 export const MoreItem = styled.p`
 	text-align: end;
 	color: ${({theme}) => theme.colors.secundary};
-	font-size: 22px;
+	font-size: 21pt;
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 600;
 	transition: margin-right .2s;
 	margin-right: 5px;
+	align-items: center;
 `
 
 export const ContainerMoreItems = styled.div`
 	align-self: flex-end;
 	display: flex;
+	align-items: center;
 	flex-direction: row;
 	cursor: pointer;
-	transition: filter .5s, opacity .2s;
+	transition: filter .2s, opacity .2s;
 	user-select: none;
+
+	&:hover {
+		filter: brightness(65%);
+	}
 
 	& svg {
 		transition: padding-left .2s;
@@ -38,11 +44,11 @@ export const ContainerMoreItems = styled.div`
 	}
 
 	&:hover ${MoreItem} {
-		margin-right: 10px;
+		margin-right: 15px;
 	}
 
 	&:hover svg {
-		padding-left: 5px;
+		padding-left: 3px;
 	}
 
 	&:active {

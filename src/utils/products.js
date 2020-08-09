@@ -5,7 +5,7 @@ export default [
 		items: [
 			{
 				id: "1",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-furnace.md',
 				timestamp: 1595462400,
 				title: 'DDL-Furnace',
 				category: 'plugin',
@@ -25,19 +25,19 @@ export default [
 			},
 			{
 				id: "2",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-tags.md',
 				timestamp: 1595462400,
-				title: 'DDL-Warps',
+				title: 'DDL-Tags',
 				category: 'plugin',
 				image: {
-					large: '/barrier.png',
-					small: '/barrier_min.png'
+					large: '/name_tag.png',
+					small: '/name_tag_min.png'
 				},
 				descriptionList: [
 					'**Minecraft version »** 1.8.x',
 					'**API »** Bukkit Spigot',
-					'**Funcionalidade »** Gerenciamento de warps',
-					'**Inovação »** Sistema em GUI automatizado',
+					'**Funcionalidade »** Sistema de tags',
+					'**Inovação »** Uma api robusta e um gerenciamento web',
 					'**Criador »** SMCodes',
 					'**A pedido de »** Ninguém'
 				],
@@ -67,17 +67,17 @@ export default [
 				id: "4",
 				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md',
 				timestamp: 1595462400,
-				title: 'DDL-Tags',
+				title: 'DDL-Warps',
 				category: 'plugin',
 				image: {
-					large: '/name_tag.png',
-					small: '/name_tag_min.png'
+					large: '/barrier.png',
+					small: '/barrier_min.png'
 				},
 				descriptionList: [
 					'**Minecraft version »** 1.8.x',
 					'**API »** Bukkit Spigot',
-					'**Funcionalidade »** Sistema de tags',
-					'**Inovação »** Uma api robusta e um gerenciamento web',
+					'**Funcionalidade »** Gerenciamento de warps',
+					'**Inovação »** Sistema em GUI automatizado',
 					'**Criador »** SMCodes',
 					'**A pedido de »** Ninguém'
 				],
@@ -124,8 +124,8 @@ export default [
 					large: '/products/ddl-nsa/large.webp',
 					small: '/products/ddl-nsa/small.webp',
 					size: {
-						width: 256,
-						height: 160
+						width: 224,
+						height: 128
 					}
 				},
 				descriptionList: [

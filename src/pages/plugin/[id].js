@@ -100,7 +100,7 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() {
-	const paths = products[0].items.map((product, index) => {
+	const paths = products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).map((product, index) => {
 		return {
 			params: {
 				id: index.toString()

@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import {useContext, useEffect, useState} from 'react'
 import {ThemeContext} from 'styled-components'
-import ReactHtmlParser from 'react-html-parser'; 
 import ProgressiveImage from 'react-progressive-graceful-image'
 import ReactMarkdown from 'react-markdown';
 
@@ -9,7 +8,14 @@ import Footer from '../../components/Footer'
 import Menu from '../../components/Menu/'
 
 import GlobalStyle from '../../styles/GlobalStyle'
+
 import products from '../../utils/products'
+import copyTextToClipboard from '../../utils/copyTextToClipboard'
+
+import {
+	Container as ContainerClipboard,
+	ContainerSuccess,
+} from '../../components/Clipoard/styles'
 
 import {
 	Container,
@@ -20,11 +26,46 @@ import {
 	ContainerButton,
 	PurchaseButton,
 	Price,
+	ProductTitle,
 } from '../../styles/pages/details'
 
 function Product({readme, product}) {
 	const {colors} = useContext(ThemeContext);
-	
+	const [actived, setActived] = useState(false)
+	const [display, setDisplay] = useState(false)
+	const [text, setText] = useState('')
+
+	useEffect(() => {
+		if (actived) {
+			setTimeout(() => {
+				setActived(false)
+				clearTimeout()
+				setTimeout(() => {
+					setDisplay(false)
+					clearTimeout()
+				}, 500)
+			}, 5000)
+		}
+	}, [actived])
+
+	useEffect(() => {
+		const codesElements = document.querySelectorAll('code')
+
+		for (let counterCodesElementsLooping = 0; counterCodesElementsLooping < codesElements.length; counterCodesElementsLooping++) {
+			codesElements[counterCodesElementsLooping].addEventListener('click', async () => {
+				if (actived === true || display === true)
+					return;
+
+				const res = await copyTextToClipboard(codesElements[counterCodesElementsLooping].innerHTML)
+
+				setText(res)
+
+				setActived(true)
+				setDisplay(true)
+			});
+		}
+	}, [])
+
 	return (
 		<div>
 			<Head>
@@ -44,6 +85,7 @@ function Product({readme, product}) {
 
 			<Container>
 				<ProductPurchase>
+					<ProductTitle>{product.title}</ProductTitle>
 					<ProgressiveImage
 						src={product.image.large}
 						placeholder={product.image.small}
@@ -93,6 +135,14 @@ function Product({readme, product}) {
 				<ProductInformations>
 					<ReactMarkdown source={readme} />
 				</ProductInformations>
+				{display && (
+					<ContainerClipboard actived={actived}>
+						<ContainerSuccess>
+							{text}
+							{actived && (<span></span>)}
+						</ContainerSuccess>
+					</ContainerClipboard>
+				)}
 			</Container>
 			
 			<Footer />
@@ -118,7 +168,7 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() {
-	const paths = products[1].items.map((product, index) => {
+	const paths = products[1].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).map((product, index) => {
 		return {
 			params: {
 				id: index.toString()

@@ -112,22 +112,26 @@ export const Container = styled.div`
 	${Title} {
 		background: var(--color-var);
 		color: ${(props) => (getLuminance(`#${props.color}`) < 0.4)
-		? props.theme.colors.light
-		: props.theme.colors.dark} !important;
+			? props.theme.colors.light
+			: props.theme.colors.dark} !important;
 	}
 `;
 
 export const Image = styled.img`
-	margin: -5px 0 5px 0;
+	margin: 5px 0 5px 0;
 	${({not_auto}) => not_auto ? '' : `
 		max-width: 132px;
 		max-height: 132px;
 	`}
-	transition: transform .2s;
+	border-radius: 5px;
 	cursor: none;
+	filter: brightness(85%);
+	transition: transform .25s, border-radius .25s, filter .25s;
 
 	&:hover {
 		transform: scale(1.1) !important;
+		border-radius: 10px;
+		filter: brightness(50%);
 	}
 `
 
@@ -140,8 +144,9 @@ export const ContainerImage = styled.div`
 	align-items: center;
 	padding: 20px 0 10px 0;
 	border-bottom: 1px solid ${({theme}) => theme.colors.primary};
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	z-index: -1;
 
 	&:hover ${Image} {
 		transform: scale(1.05);
@@ -201,10 +206,17 @@ export const PurchaseButton = styled.button`
 	font-size: 15pt;
 	font-weight: 500;
 	cursor: pointer;
-	transition: filter .2s;
+	border-bottom: 3px solid ${shade(0.3, '#e02041')};
+	position: relative;
+	transition: filter .2s, top .2s;
 	
 	&:hover {
 		filter: brightness(75%);
+	}
+
+	&:active {
+		border-bottom: 0;
+		top: 3px;
 	}
 `
 

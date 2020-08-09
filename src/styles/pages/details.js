@@ -32,6 +32,8 @@ export const ProductInformations = styled.div`
 	padding: 30px 25px;
 	line-height: 20pt;
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	display: flex;
+	flex-direction: column;
 	
 	& h1,
 	& h2,
@@ -52,7 +54,27 @@ export const ProductInformations = styled.div`
 	}
 
 	& img {
-		max-width: 100%;
+		align-self: center;
+		max-width: 95%;
+		cursor: pointer;
+		transition: filter .4s;
+	}
+
+	& img:hover {
+		filter: brightness(60%);
+	}
+
+	& code {
+		background: ${({theme}) => theme.colors.background};
+		padding: 5px;
+		margin: 0 2px;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: filter .4s;
+	}
+
+	& code:hover {
+		filter: brightness(75%);
 	}
 `
 
@@ -63,13 +85,13 @@ export const ImageLogo = styled.img`
 	`}
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	${({loading}) => (loading == "true") && 'filter: blur(5px);'}
-	padding: 15px;
-	transition: padding .2s, filter .2s, border-radius .4s;
+	padding: 10px;
+	transition: padding .4s, filter .4s, border-radius .4s;
 	cursor: pointer;
 	
 	&:hover {
 		padding: 5px;
-		border-radius: 10px;
+		border-radius: 15px;
 		filter: brightness(60%);
 	}
 `
@@ -122,4 +144,12 @@ export const Price = styled.p`
 	color: ${({theme}) => theme.colors.secundaryText};
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
+`
+
+export const ProductTitle = styled.h1`
+	color: ${({theme}) => theme.colors.text};
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	font-size: 22pt;
+	line-height: 36pt;
+	padding: 5px;
 `
