@@ -10,12 +10,6 @@ import RenderMarkdown from '../../components/RenderMarkdown/'
 import GlobalStyle from '../../styles/GlobalStyle'
 
 import products from '../../utils/products'
-import copyTextToClipboard from '../../utils/copyTextToClipboard'
-
-import {
-	Container as ContainerClipboard,
-	ContainerSuccess,
-} from '../../components/Clipoard/styles'
 
 import {
 	Container,
@@ -31,40 +25,6 @@ import {
 
 function Product({readme, product}) {
 	const {colors} = useContext(ThemeContext);
-	const [actived, setActived] = useState(false)
-	const [display, setDisplay] = useState(false)
-	const [text, setText] = useState('')
-
-	useEffect(() => {
-		if (actived) {
-			setTimeout(() => {
-				setActived(false)
-				clearTimeout()
-				setTimeout(() => {
-					setDisplay(false)
-					clearTimeout()
-				}, 500)
-			}, 5000)
-		}
-	}, [actived])
-
-	useEffect(() => {
-		const codesElements = document.querySelectorAll('code')
-
-		for (let counterCodesElementsLooping = 0; counterCodesElementsLooping < codesElements.length; counterCodesElementsLooping++) {
-			codesElements[counterCodesElementsLooping].addEventListener('click', async () => {
-				if (actived === true || display === true)
-					return;
-
-				const res = await copyTextToClipboard(codesElements[counterCodesElementsLooping].innerHTML)
-
-				setText(res)
-
-				setActived(true)
-				setDisplay(true)
-			});
-		}
-	}, [])
 
 	return (
 		<div>
@@ -135,14 +95,6 @@ function Product({readme, product}) {
 				<ProductInformations>
 					<RenderMarkdown text={readme} />
 				</ProductInformations>
-				{display && (
-					<ContainerClipboard actived={actived}>
-						<ContainerSuccess>
-							{text}
-							{actived && (<span></span>)}
-						</ContainerSuccess>
-					</ContainerClipboard>
-				)}
 			</Container>
 			
 			<Footer />

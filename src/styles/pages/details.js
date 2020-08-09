@@ -63,12 +63,6 @@ export const ProductInformations = styled.div`
 	& img:hover {
 		filter: brightness(60%);
 	}
-
-	& pre {
-		border-radius: 5px;
-		white-space: pre-wrap;
-		padding: 1.5em 2.5em !important;
-	}
 `
 
 export const ImageLogo = styled.img`
