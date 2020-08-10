@@ -1,29 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { shade, getLuminance } from 'polished';
 
-const ContainerFade = keyframes`
-	from {
-		opacity: 0;
-		transform: translateY(50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-`
-
-const animationBackgroundLoading = keyframes`
-	0% {
-		filter: brightness(105%);
-	}
-	50% {
-		filter: brightness(95%);
-	}
-	100% {
-		filter: brightness(105%);
-	}
-`
-
 export const ContainerPurchase = styled.div`
 	width: 100%;
 	display: flex;
@@ -60,7 +37,6 @@ export const TitleSkeleton = styled.div`
 	top: 25px;
 	cursor: default;
 	transition: filter 2s;
-	animation: ${animationBackgroundLoading} 5s infinite;
 
 	&:hover {
 		filter: brightness(70%);
@@ -102,7 +78,6 @@ export const Container = styled.div`
 	border-right: 1px solid ${({theme}) => theme.colors.primary};
 	--color-var: #${(props) => props.color};
 	border-top: 4px solid var(--color-var);
-	animation: ${ContainerFade} 1s linear;
 	cursor: ${(props) => (props.loading === "true") ? 'pointer' : 'default'};
 
 	&:hover {
