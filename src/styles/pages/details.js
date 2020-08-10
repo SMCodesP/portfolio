@@ -140,3 +140,43 @@ export const ProductTitle = styled.h1`
 	line-height: 36pt;
 	padding: 5px;
 `
+
+export const ContainerNextPrevious = styled.div`
+	width: 100%;
+	padding: 50px 0;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+`
+
+export const TextPrevNext = styled.p`
+	font-size: 16pt;
+	color: ${({theme}) => theme.colors.text};
+	font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	font-weight: 600;
+	margin: 0 10px;
+	cursor: pointer;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	justify-self: center;
+	transition: filter .2s;
+	user-select: none;
+
+	& svg {
+		stroke-width: 3px;
+		margin: 0 5px;
+		transition: margin .2s, padding .2s, stroke-width .4s;
+	}
+
+	&:hover {
+		filter: brightness(50%);
+	}
+
+	&:hover svg {
+		stroke-width: 5px;
+		margin: 0 12px;
+		padding: 0 3px;
+	}
+`

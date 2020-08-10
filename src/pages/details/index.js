@@ -3,6 +3,7 @@ import Head from 'next/head'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
 import ReactMarkdown from 'react-markdown'
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 
 import Footer from '../../components/Footer'
 import Menu from '../../components/Menu/'
@@ -19,6 +20,8 @@ import {
 	ContainerButton,
 	PurchaseButton,
 	Price,
+	ContainerNextPrevious,
+	TextPrevNext,
 } from '../../styles/pages/details'
 
 export default function Product({readme, product}) {
@@ -69,6 +72,17 @@ export default function Product({readme, product}) {
 					<ReactMarkdown source={readme} />
 				</ProductInformations>
 			</Container>
+
+			<ContainerNextPrevious>
+				<TextPrevNext>
+					<FiChevronLeft color={colors.text} size={24} />
+					Anterior
+				</TextPrevNext>
+				<TextPrevNext>
+					Próximo
+					<FiChevronRight color={colors.text} size={24} />
+				</TextPrevNext>
+			</ContainerNextPrevious>
 			
 			<Footer />
 

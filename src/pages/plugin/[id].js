@@ -3,6 +3,7 @@ import {useContext, useEffect, useState} from 'react'
 import {ThemeContext} from 'styled-components'
 import ReactHtmlParser from 'react-html-parser'; 
 import ProgressiveImage from 'react-progressive-graceful-image'
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 
 import Footer from '../../components/Footer/'
 import Menu from '../../components/Menu/'
@@ -20,6 +21,8 @@ import {
 	ContainerButton,
 	PurchaseButton,
 	Price,
+	ContainerNextPrevious,
+	TextPrevNext,
 } from '../../styles/pages/details'
 
 function Product({readme, product}) {
@@ -81,6 +84,17 @@ function Product({readme, product}) {
     				/>
 				</ProductInformations>
 			</Container>
+
+			<ContainerNextPrevious>
+				<TextPrevNext>
+					<FiChevronLeft color={colors.text} size={24} />
+					Anterior
+				</TextPrevNext>
+				<TextPrevNext>
+					Próximo
+					<FiChevronRight color={colors.text} size={24} />
+				</TextPrevNext>
+			</ContainerNextPrevious>
 			
 			<Footer />
 
