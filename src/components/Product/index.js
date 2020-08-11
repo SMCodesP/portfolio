@@ -1,10 +1,11 @@
-import Link from 'next/link';
-import {memo, useContext} from 'react';
-import {getColor} from 'get-color-sm';
-import ProgressiveImage from 'react-progressive-graceful-image';
+import Link from 'next/link'
+import {memo, useContext} from 'react'
+import {getColor} from 'get-color-sm'
+import ProgressiveImage from 'react-progressive-graceful-image'
 import {ThemeContext} from 'styled-components'
-import moment from 'moment';
-import Skeleton, {SkeletonTheme} from 'react-loading-skeleton';
+import moment from 'moment'
+import {shade} from 'polished'
+import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 
 import RenderMarkdown from '../RenderMarkdown/'
 
@@ -27,13 +28,13 @@ import {
 } from './styles'
 
 function Product({loading, product, productIndex}) {
-	const color = getColor();
+	const color = getColor()
 	const {colors} = useContext(ThemeContext)
 
 	return (
 		<Container color={color}>
 			{loading ? (
-				<SkeletonTheme color="#44475a" highlightColor="#282a36">
+				<SkeletonTheme color={shade(0.1, colors.secundaryBackground)} highlightColor={shade(0.1, colors.background)}>
 					<ContainerImage>
 						<Skeleton width={200} height={30} duration={2} style={{
 							position: 'relative',
