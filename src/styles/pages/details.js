@@ -183,6 +183,10 @@ export const ListProductsPages = styled.ul`
 	display: grid;
 	grid-auto-flow: column;
 	gap: 0 10px;
+
+	& a {
+		text-decoration: none;
+	}
 `
 
 export const ProductPage = styled.li`

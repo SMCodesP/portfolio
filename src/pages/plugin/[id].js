@@ -3,7 +3,7 @@ import Link from 'next/link'
 import {useContext} from 'react'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
+import {FiChevronRight, FiChevronLeft} from 'react-icons/fi'
 
 import Footer from '../../components/Footer/'
 import Menu from '../../components/Menu/'
@@ -31,6 +31,15 @@ import {
 
 function DetailsProduct({readme, product, ...params}) {
 	const {colors} = useContext(ThemeContext)
+
+	const listPagesQuantity = Array.from(Array(params.quantity).keys())
+	const listPages = listPagesQuantity.filter((value) => {
+		if (value < params.id+6 && value > params.id-6) {
+			return true
+		} else {
+	        return false
+	    }
+	})
 	
 	return (
 		<div>
@@ -101,15 +110,18 @@ function DetailsProduct({readme, product, ...params}) {
 				) : (<span />)}
 				<ContainerListPages>
 					<ListProductsPages>
-						<ProductPage>1</ProductPage>
-						<ProductPage>2</ProductPage>
-						<p style={{
-							fontSize: '14pt',
-							padding: '5px 2px',
-						}}>-</p>
-						<ProductPage>4</ProductPage>
-						<ProductPage>5</ProductPage>
-						<ProductPage>6</ProductPage>
+						{listPages.map((productId) => (productId != params.id) ? (
+							<Link href={`/${product.category}/[id]`} as={`/${product.category}/${productId}`}>
+								<a href={`/${product.category}/${productId}`}>
+									<ProductPage>{productId}</ProductPage>
+								</a>
+							</Link>
+						) : (
+							<ProductPage style={{
+								cursor: 'not-allowed',
+								filter: 'brightness(80%)'
+							}}>{productId}</ProductPage>
+						))}
 					</ListProductsPages>
 				</ContainerListPages>
 				{(params.quantity > Number(params.id)+1) ? (
