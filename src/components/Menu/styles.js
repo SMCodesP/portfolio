@@ -119,6 +119,10 @@ export const IconMenu = styled.button`
 			visibility: visible;
 		}
 	` : ``}
+
+	@media (min-width: 750px) {
+		display: none;
+	}
 `
 
 export const Page = styled.li`

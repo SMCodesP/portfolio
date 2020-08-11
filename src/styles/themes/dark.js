@@ -14,6 +14,7 @@ export default {
 		tertiaryText: '#f1fa8c',
 
 		light: '#fafafa',
-		dark: '#282a36'
+		dark: '#282a36',
+		darkTwo: '#44475a',
 	}
 }

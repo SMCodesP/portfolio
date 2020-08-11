@@ -78,12 +78,7 @@ export const Container = styled.div`
 	border-right: 1px solid ${({theme}) => theme.colors.primary};
 	--color-var: #${(props) => props.color};
 	border-top: 4px solid var(--color-var);
-	cursor: ${(props) => (props.loading === "true") ? 'pointer' : 'default'};
-
-	&:hover {
-		${props => (props.loading === "true") ? `margin: -20px 0 0 0` : ''};
-	}
-
+	
 	${Title} {
 		background: var(--color-var);
 		color: ${(props) => (getLuminance(`#${props.color}`) < 0.4)

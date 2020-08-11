@@ -1,8 +1,10 @@
 import Link from 'next/link';
-import { memo } from 'react';
-import { getColor } from 'get-color-sm';
+import {memo, useContext} from 'react';
+import {getColor} from 'get-color-sm';
 import ProgressiveImage from 'react-progressive-graceful-image';
+import {ThemeContext} from 'styled-components'
 import moment from 'moment';
+import Skeleton, {SkeletonTheme} from 'react-loading-skeleton';
 
 import RenderMarkdown from '../RenderMarkdown/'
 
@@ -26,27 +28,71 @@ import {
 
 function Product({loading, product, productIndex}) {
 	const color = getColor();
+	const {colors} = useContext(ThemeContext)
 
 	return (
-		<Container color={color} loading={loading.toString()}>
+		<Container color={color}>
 			{loading ? (
-				<>
+				<SkeletonTheme color={colors.dark} highlightColor="#44475a">
 					<ContainerImage>
-						<TitleSkeleton />
-						<ImageSkeleton />
+						<Skeleton width={200} height={30} duration={2} style={{
+							position: 'relative',
+							top: '25px',
+						}} />
+						<Skeleton circle={true} width={128} height={128} duration={2} />
 					</ContainerImage>
 					<DescriptionList>
-						<DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
-						<DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
-						<DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
-						<DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
-						<DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
-						<DescriptionSkeleton width={Math.floor(Math.random() * 225) + 15} />
+						<Skeleton width={189} height={25} duration={2} style={{
+							margin: '5px 0'
+						}} />
+						<br />
+
+							<Skeleton width={100} height={25} duration={2} style={{
+								margin: '5px 0 5px 10px'
+							}} />
+							<Skeleton width={56} height={25} duration={2} style={{
+								margin: '5px 0 5px 5px'
+							}} />
+							<br />
+
+								<Skeleton width={56} height={25} duration={2} style={{
+									margin: '5px 0 5px 20px'
+								}} />
+								<Skeleton width={100} height={25} duration={2} style={{
+									margin: '5px 0 5px 5px'
+								}} />
+								<br />
+
+								<Skeleton width={162} height={25} duration={2} style={{
+									margin: '5px 0 5px 20px'
+								}} />
+								<Skeleton width={50} height={25} duration={2} style={{
+									margin: '5px 0 5px 5px'
+								}} />
+								<br />
+
+								<Skeleton width={72} height={25} duration={2} style={{
+									margin: '5px 0 5px 20px'
+								}} />
+								<Skeleton width={32} height={25} duration={2} style={{
+									margin: '5px 0 5px 5px'
+								}} />
+								<br />
+
+							<Skeleton width={151} height={25} duration={2} style={{
+								margin: '5px 0 5px 10px'
+							}} />
+							<br />
+
+						<Skeleton width={202} height={25} duration={2} style={{
+							margin: '5px 0'
+						}} />
+						<br />
 					</DescriptionList>
 					<ContainerPurchase>
-						<ButtonSkeleton />
+						<Skeleton width={224} height={45} duration={2} />
 					</ContainerPurchase>
-				</>
+				</SkeletonTheme>
 			) : (
 				<>
 					<ContainerImage>

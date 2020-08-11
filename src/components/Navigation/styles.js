@@ -41,7 +41,7 @@ export const SubWelcome = styled.h2`
 export const WorkLast = styled.a`
 	color: ${({theme}) => theme.colors.text};
 	font-size: 15pt;
-	display: block;
+	display: inline-block;
 	margin-top: 75px;
 
 	@media (max-width: 925px) {
