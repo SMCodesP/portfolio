@@ -9,6 +9,11 @@ const GlobalStyle = createGlobalStyle`
 		outline: 0;
 	}
 
+	p, li, a, button, h1, h2, h3, h4, h5, h6 {
+		font-family: 'Libre Franklin', 'Roboto', sans-serif;
+		color: ${({theme}) => theme.colors.text};
+	}
+
 	html, body {
 		width: 100%;
 		height: 100vh;
@@ -16,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	::-webkit-scrollbar {
-		width: 4px;
+		width: 7px;
 		height: 5px;
 	}
 
@@ -26,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 
 	::-webkit-scrollbar-thumb {
 		background: ${({theme}) => theme.colors.secundary};
-		border-radius: 5px;
+		border-radius: 7px;
 	}
 
 	::-webkit-scrollbar-thumb:hover {

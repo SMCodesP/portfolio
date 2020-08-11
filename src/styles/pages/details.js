@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {shade} from 'polished'
 
 export const Container = styled.div`
 	display: flex;
@@ -27,11 +28,9 @@ export const ProductInformations = styled.div`
 	margin: 10px;
 	border-radius: 10px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
-	color: ${({theme}) => theme.colors.text};
 	height: fit-content;
 	padding: 30px 25px;
 	line-height: 20pt;
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	display: flex;
 	flex-direction: column;
 	
@@ -85,10 +84,8 @@ export const ImageLogo = styled.img`
 
 export const DescriptionList = styled.ul`
 	padding: 25px 25px 10px 25px;
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	user-select: text !important;
 	font-size: 16px;
-	color: ${({theme}) => theme.colors.text};
 	list-style-position: inside;
 	line-height: 18px;
 	align-self: flex-start;
@@ -114,8 +111,6 @@ export const PurchaseButton = styled.button`
 	border-radius: 5px;
 	height: 46px;
 	width: 100%;
-	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 15pt;
 	font-weight: 500;
 	cursor: pointer;
@@ -128,14 +123,10 @@ export const PurchaseButton = styled.button`
 `
 
 export const Price = styled.p`
-	color: ${({theme}) => theme.colors.secundaryText};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
 `
 
 export const ProductTitle = styled.h1`
-	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 22pt;
 	line-height: 36pt;
 	padding: 5px;
@@ -145,13 +136,11 @@ export const ContainerNextPrevious = styled.div`
 	width: 100%;
 	padding: 50px 0;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 `
 
 export const TextPrevNext = styled.a`
 	font-size: 16pt;
-	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 600;
 	margin: 0 10px;
 	cursor: pointer;
@@ -179,5 +168,37 @@ export const TextPrevNext = styled.a`
 		stroke-width: 5px;
 		margin: 0 12px;
 		padding: 0 3px;
+	}
+`
+
+export const ContainerListPages = styled.div`
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`
+
+export const ListProductsPages = styled.ul`
+	padding: 0 15px;
+	display: grid;
+	grid-auto-flow: column;
+	gap: 0 10px;
+`
+
+export const ProductPage = styled.li`
+	font-size: 14pt;
+	background: ${({theme}) => shade(0.1, theme.colors.background)};
+	box-shadow: 0 0 2px 1px ${({theme}) => shade(0.1, theme.colors.secundaryBackground)};
+	cursor: pointer;
+	transition: filter .4s;
+
+	list-style: none;
+	user-select: none;
+
+	padding: 7.5px;
+	border-radius: 4px;
+
+	&:hover {
+		filter: brightness(75%);
 	}
 `

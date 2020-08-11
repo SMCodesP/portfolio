@@ -24,6 +24,8 @@ import {
 	ProductTitle,
 	ContainerNextPrevious,
 	TextPrevNext,
+	ListProductsPages,
+	ProductPage,
 } from '../../styles/pages/details'
 
 function DetailsProduct({readme, product, ...params}) {
@@ -109,6 +111,15 @@ function DetailsProduct({readme, product, ...params}) {
 						</TextPrevNext>
 					</Link>
 				) : (<span />)}
+				<ListProductsPages>
+					<ProductPage>0</ProductPage>
+					<ProductPage>1</ProductPage>
+					<ProductPage>2</ProductPage>
+					<ProductPage>-</ProductPage>
+					<ProductPage>4</ProductPage>
+					<ProductPage>5</ProductPage>
+					<ProductPage>6</ProductPage>
+				</ListProductsPages>
 				{(params.quantity > Number(params.id)+1) ? (
 					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${Number(params.id)+1}`}>
 						<TextPrevNext href={`/${product.category}/${Number(params.id)+1}`}>
