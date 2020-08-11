@@ -33,7 +33,7 @@ function Product({loading, product, productIndex}) {
 	return (
 		<Container color={color}>
 			{loading ? (
-				<SkeletonTheme color={colors.dark} highlightColor="#44475a">
+				<SkeletonTheme color="#44475a" highlightColor="#282a36">
 					<ContainerImage>
 						<Skeleton width={200} height={30} duration={2} style={{
 							position: 'relative',
