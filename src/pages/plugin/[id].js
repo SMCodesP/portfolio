@@ -1,13 +1,12 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import {useContext} from 'react'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
-import {FiChevronRight, FiChevronLeft} from 'react-icons/fi'
 
 import Footer from '../../components/Footer/'
 import Menu from '../../components/Menu/'
 import RenderMarkdown from '../../components/RenderMarkdown/'
+import ListingPages from '../../components/ListingPages/'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 import products from '../../utils/products'
@@ -22,25 +21,11 @@ import {
 	PurchaseButton,
 	Price,
 	ProductTitle,
-	ContainerNextPrevious,
-	TextPrevNext,
-	ContainerListPages,
-	ListProductsPages,
-	ProductPage,
 } from '../../styles/pages/details'
 
 function DetailsProduct({readme, product, ...params}) {
 	const {colors} = useContext(ThemeContext)
 
-	const listPagesQuantity = Array.from(Array(params.quantity).keys())
-	const listPages = listPagesQuantity.filter((value) => {
-		if (value < params.id+6 && value > params.id-6) {
-			return true
-		} else {
-	        return false
-	    }
-	})
-	
 	return (
 		<div>
 			<Head>
@@ -99,40 +84,7 @@ function DetailsProduct({readme, product, ...params}) {
 				</ProductInformations>
 			</Container>
 
-			<ContainerNextPrevious>
-				{(Number(params.id)-1 >= 0) ? (
-					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${params.id-1}`}>
-						<TextPrevNext href={`/${product.category}/${params.id-1}`}>
-							<FiChevronLeft color={colors.text} size={24} />
-							Anterior
-						</TextPrevNext>
-					</Link>
-				) : (<span />)}
-				<ContainerListPages>
-					<ListProductsPages>
-						{listPages.map((productId) => (productId != params.id) ? (
-							<Link href={`/${product.category}/[id]`} as={`/${product.category}/${productId}`}>
-								<a href={`/${product.category}/${productId}`}>
-									<ProductPage>{productId}</ProductPage>
-								</a>
-							</Link>
-						) : (
-							<ProductPage style={{
-								cursor: 'not-allowed',
-								filter: 'brightness(80%)'
-							}}>{productId}</ProductPage>
-						))}
-					</ListProductsPages>
-				</ContainerListPages>
-				{(params.quantity > Number(params.id)+1) ? (
-					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${Number(params.id)+1}`}>
-						<TextPrevNext href={`/${product.category}/${Number(params.id)+1}`}>
-							Próximo
-							<FiChevronRight color={colors.text} size={24} />
-						</TextPrevNext>
-					</Link>
-				) : (<span />)}
-			</ContainerNextPrevious>
+			<ListingPages product={product} {...params} />
 			
 			<Footer />
 
@@ -151,7 +103,7 @@ export async function getStaticProps({params}) {
 	return {
 		props: {
 			readme,
-			product: product,
+			product,
 			quantity: products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).length,
 			id: Number(params.id)
 		}

@@ -1,13 +1,12 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import {useContext} from 'react'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 
 import Footer from '../../components/Footer/'
 import Menu from '../../components/Menu/'
 import RenderMarkdown from '../../components/RenderMarkdown/'
+import ListingPages from '../../components/ListingPages/'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 import products from '../../utils/products'
@@ -22,12 +21,10 @@ import {
 	PurchaseButton,
 	Price,
 	ProductTitle,
-	ContainerNextPrevious,
-	TextPrevNext,
 } from '../../styles/pages/details'
 
 function DetailsProduct({readme, product, ...params}) {
-	const {colors} = useContext(ThemeContext);
+	const {colors} = useContext(ThemeContext)
 	
 	return (
 		<div>
@@ -76,25 +73,8 @@ function DetailsProduct({readme, product, ...params}) {
 				</ProductInformations>
 			</Container>
 
-			<ContainerNextPrevious>
-				{(Number(params.id)-1 >= 0) ? (
-					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${params.id-1}`}>
-						<TextPrevNext href={`/${product.category}/${params.id-1}`}>
-							<FiChevronLeft color={colors.text} size={24} />
-							Anterior
-						</TextPrevNext>
-					</Link>
-				) : (<span />)}
-				{(params.quantity > Number(params.id)+1) ? (
-					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${Number(params.id)+1}`}>
-						<TextPrevNext href={`/${product.category}/${Number(params.id)+1}`}>
-							Próximo
-							<FiChevronRight color={colors.text} size={24} />
-						</TextPrevNext>
-					</Link>
-				) : (<span />)}
-			</ContainerNextPrevious>
-			
+			<ListingPages />
+
 			<Footer />
 
 			<GlobalStyle />
