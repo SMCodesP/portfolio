@@ -2,6 +2,7 @@ export default [
 	{
 		title: 'Minecraft plugins',
 		link: '/plugins',
+		name: 'plugin',
 		items: [
 			{
 				id: "0",
@@ -88,6 +89,7 @@ export default [
 	{
 		title: 'Web',
 		link: '/sites',
+		name: 'web',
 		items: [
 			{
 				id: "4",
