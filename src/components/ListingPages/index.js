@@ -11,21 +11,17 @@ import {
 	ProductPage,
 } from './style.js'
 
-import products from '../../utils/products'
-
 export default ({product, ...params}) => {
 	const {colors} = useContext(ThemeContext)
 
 	const listPagesQuantity = Array.from(Array(params.quantity).keys())
 	const listPages = listPagesQuantity.filter((value) => value < params.id+6 && value > params.id-6)
-	const category = products.find(category => (category.name.toLowerCase() === product.category))
-	console.log(category)
 	
 	return (
 		<ContainerNextPrevious>
 			{(Number(params.id)-1 >= 0) ? (
 				<Link href={`/${product.category}/[id]`} as={`/${product.category}/${params.id-1}`}>
-					<TextPrevNext href={`/${product.category}/${params.id-1}`} title={category.items[Number(params.id)-1].title}>
+					<TextPrevNext href={`/${product.category}/${params.id-1}`}>
 						<FiChevronLeft color={colors.text} size={24} />
 						Anterior
 					</TextPrevNext>
@@ -35,24 +31,21 @@ export default ({product, ...params}) => {
 				<ListProductsPages>
 					{listPages.map((productId) => (productId != params.id) ? (
 						<Link href={`/${product.category}/[id]`} as={`/${product.category}/${productId}`} key={productId}>
-							<a href={`/${product.category}/${productId}`} title={category.items[productId].title}>
+							<a href={`/${product.category}/${productId}`}>
 								<ProductPage>{productId}</ProductPage>
 							</a>
 						</Link>
 					) : (
-						<ProductPage key={productId}
-							style={{
-								cursor: 'not-allowed',
-								filter: 'brightness(80%)'
-							}}
-							title={`Você já está no produto ${category.items[productId].title}`}
-						>{productId}</ProductPage>
+						<ProductPage key={productId} style={{
+							cursor: 'not-allowed',
+							filter: 'brightness(80%)'
+						}}>{productId}</ProductPage>
 					))}
 				</ListProductsPages>
 			</ContainerListPages>
 			{(params.quantity > Number(params.id)+1) ? (
 				<Link href={`/${product.category}/[id]`} as={`/${product.category}/${Number(params.id)+1}`}>
-					<TextPrevNext href={`/${product.category}/${Number(params.id)+1}`} title={category.items[Number(params.id)+1].title}>
+					<TextPrevNext href={`/${product.category}/${Number(params.id)+1}`}>
 						Próximo
 						<FiChevronRight color={colors.text} size={24} />
 					</TextPrevNext>

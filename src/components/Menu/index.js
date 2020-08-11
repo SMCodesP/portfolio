@@ -93,9 +93,7 @@ function Menu({ page: isPage, background, color }) {
 			<Options id='title' background={background} actived={activedMobile}>
 				<HeadMenuFixed>
 						<IconMenu
-							onClick={() => {
-								closeOrOpenInMobile()
-							}}
+							onClick={closeOrOpenInMobile}
 							closed={isClose}
 						>
 							<span></span>

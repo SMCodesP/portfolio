@@ -73,7 +73,7 @@ function DetailsProduct({readme, product, ...params}) {
 				</ProductInformations>
 			</Container>
 
-			<ListingPages />
+			<ListingPages product={product} {...params} />
 
 			<Footer />
 
@@ -84,7 +84,7 @@ function DetailsProduct({readme, product, ...params}) {
 }
 
 export async function getStaticProps({params}) {
-	const product = products[0].items[0]
+	const product = products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1)[0]
 	
 	const res = await fetch(product.text)
 	const readme = await res.text()

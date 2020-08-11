@@ -105,7 +105,6 @@ export async function getStaticProps({params}) {
 			readme,
 			product,
 			quantity: products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).length,
-			id: Number(params.id)
 		}
 	}
 }
