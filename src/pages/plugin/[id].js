@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import {useContext, useEffect, useState} from 'react'
+import Link from 'next/link'
+import {useContext} from 'react'
 import {ThemeContext} from 'styled-components'
-import ReactHtmlParser from 'react-html-parser'; 
 import ProgressiveImage from 'react-progressive-graceful-image'
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 
 import Footer from '../../components/Footer/'
 import Menu from '../../components/Menu/'
@@ -21,12 +21,13 @@ import {
 	ContainerButton,
 	PurchaseButton,
 	Price,
+	ProductTitle,
 	ContainerNextPrevious,
 	TextPrevNext,
 } from '../../styles/pages/details'
 
-function Product({readme, product}) {
-	const {colors} = useContext(ThemeContext);
+function DetailsProduct({readme, product, ...params}) {
+	const {colors} = useContext(ThemeContext)
 	
 	return (
 		<div>
@@ -47,6 +48,7 @@ function Product({readme, product}) {
 
 			<Container>
 				<ProductPurchase>
+					<ProductTitle>{product.title}</ProductTitle>
 					<ProgressiveImage
 						src={product.image.large}
 						placeholder={product.image.small}
@@ -86,14 +88,22 @@ function Product({readme, product}) {
 			</Container>
 
 			<ContainerNextPrevious>
-				<TextPrevNext>
-					<FiChevronLeft color={colors.text} size={24} />
-					Anterior
-				</TextPrevNext>
-				<TextPrevNext>
-					Próximo
-					<FiChevronRight color={colors.text} size={24} />
-				</TextPrevNext>
+				{(Number(params.id)-1 >= 0) ? (
+					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${params.id-1}`}>
+						<TextPrevNext href={`/${product.category}/${params.id-1}`}>
+							<FiChevronLeft color={colors.text} size={24} />
+							Anterior
+						</TextPrevNext>
+					</Link>
+				) : (<span />)}
+				{(params.quantity > Number(params.id)+1) ? (
+					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${Number(params.id)+1}`}>
+						<TextPrevNext href={`/${product.category}/${Number(params.id)+1}`}>
+							Próximo
+							<FiChevronRight color={colors.text} size={24} />
+						</TextPrevNext>
+					</Link>
+				) : (<span />)}
 			</ContainerNextPrevious>
 			
 			<Footer />
@@ -113,7 +123,9 @@ export async function getStaticProps({params}) {
 	return {
 		props: {
 			readme,
-			product: product
+			product: product,
+			quantity: products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).length,
+			id: Number(params.id)
 		}
 	}
 }
@@ -133,4 +145,4 @@ export async function getStaticPaths() {
 	}
 }
 
-export default Product
+export default DetailsProduct

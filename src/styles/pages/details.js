@@ -148,13 +148,14 @@ export const ContainerNextPrevious = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 `
 
-export const TextPrevNext = styled.p`
+export const TextPrevNext = styled.a`
 	font-size: 16pt;
 	color: ${({theme}) => theme.colors.text};
 	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 600;
 	margin: 0 10px;
 	cursor: pointer;
+	text-decoration: none;
 
 	display: flex;
 	justify-content: center;

@@ -19,10 +19,6 @@ import {
 	ContainerPurchase,
 	PriceTitle,
 	PurchaseButton,
-	TitleSkeleton,
-	ImageSkeleton,
-	DescriptionSkeleton,
-	ButtonSkeleton,
 	DetailsContainer,
 	Details
 } from './styles'

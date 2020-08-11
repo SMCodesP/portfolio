@@ -27,44 +27,6 @@ export const Title = styled.p`
 	}
 `
 
-export const TitleSkeleton = styled.div`
-	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
-	border-radius: 5px;
-	width: 45%;
-	height: 30px;
-	padding: 5px 25px;
-	position: relative;
-	top: 25px;
-	cursor: default;
-	transition: filter 2s;
-
-	&:hover {
-		filter: brightness(70%);
-	}
-`
-
-export const ImageSkeleton = styled.div`
-	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
-	width: 128px;
-	height: 128px;
-	border-radius: 50%;
-`
-
-export const ButtonSkeleton = styled.div`
-	width: 100%;
-	height: 45px;
-	padding: 15px 0;
-	border-radius: 5px;
-	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
-`
-
-export const DescriptionSkeleton = styled.div`
-	background-color: ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
-	width: ${(props) => (props.width) ? props.width : 92}px;
-	height: 25px;
-	margin: 10px 0 0 0;
-`
-
 export const Container = styled.div`
 	background: ${({theme}) => theme.colors.background};
 	height: fit-content;

@@ -1,12 +1,13 @@
-import {useContext, useEffect, useState} from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
+import {useContext} from 'react'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
-import ReactMarkdown from 'react-markdown'
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
+import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 
-import Footer from '../../components/Footer'
+import Footer from '../../components/Footer/'
 import Menu from '../../components/Menu/'
+import RenderMarkdown from '../../components/RenderMarkdown/'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 import products from '../../utils/products'
@@ -20,11 +21,12 @@ import {
 	ContainerButton,
 	PurchaseButton,
 	Price,
+	ProductTitle,
 	ContainerNextPrevious,
 	TextPrevNext,
 } from '../../styles/pages/details'
 
-export default function Product({readme, product}) {
+function DetailsProduct({readme, product, ...params}) {
 	const {colors} = useContext(ThemeContext);
 	
 	return (
@@ -46,6 +48,7 @@ export default function Product({readme, product}) {
 
 			<Container>
 				<ProductPurchase>
+					<ProductTitle>{product.title}</ProductTitle>
 					<ProgressiveImage
 						src={product.image.large}
 						placeholder={product.image.small}
@@ -60,7 +63,7 @@ export default function Product({readme, product}) {
 					</ProgressiveImage>
 					<DescriptionList>
 						{product.descriptionList.map((description, index) => (
-							<ReactMarkdown key={index} source={description} />
+							<RenderMarkdown key={index} text={description} />
 						))}
 					</DescriptionList>
 					<ContainerButton>
@@ -69,19 +72,27 @@ export default function Product({readme, product}) {
 					</ContainerButton>
 				</ProductPurchase>
 				<ProductInformations>
-					<ReactMarkdown source={readme} />
+					<RenderMarkdown text={readme} />
 				</ProductInformations>
 			</Container>
 
 			<ContainerNextPrevious>
-				<TextPrevNext>
-					<FiChevronLeft color={colors.text} size={24} />
-					Anterior
-				</TextPrevNext>
-				<TextPrevNext>
-					Próximo
-					<FiChevronRight color={colors.text} size={24} />
-				</TextPrevNext>
+				{(Number(params.id)-1 >= 0) ? (
+					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${params.id-1}`}>
+						<TextPrevNext href={`/${product.category}/${params.id-1}`}>
+							<FiChevronLeft color={colors.text} size={24} />
+							Anterior
+						</TextPrevNext>
+					</Link>
+				) : (<span />)}
+				{(params.quantity > Number(params.id)+1) ? (
+					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${Number(params.id)+1}`}>
+						<TextPrevNext href={`/${product.category}/${Number(params.id)+1}`}>
+							Próximo
+							<FiChevronRight color={colors.text} size={24} />
+						</TextPrevNext>
+					</Link>
+				) : (<span />)}
 			</ContainerNextPrevious>
 			
 			<Footer />
@@ -101,7 +112,12 @@ export async function getStaticProps({params}) {
   return {
 		props: {
 			readme,
-			product: product
+			product: product,
+			quantity: products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).length,
+			id: 0
 		}
 	}
 }
+
+
+export default DetailsProduct;
