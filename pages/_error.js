@@ -1,3 +1,4 @@
+import Error from 'next/error';
 import Link from 'next/link'
 import {createGlobalStyle} from 'styled-components'
 import ContainerParticles from '../components/ContainerParticles/'
@@ -15,20 +16,27 @@ const CustomStyles = createGlobalStyle`
 	}
 `
 
-export default function Error404() {
+function Error404({ statusCode }) {
 	return (
 		<>
 			<Container>
-				<TextError data-text="Error 404">Error 404</TextError>
-				<h1>Página não encontrada</h1>
+				<TextError data-text={`Error ${statusCode}`}>Error {statusCode}</TextError>
 				<Link href="/"><a style={{
 					margin: '25px 0',
 				}}><BackToHome>Go to home</BackToHome></a></Link>
 			</Container>
 			<ContainerParticles />
 
+      <Error statusCode={404} title="Página não encontrada!"></Error>
 			<CustomStyles />
 			<GlobalStyle />
 		</>
 	)
 }
+
+Error404.getInitialProps = ({ res, err }) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404
+  return { statusCode }
+}
+
+export default Error404
