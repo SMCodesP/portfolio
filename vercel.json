@@ -1,0 +1,21 @@
+{
+  "routes": [
+    {
+      "src": "/plugin.*",
+      "headers": { "Cache-Control": "max-age=3600" },
+      "continue": true
+    },
+    {
+      "src": "/web.*",
+      "headers": { "Cache-Control": "max-age=3600" },
+      "continue": true
+    },
+    {
+      "src": "/web.*",
+      "headers": { "Cache-Control": "max-age=3600" },
+      "continue": true
+    },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 404, "dest": "/404/" }
+  ]
+}
