@@ -22,9 +22,13 @@ export const ImageLogo = styled.img`
 
 export const Title = styled.h1`
 	font-size: 32pt;
+  z-index: 7 !important;
+	color: ${({theme}) => theme.colors.light};
 `
 
 export const SubTitle = styled.h2`
 	font-size: 18pt;
 	font-weight: 400;
+  z-index: 6 !important;
+	color: ${({theme}) => theme.colors.light};
 `
