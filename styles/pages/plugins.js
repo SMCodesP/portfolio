@@ -30,5 +30,7 @@ export const SubTitle = styled.h2`
 	font-size: 18pt;
 	font-weight: 400;
   z-index: 6 !important;
+  text-align: center;
+  padding: 15px 25px;
 	color: ${({theme}) => theme.colors.light};
 `

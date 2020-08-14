@@ -52,7 +52,7 @@ export default () => {
 					)}
 				</ProgressiveImage>
 				<Title>Sites</Title>
-				<SubTitle>Sites otimizados e seguros de acordo com sua usabilidade.</SubTitle>
+				<SubTitle>Sites otimizados e seguros de acordo com a usabilidade de seus clientes.</SubTitle>
 			</Container>
 
 			{[products[1]].map((category, index) => (
