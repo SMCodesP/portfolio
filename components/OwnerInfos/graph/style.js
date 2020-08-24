@@ -5,7 +5,7 @@ export const ContainerResponsive = styled.div`
 	height: 65vh;
 
 	@media (max-width: 1100px) {
-		height: 100%;
+		height: 45vh;
 	}
 `
 
