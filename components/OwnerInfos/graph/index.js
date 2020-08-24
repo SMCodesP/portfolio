@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import $ from 'jquery'
 import {
+	ResponsiveContainer,
 	BarChart,
 	Bar,
 	XAxis,
@@ -14,6 +15,7 @@ import { shade } from 'polished'
 import { ThemeContext } from 'styled-components'
 
 import {
+	ContainerResponsive,
 	ContainerItem,
 	ItemTitle,
 	ItemDescription,
@@ -122,36 +124,40 @@ export default function Graph() {
 	}
 
 	return (
-	    <BarChart id='client-graph' width={isMobile ? size/1.25 : size/2} height={isMobile ? size/1.7 : 350} data={data}>
-			<XAxis dataKey='name' />
-			<YAxis />
-			<Tooltip content={<CustomTooltip />}/>
-			<CartesianGrid stroke={colors.background} strokeDasharray='9 9' />
-			<Legend
-				width={100}
-				wrapperStyle={{
-					top: 20,
-					right: 20,
-					backgroundColor: colors.background,
-					border: `1px solid ${shade(0.5, colors.background)}`,
-					borderRadius: 5,
-					lineHeight: '40px'
-				}}
-			/>
-			<Bar
-				dataKey='Projetos'
-				stackId='a'
-				onMouseEnter={mouseEnterInCategory}
-				onMouseLeave={mouseLeaveInCategory}
-			>
-				{data.map((_, index) => (
-					<Cell
-						cursor='pointer'
-						fill={index === activeIndex ? '#333333' : '#33333355'}
-						key={`cell-${index}`}
+		<ContainerResponsive>
+			<ResponsiveContainer>
+			    <BarChart id='client-graph' data={data}>
+					<XAxis dataKey='name' />
+					<YAxis />
+					<Tooltip content={<CustomTooltip />}/>
+					<CartesianGrid stroke={colors.background} strokeDasharray='9 9' />
+					<Legend
+						width={100}
+						wrapperStyle={{
+							top: 20,
+							right: 20,
+							backgroundColor: colors.background,
+							border: `1px solid ${shade(0.5, colors.background)}`,
+							borderRadius: 5,
+							lineHeight: '40px'
+						}}
 					/>
-				))}
-			</Bar>
-		</BarChart>
+					<Bar
+						dataKey='Projetos'
+						stackId='a'
+						onMouseEnter={mouseEnterInCategory}
+						onMouseLeave={mouseLeaveInCategory}
+					>
+						{data.map((_, index) => (
+							<Cell
+								cursor='pointer'
+								fill={index === activeIndex ? '#333333' : '#33333355'}
+								key={`cell-${index}`}
+							/>
+						))}
+					</Bar>
+				</BarChart>
+			</ResponsiveContainer>
+		</ContainerResponsive>
 	)
 }

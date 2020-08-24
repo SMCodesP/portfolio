@@ -17,6 +17,14 @@ export const ContainerOwner = styled.div`
 `
 
 export const ContainerOwnerInfos = styled.div`
+	flex: 1;
+	@media (max-width: 1100px) {
+		display: flex;
+		flex-direction: column;
+		
+		justify-content: center;
+		align-items: center;
+	}
 `
 
 export const TitleContainer = styled.h1`
@@ -36,15 +44,15 @@ export const ImageContainer = styled.img`
 		filter: brightness(65%);
 	}
 
-  	@media (max-width: 1100px) {
-    	margin-bottom: 40px;
-  	}
+	@media (max-width: 1100px) {
+		margin-bottom: 40px;
+	}
 `
 
 export const ContainerInfos = styled.nav`
 	display: flex;
+	flex: 2;
 	flex-direction: column;
-  	margin-left: 10%;
 `
 
 export const InfosItem = styled.div`
@@ -60,4 +68,5 @@ export const InfosKey = styled.h2`
 
 export const InfosValue = styled.p`
 	font-size: 18px;
+	padding: 5px 10px;
 `
