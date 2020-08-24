@@ -20,7 +20,7 @@ export default function Products({ items, category, limit }) {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
-		}, 15000)
+		}, 2500)
 	}, [])
 
 	return (
@@ -28,15 +28,10 @@ export default function Products({ items, category, limit }) {
 			<ContainerItems>
 				<CategoryTitle>{category.title}</CategoryTitle>
 				<ContainerProducts items={items}>
-					{loading ? (
-							<Product productIndex={0} product={{}} loading={true} />
-						) : category.items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).map((item, index) => {
-						if (limit && index > 2) {
-						} else {
-							return (
-								<Product key={index} productIndex={index} product={item} loading={loading} />
-							)
-						}
+					{category.items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).slice(0, 3).map((item, index) => {
+						return (
+							<Product key={index} productIndex={index} product={item} loading={loading} />
+						)
 					})}
 				</ContainerProducts>
 				{limit && (
