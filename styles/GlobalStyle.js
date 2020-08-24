@@ -7,10 +7,10 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0;
 		box-sizing: border-box;
 		outline: 0;
+		font-family: 'Roboto', sans-serif !important;
 	}
 
-	p, li, a, button, h1, h2, h3, h4, h5, h6 {
-		font-family: 'Libre Franklin', 'Roboto', sans-serif;
+	p, li, a, button, h1, h2, h3, h4, h5, h6, span, div, strong, i, b, input {
 		color: ${({theme}) => theme.colors.text};
 	}
 

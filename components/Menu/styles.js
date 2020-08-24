@@ -22,7 +22,6 @@ export const Title = styled.p`
 	font-size: 26px;
 	font-weight: 600;
 	line-height: 26px;
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	transition: all .2s;
 	user-select: none;
 `
@@ -132,7 +131,6 @@ export const Page = styled.li`
 	justify-content: center;
 	align-items: center;
 
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	user-select: none;
 	list-style: none;
 	cursor: pointer;
@@ -333,7 +331,6 @@ export const UserIcon = styled.img`
 
 export const Username = styled.p`
 	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
 	font-weight: medium;
 	margin: 5px 0;
@@ -369,7 +366,6 @@ export const Option = styled.li`
 
 export const OptionTitle = styled.p`
 	color: ${({theme}) => theme.colors.secundaryText};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
 	line-height: 15pt;
 

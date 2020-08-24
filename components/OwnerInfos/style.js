@@ -7,7 +7,6 @@ export const ContainerOwner = styled.div`
 	padding: 30px 0 30px 165px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	display: flex;
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	color: ${({theme}) => theme.colors.text};
 
 	@media (max-width: 1100px) {

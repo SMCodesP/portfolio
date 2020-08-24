@@ -9,7 +9,6 @@ export const Container = styled.header`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-family: 'Libre Franklin', sans-serif;
 `
 
 export const ContainerWelcome = styled.div`

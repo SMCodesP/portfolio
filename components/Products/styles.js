@@ -18,7 +18,6 @@ export const MoreItem = styled.p`
 	text-align: end;
 	color: ${({theme}) => theme.colors.secundary};
 	font-size: 21pt;
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 600;
 	transition: margin-right .2s;
 	margin-right: 5px;
@@ -78,7 +77,6 @@ export const ContainerProducts = styled.div`
 `
 
 export const CategoryTitle = styled.p`
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 900;
 	font-size: 24pt;
 	color: ${({theme}) => theme.colors.text};

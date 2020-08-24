@@ -9,7 +9,6 @@ export const ContainerLicense = styled.div`
 	background-color: ${({theme}) => theme.colors.secundaryBackground};
 	background-image: linear-gradient(-135deg, ${({theme}) => theme.colors.primary}, ${({theme}) => shade(0.2, theme.colors.primary)});
 	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	padding: 25px;
 `;
 

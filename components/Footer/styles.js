@@ -36,7 +36,6 @@ export const FooterContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
 
 	@media (max-width: 680px) {

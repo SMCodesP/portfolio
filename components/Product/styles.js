@@ -11,7 +11,6 @@ export const ContainerPurchase = styled.div`
 `
 
 export const Title = styled.p`
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 500;
 	font-size: 18px;
 	border-radius: 50px;
@@ -91,7 +90,6 @@ export const NewInfo = styled.p`
 	background: ${({theme}) => theme.colors.primary};
 	padding: 6px 6px 6px 10px;
 	border-bottom-left-radius: 10px;
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14px;
 	font-weight: 700;
 	border-bottom: 4px solid ${({theme}) => shade(0.4, theme.colors.primary)};
@@ -106,7 +104,6 @@ export const NewInfo = styled.p`
 
 export const DescriptionList = styled.ul`
 	padding: 40px 40px 20px 40px;
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	user-select: text !important;
 	font-size: 16px;
 	color: ${({theme}) => theme.colors.text};
@@ -119,7 +116,6 @@ export const DescriptionList = styled.ul`
 `
 
 export const PriceTitle = styled.p`
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-weight: 500;
 	font-size: 20px;
 	color: ${({theme}) => theme.colors.text};
@@ -134,7 +130,6 @@ export const PurchaseButton = styled.button`
 	height: 46px;
 	width: 100%;
 	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 15pt;
 	font-weight: 500;
 	cursor: pointer;
@@ -155,7 +150,6 @@ export const PurchaseButton = styled.button`
 export const Details = styled.p`
 	cursor: pointer;
 	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
 	transition: filter .5s, text-decoration .5s;
 	display: flex;

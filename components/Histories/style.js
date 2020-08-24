@@ -20,7 +20,6 @@ export const ContainerHistories = styled.div`
 export const MainHistories = styled.div`
 	display: flex;
 	flex-direction: column;
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 `
 
 export const HistoriesTitle = styled.h1`

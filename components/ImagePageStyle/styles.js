@@ -70,7 +70,6 @@ export const ContainerImage = styled.div`
 `
 
 export const TitleImage = styled.p`
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
   font-size: 12pt;
   color: #f8f8f2;
   margin: 0;

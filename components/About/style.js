@@ -11,7 +11,6 @@ export const Infos = styled.div`
 	width: 77%;
 	flex-direction: column;
 	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 
   	@media (max-width: 600px) {
     	width: 85%;

@@ -13,6 +13,7 @@ import {
 const CustomStyles = createGlobalStyle`
 	body, html {
 		overflow: hidden;
+		font-family: 'Roboto', sans-serif !important;
 	}
 `
 

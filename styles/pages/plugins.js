@@ -6,7 +6,6 @@ export const Container = styled.div`
 	height: 400px;
 	background: ${({theme}) => darken(0.9, theme.colors.background)};
 	color: ${({theme}) => theme.colors.light};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -29,8 +28,8 @@ export const Title = styled.h1`
 export const SubTitle = styled.h2`
 	font-size: 18pt;
 	font-weight: 400;
-  z-index: 6 !important;
-  text-align: center;
-  padding: 15px 25px;
+	z-index: 6 !important;
+	text-align: center;
+	padding: 15px 25px;
 	color: ${({theme}) => theme.colors.light};
 `

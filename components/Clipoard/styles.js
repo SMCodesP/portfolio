@@ -23,7 +23,6 @@ export const ContainerSuccess = styled.div`
 	background-color: ${({theme}) => darken(0.07, theme.colors.background)};
 	width: 65%;
 	color: ${({theme}) => theme.colors.text};
-	font-family: 'Libre Franklin', 'Roboto', sans-serif;
 	font-size: 14pt;
 	line-height: 65px;
 	display: flex;
