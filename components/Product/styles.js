@@ -124,7 +124,7 @@ export const PriceTitle = styled.p`
 `
 
 export const PurchaseButton = styled.button`
-	background: #e02041;
+	background: ${({theme}) => theme.colors.secundaryBackground};
 	border: 0;
 	border-radius: 5px;
 	height: 46px;
@@ -133,7 +133,7 @@ export const PurchaseButton = styled.button`
 	font-size: 15pt;
 	font-weight: 500;
 	cursor: pointer;
-	border-bottom: 3px solid ${shade(0.3, '#e02041')};
+	border-bottom: 3px solid ${({theme}) => shade(0.3, theme.colors.secundaryBackground)};
 	position: relative;
 	transition: filter .2s, top .2s;
 	
