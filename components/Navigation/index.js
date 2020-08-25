@@ -22,13 +22,13 @@ const Navigation = ({ page, scrollingToRef, refExternal }) => {
 				<SubWelcome>Me chamo Samuel e é um prazer encontra-lo em meu portfólio.</SubWelcome>
 				<WorkLast href="/last">Trabalho mais recente</WorkLast>
 			</ContainerWelcome>
-			<Down
+			<a href="/#products"><Down
 				size={64}
 				color={colors.secundary}
 				onClick={() => {
 					console.log(refExternal)
 				}}
-			/>
+			/></a>
 		</Container>
 	)
 }

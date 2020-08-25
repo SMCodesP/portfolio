@@ -114,7 +114,7 @@ function Product({loading, product, productIndex}) {
 									style={{
 										width: loading ? 128 : 'auto',
 										height: loading ? 128 : 'auto',
-										filter: loading ? 'blur(5px)' : ''
+										filter: loading ? 'blur(10px)' : ''
 									}}
 									not_auto={false}
 									src={src}

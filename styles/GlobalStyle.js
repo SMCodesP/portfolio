@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 		width: 100%;
 		height: 100vh;
 		background: ${({ theme }) => theme.colors.background};
+		scroll-behavior: smooth;
 	}
 
 	::-webkit-scrollbar {

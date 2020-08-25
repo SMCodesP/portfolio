@@ -32,6 +32,7 @@ const Home = ({initialTheme}) => {
 				<Navigation page="/" />
 
 				<br />
+				<div id="products" />
 				{products.map((category, index) => (
 					<Products
 						key={index}
