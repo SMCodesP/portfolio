@@ -60,17 +60,20 @@ const DownUp = keyframes`
 	}
 `
 
-export const Down = styled(FiArrowDown)`
+export const DownLink = styled.a`
 	animation: ${DownUp} 3s linear infinite;
 	margin-top: 15vh;
+	
+	@media (max-height: 550px) {
+		display: none;
+	}
+`;
+
+export const Down = styled(FiArrowDown)`
 	cursor: pointer;
 	transition: filter .5s;
 
 	&:hover {
 		filter: brightness(60%);
-	}
-
-	@media (max-height: 550px) {
-		display: none;
 	}
 `

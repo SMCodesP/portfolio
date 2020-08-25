@@ -8,7 +8,8 @@ import {
 	Welcome,
 	SubWelcome,
 	WorkLast,
-	Down
+	DownLink,
+	Down,
 } from './styles'
 
 const Navigation = ({ page, scrollingToRef, refExternal }) => {
@@ -22,13 +23,13 @@ const Navigation = ({ page, scrollingToRef, refExternal }) => {
 				<SubWelcome>Me chamo Samuel e é um prazer encontra-lo em meu portfólio.</SubWelcome>
 				<WorkLast href="/last">Trabalho mais recente</WorkLast>
 			</ContainerWelcome>
-			<a href="/#products"><Down
+			<DownLink href="/#products"><Down
 				size={64}
 				color={colors.secundary}
 				onClick={() => {
 					console.log(refExternal)
 				}}
-			/></a>
+			/></DownLink>
 		</Container>
 	)
 }
