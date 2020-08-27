@@ -168,8 +168,6 @@ export const User = styled(IoMdSettings).attrs(({theme}) => ({
 	color: theme.colors.text,
 	size: 20
 }))`
-	line-height: 10px;
-	margin-top: -5px;
 	stroke-width: 3px;
 	box-sizing: content-box;
 	border-radius: 50%;
@@ -259,9 +257,6 @@ export const Options = styled.div`
 	@media(max-width: 430px) {
 		padding: 5px 10px 5px 10px !important;
 
-		${ListingPage} {
-			margin: 20px 5px !important;
-		}
 	}
 `
 

@@ -31,8 +31,8 @@ export const Container = styled.div`
 	height: fit-content;
 	flex: 1;
 	max-width: 360px;
-	min-width: 280px;
-	margin: 5px;
+	min-width: 355px;
+	margin: 7.5px;
 	border-radius: 10px;
 	transition: box-shadow .3s, transform .3s, border .3s;
 	padding-bottom: 10px;
@@ -53,7 +53,13 @@ export const Container = styled.div`
 	&:hover {
 		border: 0;
 		box-shadow: 0 0 5px 0 ${({theme}) => theme.colors.primary};
-		transform: scale(1.025);
+		transform: scale(1.035);
+	}
+
+	@media (max-width: 500px) {
+		margin: 7.5px 0;
+		max-width: 90%;
+		min-width: 90%;
 	}
 `;
 

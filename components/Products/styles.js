@@ -5,6 +5,10 @@ export const Container = styled.div`
 	padding: 15px 30px;
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: 475px) {
+		padding: 15px 0;
+	}
 `
 
 export const ContainerItems = styled.div`
@@ -73,11 +77,21 @@ export const ContainerProducts = styled.div`
 	@media (max-width: 615px) {
 		grid-template-columns: repeat(1, 1fr);
 	}
+
+	@media (max-width: 475px) {
+		margin: 0;
+		padding: 20px 0;
+		justify-content: center;
+	}
 `
 
 export const CategoryTitle = styled.p`
 	font-weight: 900;
 	font-size: 24pt;
 	color: ${({theme}) => theme.colors.text};
+
+	@media (max-width: 475px) {
+		text-align: center;
+	}
 `
 
