@@ -12,6 +12,7 @@ export default {
 		text: '#f8f8f2',
 		secundaryText: '#bd93f9',
 		tertiaryText: '#f1fa8c',
+		inverseText: '#333333',
 
 		light: '#fafafa',
 		dark: '#282a36',

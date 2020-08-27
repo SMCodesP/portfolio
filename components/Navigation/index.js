@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 
@@ -12,7 +13,7 @@ import {
 	Down,
 } from './styles'
 
-const Navigation = ({ page, scrollingToRef, refExternal }) => {
+const Navigation = ({ page, scrollingToRef }) => {
 	const {colors} = useContext(ThemeContext)
 
 	return (
@@ -21,14 +22,11 @@ const Navigation = ({ page, scrollingToRef, refExternal }) => {
 			<ContainerWelcome>
 				<Welcome ><strong>Oi</strong>, seja muito bem-vindo!</Welcome>
 				<SubWelcome>Me chamo Samuel e é um prazer encontra-lo em meu portfólio.</SubWelcome>
-				<WorkLast href="/last">Trabalho mais recente</WorkLast>
+				<Link href={`/web/[id]`} as={`/web/0`}><WorkLast href={`/web/0`}>Trabalho mais recente</WorkLast></Link>
 			</ContainerWelcome>
 			<DownLink href="/#products"><Down
 				size={64}
 				color={colors.secundary}
-				onClick={() => {
-					console.log(refExternal)
-				}}
 			/></DownLink>
 		</Container>
 	)

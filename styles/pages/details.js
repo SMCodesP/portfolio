@@ -1,3 +1,4 @@
+import { shade } from 'polished';
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -105,7 +106,7 @@ export const ContainerButton = styled.div`
 `
 
 export const PurchaseButton = styled.button`
-	background: #e02041;
+	background: ${({theme}) => shade(0.1, theme.colors.secundaryBackground)};
 	border: 0;
 	border-radius: 5px;
 	height: 46px;
@@ -114,10 +115,17 @@ export const PurchaseButton = styled.button`
 	font-weight: 500;
 	cursor: pointer;
 	margin: 10px 0;
-	transition: filter .2s;
+	border-bottom: 3px solid ${({theme}) => shade(0.3, theme.colors.secundaryBackground)};
+	position: relative;
+	transition: filter .2s, top .2s;
 	
 	&:hover {
 		filter: brightness(75%);
+	}
+
+	&:active {
+		border-bottom: 0;
+		top: 3px;
 	}
 `
 

@@ -39,9 +39,23 @@ export const SubWelcome = styled.h2`
 
 export const WorkLast = styled.a`
 	color: ${({theme}) => theme.colors.text};
+	border: 1px solid ${({theme}) => theme.colors.text};
+	text-decoration: none;
+	padding: 10px 25px;
+	border-radius: calc(15pt + 10px);
 	font-size: 15pt;
 	display: inline-block;
 	margin-top: 75px;
+	cursor: pointer;
+
+	transition: all .2s;
+
+	&:hover {
+		text-decoration: underline;
+		background: ${({theme}) => theme.colors.text};
+		box-shadow: 0 0 5px 0 ${({theme}) => theme.colors.primary};
+		color: ${({theme}) => theme.colors.inverseText};
+	}
 
 	@media (max-width: 925px) {
 		margin-top: 35px;
