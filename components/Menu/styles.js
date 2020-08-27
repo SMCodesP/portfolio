@@ -21,7 +21,6 @@ export const Title = styled.p`
 	color: ${({ color, theme }) => color || theme.colors.text};
 	font-size: 26px;
 	font-weight: 600;
-	line-height: 26px;
 	transition: all .2s;
 	user-select: none;
 `
@@ -146,6 +145,22 @@ export const Page = styled.li`
 		transform: ${(props) => props.locate
 			? 'scale(1)'
 			: 'scale(1.1)'};
+	}
+`
+
+export const PageCustom = styled(Page)`
+	padding: 5px 20px;
+	border: 1px solid ${({theme}) => theme.colors.text};
+	border-radius: 23px;
+
+	&:hover {
+		transform: ${(props) => props.locate
+			? 'scale(1)'
+			: 'scale(1.05)'};
+		text-decoration: underline;
+		background: ${({theme}) => theme.colors.text};
+		box-shadow: 0 0 5px 0 ${({theme}) => theme.colors.primary};
+		color: ${({theme}) => theme.colors.inverseText};
 	}
 `
 

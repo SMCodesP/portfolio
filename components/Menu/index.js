@@ -10,6 +10,7 @@ import {
 	Options,
 	Title,
 	ListingPage,
+	PageCustom,
 	Page,
 	User,
 	OptionsFixed,
@@ -53,12 +54,8 @@ function Menu({ page: isPage, background, color }) {
 			displayed: 'Plugins',
 		},
 		{
-			name: '/apis',
-			displayed: 'APIs',
-		},
-		{
-			name: '/outros',
-			displayed: 'Outros',
+			name: '/all',
+			displayed: 'Todos',
 		},
 	]
 
@@ -92,13 +89,22 @@ function Menu({ page: isPage, background, color }) {
 		<>
 			<Options id='title' background={background} actived={activedMobile}>
 				<HeadMenuFixed>
-						<IconMenu
-							onClick={closeOrOpenInMobile}
-							closed={isClose}
-						>
-							<span></span>
-						</IconMenu>
+					<IconMenu
+						onClick={closeOrOpenInMobile}
+						closed={isClose}
+					>
+						<span></span>
+					</IconMenu>
 					<Title color={color}>SMCodes</Title>
+					<Page
+						color={colors.text}
+						onClick={() => setShowModal(true)}
+					>
+						<User
+							color={colors.text}
+							size={40}
+						/>
+					</Page>
 				</HeadMenuFixed>
 				<ListingPage>
 					{list.map((page) => (
@@ -111,15 +117,9 @@ function Menu({ page: isPage, background, color }) {
 							</Page>
 						</Link>
 					))}
-					<Page
-						color={colors.text}
-						onClick={() => setShowModal(true)}
-					>
-						<User
-							color={colors.text}
-							size={40}
-						/>
-					</Page>
+					<Link href="/signup">
+						<PageCustom>Cadastrar / Login</PageCustom>
+					</Link>
 				</ListingPage>
 			</Options>
 			<Modal
