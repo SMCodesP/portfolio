@@ -30,21 +30,26 @@ export const Container = styled.div`
 	background: ${({theme}) => theme.colors.background};
 	height: fit-content;
 	max-width: 100%;
-	min-width: 320px;
+	min-width: 300px;
 	border-radius: 10px;
-	transition: margin .2s, height .2s;
+	transition: box-shadow .3s, transform .3s, border .3s;
 	padding-bottom: 10px;
-	border-bottom: 1px solid ${({theme}) => theme.colors.primary};
-	border-left: 1px solid ${({theme}) => theme.colors.primary};
-	border-right: 1px solid ${({theme}) => theme.colors.primary};
+	border: 1px solid ${({theme}) => theme.colors.primary};
 	--color-var: #${(props) => props.color};
 	border-top: 4px solid var(--color-var);
+	box-shadow: 0;
 	
 	${Title} {
 		background: var(--color-var);
 		color: ${(props) => (getLuminance(`#${props.color}`) < 0.4)
 			? props.theme.colors.light
 			: props.theme.colors.dark} !important;
+	}
+
+	&:hover {
+		border: 0;
+		box-shadow: 0 0 5px 0 ${({theme}) => theme.colors.primary};
+		transform: scale(1.025);
 	}
 `;
 
@@ -57,13 +62,6 @@ export const Image = styled.img`
 	border-radius: 5px;
 	cursor: none;
 	filter: brightness(85%);
-	transition: transform .25s, border-radius .25s, filter .25s;
-
-	&:hover {
-		transform: scale(1.1) !important;
-		border-radius: 10px;
-		filter: brightness(50%);
-	}
 `
 
 export const ContainerImage = styled.div`
@@ -78,10 +76,6 @@ export const ContainerImage = styled.div`
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	z-index: -1;
-
-	&:hover ${Image} {
-		transform: scale(1.05);
-	}
 `
 
 export const NewInfo = styled.p`

@@ -63,7 +63,7 @@ export const ContainerProducts = styled.div`
 	margin-top: 5px;
 	display: grid;
 	grid-template-columns: repeat(${({ items = 2 }) => items}, 1fr);
-	gap: 30px 10px;
+	gap: 30px 20px;
 	position: relative;
 	margin-bottom: 15px;
 
