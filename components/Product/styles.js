@@ -29,8 +29,10 @@ export const Title = styled.p`
 export const Container = styled.div`
 	background: ${({theme}) => theme.colors.background};
 	height: fit-content;
-	max-width: 100%;
-	min-width: 300px;
+	flex: 1;
+	max-width: 360px;
+	min-width: 280px;
+	margin: 5px;
 	border-radius: 10px;
 	transition: box-shadow .3s, transform .3s, border .3s;
 	padding-bottom: 10px;
@@ -38,6 +40,8 @@ export const Container = styled.div`
 	--color-var: #${(props) => props.color};
 	border-top: 4px solid var(--color-var);
 	box-shadow: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
 	
 	${Title} {
 		background: var(--color-var);

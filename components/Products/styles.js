@@ -61,11 +61,10 @@ export const ContainerProducts = styled.div`
 	overflow-y: hidden; /* Add vertical scrollbar */
 	padding: 20px;
 	margin-top: 5px;
-	display: grid;
-	grid-template-columns: repeat(${({ items = 2 }) => items}, 1fr);
-	gap: 30px 20px;
+	display: flex;
 	position: relative;
 	margin-bottom: 15px;
+	flex-flow: row wrap;
 
 	@media (max-width: 975px) {
 		grid-template-columns: repeat(2, 1fr);
