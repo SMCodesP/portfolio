@@ -8,6 +8,7 @@ export const Container = styled.li`
 	list-style: none;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 
 	& code {
 		font-size: 18px;
