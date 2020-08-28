@@ -1,5 +1,63 @@
 export default [
 	{
+		title: 'Web',
+		link: '/sites',
+		name: 'web',
+		items: [
+			{
+				id: "4",
+				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/README.md',
+				timestamp: 1596672000,
+				title: 'SMPortfolio',
+				category: 'web',
+				image: {
+					large: '/favicon.jpg',
+					small: '/favicon_min.jpg'
+				},
+				descriptionList: [
+					'**Páginas »** 4',
+					'**Páginas alternativas »** 8',
+					'**Contém sistemas de »** Venda, Licenciamento, Login, Blog',
+					'**Open source »** Sim',
+					'**Licença »** Apache 2.0',
+					'**Preview »** [Clique aqui](https://www.spetacularnetwork.xyz/)',
+					'**Repositório »** [Clique aqui](https://github.com/SMCodesP/portfolio)',
+					'**Dependência »** [SMPortfolio-backend](https://github.com/SMCodesP/portfolio-backend)',
+					'**Site feito para »** `SMCodes`',
+					'**Criador »** SMCodes',
+				],
+				button_link: 'https://github.com/SMCodesP/portfolio/archive/master.zip',
+				price: 0
+			},
+			{
+				id: "5",
+				text: 'https://raw.githubusercontent.com/SMCodesP/DDL-NSA/master/README.md',
+				timestamp: 1595462400,
+				title: 'DDL-NSA',
+				category: 'web',
+				image: {
+					large: '/products/ddl-nsa/large.webp',
+					small: '/products/ddl-nsa/small.webp',
+					size: {
+						width: 224,
+						height: 128
+					}
+				},
+				descriptionList: [
+					'**Páginas »** 4',
+					'**Open source »** Sim',
+					'**Licença »** [MIT](https://github.com/SMCodesP/DDL-NSA/blob/master/LICENSE.md)',
+					'**Preview »** [Clique aqui](https://samuel-nsa.netlify.app/)',
+					'**Repositório »** [Clique aqui](https://github.com/SMCodesP/DDL-NSA)',
+					'**Site feito para »** `Estudos`',
+					'**Criador »** SMCodes',
+				],
+				button_link: 'https://github.com/SMCodesP/DDL-NSA/archive/master.zip',
+				price: 0
+			},
+		]
+	},
+	{
 		title: 'Minecraft plugins',
 		link: '/plugins',
 		name: 'plugin',
@@ -84,64 +142,6 @@ export default [
 				],
 				price: 4.99
 			}
-		]
-	},
-	{
-		title: 'Web',
-		link: '/sites',
-		name: 'web',
-		items: [
-			{
-				id: "4",
-				text: 'https://raw.githubusercontent.com/SMCodesP/portfolio/master/README.md',
-				timestamp: 1596672000,
-				title: 'SMPortfolio',
-				category: 'web',
-				image: {
-					large: '/favicon.jpg',
-					small: '/favicon_min.jpg'
-				},
-				descriptionList: [
-					'**Páginas »** 4',
-					'**Páginas alternativas »** 8',
-					'**Contém sistemas de »** Venda, Licenciamento, Login, Blog',
-					'**Open source »** Sim',
-					'**Licença »** Apache 2.0',
-					'**Preview »** [Clique aqui](https://www.spetacularnetwork.xyz/)',
-					'**Repositório »** [Clique aqui](https://github.com/SMCodesP/portfolio)',
-					'**Dependência »** [SMPortfolio-backend](https://github.com/SMCodesP/portfolio-backend)',
-					'**Site feito para »** `SMCodes`',
-					'**Criador »** SMCodes',
-				],
-				button_link: 'https://github.com/SMCodesP/portfolio/archive/master.zip',
-				price: 0
-			},
-			{
-				id: "5",
-				text: 'https://raw.githubusercontent.com/SMCodesP/DDL-NSA/master/README.md',
-				timestamp: 1595462400,
-				title: 'DDL-NSA',
-				category: 'web',
-				image: {
-					large: '/products/ddl-nsa/large.webp',
-					small: '/products/ddl-nsa/small.webp',
-					size: {
-						width: 224,
-						height: 128
-					}
-				},
-				descriptionList: [
-					'**Páginas »** 4',
-					'**Open source »** Sim',
-					'**Licença »** [MIT](https://github.com/SMCodesP/DDL-NSA/blob/master/LICENSE.md)',
-					'**Preview »** [Clique aqui](https://samuel-nsa.netlify.app/)',
-					'**Repositório »** [Clique aqui](https://github.com/SMCodesP/DDL-NSA)',
-					'**Site feito para »** `Estudos`',
-					'**Criador »** SMCodes',
-				],
-				button_link: 'https://github.com/SMCodesP/DDL-NSA/archive/master.zip',
-				price: 0
-			},
 		]
 	},
 ]

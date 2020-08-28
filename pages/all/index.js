@@ -3,7 +3,8 @@ import {ThemeContext} from 'styled-components'
 import Head from 'next/head'
 
 import Footer from '../../components/Footer'
-import Menu from '../../components/Menu/'
+import Menu from '../../components/Menu'
+import ResumeListItems from '../../components/ResumeListItems'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 
@@ -22,22 +23,22 @@ export default () => {
 	return (
 		<div>
 			<Head>
-				<title>SMCodes - Plugins</title>
-				<meta property="og:title" content="SMCodes - Plugins" key="title" />
-				<meta name="twitter:title" content="SMCodes - Plugins" />
-				<meta name="description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
-				<meta property="og:description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
-				<meta name="description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
-				<meta name="Description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
-				<meta name="twitter:description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
+				<title>SMCodes - All</title>
+				<meta property="og:title" content="SMCodes - All products" key="title" />
+				<meta name="twitter:title" content="SMCodes - All products" />
+				<meta name="description" content="SMCodes - Nessa página você irá encontrar todos meus trabalhos idependentes do estilo ou intuito." />
+				<meta property="og:description" content="SMCodes - Nessa página você irá encontrar todos meus trabalhos idependentes do estilo ou intuito." />
+				<meta name="description" content="SMCodes - Nessa página você irá encontrar todos meus trabalhos idependentes do estilo ou intuito." />
+				<meta name="Description" content="SMCodes - Nessa página você irá encontrar todos meus trabalhos idependentes do estilo ou intuito." />
+				<meta name="twitter:description" content="SMCodes - Nessa página você irá encontrar todos meus trabalhos idependentes do estilo ou intuito." />
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/plugins" background={colors.background} />
+				<Menu page="/all" background={colors.background} />
 			</div>
 
 
-
+			<ResumeListItems />
 
 
 			<Footer />
