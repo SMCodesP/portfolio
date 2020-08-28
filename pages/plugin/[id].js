@@ -95,7 +95,7 @@ function DetailsProduct({readme, product, ...params}) {
 }
 
 export async function getStaticProps({params}) {
-	const product = products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1)[Number(params.id)]
+	const product = products.find((category) => category.name === "plugin").items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1)[Number(params.id)]
 	
 	const res = await fetch(product.text)
 	const readme = await res.text()
@@ -104,14 +104,14 @@ export async function getStaticProps({params}) {
 		props: {
 			readme,
 			product,
-			quantity: products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).length,
+			quantity: products.find((category) => category.name === "plugin").items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).length,
 			id: Number(params.id)
 		}
 	}
 }
 
 export async function getStaticPaths() {
-	const paths = products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).map((product, index) => {
+	const paths = products.find((category) => category.name === "plugin").items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).map((product, index) => {
 		return {
 			params: {
 				id: index.toString()

@@ -55,7 +55,7 @@ export default () => {
 				<SubTitle>Sites otimizados e seguros de acordo com a usabilidade de seus clientes.</SubTitle>
 			</Container>
 
-			{[products[1]].map((category, index) => (
+			{[products.find((category) => category.name === "web")].map((category, index) => (
 				<Products
 					key={index}
 					items={3}

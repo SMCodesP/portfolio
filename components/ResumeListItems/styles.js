@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.main`
-	margin: 32px;
+	margin: 65px 32px;
 `
 
 export const ContainerList = styled.ul`

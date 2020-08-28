@@ -55,7 +55,7 @@ export default () => {
 				<SubTitle>Plugins otimizados para seu servidor.</SubTitle>
 			</Container>
 
-			{[products[0]].map((category, index) => (
+			{[products.find((category) => category.name === "plugin")].map((category, index) => (
 				<Products
 					key={index}
 					items={3}

@@ -1,15 +1,13 @@
 import styled from 'styled-components'
 
-import RenderMarkdown from '../RenderMarkdown/'
-
 export const Container = styled.li`
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	margin: 10px;
 	border-radius: 5px;
+	padding: 15px;
 	list-style: none;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: row;
 
 	& code {
 		font-size: 18px;
@@ -23,7 +21,7 @@ export const ImageLogo = styled.img`
 	`}
 	cursor: pointer;
 	padding: 10px;
-	margin: 15px;
+	margin-right: 20px;
 	border-radius: 5px;
 	transition: filter .4s, border-radius .4s, background .4s;
 
@@ -32,7 +30,4 @@ export const ImageLogo = styled.img`
 		border-radius: 10px;
 		background: ${({theme}) => theme.colors.background};
 	}
-`
-
-export const Title = styled(RenderMarkdown)`
 `
