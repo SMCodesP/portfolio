@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
 	display: flex;
 	width: 100%;
-	padding: 5%;
+	padding: 5% 1%;
 	
 	@media (max-width: 1000px) {
 		flex-direction: column;
@@ -20,7 +20,7 @@ export const ProductPurchase = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 15px;
+	padding: 5%;
 `
 
 export const ProductInformations = styled.div`
@@ -97,6 +97,10 @@ export const DescriptionList = styled.ul`
 	
 	& div {
 		padding: 4px;
+	}
+
+	@media (max-width: 400px) {
+		padding: 25px 0 5px 5px;
 	}
 `
 
