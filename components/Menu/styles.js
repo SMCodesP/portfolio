@@ -9,7 +9,7 @@ export const ListingPage = styled.ul`
 	display: flex;
 	transition: all .2s;
 
-	@media(max-width: 750px) {
+	@media(max-width: 890px) {
 		flex-direction: column;
 	}
 `
@@ -118,7 +118,7 @@ export const IconMenu = styled.button`
 		}
 	` : ``}
 
-	@media (min-width: 750px) {
+	@media (min-width:890px) {
 		display: none;
 	}
 `
@@ -202,7 +202,7 @@ export const Options = styled.div`
 	transition: all .2s;
 	padding: 25px 90px;
 
-	@media(max-width: 750px) {
+	@media(max-width: 890px) {
 		flex-direction: column;
 		padding: 10px 70px 10px 70px;
 		z-index: 999;
@@ -256,7 +256,6 @@ export const Options = styled.div`
 
 	@media(max-width: 430px) {
 		padding: 5px 10px 5px 10px !important;
-
 	}
 `
 

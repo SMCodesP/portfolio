@@ -13,20 +13,20 @@ export const Container = styled.header`
 
 export const ContainerWelcome = styled.div`
 	width: 80%;
-	margin-top: 100px;
-
-	@media (max-width: 500px) {
-		margin-top: 10px;
-	}
+	margin-top: 15vh;
 `
 
 export const Welcome = styled.h1`
 	font-weight: 400;
 	color: ${({theme}) => theme.colors.text};
-	font-size: 40pt;
+	font-size: 10vh;
 
 	& > strong {
 		font-weight: 600 !important;
+	}
+
+	@media (max-width: 441px) {
+		font-size: 15vw;
 	}
 `
 
@@ -35,6 +35,10 @@ export const SubWelcome = styled.h2`
 	font-size: 17pt;
 	font-weight: 400;
 	line-height: 40px;
+
+	@media (max-height: 392px) {
+		display: none;
+	}
 `
 
 export const WorkLast = styled.a`
@@ -60,6 +64,15 @@ export const WorkLast = styled.a`
 	@media (max-width: 925px) {
 		margin-top: 35px;
 	}
+
+
+	@media (max-height: 452px) {
+		display: none;
+	}
+
+	@media (max-width: 318px) {
+		display: none;
+	}
 `
 
 const DownUp = keyframes`
@@ -67,7 +80,7 @@ const DownUp = keyframes`
 		transform: translateY(0);
 	}
 	50% {
-		transform: translateY(5vh);
+		transform: translateY(5vw);
 	}
 	100% {
 		transform: translateY(0);
@@ -76,9 +89,9 @@ const DownUp = keyframes`
 
 export const DownLink = styled.a`
 	animation: ${DownUp} 3s linear infinite;
-	margin-top: 15vh;
+	margin-top: 15vw;
 	
-	@media (max-height: 550px) {
+	@media (max-height: 676px) {
 		display: none;
 	}
 `;
