@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
 	display: flex;
 	width: 100%;
-	padding: 25px;
+	padding: 5%;
 	
 	@media (max-width: 1000px) {
 		flex-direction: column;
@@ -29,7 +29,7 @@ export const ProductInformations = styled.div`
 	border-radius: 10px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	height: fit-content;
-	padding: 30px 25px;
+	padding: 5% 2%;
 	line-height: 20pt;
 	display: flex;
 	flex-direction: column;
@@ -50,6 +50,10 @@ export const ProductInformations = styled.div`
 
 	& p {
 		margin: 15px 25px;
+	}
+
+	& code {
+		word-wrap: break-word;
 	}
 
 	& img {
