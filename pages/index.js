@@ -1,5 +1,9 @@
 import Head from 'next/head'
 
+import {useContext} from 'react'
+
+import {ThemeContext} from 'styled-components'
+
 import Navigation from '../components/Navigation/'
 import Products from '../components/Products'
 import Footer from '../components/Footer'
@@ -14,7 +18,8 @@ import {
 	Title,
 } from '../styles/pages/index'
 
-const Home = ({initialTheme}) => {
+const Home = () => {
+	const {colors} = useContext(ThemeContext)
 
 	return (
 			<div className="container">
@@ -27,6 +32,9 @@ const Home = ({initialTheme}) => {
 					<meta name="description" content="Portfólio de SMCodes, um programador web e mobile, venha comprar e baixar plugins grátis de Minecraft ou até mesmo encomendar softwares únicos." />
 					<meta name="Description" content="Portfólio de SMCodes, um programador web e mobile, venha comprar e baixar plugins grátis de Minecraft ou até mesmo encomendar softwares únicos." />
 					<meta name="twitter:description" content="Portfólio de SMCodes, um programador web e mobile, venha comprar e baixar plugins grátis de Minecraft ou até mesmo encomendar softwares únicos." />
+					<meta name="theme-color" content={colors.background} />
+					<meta name="apple-mobile-web-app-status-bar-style" content={colors.background} />
+					<meta name="msapplication-navbutton-color" content={colors.background} />
 				</Head>
 
 				<Navigation page="/" />
