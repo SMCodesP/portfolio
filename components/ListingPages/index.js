@@ -22,8 +22,8 @@ export default ({product, ...params}) => {
 			{(Number(params.id)-1 >= 0) ? (
 				<Link href={`/${product.category}/[id]`} as={`/${product.category}/${params.id-1}`}>
 					<TextPrevNext href={`/${product.category}/${params.id-1}`}>
-						<FiChevronLeft color={colors.text} size={24} />
-						Anterior
+						<FiChevronLeft color={colors.primary} size={24} />
+						<span>Anterior</span>
 					</TextPrevNext>
 				</Link>
 			) : (<span />)}
@@ -46,8 +46,8 @@ export default ({product, ...params}) => {
 			{(params.quantity > Number(params.id)+1) ? (
 				<Link href={`/${product.category}/[id]`} as={`/${product.category}/${Number(params.id)+1}`}>
 					<TextPrevNext href={`/${product.category}/${Number(params.id)+1}`}>
-						Próximo
-						<FiChevronRight color={colors.text} size={24} />
+						<span>Próximo</span>
+						<FiChevronRight color={colors.primary} size={24} />
 					</TextPrevNext>
 				</Link>
 			) : (<span />)}

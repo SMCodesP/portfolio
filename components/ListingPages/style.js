@@ -38,6 +38,12 @@ export const TextPrevNext = styled.a`
 		margin: 0 12px;
 		padding: 0 3px;
 	}
+
+	@media (max-width: 460px) {
+		& span {
+			display: none;
+		}
+	}
 `
 
 export const ContainerListPages = styled.div`
