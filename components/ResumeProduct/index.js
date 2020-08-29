@@ -28,10 +28,9 @@ export default ({product, productIndex, loading}) => {
 				>
 					<Skeleton width={142} height={132} duration={2} style={{
 						padding: '10px',
-						margin: '15px',
 						borderRadius: '5px',
 					}} />
-
+					<br />
 					<Skeleton width={132} height={12} duration={2} style={{
 						padding: '10px',
 						borderRadius: '5px',

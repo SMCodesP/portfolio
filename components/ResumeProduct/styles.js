@@ -7,12 +7,17 @@ export const Container = styled.li`
 	padding: 15px;
 	list-style: none;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
 
 	& code {
 		font-size: 18px;
+		margin-top: 15px;
 		padding: 5px 10px;
+	}
+
+	& p {
+		margin-top: 15px;
 	}
 `
 
@@ -22,7 +27,6 @@ export const ImageLogo = styled.img`
 	`}
 	cursor: pointer;
 	padding: 10px;
-	margin-right: 20px;
 	border-radius: 5px;
 	transition: filter .4s, border-radius .4s, background .4s;
 
