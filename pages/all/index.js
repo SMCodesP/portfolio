@@ -31,6 +31,9 @@ export default () => {
 				<meta name="description" content="SMCodes - Nessa página você irá encontrar todos meus trabalhos idependentes do estilo ou intuito." />
 				<meta name="Description" content="SMCodes - Nessa página você irá encontrar todos meus trabalhos idependentes do estilo ou intuito." />
 				<meta name="twitter:description" content="SMCodes - Nessa página você irá encontrar todos meus trabalhos idependentes do estilo ou intuito." />
+				<meta name="theme-color" content={colors.background} />
+				<meta name="apple-mobile-web-app-status-bar-style" content={colors.background} />
+				<meta name="msapplication-navbutton-color" content={colors.background} />
 			</Head>
 
 			<div style={{width: "100%"}}>

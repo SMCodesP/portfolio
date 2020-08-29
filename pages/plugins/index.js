@@ -32,6 +32,9 @@ export default () => {
 				<meta name="description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
 				<meta name="Description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
 				<meta name="twitter:description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
+				<meta name="theme-color" content={colors.background} />
+				<meta name="apple-mobile-web-app-status-bar-style" content={colors.background} />
+				<meta name="msapplication-navbutton-color" content={colors.background} />
 			</Head>
 
 			<div style={{width: "100%"}}>

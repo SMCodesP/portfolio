@@ -37,6 +37,9 @@ function DetailsProduct({readme, product, ...params}) {
 				<meta name="description" content={`Venha comprar um plugin de minecraft, ${product.title} com funcionalidades únicas e com uma alta velocidade.`} />
 				<meta name="Description" content={`Venha comprar um plugin de minecraft, ${product.title} com funcionalidades únicas e com uma alta velocidade.`} />
 				<meta name="twitter:description" content={`Venha comprar um plugin de minecraft, ${product.title} com funcionalidades únicas e com uma alta velocidade.`} />
+				<meta name="theme-color" content={colors.background} />
+				<meta name="apple-mobile-web-app-status-bar-style" content={colors.background} />
+				<meta name="msapplication-navbutton-color" content={colors.background} />
 			</Head>
 
 			<div style={{width: "100%"}}>

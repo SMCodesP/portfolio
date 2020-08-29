@@ -24,6 +24,9 @@ const About = () => {
 				<meta name="description" content="Portfólio de SMCodes, um programador web e mobile, venha comprar e baixar plugins grátis de Minecraft ou até mesmo encomendar softwares únicos." />
 				<meta name="Description" content="Portfólio de SMCodes, um programador web e mobile, venha comprar e baixar plugins grátis de Minecraft ou até mesmo encomendar softwares únicos." />
 				<meta name="twitter:description" content="Portfólio de SMCodes, um programador web e mobile, venha comprar e baixar plugins grátis de Minecraft ou até mesmo encomendar softwares únicos." />
+				<meta name="theme-color" content={colors.background} />
+				<meta name="apple-mobile-web-app-status-bar-style" content={colors.background} />
+				<meta name="msapplication-navbutton-color" content={colors.background} />
 			</Head>
 
 			<div style={{width: "100%"}}>

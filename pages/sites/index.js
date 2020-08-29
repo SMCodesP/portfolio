@@ -32,6 +32,9 @@ export default () => {
 				<meta name="description" content="Venha encomendar e fazer suas contribuições em sites web." />
 				<meta name="Description" content="Venha encomendar e fazer suas contribuições em sites web." />
 				<meta name="twitter:description" content="Venha encomendar e fazer suas contribuições em sites web." />
+				<meta name="theme-color" content={colors.background} />
+				<meta name="apple-mobile-web-app-status-bar-style" content={colors.background} />
+				<meta name="msapplication-navbutton-color" content={colors.background} />
 			</Head>
 
 			<div style={{width: "100%"}}>
