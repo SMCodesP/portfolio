@@ -141,10 +141,14 @@ export const Page = styled.li`
 	margin: 0 8px 0 8px !important;
 	transition: transform .2s;
 
+
+
 	@media(min-width: 890px) {
-		transform: ${(props) => props.locate
-			? 'scale(1)'
-			: 'scale(1.1)'};
+		&:hover {
+			transform: ${(props) => props.locate
+				? 'scale(1)'
+				: 'scale(1.1)'};
+		}
 	}
 `
 
