@@ -72,7 +72,7 @@ function Menu({ page: isPage, background, color }) {
 			bottom: 'auto',
 			marginRight: '-50%',
 			transform: 'translate(-50%, -50%)',
-			width: '70%',
+			width: '98%',
 			background: shade(0.4, colors.background),
 			border: 0,
 			padding: '3px',
