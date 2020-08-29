@@ -15,6 +15,10 @@ export const ContainerHistories = styled.div`
   	@media (max-width: 600px) {
     	padding: 15px;
   	}
+
+  	@media (max-width: 400px) {
+    	padding: 10px;
+  	}
 `
 
 export const MainHistories = styled.div`
@@ -48,6 +52,10 @@ export const HistoriesText = styled.p`
 
 	@media (max-width: 600px) {
 	    margin: 0;
+	}
+
+	@media (max-width: 400px) {
+	    padding: 10px;
 	}
 `
 

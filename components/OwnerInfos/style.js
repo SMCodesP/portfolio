@@ -64,6 +64,10 @@ export const InfosKey = styled.h2`
 	font-size: 20px;
 	font-weight: bold;
 	color: ${({theme}) => shade(0.3, theme.colors.text)};
+
+	@media (max-width: 600px) {
+		margin-left: 25%;
+	}
 `
 
 export const InfosValue = styled.p`

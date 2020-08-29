@@ -139,9 +139,9 @@ export const Page = styled.li`
 		? '900'
 		: ''};
 	margin: 0 8px 0 8px !important;
-	transition: all .2s;
+	transition: transform .2s;
 
-	&:hover {
+	@media(min-width: 890px) {
 		transform: ${(props) => props.locate
 			? 'scale(1)'
 			: 'scale(1.1)'};
@@ -229,8 +229,8 @@ export const Options = styled.div`
 				border-radius: 5px;
 			}
 
-			${Page}:hover {
-				filter: brightness(80%);
+			${Page}:active {
+				filter: brightness(75%);
 			}
 		`}
 

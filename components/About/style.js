@@ -15,6 +15,10 @@ export const Infos = styled.div`
   	@media (max-width: 600px) {
     	width: 85%;
   	}
+
+  	@media (max-width: 400px) {
+    	width: 95%;
+  	}
 `
 
 export const InfoTitle = styled.h1`
@@ -34,7 +38,7 @@ export const InfoText = styled.p`
 	font-size: 13pt;
 
   	@media (max-width: 600px) {
-    	margin: 20px;
+    	margin: 3%;
   	}
 `
 
