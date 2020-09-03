@@ -109,16 +109,20 @@ function Menu({ page: isPage, background, color }) {
 				<ListingPage>
 					{list.map((page) => (
 						<Link key={page.name} href={page.name}>
-							<Page
-								locate={(isPage == page.name)}
-								color={color}
-							>
-								{page.displayed}
-							</Page>
+							<a>
+								<Page
+									locate={(isPage == page.name)}
+									color={color}
+								>
+									{page.displayed}
+								</Page>
+							</a>
 						</Link>
 					))}
 					<Link href="/signup">
-						<PageCustom>Cadastrar / Login</PageCustom>
+						<a>
+							<PageCustom>Cadastrar / Login</PageCustom>
+						</a>
 					</Link>
 				</ListingPage>
 			</Options>

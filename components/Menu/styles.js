@@ -12,9 +12,16 @@ export const ListingPage = styled.ul`
 	@media(max-width: 890px) {
 		flex-direction: column;
 	}
+
+	& a {
+		text-decoration: none;
+		margin: 0 8px 0 8px !important;
+	}
 `
 
 export const Title = styled.p`
+	display: flex;
+    align-items: center;
 	height: auto;
 	opacity: 1;
 
@@ -23,6 +30,7 @@ export const Title = styled.p`
 	font-weight: 600;
 	transition: all .2s;
 	user-select: none;
+	margin: 0 10px;
 `
 
 export const IconMenu = styled.button`
@@ -124,11 +132,10 @@ export const IconMenu = styled.button`
 `
 
 export const Page = styled.li`
-	height: auto;
 	opacity: 1;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	height: 100%;
 
 	user-select: none;
 	list-style: none;
@@ -138,10 +145,7 @@ export const Page = styled.li`
 	font-weight: ${(props) => props.locate
 		? '900'
 		: ''};
-	margin: 0 8px 0 8px !important;
 	transition: transform .2s;
-
-
 
 	@media(min-width: 890px) {
 		&:hover {
