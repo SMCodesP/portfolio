@@ -47,21 +47,21 @@ export const TextError = styled.div`
 		width: 100%;
 		content: attr(data-text);
 		position: absolute;
-		left: 2px;
-		text-shadow: -1px 0 red;
+		left: 3px;
+		text-shadow: -3px 0 #e02041;
 		top: 0;
 		color: ${({theme}) => theme.colors.text};
 		background: ${({theme}) => theme.colors.secundaryBackground};
 		overflow: hidden;
-		animation: ${noise_text} 2s infinite linear alternate-reverse;
+		animation: ${noise_text} 3s infinite linear alternate-reverse;
 	}
 
 	&:before {
 		width: 100%;
 		content: attr(data-text);
 		position: absolute;
-		left: -2px;
-		text-shadow: 1px 0 blue;
+		left: -3px;
+		text-shadow: 3px 0 #8020e0;
 		top: 0;
 		color: ${({theme}) => theme.colors.text};
 		background: ${({theme}) => theme.colors.secundaryBackground};
