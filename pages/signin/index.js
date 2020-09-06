@@ -1,5 +1,6 @@
 import { useContext, useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 import {ThemeContext} from 'styled-components'
@@ -28,16 +29,20 @@ import GlobalStyle from '../../styles/GlobalStyle'
 const About = () => {
 	const theme = useContext(ThemeContext)
 	const recaptchaRef = useRef()
+	const router = useRouter()
+
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
-	const [recaptcha, setReCaptcha] = useState(null)
+	const [token, setToken] = useState(null)
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		
 		console.log(username)
 		console.log(password)
-		console.log(recaptchaRef)
+		console.log(token)
+
+		router.push('/dashboard')
 	}
 
 	return (
@@ -101,9 +106,7 @@ const About = () => {
 									marginTop: '15px'
 								 }}
 								ref={recaptchaRef}
-								onChange={(value) => {
-									console.log(value)
-								}}
+								onChange={(value) => setToken(value)}
 								theme={theme.title.toLowerCase()}
 								sitekey="6LeeksgZAAAAAMl-CX7LZSZ_wDopPC2zQDKRtefa"
 							/>
