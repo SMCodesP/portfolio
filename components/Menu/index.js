@@ -119,9 +119,9 @@ function Menu({ page: isPage, background, color }) {
 							</a>
 						</Link>
 					))}
-					<Link href="/signup">
+					<Link href="/sign">
 						<a>
-							<PageCustom>Cadastrar / Login</PageCustom>
+							<PageCustom>Acessar conta</PageCustom>
 						</a>
 					</Link>
 				</ListingPage>
