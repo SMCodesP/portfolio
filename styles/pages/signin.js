@@ -147,6 +147,7 @@ export const ButtonSubmit = styled.button`
 	height: 55px;
 	align-self: center;
 	margin-top: 15px;
+	background: ${({theme}) => theme.colors.background};
 
 	border-radius: 5px;
 	border: 0;

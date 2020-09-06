@@ -59,7 +59,7 @@ const About = () => {
 					</ContainerHeader>
 					<ContainerBody>
 						<Form>
-							<LabelInput>Informe seu usuário</LabelInput>
+							<LabelInput>Informe seu username</LabelInput>
 							<InputContainer>
 								<RiMapPinUserLine style={{marginLeft: "0.5rem", position: "absolute"}} color={theme.colors.text} size="1.5em" />
 								<InputForm name="username" type="text" placeholder="Digite o username de sua conta" />
