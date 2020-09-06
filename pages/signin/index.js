@@ -1,11 +1,11 @@
-import { useContext } from 'react'
+import { useContext, useRef } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 
 import {ThemeContext} from 'styled-components'
 import { RiMapPinUserLine, RiLockPasswordLine } from 'react-icons/ri'
 import { FaHome } from 'react-icons/fa'
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha"
 
 import {
 	Container,
@@ -19,12 +19,15 @@ import {
 	InputContainer,
 	InputForm,
 	ForgotPassword,
+	ButtonSubmit,
+	NotHaveAccount,
 } from '../../styles/pages/signin'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 
 const About = () => {
-	const theme = useContext(ThemeContext);
+	const theme = useContext(ThemeContext)
+	const recaptchaRef = useRef()
 
 	return (
 		<div className="container">
@@ -59,12 +62,12 @@ const About = () => {
 							<LabelInput>Informe seu usuário</LabelInput>
 							<InputContainer>
 								<RiMapPinUserLine style={{marginLeft: "0.5rem", position: "absolute"}} color={theme.colors.text} size="1.5em" />
-								<InputForm placeholder="Digite o username de sua conta" />
+								<InputForm name="username" type="text" placeholder="Digite o username de sua conta" />
 							</InputContainer>
 							<LabelInput>Informe sua senha</LabelInput>
 							<InputContainer>
 								<RiLockPasswordLine style={{marginLeft: "0.5rem", position: "absolute"}} color={theme.colors.text} size="1.5em" />
-								<InputForm placeholder="Digite a senha de sua conta" />
+								<InputForm name="password" type="password" placeholder="Digite a senha de sua conta" />
 							</InputContainer>
 							<Link href="/forgot">
 								<ForgotPassword href="/forgot">Esqueceu sua senha?</ForgotPassword>
@@ -75,14 +78,18 @@ const About = () => {
 									justifyContent: 'center',
 									marginTop: '15px'
 								 }}
+								 ref={recaptchaRef}
 								theme={theme.title.toLowerCase()}
 								sitekey="6LeeksgZAAAAAMl-CX7LZSZ_wDopPC2zQDKRtefa"
 							/>
+							<ButtonSubmit>Entrar</ButtonSubmit>
+							<Link href="signup">
+								<NotHaveAccount href="/signup">Não tem uma conta?</NotHaveAccount>
+							</Link>
 						</Form>
 					</ContainerBody>
 				</ContainerLogin>
 			</Container>
-
 
 			<GlobalStyle />
 
@@ -90,4 +97,4 @@ const About = () => {
 	)
 }
 
-export default About;
+export default About

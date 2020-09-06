@@ -67,8 +67,6 @@ export const Title = styled.h1`
 export const ContainerBody = styled.div`
 	width: 100%;
 
-	margin: 25px 0;
-
 	display: flex;
 	justify-content: center;
 `
@@ -142,4 +140,30 @@ export const ForgotPassword = styled.a`
 	&:hover {
 		filter: brightness(75%);
 	}
+`
+
+export const ButtonSubmit = styled.button`
+	width: 80%;
+	height: 55px;
+	align-self: center;
+	margin-top: 15px;
+
+	border-radius: 5px;
+	border: 0;
+
+	cursor: pointer;
+
+	font-size: 15pt;
+
+	transition: filter .5s;
+
+	&:hover {
+		filter: brightness(75%);
+	}
+`
+
+export const NotHaveAccount = styled(ForgotPassword)`
+	bottom: 5px;
+	position: absolute;
+	align-self: initial;
 `
