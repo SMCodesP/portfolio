@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react'
+import { useContext, useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -28,6 +28,17 @@ import GlobalStyle from '../../styles/GlobalStyle'
 const About = () => {
 	const theme = useContext(ThemeContext)
 	const recaptchaRef = useRef()
+	const [username, setUsername] = useState('')
+	const [password, setPassword] = useState('')
+	const [recaptcha, setReCaptcha] = useState(null)
+
+	const handleSubmit = (event) => {
+		event.preventDefault()
+		
+		console.log(username)
+		console.log(password)
+		console.log(recaptchaRef)
+	}
 
 	return (
 		<div className="container">
@@ -58,16 +69,27 @@ const About = () => {
 						<Title>Acesse sua conta</Title>
 					</ContainerHeader>
 					<ContainerBody>
-						<Form>
+						<Form onSubmit={handleSubmit}>
 							<LabelInput>Informe seu username</LabelInput>
 							<InputContainer>
 								<RiMapPinUserLine style={{marginLeft: "0.5rem", position: "absolute"}} color={theme.colors.text} size="1.5em" />
-								<InputForm name="username" type="text" placeholder="Digite o username de sua conta" />
+								<InputForm
+									name="username"
+									type="text"
+									placeholder="Digite o username de sua conta"
+									value={username}
+									onChange={(event) => setUsername(event.target.value)}
+								/>
 							</InputContainer>
 							<LabelInput>Informe sua senha</LabelInput>
 							<InputContainer>
 								<RiLockPasswordLine style={{marginLeft: "0.5rem", position: "absolute"}} color={theme.colors.text} size="1.5em" />
-								<InputForm name="password" type="password" placeholder="Digite a senha de sua conta" />
+								<InputForm
+									name="password"
+									type="password"
+									placeholder="Digite a senha de sua conta"
+									onChange={(event) => setPassword(event.target.value)}
+								/>
 							</InputContainer>
 							<Link href="/forgot">
 								<ForgotPassword href="/forgot">Esqueceu sua senha?</ForgotPassword>
@@ -78,11 +100,14 @@ const About = () => {
 									justifyContent: 'center',
 									marginTop: '15px'
 								 }}
-								 ref={recaptchaRef}
+								ref={recaptchaRef}
+								onChange={(value) => {
+									console.log(value)
+								}}
 								theme={theme.title.toLowerCase()}
 								sitekey="6LeeksgZAAAAAMl-CX7LZSZ_wDopPC2zQDKRtefa"
 							/>
-							<ButtonSubmit>Entrar</ButtonSubmit>
+							<ButtonSubmit type="submit">Entrar</ButtonSubmit>
 							<Link href="signup">
 								<NotHaveAccount href="/signup">Não tem uma conta?</NotHaveAccount>
 							</Link>
