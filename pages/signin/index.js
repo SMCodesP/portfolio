@@ -58,12 +58,12 @@ const About = () => {
 						<Form>
 							<LabelInput>Informe seu usuário</LabelInput>
 							<InputContainer>
-								<RiMapPinUserLine style={{marginLeft: "0.5rem", position: "absolute"}} color={theme.colors.background} size="1.5em" />
+								<RiMapPinUserLine style={{marginLeft: "0.5rem", position: "absolute"}} color={theme.colors.text} size="1.5em" />
 								<InputForm placeholder="Digite o username de sua conta" />
 							</InputContainer>
 							<LabelInput>Informe sua senha</LabelInput>
 							<InputContainer>
-								<RiLockPasswordLine style={{marginLeft: "0.5rem", position: "absolute"}} color={theme.colors.background} size="1.5em" />
+								<RiLockPasswordLine style={{marginLeft: "0.5rem", position: "absolute"}} color={theme.colors.text} size="1.5em" />
 								<InputForm placeholder="Digite a senha de sua conta" />
 							</InputContainer>
 							<Link href="/forgot">

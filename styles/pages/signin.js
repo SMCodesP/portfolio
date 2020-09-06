@@ -20,7 +20,7 @@ export const ContainerHeaderLogo = styled.div`
 	justify-content: center;
 	align-items: center;
 
-	background: ${({theme}) => theme.colors.fourth};
+	background: ${({theme}) => theme.colors.text};
 
 	transition: filter .2s;
 
@@ -99,11 +99,19 @@ export const InputForm = styled.input`
 	padding: 1rem 1rem 1rem 2.5rem;
 	align-self: flex-end;
 
-	background: ${({theme}) => theme.colors.fourth};
+	background: ${({theme}) => theme.colors.background};
 	border-radius: 5px;
 	border: 0;
+	box-shadow: 0 0 10px -5px ${({theme}) => theme.colors.text};
 
 	color: ${({theme}) => theme.colors.text};
+
+	transition: border .2s, box-shadow .2s;
+
+	&:focus {
+		border: 1px solid ${({theme}) => theme.colors.text};
+		box-shadow: 0 0 9px -5px ${({theme}) => theme.colors.text};
+	}
 
 	&::-webkit-input-placeholder {
 		color: ${({theme}) => theme.colors.text};
