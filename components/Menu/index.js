@@ -119,7 +119,7 @@ function Menu({ page: isPage, background, color }) {
 							</a>
 						</Link>
 					))}
-					<Link href="/sign">
+					<Link href="/signin">
 						<a>
 							<PageCustom>Acessar conta</PageCustom>
 						</a>
