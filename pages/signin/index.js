@@ -76,7 +76,7 @@ const About = () => {
 									marginTop: '15px'
 								 }}
 								theme={theme.title.toLowerCase()}
-								sitekey="6LeSj8gZAAAAAMhcGwNQOwkGaYJd7wElVYW0Zbeb"
+								sitekey="6LeeksgZAAAAAMl-CX7LZSZ_wDopPC2zQDKRtefa"
 							/>
 						</Form>
 					</ContainerBody>
