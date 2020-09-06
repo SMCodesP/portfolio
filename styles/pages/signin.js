@@ -20,7 +20,7 @@ export const ContainerHeaderLogo = styled.div`
 	justify-content: center;
 	align-items: center;
 
-	background: ${({theme}) => theme.colors.secundary}cc;
+	background: ${({theme}) => theme.colors.fourth};
 
 	transition: filter .2s;
 
@@ -99,7 +99,7 @@ export const InputForm = styled.input`
 	padding: 1rem 1rem 1rem 2.5rem;
 	align-self: flex-end;
 
-	background: ${({theme}) => theme.colors.secundary};
+	background: ${({theme}) => theme.colors.fourth};
 	border-radius: 5px;
 	border: 0;
 

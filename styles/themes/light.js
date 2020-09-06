@@ -5,6 +5,7 @@ export default {
 		primary: '#DEC0F1',
 		secundary: '#957FEF',
 		tertiary: '#EFD9CE',
+		fourth: '#DEC0F1',
 
 		background: '#fafafa',
 		secundaryBackground: '#e0e0e0',
