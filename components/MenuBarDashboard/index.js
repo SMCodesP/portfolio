@@ -56,11 +56,12 @@ export default function MenuBarDashboard() {
 					/>
 				</Page>
 			</ListPages>
-			<Page>
+			<Page
+				onClick={() => setShowModal(true)}
+			>
 				<MdSettings
 					size={32}
 					color={theme.colors.text}
-					onClick={() => setShowModal(true)}
 					styled={{
 						marginBottom: 25
 					}}
