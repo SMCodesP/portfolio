@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 
 import { AiFillHome } from 'react-icons/ai'
 import { FaUserFriends, FaGlobeAmericas } from 'react-icons/fa'
@@ -8,6 +8,8 @@ import { CgLogOut } from 'react-icons/cg';
 import { MdSettings } from 'react-icons/md';
 import { ThemeContext } from 'styled-components'
 
+import ModalSetting from '../ModalSetting'
+
 import {
 	MenuBar,
 	ListPages,
@@ -16,6 +18,7 @@ import {
 
 export default function MenuBarDashboard() {
 	const theme = useContext(ThemeContext)
+	const [showModal, setShowModal] = useState(false);
 
 	return (
 		<MenuBar>
@@ -52,13 +55,17 @@ export default function MenuBarDashboard() {
 						color={theme.colors.text}
 					/>
 				</Page>
-				<Page>
-					<MdSettings
-						size={28}
-						color={theme.colors.text}
-					/>
-				</Page>
 			</ListPages>
+			<Page>
+				<MdSettings
+					size={32}
+					color={theme.colors.text}
+					onClick={() => setShowModal(true)}
+					styled={{
+						marginBottom: 25
+					}}
+				/>
+			</Page>
 			<Page>
 				<CgLogOut
 					size={32}
@@ -68,6 +75,7 @@ export default function MenuBarDashboard() {
 					}}
 				/>
 			</Page>
+			<ModalSetting showModal={showModal} setShowModal={setShowModal} />
 		</MenuBar>
 	);
 }

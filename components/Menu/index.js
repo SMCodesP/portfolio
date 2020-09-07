@@ -13,7 +13,6 @@ import {
 	PageCustom,
 	Page,
 	User,
-	OptionsFixed,
 	HeadMenuFixed,
 	IconMenu,
 	UserMenu,
@@ -26,6 +25,8 @@ import {
 	OptionSelect,
 } from './styles'
 
+import ModalSetting from '../ModalSetting'
+
 function Menu({ page: isPage, background, color }) {
 	const [activedMobile, setActivedMobile] = useState(false)
 	const [isClose, setIsClose] = useState(false)
@@ -33,8 +34,6 @@ function Menu({ page: isPage, background, color }) {
 
 	const {colors, ...theme} = useContext(ThemeContext)
 	const {toggleTheme} = useContext(ThemesContext)
-
-	const menuUser = useRef(null);
 
 	const list = [
 		{
@@ -126,40 +125,7 @@ function Menu({ page: isPage, background, color }) {
 					</Link>
 				</ListingPage>
 			</Options>
-			<Modal
-				closeTimeoutMS={50}
-				isOpen={showModal}
-				onRequestClose={() => setShowModal(false)}
-				contentLabel="Minimal Modal Example"
-				style={customStyles}
-			>
-				<UserMenu>
-					<IconMenu
-						onClick={() => setShowModal(false)}
-						closed={true}
-						style={{
-							alignSelf: 'flex-end',
-							display: 'block'
-						}}
-					>
-						<span></span>
-					</IconMenu>
-					<UserIcon
-						src="/unknown.webp"
-					/>
-					<Username>Unknown</Username>
-					<Line />
-					<ListOptions>
-						<Option>
-							<OptionTitle>Dracula theme</OptionTitle>
-							<OptionSelect
-								onChange={toggleTheme}
-								checked={(theme.title.toLowerCase() == 'dark')}
-							/>
-						</Option>
-					</ListOptions>
-				</UserMenu>
-			</Modal>
+			<ModalSetting showModal={showModal} setShowModal={setShowModal} />
 		</>
 	)
 }

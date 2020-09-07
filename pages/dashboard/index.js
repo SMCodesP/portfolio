@@ -8,6 +8,8 @@ import GlobalStyle from '../../styles/GlobalStyle'
 import {
 	Container,
 	ContainerShape,
+	ContainerInformations,
+	ContainerInfo,
 } from '../../styles/pages/dashboard'
 
 import MenuBarDashboard from '../../components/MenuBarDashboard'
@@ -44,6 +46,11 @@ const Dashboard = () => {
 					</svg>
 				</ContainerShape>
 				<MenuBarDashboard />
+				<ContainerInformations>
+					<ContainerInfo>
+
+					</ContainerInfo>
+				</ContainerInformations>
 			</Container>
 
 			<GlobalStyle />

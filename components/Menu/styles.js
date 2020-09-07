@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { IoMdSettings } from 'react-icons/io';
 import Switch from "react-switch";
 import { shade } from 'polished'
@@ -187,16 +187,6 @@ export const User = styled(IoMdSettings).attrs(({theme}) => ({
 	}
 `
 
-const UserOn = keyframes`
-	from {
-		opacity: 0;
-    	margin: 0 0 0 -35px;
-	}
-	to {
-		opacity: 1;
-    	margin: 85px 0 0 -35px;
-	}
-`
 
 export const Options = styled.div`
 	width: 100%;

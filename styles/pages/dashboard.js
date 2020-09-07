@@ -27,3 +27,22 @@ export const ContainerShape = styled.div`
 		left: 0;
 	}
 `
+
+export const ContainerInformations = styled.div`
+	width: calc(100% - 95px);
+	height: 300px;
+
+	position: relative;
+	margin-left: 95px;
+	top: 75px;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 5px;
+`
+
+export const ContainerInfo = styled.div`
+	background: ${({theme}) => theme.colors.background};
+	border-radius: 5px;
+	box-shadow: 0 0 5px 1px ${({theme}) => theme.colors.text}33;
+`
