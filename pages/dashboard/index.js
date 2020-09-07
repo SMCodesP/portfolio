@@ -1,22 +1,16 @@
 import { useContext } from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
 
-import { AiFillHome } from 'react-icons/ai'
-import { FaUserFriends, FaGlobeAmericas } from 'react-icons/fa'
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { VscDebugDisconnect } from 'react-icons/vsc';
-import { CgLogOut } from 'react-icons/cg';
-import { MdSettings } from 'react-icons/md';
+import { darken } from 'polished'
 import { ThemeContext } from 'styled-components'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 import {
 	Container,
-	MenuBar,
-	ListPages,
-	Page,
+	ContainerShape,
 } from '../../styles/pages/dashboard'
+
+import MenuBarDashboard from '../../components/MenuBarDashboard'
 
 const Dashboard = () => {
 	const theme = useContext(ThemeContext)
@@ -38,57 +32,18 @@ const Dashboard = () => {
 			</Head>
 
 			<Container>
-				<MenuBar>
-					<GiHamburgerMenu
-						size={32}
-						color={theme.colors.text}
-						style={{
-							margin: 12,
-							cursor: 'pointer'
-						}}
-					/>
-					<ListPages>
-						<Page>
-							<AiFillHome
-								size={28}
-								color={theme.colors.text}
-							/>
-						</Page>
-						<Page>
-							<FaUserFriends
-								size={28}
-								color={theme.colors.text}
-							/>
-						</Page>
-						<Page>
-							<VscDebugDisconnect
-								size={28}
-								color={theme.colors.text}
-							/>
-						</Page>
-						<Page>
-							<FaGlobeAmericas
-								size={28}
-								color={theme.colors.text}
-							/>
-						</Page>
-						<Page>
-							<MdSettings
-								size={28}
-								color={theme.colors.text}
-							/>
-						</Page>
-					</ListPages>
-					<Page>
-						<CgLogOut
-							size={32}
-							color="#e02041"
-							styled={{
-								marginBottom: 25
-							}}
-						/>
-					</Page>
-				</MenuBar>
+				<ContainerShape>
+					<svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+						<defs>
+							<linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+							<stop offset="0%"   stop-color={darken(-0.005, theme.colors.secundaryBackground)} />
+							<stop offset="100%" stop-color={darken(0.04, theme.colors.background)} />
+							</linearGradient>
+						</defs>
+						<path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke: 'none', fill: 'url(#gradient)'}}></path>
+					</svg>
+				</ContainerShape>
+				<MenuBarDashboard />
 			</Container>
 
 			<GlobalStyle />
