@@ -9,7 +9,14 @@ import {
 	Container,
 	ContainerShape,
 	ContainerInformations,
+	ContainerInfos,
 	ContainerInfo,
+	ImageLogo,
+	ContainerInformationList,
+	InformationList,
+	InformationItem,
+	ItemKey,
+	ItemValue
 } from '../../styles/pages/dashboard'
 
 import MenuBarDashboard from '../../components/MenuBarDashboard'
@@ -47,9 +54,38 @@ const Dashboard = () => {
 				</ContainerShape>
 				<MenuBarDashboard />
 				<ContainerInformations>
-					<ContainerInfo>
+					<h1>Informações</h1>
+					<ContainerInfos>
+						<ContainerInfo>
+							<ImageLogo src="/favicon.jpg" />
+							<h1>Suas  compras</h1>
 
-					</ContainerInfo>
+							<ContainerInformationList>
+								<InformationList>
+									<InformationItem>
+										<ItemKey>Quantidade de compras feitas » </ItemKey>
+										<ItemValue>17</ItemValue>
+									</InformationItem>
+									<InformationItem>
+										<ItemKey>Plugins de minecraft » </ItemKey>
+										<ItemValue>8</ItemValue>
+									</InformationItem>
+									<InformationItem>
+										<ItemKey>Sites » </ItemKey>
+										<ItemValue>4</ItemValue>
+									</InformationItem>
+									<InformationItem>
+										<ItemKey>Aplicativo mobile » </ItemKey>
+										<ItemValue>3</ItemValue>
+									</InformationItem>
+									<InformationItem>
+										<ItemKey>Bot discord » </ItemKey>
+										<ItemValue>2</ItemValue>
+									</InformationItem>
+								</InformationList>
+							</ContainerInformationList>
+						</ContainerInfo>
+					</ContainerInfos>
 				</ContainerInformations>
 			</Container>
 

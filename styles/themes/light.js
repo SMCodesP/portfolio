@@ -11,8 +11,9 @@ export default {
 		secundaryBackground: '#e0e0e0',
 
 		text: '#333333',
-		secundaryText: '#222222',
+		secundaryText: '#282a36',
 		tertiaryText: '#e0e0e0',
+		fourthText: '#e02041',
 		inverseText: '#f8f8f2',
 
 		light: '#fafafa',
