@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {useContext, useState} from 'react';
 
 import { AiFillHome } from 'react-icons/ai'
@@ -67,15 +68,19 @@ export default function MenuBarDashboard() {
 					}}
 				/>
 			</Page>
-			<Page>
-				<CgLogOut
-					size={32}
-					color="#e02041"
-					styled={{
-						marginBottom: 25
-					}}
-				/>
-			</Page>
+			<Link href="/signin">
+				<a>
+					<Page>
+						<CgLogOut
+							size={32}
+							color="#e02041"
+							styled={{
+								marginBottom: 25
+							}}
+						/>
+					</Page>
+				</a>
+			</Link>
 			<ModalSetting showModal={showModal} setShowModal={setShowModal} />
 		</MenuBar>
 	);

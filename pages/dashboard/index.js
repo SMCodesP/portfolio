@@ -42,7 +42,7 @@ const Dashboard = () => {
 
 			<Container>
 				<ContainerShape>
-					<svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+					<svg viewBox="0 0 500 150" preserveAspectRatio="xMinYMin meet">
 						<defs>
 							<linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
 							<stop offset="0%"   stop-color={darken(-0.005, theme.colors.secundaryBackground)} />
@@ -86,6 +86,12 @@ const Dashboard = () => {
 							</ContainerInformationList>
 						</ContainerInfo>
 					</ContainerInfos>
+					<h1 style={{
+						marginTop: 25
+					}}>Histórico</h1>
+					<h2 style={{
+						margin: '0 15px'
+					}}>Sem nenhuma alteração feita até o momento.</h2>
 				</ContainerInformations>
 			</Container>
 
