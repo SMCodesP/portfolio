@@ -46,7 +46,6 @@ export const ContainerInformations = styled.div`
 `
 
 export const ContainerInfos = styled.div`
-	height: 300px;
 	margin: 10px 15px;
 
 	display: grid;
@@ -58,6 +57,7 @@ export const ContainerInfo = styled.div`
 	background: ${({theme}) => theme.colors.background};
 	border-radius: 5px;
 	box-shadow: 0 0 5px 1px ${({theme}) => theme.colors.text}33;
+	padding-bottom: 15px;
 
 	display: flex;
 	flex-direction: column;
@@ -88,7 +88,7 @@ export const ImageLogo = styled.img`
 export const ContainerInformationList = styled.div`
 	width: 100%;
 
-	margin: 10px 20px;
+	margin: 7.5px 20px;
 `
 
 export const InformationList = styled.ul`
@@ -98,7 +98,7 @@ export const InformationList = styled.ul`
 
 export const InformationItem = styled.li`
 	font-size: 15pt;
-	margin: 7.5px 0 7.5px 7.5px;
+	margin: 5px 0 5px 5px;
 `
 
 export const ItemKey = styled.strong`
