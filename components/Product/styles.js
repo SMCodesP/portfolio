@@ -216,7 +216,7 @@ export const DescriptionSkeleton = styled.div`
 	width: ${(props) => (props.width) ? props.width : 92}px;
 	height: 25px;
 	margin: 10px 0 0 0;
-	border: 2px;
+	border-radius: 2px;
 `
 
 export const ButtonSkeleton = styled.div`
