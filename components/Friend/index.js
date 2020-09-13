@@ -21,8 +21,8 @@ const FriendComponent = () => {
 	return (
 		<Friend>
 			<UserHeader>
-				<UserAvatar src="https://minotar.net/avatar/breze/42.png" alt="Skin breze" />
-				<Username>Breze</Username>
+				<UserAvatar src="/favicon.jpg" alt="User avatar" />
+				<Username>SMCodes</Username>
 				<Trash
 					size={24}
 					color="#e02041"
