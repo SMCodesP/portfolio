@@ -32,18 +32,26 @@ export default function MenuBarDashboard() {
 				}}
 			/>
 			<ListPages>
-				<Page>
-					<AiFillHome
-						size={28}
-						color={theme.colors.text}
-					/>
-				</Page>
-				<Page>
-					<FaUserFriends
-						size={28}
-						color={theme.colors.text}
-					/>
-				</Page>
+				<Link href="/dashboard">
+					<a>
+						<Page>
+							<AiFillHome
+								size={28}
+								color={theme.colors.text}
+							/>
+						</Page>
+					</a>
+				</Link>
+				<Link href="/dashboard/friends">
+					<a>
+						<Page>
+							<FaUserFriends
+								size={28}
+								color={theme.colors.text}
+							/>
+						</Page>
+					</a>
+				</Link>
 				<Page>
 					<VscDebugDisconnect
 						size={28}
