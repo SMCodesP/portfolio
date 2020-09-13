@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import { FiTrash2 } from 'react-icons/fi'
 
 export const Friend = styled.li`
-	height: 225px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 8px;
 
 	border-radius: 5px;
 
