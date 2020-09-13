@@ -14,6 +14,7 @@ export default {
 		secundaryText: '#282a36',
 		tertiaryText: '#e0e0e0',
 		fourthText: '#e02041',
+		fifthText: '#957FEF',
 		inverseText: '#f8f8f2',
 
 		light: '#fafafa',

@@ -59,3 +59,19 @@ export const Trash = styled(FiTrash2)`
 		filter: brightness(75%);
 	}
 `
+
+export const ConfirmConfigure = styled.div`
+	align-self: flex-end;
+	margin-right: 10px;
+
+	& svg {
+		margin: 5px;
+		cursor: pointer;
+
+		transition: filter .2s;
+	}
+
+	& svg:hover {
+		filter: brightness(75%) blur(0);
+	}
+`
