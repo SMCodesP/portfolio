@@ -5,7 +5,7 @@ function usePersistedState(key, initialState) {
 	const [state, setState] = useState(initialState)
 
   useEffect(() => {
-		if (localStorage.getItem(key)) {
+	if (localStorage.getItem(key)) {
       setState(JSON.parse(localStorage.getItem(key)))
     }
   }, [])
