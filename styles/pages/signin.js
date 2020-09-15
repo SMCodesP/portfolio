@@ -40,7 +40,7 @@ export const ContainerHeaderLogo = styled.div`
 
 export const ContainerLogin = styled.div`
 	width: 35%;
-	height: 80vh;
+	min-height: 80vh;
 
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	position: absolute;
@@ -164,7 +164,6 @@ export const ButtonSubmit = styled.button`
 `
 
 export const NotHaveAccount = styled(ForgotPassword)`
-	bottom: 5px;
-	position: absolute;
 	align-self: initial;
+	margin: 5px;
 `
