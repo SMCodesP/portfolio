@@ -91,6 +91,7 @@ export const LabelInput = styled.label`
 	margin: 25px 0 0 0;
 	padding: 0 .5rem;
 	font-size: 13pt;
+	color: ${({theme}) => theme.colors.fifthText};
 `
 
 export const InputContainer = styled.div`
