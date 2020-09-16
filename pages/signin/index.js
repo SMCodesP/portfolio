@@ -5,12 +5,12 @@ import Head from 'next/head'
 
 import {ThemeContext} from 'styled-components'
 import { RiMapPinUserLine, RiLockPasswordLine } from 'react-icons/ri'
-import { FaHome } from 'react-icons/fa'
 import ReCAPTCHA from "react-google-recaptcha"
+import { FiArrowLeft } from "react-icons/fi";
 
 import {
 	Container,
-	ContainerHeaderLogo,
+	BackHome,
 	ContainerLogin,
 	ContainerHeader,
 	Title,
@@ -63,10 +63,18 @@ const About = () => {
 
 			<Container>
 				<Link href="/">
-					<a>
-						<ContainerHeaderLogo>
-							<FaHome size="52px" color={theme.colors.secundaryBackground} />
-						</ContainerHeaderLogo>
+					<a style={{
+					    position: 'absolute',
+						left: 0,
+					    right: 0,
+					    margin: 20,
+					    width: 'fit-content',
+					    textDecoration: 'none',
+					}}>
+						<BackHome>
+							<FiArrowLeft size={32} color={theme.colors.secundary} />
+							<p>Voltar para página inicial</p>
+						</BackHome>
 					</a>
 				</Link>
 				<ContainerLogin>

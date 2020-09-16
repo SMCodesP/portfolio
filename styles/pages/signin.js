@@ -8,33 +8,42 @@ export const Container = styled.div`
 	${({theme}) => `background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=${theme.colors.background.substring(1, toString(theme.colors.background).length)}ff&noise=${theme.colors.text.substring(1, toString(theme.colors.text).length)}&density=1&opacity=40');`}
 `
 
-export const ContainerHeaderLogo = styled.div`
-	width: 12.5vh;
-	height: 12.5vh;
-	margin-top: 4vh;
-	cursor: pointer;
-	border-radius: 5px;
-	box-shadow: 0 0 2px 0 ${({theme}) => theme.colors.primary};
-
+export const BackHome = styled.div`
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-self: initial;
+	cursor: pointer;
+	transition: filter .3s, opacity .3s;
+	user-select: none;
 
-	background: ${({theme}) => theme.colors.text};
-
-	transition: filter .2s;
-
-	& svg {
-		transition: transform .2s;
-		transform: scale(0.95);
+	& p {
+		color: ${({theme}) => theme.colors.secundary};
+		transition: margin-left .3s;
+		margin-left: 5px;
+		text-decoration: none;
+		font-size: 16pt;
+		font-weight: 600;
 	}
 
 	&:hover {
-		filter: brightness(75%);
+		filter: brightness(65%);
+	}
+
+	& svg {
+		transition: padding-right .3s;
+		stroke-width: 3px;
+	}
+
+	&:hover p {
+		margin-left: 15px;
 	}
 
 	&:hover svg {
-		transform: scale(1.10);
+		padding-right: 3px;
+	}
+
+	&:active {
+		opacity: 0;
 	}
 `
 
