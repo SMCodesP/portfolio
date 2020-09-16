@@ -63,14 +63,14 @@ export const ContainerLogin = styled.div`
 
 export const ContainerHeader = styled.div`
 	width: 100%;
-	height: 72px;
+	height: 54px;
 
 	display: flex;
 	align-items: flex-end;
+	justify-content: center;
 `
 
 export const Title = styled.h1`
-	margin-left: 28px;
 `
 
 export const ContainerBody = styled.div`
@@ -88,8 +88,9 @@ export const Form = styled.form`
 `
 
 export const LabelInput = styled.label`
-	margin: 20px 0 5px 0;
-	font-size: 15pt;
+	margin: 25px 0 0 0;
+	padding: 0 .5rem;
+	font-size: 13pt;
 `
 
 export const InputContainer = styled.div`
@@ -109,15 +110,13 @@ export const InputForm = styled.input`
 	background: ${({theme}) => theme.colors.background};
 	border-radius: 5px;
 	border: 0;
-	box-shadow: 0 0 10px -5px ${({theme}) => theme.colors.text};
 
 	color: ${({theme}) => theme.colors.text};
 
 	transition: border .2s, box-shadow .2s;
 
 	&:focus {
-		border: 1px solid ${({theme}) => theme.colors.text};
-		box-shadow: 0 0 9px -5px ${({theme}) => theme.colors.text};
+		box-shadow: 0 0 9px -5px ${({theme}) => theme.colors.primary};
 	}
 
 	&::-webkit-input-placeholder {
