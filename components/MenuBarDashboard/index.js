@@ -52,12 +52,16 @@ export default function MenuBarDashboard() {
 						</Page>
 					</a>
 				</Link>
-				<Page>
-					<VscDebugDisconnect
-						size={28}
-						color={theme.colors.text}
-					/>
-				</Page>
+				<Link href="/dashboard/plugins">
+					<a>
+						<Page>
+							<VscDebugDisconnect
+								size={28}
+								color={theme.colors.text}
+							/>
+						</Page>
+					</a>
+				</Link>
 				<Page>
 					<FaGlobeAmericas
 						size={28}

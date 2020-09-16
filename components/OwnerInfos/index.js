@@ -18,7 +18,7 @@ export default function OwnerInfos() {
 		<ContainerOwner>
 			<ContainerOwnerInfos>
 				<TitleContainer>Perfil</TitleContainer>
-				<InfosValue>Desenvolvedor Front-end, Back-end & APIs</InfosValue>
+				<InfosValue>Desenvolvedor front-end web e back-end</InfosValue>
 				<ProgressiveImage
 					src="/user.webp"
 					placeholder="/user_min.webp"

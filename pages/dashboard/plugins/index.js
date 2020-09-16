@@ -1,9 +1,8 @@
 import { useContext } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 
-import { darken } from 'polished'
 import { ThemeContext } from 'styled-components'
-import Switch from "react-switch";
 
 import GlobalStyle from '../../../styles/GlobalStyle'
 import {
@@ -11,21 +10,27 @@ import {
 	ContainerInformations,
 } from '../../../styles/pages/dashboard'
 import {
-	ListFriends,
-} from '../../../styles/pages/friends'
+	ListPlugins,
+} from '../../../styles/pages/dashboard/plugins'
+import {
+	ContainerLicense,
+	Description,
+	Title,
+} from '../../../styles/pages/index'
 
 import MenuBarDashboard from '../../../components/MenuBarDashboard'
-import Friend from '../../../components/Friend'
+import Plugin from '../../../components/Plugin'
+import products from '../../../utils/products'
 
-const Friends = () => {
+const Plugins = () => {
 	const theme = useContext(ThemeContext)
 
 	return (
 		<div className="container">
 			<Head>
-				<title>Dashboard - Friends</title>
-				<meta property="og:title" content="Dashboard - Friends" key="title" />
-				<meta name="twitter:title" content="Dashboard - Friends" />
+				<title>Dashboard - Plugins</title>
+				<meta property="og:title" content="Dashboard - Plugins" key="title" />
+				<meta name="twitter:title" content="Dashboard - Plugins" />
 				<meta name="description" content="Área restrita para membros que tenha uma conta em nosso sistema." />
 				<meta property="og:description" content="Área restrita para membros que tenha uma conta em nosso sistema." />
 				<meta name="description" content="Área restrita para membros que tenha uma conta em nosso sistema." />
@@ -39,21 +44,30 @@ const Friends = () => {
 			<Container>
 				<MenuBarDashboard />
 				<ContainerInformations>
-					<h1>Seus amigos</h1>
-					<ListFriends>
-						<Friend />
-						<Friend />
-						<Friend />
-						<Friend />
-						<Friend />
-						<Friend />
-						<Friend />
-						<Friend />
-						<Friend />
-						<Friend />
-						<Friend />
-						<Friend />
-					</ListFriends>
+					<ContainerLicense
+						style={{
+							marginTop: 0,
+							marginBottom: '10px'
+						}}
+					>
+						<Title>Alerta</Title>
+						<Description>Essa área é exclusiva para clientes que tem plugins de minecraft comprados, nessa área é possível visualizar e gerenciar informações como configuração de mensagens, uso de dados, armazenamento e trafego de dados</Description>
+					</ContainerLicense>
+					<h1>Seus plugins</h1>
+					<ListPlugins>
+						{products[1].items
+							.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1)
+							.map((product, index) => (
+								<Link href={`/dashboard/plugin/${index}`}>
+									<a>
+										<Plugin
+											key={index.toString()}
+											plugin={product}
+										/>
+									</a>
+								</Link>
+						))}
+					</ListPlugins>
 				</ContainerInformations>
 			</Container>
 
@@ -63,4 +77,4 @@ const Friends = () => {
 	)
 }
 
-export default Friends
+export default Plugins

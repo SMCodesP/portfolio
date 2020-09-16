@@ -27,9 +27,9 @@ const Dashboard = () => {
 	return (
 		<div className="container">
 			<Head>
-				<title>SMCodes - Dashboard</title>
-				<meta property="og:title" content="SMCodes - Dashboard" key="title" />
-				<meta name="twitter:title" content="SMCodes - Dashboard" />
+				<title>Dashboard - Início</title>
+				<meta property="og:title" content="Dashboard - Início" key="title" />
+				<meta name="twitter:title" content="Dashboard - Início" />
 				<meta name="description" content="Área restrita para membros que tenha uma conta em nosso sistema." />
 				<meta property="og:description" content="Área restrita para membros que tenha uma conta em nosso sistema." />
 				<meta name="description" content="Área restrita para membros que tenha uma conta em nosso sistema." />
