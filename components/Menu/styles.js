@@ -146,10 +146,11 @@ export const Page = styled.li`
 	font-weight: ${(props) => props.locate
 		? '900'
 		: ''};
-	transition: transform .2s;
+	transition: transform .2s, filter .2s;
 
 	@media(min-width: 890px) {
 		&:hover {
+			filter: brightness(75%);
 			transform: ${(props) => props.locate
 				? 'scale(1)'
 				: 'scale(1.1)'};
@@ -229,7 +230,7 @@ export const Options = styled.div`
 				border-radius: 5px;
 			}
 
-			${Page}:active {
+			a:hover ${Page} {
 				filter: brightness(75%);
 			}
 		` : `
