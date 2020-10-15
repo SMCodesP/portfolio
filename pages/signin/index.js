@@ -26,10 +26,13 @@ import {
 
 import GlobalStyle from '../../styles/GlobalStyle'
 
+import useWindow from '../../utils/useWindow'
+
 const About = () => {
 	const theme = useContext(ThemeContext)
 	const recaptchaRef = useRef()
 	const router = useRouter()
+	const window = useWindow()
 
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
@@ -112,7 +115,8 @@ const About = () => {
 									display: 'flex',
 									justifyContent: 'center',
 									marginTop: '15px'
-								 }}
+								}}
+								size={(window.width < 450) ? "compact" : "normal"}
 								ref={recaptchaRef}
 								onChange={(value) => setToken(value)}
 								theme={theme.title.toLowerCase()}

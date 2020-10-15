@@ -21,7 +21,7 @@ export const BackHome = styled.div`
 		transition: margin-left .3s;
 		margin-left: 5px;
 		text-decoration: none;
-		font-size: 16pt;
+		font-size: 1.5rem;
 		font-weight: 600;
 	}
 
@@ -59,6 +59,24 @@ export const ContainerLogin = styled.div`
 	border-top-left-radius: 10px;
 
 	box-shadow: ${({theme}) => theme.colors.primary}CC 0px 20px 35px -40px, ${({theme}) => theme.colors.primary}CC 0px 20px 20px -10px;
+	transition: width .2s;
+
+	@media(max-width: 1240px) {
+		width: 40%;
+	}
+
+	@media(max-width: 900px) {
+		width: 65%;
+	}
+
+
+	@media(max-width: 650px) {
+		width: 85%;
+	}
+
+	@media(max-width: 440px) {
+		width: 95%;
+	}
 `
 
 export const ContainerHeader = styled.div`
@@ -71,6 +89,7 @@ export const ContainerHeader = styled.div`
 `
 
 export const Title = styled.h1`
+	font-size: 1.75rem;
 `
 
 export const ContainerBody = styled.div`
