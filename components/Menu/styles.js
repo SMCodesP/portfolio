@@ -15,7 +15,7 @@ export const ListingPage = styled.ul`
 
 	& a {
 		text-decoration: none;
-		margin: 0 8px 0 8px !important;
+		margin: 8px !important;
 	}
 `
 
@@ -135,6 +135,7 @@ export const Page = styled.li`
 	opacity: 1;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	height: 100%;
 
 	user-select: none;
@@ -201,12 +202,13 @@ export const Options = styled.div`
 	padding: 25px 90px;
 
 	@media(max-width: 890px) {
+
 		flex-direction: column;
 		padding: 10px 70px 10px 70px;
 		z-index: 999;
 		transition: all .2s;
 
-		${(props) => props.actived && `
+		${(props) => props.actived ? `
 			position: fixed;
 			top: 0;
 			background-color: #7159c1;
@@ -229,6 +231,10 @@ export const Options = styled.div`
 
 			${Page}:active {
 				filter: brightness(75%);
+			}
+		` : `
+			a {
+				display: none;
 			}
 		`}
 
