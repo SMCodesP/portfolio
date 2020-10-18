@@ -22,7 +22,6 @@ export default class MyDocument extends Document {
 			<html lang="pt-BR">
 				<Head>
 					{this.props.styleTags}
-					<link href="/fonts/fonts.css" rel="stylesheet" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta charSet="utf-8" />
 					<link rel="icon" href="/favicon.jpg" />
@@ -33,6 +32,7 @@ export default class MyDocument extends Document {
 					<meta property="og:image" content="/favicon.jpeg" />
 					<meta name="keywords" content="HTML,CSS,JavaScript,Java,Plugin minecraft,Minecraft,Minecraft servidor,ReactNative,ReactJS,Discord.js,Node.js,Kotlin,SMCodes,Portfolio" />
 					<meta name="copyright" content="© 2020 Samuel Pereira da Silva" />
+					<link href="/fonts/fonts.css" rel="stylesheet" />
 				</Head>
 				<body>
 					<Main />
