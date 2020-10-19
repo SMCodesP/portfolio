@@ -1,18 +1,24 @@
+import dynamic from 'next/dynamic'
 import { useContext } from 'react'
 
 import App from 'next/app'
 import 'react-medium-image-zoom/dist/styles.css'
-import {ThemesProvider} from '../contexts/themes'
 
-import dark from '../styles/themes/dark'
+const Themes = dynamic(
+  () => import('../styles/themes/'),
+  { ssr: false }
+)
+
+import '../styles/GlobalStyle.css'
 
 function Main(props) {
 	const { Component, pageProps } = props
 
 	return (
-		<ThemesProvider>
+		<>
+			<Themes />
 			<Component {...pageProps} />
-		</ThemesProvider>
+		</>
 	)
 }
 

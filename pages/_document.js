@@ -1,28 +1,17 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
 
-	static getInitialProps({ renderPage }) {
-	    const sheet = new ServerStyleSheet();
+	static getInitialProps ({ renderPage }) {
 
-	    function handleCollectStyles(App) {
-	      return props => {
-	        return sheet.collectStyles(<App {...props} />);
-	      };
-	    }
-
-	    const page = renderPage(App => handleCollectStyles(App));
-	    const styleTags = sheet.getStyleElement();
-	    return { ...page, styleTags };
+		return renderPage();
 	}
 
 	render() {
 		return (
-			<html lang="pt-BR">
+			<Html lang="pt-BR">
 				<Head>
 					<link href="/fonts/fonts.css" rel="stylesheet" />
-					{this.props.styleTags}
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta charSet="utf-8" />
 					<link rel="icon" href="/favicon.jpg" />
@@ -38,7 +27,7 @@ export default class MyDocument extends Document {
 					<Main />
 					<NextScript />
 				</body>
-			</html>
+			</Html>
 		);
 	}
 }

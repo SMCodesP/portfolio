@@ -1,26 +1,12 @@
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 
-import {useContext} from 'react'
-
-import {ThemeContext} from 'styled-components'
-
-import Navigation from '../components/Navigation/'
-import Products from '../components/Products'
-import Footer from '../components/Footer'
-
-import GlobalStyle from '../styles/GlobalStyle'
-
-import products from '../utils/products'
-
-import {
-	ContainerLicense,
-	Description,
-	Title,
-} from '../styles/pages/index'
+const Navigation = dynamic(
+  () => import('../components/Navigation/'),
+  { ssr: false }
+)
 
 const Home = () => {
-	const {colors} = useContext(ThemeContext)
-
 	return (
 			<div className="container">
 				<Head>
@@ -32,33 +18,13 @@ const Home = () => {
 					<meta name="description" content="Portfólio de SMCodes, um programador web e mobile, venha comprar e baixar plugins grátis de Minecraft ou até mesmo encomendar softwares únicos." />
 					<meta name="Description" content="Portfólio de SMCodes, um programador web e mobile, venha comprar e baixar plugins grátis de Minecraft ou até mesmo encomendar softwares únicos." />
 					<meta name="twitter:description" content="Portfólio de SMCodes, um programador web e mobile, venha comprar e baixar plugins grátis de Minecraft ou até mesmo encomendar softwares únicos." />
-					<meta name="theme-color" content={colors.background} />
-					<meta name="apple-mobile-web-app-status-bar-style" content={colors.background} />
-					<meta name="msapplication-navbutton-color" content={colors.background} />
+					{/* <meta name="theme-color" content={colors.background} /> */}
+					{/* <meta name="apple-mobile-web-app-status-bar-style" content={colors.background} /> */}
+					{/* <meta name="msapplication-navbutton-color" content={colors.background} /> */}
 				</Head>
 
 				<Navigation page="/" />
 
-				<br />
-				<div id="products" />
-				{products.map((category, index) => (
-					<Products
-						key={index}
-						items={3}
-						category={category}
-						id="navigation"
-						limit={true}
-					/>
-				))}
-				<ContainerLicense>
-					<Title>Sistema de licença</Title>
-					<Description>
-						Nosso sistema de licença apresenta com uma api focada em performance, todos os plugins de minecraft contém uma versão gratuita, porém caso compre a versão paga você adquiri 3 versões do mesmo plugin dedicado de acordo com sua hospedagem, você também recebe um licença dedicada para otimização do seu plugin, essa licença só pode ser usada em 1 servidor por vez.
-					</Description>
-				</ContainerLicense>
-				<Footer />
-
-				<GlobalStyle />
 			</div>
 	)
 }

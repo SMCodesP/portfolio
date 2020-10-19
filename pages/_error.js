@@ -8,19 +8,11 @@ import {ThemeContext, createGlobalStyle} from 'styled-components'
 
 import ContainerParticles from '../components/ContainerParticles/'
 
-import GlobalStyle from '../styles/GlobalStyle'
 import {
 	Container,
 	TextError,
 	BackToHome,
 } from '../styles/pages/404'
-
-const CustomStyles = createGlobalStyle`
-	body, html {
-		overflow: hidden;
-		font-family: 'Roboto', sans-serif !important;
-	}
-`
 
 function Error404({ statusCode }) {
 	const {colors} = useContext(ThemeContext)
@@ -41,8 +33,6 @@ function Error404({ statusCode }) {
 			<ContainerParticles />
 
       		<Error statusCode={404} title="Página não encontrada!"></Error>
-			<CustomStyles />
-			<GlobalStyle />
 		</>
 	)
 }
