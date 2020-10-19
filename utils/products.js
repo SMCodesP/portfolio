@@ -1,5 +1,32 @@
 export default [
 	{
+		title: 'Discord-BOT',
+		link: '/bots',
+		name: 'bot',
+		items: [
+			{
+				id: "14",
+				text: 'https://raw.githubusercontent.com/SMCodesP/BotGame/master/README.md',
+				timestamp: 1586487540,
+				title: 'BotGame',
+				category: 'bot',
+				image: {
+					large: '/bot.png',
+					small: '/bot_min.png'
+				},
+				descriptionList: [
+					'**Comandos »** 37',
+					'**Open source »** Sim',
+					'**Licença »** Apache 2.0',
+					'**Contém sistemas de »** Mineração, economia, cargos, emprego, skills e configuração de servidores',
+					'**Feito por »** `SMCodes`',
+				],
+				button_link: 'https://github.com/SMCodesP/BotGame/archive/master.zip',
+				price: 0
+			},
+		]
+	},
+	{
 		title: 'Web',
 		link: '/sites',
 		name: 'web',

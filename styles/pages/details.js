@@ -5,7 +5,7 @@ export const Container = styled.div`
 	display: flex;
 	width: 100%;
 	padding: 5% 1%;
-	
+
 	@media (max-width: 1000px) {
 		flex-direction: column;
 	}
@@ -20,7 +20,7 @@ export const ProductPurchase = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 5%;
+	padding: 20px 10px;
 `
 
 export const ProductInformations = styled.div`
@@ -29,11 +29,11 @@ export const ProductInformations = styled.div`
 	border-radius: 10px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	height: fit-content;
-	padding: 5% 2%;
+	padding: 25px 15px;
 	line-height: 20pt;
 	display: flex;
 	flex-direction: column;
-	
+
 	& h1,
 	& h2,
 	& h3,
@@ -78,7 +78,7 @@ export const ImageLogo = styled.img`
 	padding: 10px;
 	transition: padding .4s, filter .4s, border-radius .4s;
 	cursor: pointer;
-	
+
 	&:hover {
 		padding: 5px;
 		border-radius: 15px;
@@ -94,7 +94,7 @@ export const DescriptionList = styled.ul`
 	line-height: 18px;
 	align-self: flex-start;
 	line-height: 20pt;
-	
+
 	& div {
 		padding: 4px;
 	}
@@ -126,7 +126,7 @@ export const PurchaseButton = styled.button`
 	border-bottom: 3px solid ${({theme}) => shade(0.3, theme.colors.secundaryBackground)};
 	position: relative;
 	transition: filter .2s, top .2s;
-	
+
 	&:hover {
 		filter: brightness(75%);
 	}
