@@ -71,7 +71,9 @@ function DetailsProduct({readme, product, ...params}) {
 					</DescriptionList>
 					<ContainerButton>
 						{(product.price <= 0 ) ? (
-							<PurchaseButton>Baixar</PurchaseButton>
+							<a href={product.button_link} tartget="_blank" style={{ width: '100%' }} download>
+								<PurchaseButton>Baixar</PurchaseButton>
+							</a>
 						) : (
 							<>
 								<Price>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</Price>
