@@ -1,11 +1,11 @@
 # SMPortfolio
 
-[![Online version](https://img.shields.io/badge/Wecolme%20by%20project-1.2-282a36?style=for-the-badge)](https://spetacularnetwork.xyz)
+[![Online version](https://img.shields.io/badge/Wecolme%20by%20project-1.2-282a36?style=for-the-badge)](https://smcodes.tk)
 [![Created by](https://img.shields.io/badge/Discord-SMCodes%234207-ff79c6)](https://discord.com/users/360247173356584960)
 
 ![Preview](https://raw.githubusercontent.com/SMCodesP/portfolio/master/readme.png)
 
-### Click [here](https://spetacularnetwork.xyz/images) view more images about for website
+### Click [here](https://smcodes.tk/images) view more images about for website
 ---
 
 ## Description about this project

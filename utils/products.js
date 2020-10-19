@@ -47,7 +47,7 @@ export default [
 					'**Contém sistemas de »** Venda, Licenciamento, Login, Blog',
 					'**Open source »** Sim',
 					'**Licença »** Apache 2.0',
-					'**Preview »** [Clique aqui](https://www.spetacularnetwork.xyz/)',
+					'**Preview »** [Clique aqui](https://smcodes.tk)',
 					'**Repositório »** [Clique aqui](https://github.com/SMCodesP/portfolio)',
 					'**Dependência »** [SMPortfolio-backend](https://github.com/SMCodesP/portfolio-backend)',
 					'**Site feito para »** `SMCodes`',
