@@ -5,9 +5,9 @@ export const ListPlugins = styled.ul`
 	width: 97.5%;
 	margin: 0 1.25%;
 	padding-bottom: 45px;
-
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	gap: 5px;
 
 	& a {
 		text-decoration: none;

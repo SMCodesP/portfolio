@@ -76,11 +76,13 @@ const Plugins = () => {
 							})
 							.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1)
 							.map((product, index) => (
-								<Link href={`/dashboard/plugin/${index}`}>
-									<Plugin
-										key={index.toString()}
-										plugin={product}
-									/>
+								<Link href={`/dashboard/plugin/[id]`} as={`/dashboard/plugin/${index}`}>
+									<a>
+										<Plugin
+											key={index.toString()}
+											plugin={product}
+										/>
+									</a>
 								</Link>
 						))}
 					</ListPlugins>
