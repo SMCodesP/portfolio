@@ -17,7 +17,7 @@ import {
 	Page,
 } from './styles';
 
-export default function MenuBarDashboard() {
+export default function MenuBarDashboard({location}) {
 	const theme = useContext(ThemeContext)
 	const [showModal, setShowModal] = useState(false);
 
@@ -34,7 +34,7 @@ export default function MenuBarDashboard() {
 			<ListPages>
 				<Link href="/dashboard">
 					<a>
-						<Page>
+						<Page selected={(location === "dashboard")}>
 							<AiFillHome
 								size={28}
 								color={theme.colors.text}
@@ -44,7 +44,7 @@ export default function MenuBarDashboard() {
 				</Link>
 				<Link href="/dashboard/friends">
 					<a>
-						<Page>
+						<Page selected={(location === "friends")}>
 							<FaUserFriends
 								size={28}
 								color={theme.colors.text}
@@ -54,7 +54,7 @@ export default function MenuBarDashboard() {
 				</Link>
 				<Link href="/dashboard/plugins">
 					<a>
-						<Page>
+						<Page selected={(location === "plugins")}>
 							<VscDebugDisconnect
 								size={28}
 								color={theme.colors.text}
@@ -62,7 +62,7 @@ export default function MenuBarDashboard() {
 						</Page>
 					</a>
 				</Link>
-				<Page>
+				<Page selected={(location === "explorer")}>
 					<FaGlobeAmericas
 						size={28}
 						color={theme.colors.text}

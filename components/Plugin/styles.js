@@ -4,11 +4,12 @@ export const ContainerPlugin = styled.li`
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	border-radius: 5px;
 	padding: 10px;
-	width: 100%
+	width: 100%;
+	margin: 0 2.5px;
 `
 
 export const ImageLogo = styled.img`
-	max-width: 124px;
+	height: 100%;
 	margin: 0 20px 0 0;
 	cursor: pointer;
 	background: ${({theme}) => theme.colors.secundaryBackground};

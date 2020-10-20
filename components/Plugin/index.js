@@ -12,7 +12,7 @@ const PluginComponent = ({plugin}) => {
 
 	return (
 		<ContainerPlugin>
-			<ImageLoading image_min={image.small} image_max={image.large} />
+			<ImageLoading image={image} />
 			<PluginBody>
 				<Name>{title}</Name>
 				<Info>Servidores ativos » <span> 2</span></Info>

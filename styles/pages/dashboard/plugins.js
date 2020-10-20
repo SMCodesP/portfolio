@@ -7,7 +7,6 @@ export const ListPlugins = styled.ul`
 
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 10px;
 
 	& a {
 		text-decoration: none;

@@ -28,6 +28,8 @@ export const Page = styled.li`
 	justify-content: center;
 	cursor: pointer;
 
+	filter: brightness(${({selected}) => (selected) ? '75%' : '100%'});
+
 	transition: filter .5s;
 
 	&:hover {
