@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -11,6 +11,8 @@ import {
 } from '../../../styles/pages/dashboard'
 import {
 	ListPlugins,
+	ContainerInput,
+	SearchBar,
 } from '../../../styles/pages/dashboard/plugins'
 import {
 	ContainerLicense,
@@ -23,6 +25,7 @@ import Plugin from '../../../components/Plugin'
 import products from '../../../utils/products'
 
 const Plugins = () => {
+	const [search, setSearch] = useState('')
 	const theme = useContext(ThemeContext)
 
 	return (
@@ -43,6 +46,7 @@ const Plugins = () => {
 
 			<Container>
 				<MenuBarDashboard />
+
 				<ContainerInformations>
 					<ContainerLicense
 						style={{
@@ -54,8 +58,22 @@ const Plugins = () => {
 						<Description>Essa área é exclusiva para clientes que tem plugins de minecraft comprados, nessa área é possível visualizar e gerenciar informações como configuração de mensagens, uso de dados, armazenamento e trafego de dados</Description>
 					</ContainerLicense>
 					<h1>Seus plugins</h1>
+
+					<ContainerInput>
+						<SearchBar
+							type="text"
+							placeholder="Pesquise um de seus plugin"
+							value={search}
+							onChange={(e) => setSearch(e.target.value)}
+						/>
+					</ContainerInput>
+
 					<ListPlugins>
-						{products[1].items
+						{products[2].items.filter((product) => {
+								const product_title = product.title.toLowerCase()
+
+								return product_title.includes(search.toLowerCase())
+							})
 							.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1)
 							.map((product, index) => (
 								<Link href={`/dashboard/plugin/${index}`}>

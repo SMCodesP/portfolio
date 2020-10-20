@@ -5,7 +5,7 @@ export const ContainerPlugin = styled.li`
 	border-radius: 5px;
 	padding: 10px;
 	width: 100%;
-	margin: 0 2.5px;
+	margin: 2.5px;
 `
 
 export const ImageLogo = styled.img`
