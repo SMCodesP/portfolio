@@ -2,12 +2,28 @@ import Head from 'next/head'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 
+import { FiDownloadCloud } from 'react-icons/fi'
+import { AiFillCopy } from 'react-icons/ai'
+import { RiFolderDownloadFill } from 'react-icons/ri'
+import { BsFileEarmarkArrowDown } from 'react-icons/bs'
+import { BiRefresh } from 'react-icons/bi'
+
+import {getColor} from 'get-color-sm'
+
 import GlobalStyle from '../../../styles/GlobalStyle'
 
 import {
 	Container,
 	ContainerInformations,
 } from '../../../styles/pages/dashboard'
+
+import {
+	ContainerDetails,
+	Detail,
+	Icons,
+	Icon,
+} from '../../../styles/pages/dashboard/plugin'
+
 import MenuBarDashboard from '../../../components/MenuBarDashboard'
 import products from '../../../utils/products'
 import ImageLoading from './ImageLoading'
@@ -21,7 +37,7 @@ function Plugin({readme, product, ...params}) {
 
 		<div className="container">
 			<Head>
-				<title>Dashboard - Plugin</title>
+				<title>Dashboard - {product.title}</title>
 				<meta property="og:title" content={`Dashboard - Plugin | ${product.title}`} key="title" />
 				<meta name="twitter:title" content={`Dashboard - Plugin | ${product.title}`} />
 				<meta name="description" content="Área restrita para membros que tenha uma conta em nosso sistema." />
@@ -47,6 +63,43 @@ function Plugin({readme, product, ...params}) {
 							marginLeft: 10
 						}}>{product.title}</h1>
 					</div>
+
+					<ContainerDetails>
+						<Detail color={getColor()}>
+							<span title="Baixar plugin em .jar">
+								<FiDownloadCloud
+									size={46}
+									color={theme.colors.text}
+								/>
+							</span>
+							<span title="Baixar todas as dependências">
+								<RiFolderDownloadFill
+									size={46}
+									color={theme.colors.text}
+								/>
+							</span>
+							<span title="Baixar arquivo de configuração padrão">
+								<BsFileEarmarkArrowDown
+									size={46}
+									color={theme.colors.text}
+								/>
+							</span>
+							<span title="Clique para copiar token do plugin">
+								<AiFillCopy
+									size={46}
+									color={theme.colors.text}
+								/>
+							</span>
+							<span title="Gerar um novo token, caso clique o token anterior será desabilitado">
+								<BiRefresh
+									size={46}
+									color={theme.colors.text}
+								/>
+							</span>
+						</Detail>
+						<Detail color={getColor()} />
+						<Detail color={getColor()} />
+					</ContainerDetails>
 				</ContainerInformations>
 			</Container>
 
