@@ -26,7 +26,7 @@ import {
 
 import MenuBarDashboard from '../../../components/MenuBarDashboard'
 import products from '../../../utils/products'
-import ImageLoading from '../../../ImageLoading'
+import ImageLoading from '../../../components/ImageLoading'
 
 function Plugin({readme, product, ...params}) {
 	const theme = useContext(ThemeContext)
