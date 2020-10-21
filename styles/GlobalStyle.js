@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 		outline: 0;
 		font-family: 'Roboto', sans-serif !important;
+		transition: background .2s, background-color .2s, color .2s;
 	}
 
 	p, li, a, button, h1, h2, h3, h4, h5, h6, span, div, strong, i, b, input {
