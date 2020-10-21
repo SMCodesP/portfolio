@@ -15,9 +15,9 @@ export const OptionManagment = styled.div`
 	border-top-left-radius: 10px;
 	justify-content: center;
 	align-items: center;
-	background: ${({theme}) => theme.colors.secundaryText};
+	background: ${({theme}) => theme.colors.fifthText};
 	cursor: pointer;
-	border-top: ${({selected}) => selected ? '3px' : '0'} solid ${({theme}) => theme.colors.fifthText};
+	border-top: ${({selected}) => selected ? '3px' : '0'} solid ${({theme}) => theme.colors.fourthText};
 	transition: .2s all;
 
 	& h1 {
