@@ -1,0 +1,82 @@
+{
+	"Connection": {
+		"data_type": "object_inputs",
+		"inputs": {
+			"Host": {
+				"data_type": "label_input",
+				"name": "host",
+				"type": "text",
+				"placeholder": "Digite a host da conexão"
+			},
+			"Porta": {
+				"data_type": "label_input",
+				"name": "port",
+				"type": "number",
+				"value": 3306
+			},
+			"User": {
+				"data_type": "label_input",
+				"name": "user",
+				"type": "text",
+				"placeholder": "Digite o usuário para sessão com o mysql"
+			},
+			"Password": {
+				"data_type": "label_input",
+				"name": "password",
+				"type": "password",
+				"placeholder": "Digite a senha do usuário"
+			},
+			"Database": {
+				"data_type": "label_input",
+				"name": "database",
+				"type": "text",
+				"placeholder": "Digite o banco de dados padrão para se conectar"
+			}
+		}
+	},
+    "Titulo_do_menu_de_troca": {
+		"data_type": "input",
+		"name": "menu_title",
+		"type": "text",
+    	"placeholder": "Digite o título da GUI para a troca de pontos"
+    },
+	"Exchange": {
+		"data_type": "array_objects",
+		"inputs": {
+	        "Title": {
+				"data_type": "label_input",
+				"name": "title",
+	        	"type": "text",
+	        	"placeholder": "Digite o título do item para ser trocado"
+	        },
+	        "Slot": {
+				"data_type": "label_input",
+				"name": "slot",
+	        	"type": "number",
+	        	"value": 1
+	        },
+	        "Item_ID": {
+				"data_type": "label_input",
+				"name": "item_id",
+	        	"type": "number",
+	        	"value": 1
+	        },
+	        "Price": {
+				"data_type": "label_input",
+				"name": "price",
+	        	"value": 200
+	        },
+	        "Command": {
+				"data_type": "label_input",
+				"name": "command",
+	        	"type": "text",
+	        	"placeholder": "Digite o comando para ser executado após ser trocado"
+	        },
+	        "Description": {
+				"data_type": "array",
+				"name": "description",
+	        	"sub_type": "input"
+	        }	
+		}
+	}
+}

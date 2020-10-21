@@ -43,6 +43,4 @@ export const ContainerManagment = styled.div`
 	margin-bottom: 50px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 `
