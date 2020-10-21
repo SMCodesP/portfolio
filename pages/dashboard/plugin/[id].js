@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
- import Loader from 'react-loader-spinner'
+import Loader from 'react-loader-spinner'
+import { getLuminance } from 'polished'
 
 import { FiDownloadCloud } from 'react-icons/fi'
 import { FaUsers, FaDownload, FaClipboardList } from 'react-icons/fa'
@@ -33,8 +34,6 @@ import ImageLoading from '../../../components/ImageLoading'
 
 function Plugin({readme, product, ...params}) {
 	const theme = useContext(ThemeContext)
-
-	console.log(product)
 
 	return (
 
@@ -72,81 +71,101 @@ function Plugin({readme, product, ...params}) {
 							<span title="Baixar plugin em .jar">
 								<FiDownloadCloud
 									size={46}
-									color={theme.colors.text}
+									color={theme.colors.fourthText}
 								/>
 							</span>
 							<span title="Baixar todas as dependências">
 								<RiFolderDownloadFill
 									size={46}
-									color={theme.colors.text}
+									color={theme.colors.fifthText}
 								/>
 							</span>
 							<span title="Baixar arquivo de configuração padrão">
 								<BsFileEarmarkArrowDown
 									size={46}
-									color={theme.colors.text}
+									color={theme.colors.darkTwo}
 								/>
 							</span>
 							<span title="Clique para copiar token do plugin">
 								<AiFillCopy
 									size={46}
-									color={theme.colors.text}
+									color={theme.colors.secundaryText}
 								/>
 							</span>
 							<span title="Gerar um novo token, caso clique o token anterior será desabilitado">
 								<BiRefresh
 									size={46}
-									color={theme.colors.text}
+									color={theme.colors.fourthText}
 								/>
 							</span>
 						</Detail>
 						<Detail color={getColor()} style={{
 							justifyContent: 'space-between'
 						}}>
-							<div style={{
-								display: 'flex'
-							}}>
-								<span title="Utilizadores">
-									<FaUsers
-										size={46}
-										color={getColor()}
-									/>
-								</span>
-								<h4 style={{
-									marginLeft: 10,
-									alignSelf: 'center',
-									color: theme.colors.fourthText
-								}}>1 / 10</h4>
-							</div>
-							<div style={{
-								display: 'flex'
-							}}>
-								<span title="Utilizadores">
-									<FaDownload
-										size={46}
-										color={getColor()}
-									/>
-								</span>
-								<h4 style={{
-									marginLeft: 10,
-									alignSelf: 'center',
-									color: theme.colors.fifthText
-								}}>46</h4>
-							</div>
+							{(() => {
+								let color = getColor()
+
+								return (
+									<div style={{
+										display: 'flex',
+										color: `#${color}`
+									}}>
+										<span title="Utilizadores">
+											<FaUsers
+												size={46}
+												color={color}
+											/>
+										</span>
+										<h4 style={{
+											marginLeft: 10,
+											alignSelf: 'center',
+											color: `#${color}`
+										}}>1 / 10</h4>
+									</div>
+								)
+							})()}
+							{(() => {
+								let color = getColor()
+
+								return (
+									<div style={{
+										display: 'flex',
+										color: `#${color}`
+									}}>
+										<span title="Baixados">
+											<FaDownload
+												size={46}
+												color={color}
+											/>
+										</span>
+										<h4 style={{
+											marginLeft: 10,
+											alignSelf: 'center',
+											color: `#${color}`
+										}}>46</h4>
+									</div>
+								)
+							})()}
 						</Detail>
-						<Detail color={getColor()}>
-							<span title="Logs de registro">
-								<FaClipboardList
-									size={46}
-									color={getColor()}
-								/>
-								<h4 style={{
-									marginLeft: 10,
-									alignSelf: 'center',
-									color: "#00BFFF"
-								}}>854</h4>
-							</span>
-						</Detail>
+						{(() => {
+							let color = getColor()
+
+							return (
+								<Detail color={color}>
+									<span title="Logs de registro">
+										<FaClipboardList
+											size={46}
+											color={color}
+										/>
+										<h4 style={{
+											marginLeft: 10,
+											alignSelf: 'center',
+											color: `#${color}`
+										}}>854</h4>
+									</span>
+								</Detail>
+							)
+						})()}
 					</ContainerDetails>
 
 					<h1>Informações</h1>
