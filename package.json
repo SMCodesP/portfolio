@@ -35,6 +35,7 @@
     "react-progressive-graceful-image": "^0.6.11",
     "react-switch": "^5.0.1",
     "react-syntax-highlighter": "^13.3.1",
+    "react-tooltip": "^4.2.10",
     "recharts": "^1.8.5",
     "styled-components": "^5.1.1",
     "styled-theming": "^2.2.0"

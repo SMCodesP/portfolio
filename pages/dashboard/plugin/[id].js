@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import Loader from 'react-loader-spinner'
 import { getLuminance } from 'polished'
+import ReactTooltip from 'react-tooltip'
 
 import { FiDownloadCloud } from 'react-icons/fi'
 import { FaUsers, FaDownload, FaClipboardList } from 'react-icons/fa'
@@ -68,31 +69,31 @@ function Plugin({readme, product, ...params}) {
 
 					<ContainerDetails>
 						<Detail color={getColor()}>
-							<span title="Baixar plugin em .jar">
+							<span data-tip="Baixar plugin em .jar" data-iscapture="true">
 								<FiDownloadCloud
 									size={46}
 									color={theme.colors.fourthText}
 								/>
 							</span>
-							<span title="Baixar todas as dependências">
+							<span data-tip="Baixar todas as dependências">
 								<RiFolderDownloadFill
 									size={46}
 									color={theme.colors.fifthText}
 								/>
 							</span>
-							<span title="Baixar arquivo de configuração padrão">
+							<span data-tip="Baixar arquivo de configuração padrão">
 								<BsFileEarmarkArrowDown
 									size={46}
 									color={theme.colors.darkTwo}
 								/>
 							</span>
-							<span title="Clique para copiar token do plugin">
+							<span data-tip="Clique para copiar token do plugin">
 								<AiFillCopy
 									size={46}
 									color={theme.colors.secundaryText}
 								/>
 							</span>
-							<span title="Gerar um novo token, caso clique o token anterior será desabilitado">
+							<span data-tip="Gerar um novo token, caso clique o token anterior será desabilitado">
 								<BiRefresh
 									size={46}
 									color={theme.colors.fourthText}
@@ -110,7 +111,7 @@ function Plugin({readme, product, ...params}) {
 										display: 'flex',
 										color: `#${color}`
 									}}>
-										<span title="Utilizadores">
+										<span data-tip="Utilizadores">
 											<FaUsers
 												size={46}
 												color={color}
@@ -132,7 +133,7 @@ function Plugin({readme, product, ...params}) {
 										display: 'flex',
 										color: `#${color}`
 									}}>
-										<span title="Baixados">
+										<span data-tip="Baixados">
 											<FaDownload
 												size={46}
 												color={color}
@@ -152,7 +153,7 @@ function Plugin({readme, product, ...params}) {
 
 							return (
 								<Detail color={color}>
-									<span title="Logs de registro">
+									<span data-tip="Logs de registro">
 										<FaClipboardList
 											size={46}
 											color={color}
@@ -182,6 +183,7 @@ function Plugin({readme, product, ...params}) {
 				</ContainerInformations>
 			</Container>
 
+			<ReactTooltip place="bottom" type="dark" effect="solid" />
 			<GlobalStyle />
 		</div>
 
