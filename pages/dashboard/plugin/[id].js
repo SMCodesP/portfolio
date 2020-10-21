@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
+ import Loader from 'react-loader-spinner'
 
 import { FiDownloadCloud } from 'react-icons/fi'
+import { FaUsers, FaDownload } from 'react-icons/fa'
 import { AiFillCopy } from 'react-icons/ai'
 import { RiFolderDownloadFill } from 'react-icons/ri'
 import { BsFileEarmarkArrowDown } from 'react-icons/bs'
@@ -22,6 +24,7 @@ import {
 	Detail,
 	Icons,
 	Icon,
+	ContainerManagment,
 } from '../../../styles/pages/dashboard/plugin'
 
 import MenuBarDashboard from '../../../components/MenuBarDashboard'
@@ -97,9 +100,54 @@ function Plugin({readme, product, ...params}) {
 								/>
 							</span>
 						</Detail>
-						<Detail color={getColor()} />
-						<Detail color={getColor()} />
+						<Detail color={getColor()} style={{
+							justifyContent: 'space-between'
+						}}>
+							<div style={{
+								display: 'flex'
+							}}>
+								<span title="Utilizadores">
+									<FaUsers
+										size={46}
+										color={getColor()}
+									/>
+								</span>
+								<h4 style={{
+									marginLeft: 10,
+									alignSelf: 'center',
+									color: theme.colors.fourthText
+								}}>1 / 10</h4>
+							</div>
+							<div style={{
+								display: 'flex'
+							}}>
+								<span title="Utilizadores">
+									<FaDownload
+										size={46}
+										color={getColor()}
+									/>
+								</span>
+								<h4 style={{
+									marginLeft: 10,
+									alignSelf: 'center',
+									color: theme.colors.fifthText
+								}}>46</h4>
+							</div>
+						</Detail>
+						<Detail color={getColor()}/>
 					</ContainerDetails>
+
+					<h1>Informações</h1>
+					<ContainerManagment>
+						<Loader
+							type="Rings"
+							color={theme.colors.fifthText}
+							secondaryColor="#00BFFF"
+							height={160}
+							width={160}
+						/>
+						<h3>Carregando...</h3>
+					</ContainerManagment>
 				</ContainerInformations>
 			</Container>
 

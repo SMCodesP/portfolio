@@ -41,3 +41,16 @@ export const Detail = styled.li`
 		filter: brightness(95%);
 	}
 `
+
+export const ContainerManagment = styled.div`
+	margin: 0 10px;
+	padding: 5px;
+	border-radius: 5px;
+	height: 85vh;
+	background: ${({theme}) => theme.colors.secundaryBackground};
+	margin-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`

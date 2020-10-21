@@ -30,7 +30,6 @@ export const ContainerShape = styled.div`
 
 export const ContainerInformations = styled.div`
 	width: calc(100% - 95px);
-	height: 300px;
 
 	position: relative;
 	margin-left: 95px;
