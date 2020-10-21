@@ -1,4 +1,5 @@
 import Input from '../components/Input'
+import Add from '../components/Add'
 
 const components = {
   "input": (props) => {
@@ -31,7 +32,10 @@ const components = {
   "array_objects": (data) => (
     <>
       <label>{data.key}</label>
-      <add>+</add>
+      <Add style={{
+        width: '64px !important',
+        height: '64px !important'
+      }}>+</Add>
     </>
   ),
   "object_inputs": (data, key) => {
