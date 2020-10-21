@@ -174,8 +174,16 @@ function Plugin({readme, product, ...params}) {
 				</ContainerInformations>
 			</Container>
 
+			<ReactTooltip
+				place="bottom"
+				data-text-color={theme.colors.background}
+				textColor={theme.colors.background}
+				data-background-color={theme.colors.text}
+				backgroundColor={theme.colors.text}
+				effect="solid"
+				id="tooltip"
+			/>
 			<GlobalStyle />
-			<ReactTooltip place="bottom" type="dark" effect="solid" />
 		</div>
 
 	)
