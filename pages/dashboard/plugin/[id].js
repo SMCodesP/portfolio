@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import Loader from 'react-loader-spinner'
-import { getLuminance } from 'polished'
 import ReactTooltip from 'react-tooltip'
 
 import { FiDownloadCloud } from 'react-icons/fi'
@@ -24,12 +22,11 @@ import {
 import {
 	ContainerDetails,
 	Detail,
-	Icons,
-	Icon,
-	ContainerManagment,
 } from '../../../styles/pages/dashboard/plugin'
 
 import MenuBarDashboard from '../../../components/MenuBarDashboard'
+import OptionManagment from '../../../components/OptionManagment'
+
 import products from '../../../utils/products'
 import ImageLoading from '../../../components/ImageLoading'
 
@@ -172,16 +169,8 @@ function Plugin({readme, product, ...params}) {
 					</ContainerDetails>
 
 					<h1>Informações</h1>
-					<ContainerManagment>
-						<Loader
-							type="Rings"
-							color={theme.colors.fifthText}
-							secondaryColor="#00BFFF"
-							height={160}
-							width={160}
-						/>
-						<h3>Carregando...</h3>
-					</ContainerManagment>
+					<OptionManagment theme={theme} />
+
 				</ContainerInformations>
 			</Container>
 
