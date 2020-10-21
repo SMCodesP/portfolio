@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { shade } from 'polished'
 
 export const ContainerOptionsManagment = styled.div`
 	margin: 0 10px;
@@ -15,9 +16,9 @@ export const OptionManagment = styled.div`
 	border-top-left-radius: 10px;
 	justify-content: center;
 	align-items: center;
-	background: ${({theme}) => theme.colors.fifthText};
+	background: ${({theme}) => shade(0.25, theme.colors.inverseText)};
 	cursor: pointer;
-	border-top: ${({selected}) => selected ? '3px' : '0'} solid ${({theme}) => theme.colors.fourthText};
+	border-top: ${({selected}) => selected ? '3px' : '0'} solid ${({theme}) => theme.colors.fifthText};
 	transition: .2s all;
 
 	& h1 {
@@ -25,6 +26,10 @@ export const OptionManagment = styled.div`
 		font-size: ${({selected}) => selected ? '18px' : '16px'};
 		font-weight: ${({selected}) => selected ? 'bold' : 'normal'};
 		transition: .2s all;
+	}
+
+	&:hover {
+		filter: brightness(75%);
 	}
 `
 
