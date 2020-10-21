@@ -105,6 +105,7 @@ function Plugin({readme, product, ...params}) {
 						}}>
 							{(() => {
 								let color = getColor()
+								console.log(color)
 
 								return (
 									<div style={{
@@ -114,7 +115,7 @@ function Plugin({readme, product, ...params}) {
 										<span data-tip="Utilizadores">
 											<FaUsers
 												size={46}
-												color={color}
+												color={`#${color}`}
 											/>
 										</span>
 										<h4 style={{
@@ -136,7 +137,7 @@ function Plugin({readme, product, ...params}) {
 										<span data-tip="Baixados">
 											<FaDownload
 												size={46}
-												color={color}
+												color={`#${color}`}
 											/>
 										</span>
 										<h4 style={{
@@ -156,7 +157,7 @@ function Plugin({readme, product, ...params}) {
 									<span data-tip="Logs de registro">
 										<FaClipboardList
 											size={46}
-											color={color}
+											color={`#${color}`}
 										/>
 										<h4 style={{
 											marginLeft: 10,
