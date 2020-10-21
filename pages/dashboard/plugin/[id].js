@@ -174,8 +174,8 @@ function Plugin({readme, product, ...params}) {
 				</ContainerInformations>
 			</Container>
 
-			<ReactTooltip place="bottom" type="dark" effect="solid" />
 			<GlobalStyle />
+			<ReactTooltip place="bottom" type="dark" effect="solid" />
 		</div>
 
 	)
