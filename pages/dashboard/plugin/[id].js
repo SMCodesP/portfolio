@@ -4,7 +4,7 @@ import { ThemeContext } from 'styled-components'
  import Loader from 'react-loader-spinner'
 
 import { FiDownloadCloud } from 'react-icons/fi'
-import { FaUsers, FaDownload } from 'react-icons/fa'
+import { FaUsers, FaDownload, FaClipboardList } from 'react-icons/fa'
 import { AiFillCopy } from 'react-icons/ai'
 import { RiFolderDownloadFill } from 'react-icons/ri'
 import { BsFileEarmarkArrowDown } from 'react-icons/bs'
@@ -134,7 +134,19 @@ function Plugin({readme, product, ...params}) {
 								}}>46</h4>
 							</div>
 						</Detail>
-						<Detail color={getColor()}/>
+						<Detail color={getColor()}>
+							<span title="Logs de registro">
+								<FaClipboardList
+									size={46}
+									color={getColor()}
+								/>
+								<h4 style={{
+									marginLeft: 10,
+									alignSelf: 'center',
+									color: "#00BFFF"
+								}}>854</h4>
+							</span>
+						</Detail>
 					</ContainerDetails>
 
 					<h1>Informações</h1>
