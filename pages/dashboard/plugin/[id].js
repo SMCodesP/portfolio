@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ThemeContext } from 'styled-components'
 import ReactTooltip from 'react-tooltip'
 
@@ -32,6 +32,10 @@ import ImageLoading from '../../../components/ImageLoading'
 
 function Plugin({readme, product, ...params}) {
 	const theme = useContext(ThemeContext)
+
+	useEffect(() => {
+		ReactTooltip.rebuild()
+	}, [])
 
 	return (
 
@@ -181,7 +185,6 @@ function Plugin({readme, product, ...params}) {
 				data-background-color={theme.colors.text}
 				backgroundColor={theme.colors.text}
 				effect="solid"
-				id="tooltip"
 			/>
 			<GlobalStyle />
 		</div>

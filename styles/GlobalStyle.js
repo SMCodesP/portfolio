@@ -52,11 +52,6 @@ const GlobalStyle = createGlobalStyle`
 	.ReactModal__Overlay--before-close{
 	    opacity: 0;
 	}
-
-	#tooltip {
-		font-size: 15px;
-		padding: 5px 10px;
-	}
 `;
 
 export default GlobalStyle;
