@@ -15,7 +15,7 @@ export const OptionManagment = styled.div`
 	border-top-left-radius: 10px;
 	justify-content: center;
 	align-items: center;
-	background: ${({theme}) => theme.colors.inverseText};
+	background: ${({theme}) => theme.colors.secundaryText};
 	cursor: pointer;
 	border-top: ${({selected}) => selected ? '3px' : '0'} solid ${({theme}) => theme.colors.fifthText};
 	transition: .2s all;
