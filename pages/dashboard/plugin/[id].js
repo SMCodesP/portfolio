@@ -68,7 +68,9 @@ function Plugin({readme, product, ...params}) {
 					</div>
 
 					<ContainerDetails>
-						<Detail color={getColor()}>
+						<Detail color={getColor()} style={{
+							justifyContent: 'space-between'
+						}}>
 							<span data-tip="Baixar plugin em .jar" data-iscapture="true">
 								<FiDownloadCloud
 									size={46}
@@ -105,7 +107,6 @@ function Plugin({readme, product, ...params}) {
 						}}>
 							{(() => {
 								let color = getColor()
-								console.log(color)
 
 								return (
 									<div style={{
