@@ -75,7 +75,14 @@
 	        "Description": {
 				"data_type": "array",
 				"name": "description",
-	        	"sub_type": "input"
+				"inputs": {
+					"Desc.": {
+						"data_type": "input",
+						"name": "description",
+						"type": "text",
+						"placeholder": "Digite um texto para a descrição do item, podendo conter cores do minecraft, por exemplo: &7Comprar tag &6[Master]"
+					}
+				}
 	        }	
 		}
 	}

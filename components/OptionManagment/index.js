@@ -32,6 +32,10 @@ function OptionManagment({ theme }) {
 
   }, [])
 
+  function handleSubmit(data) {
+    console.log(data)
+  }
+
   return (
     <>
       <ContainerOptionsManagment>
@@ -76,7 +80,7 @@ function OptionManagment({ theme }) {
         ) : (
           <Form style={{
             flexDirection: 'column'
-          }}>
+          }} onSubmit={handleSubmit}>
             {Object.keys(config).map((objectKey, index) => {
               let value = config[objectKey];
 
@@ -91,6 +95,7 @@ function OptionManagment({ theme }) {
                 </>
               )
             })}
+            <button type="submit">Salvar</button>
           </Form>
         )}
       </ContainerManagment>

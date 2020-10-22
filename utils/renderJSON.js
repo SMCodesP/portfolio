@@ -3,7 +3,6 @@ import Add from '../components/Add'
 
 const components = {
   "input": (props) => {
-    console.log(props)
     return (
       <Input
         style={{
@@ -14,9 +13,6 @@ const components = {
     )
   },
   "label_input": (input) => {
-
-    console.log(input.key)
-
     return (
       <div
         style={{
@@ -36,15 +32,28 @@ const components = {
     )
   },
   "array": (data) => (
-    <>
-      <label>{data.key}</label>
-      <button>+</button>
-    </>
+    <div style={{
+      marginLeft: '15px',
+      flexDirection: 'column'
+    }}>
+      <label>{data.key} »</label>
+      <Add
+        data={data}
+        style={{
+          width: '64px !important',
+          height: '64px !important',
+          margin: '5px'
+        }}
+        styleInput={{
+          padding: 0
+        }}
+      >+</Add>
+    </div>
   ),
   "array_objects": (data) => (
     <>
       <label>{data.key}</label>
-      <Add style={{
+      <Add data={data} style={{
         width: '64px !important',
         height: '64px !important'
       }}>+</Add>
@@ -64,7 +73,6 @@ const components = {
           let input = inputs[inputKey]
 
           input.key = inputKey || key
-          console.log(input.key)
 
           return components[input.data_type](input)
         })}
