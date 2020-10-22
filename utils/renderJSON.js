@@ -6,6 +6,9 @@ const components = {
     console.log(props)
     return (
       <Input
+        style={{
+          marginLeft: '15px'
+        }}
         {...props}
       />
     )
@@ -15,12 +18,21 @@ const components = {
     console.log(input.key)
 
     return (
-      <>
+      <div
+        style={{
+          marginLeft: '15px',
+          flexDirection: 'column'
+        }}
+      >
         <label>{input.key.replaceAll('_', ' ')} »</label>
         <Input
+          style={{
+            margin: '5px',
+            paddding: '0 5px',
+          }}
           {...input}
         />
-      </>
+      </div>
     )
   },
   "array": (data) => (

@@ -6,25 +6,25 @@
 				"data_type": "label_input",
 				"name": "host",
 				"type": "text",
-				"placeholder": "Digite a host da conexão"
+				"placeholder": "Digite a host da conexão, por exemplo: 127.0.0.1"
 			},
 			"Porta": {
 				"data_type": "label_input",
 				"name": "port",
 				"type": "number",
-				"value": 3306
+				"placeholder": "Digite a porta de entrada do banco de dados, por exemplo: 3306"
 			},
 			"User": {
 				"data_type": "label_input",
 				"name": "user",
 				"type": "text",
-				"placeholder": "Digite o usuário para sessão com o mysql"
+				"placeholder": "Digite o usuário para sessão com o mysql, por exemplo: root"
 			},
 			"Password": {
 				"data_type": "label_input",
 				"name": "password",
 				"type": "password",
-				"placeholder": "Digite a senha do usuário"
+				"placeholder": "Digite a senha do usuário, por exemplo: root"
 			},
 			"Database": {
 				"data_type": "label_input",
