@@ -4,6 +4,7 @@ import Loader from 'react-loader-spinner'
 import { Form } from '@unform/web'
 
 import renderJSON from '../../utils/renderJSON'
+import yaml from 'js-yaml'
 
 import {
   ContainerOptionsManagment,
@@ -35,6 +36,7 @@ function OptionManagment({ theme }) {
 
   function handleSubmit(data) {
     console.log(data)
+    console.log(yaml.dump(data))
   }
 
   return (

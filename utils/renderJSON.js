@@ -1,5 +1,6 @@
 import Input from '../components/Input'
 import Add from '../components/Add'
+import AddAlternative from '../components/Add/alternative-index'
 
 const components = {
   "input": (props) => {
@@ -31,15 +32,15 @@ const components = {
       </div>
     )
   },
-  "array": (data) => (
-    <div style={{
+  "array": (data) => {
+    return (<div style={{
       marginLeft: '15px',
       flexDirection: 'column'
     }}>
       <label>{data.key} »</label>
-      <Add
-		data={data}
-		name={data.key}
+      <AddAlternative
+        data={data}
+        name={data.name}
         style={{
           width: '64px !important',
           height: '64px !important',
@@ -48,10 +49,11 @@ const components = {
         styleInput={{
           padding: 0
         }}
-      >+</Add>
+      >+</AddAlternative>
     </div>
-  ),
-  "array_objects": (data, name) => (
+  )},
+  "array_objects": (data, name) => {
+    return (
     <>
       <label>{data.key}</label>
       <Add data={data} name={name} style={{
@@ -59,9 +61,10 @@ const components = {
         height: '64px !important'
       }}>+</Add>
     </>
-  ),
+  )},
   "object_inputs": (data, key) => {
     const { inputs } = data
+    console.log(data)
 
     return (
       <div
@@ -75,7 +78,10 @@ const components = {
 
           input.key = inputKey || key
 
-          return components[input.data_type](input)
+          return components[input.data_type]({
+            ...input,
+            name: `${key.toLowerCase()}.${input.name}`
+          })
         })}
       </div>
     )

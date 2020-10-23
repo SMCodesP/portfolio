@@ -49,12 +49,12 @@ export default ({children, style, styleInput, data, name = "default", ...params}
               const newConfig = {
                 ...inputConfig,
                 key: inputKey || key,
-                name: `${name.toLowerCase()}.${input.id_item}.${inputConfig.name}`,
+                name: `${name.toLowerCase()}[${indexInput}]`,
               }
 
               const rendered = renderJSON(null, newConfig)
 
-              return rendered(newConfig)
+              return rendered(newConfig, `${name.toLowerCase()}[${indexInput}]`)
             })}
           </ContainerInput>
         )
