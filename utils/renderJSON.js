@@ -38,7 +38,8 @@ const components = {
     }}>
       <label>{data.key} »</label>
       <Add
-        data={data}
+		data={data}
+		name={data.key}
         style={{
           width: '64px !important',
           height: '64px !important',
@@ -50,10 +51,10 @@ const components = {
       >+</Add>
     </div>
   ),
-  "array_objects": (data) => (
+  "array_objects": (data, name) => (
     <>
       <label>{data.key}</label>
-      <Add data={data} style={{
+      <Add data={data} name={name} style={{
         width: '64px !important',
         height: '64px !important'
       }}>+</Add>

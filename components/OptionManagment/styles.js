@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { shade } from 'polished'
+import { shade, parseToRgb, rgba } from 'polished'
 
 export const ContainerOptionsManagment = styled.div`
 	margin: 0 10px;
@@ -42,4 +42,37 @@ export const ContainerManagment = styled.div`
 	margin-bottom: 50px;
 	display: flex;
 	flex-direction: column;
+`
+
+export const ButtonSubmit = styled.button`
+	width: 106px;
+	height: 36px;
+	opacity: .75;
+	justify-content: center;
+	align-self: flex-end;
+	align-items: center;
+	padding: 5px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	color: ${({theme}) => theme.colors.inverseText};
+	font-weight: bold;
+	font-size: 17px;
+	border: 1px solid ${({theme}) => rgba({
+		...parseToRgb(theme.colors.inverseText),
+		alpha: 0.25
+	})};
+	background: ${({theme}) => theme.colors.fourthText};
+	transition: opacity .2s, filter .2s, border .2s;
+
+	&:hover {
+		opacity: 1;
+		border: 1px solid ${({theme}) => rgba({
+			...parseToRgb(theme.colors.inverseText),
+			alpha: 0.5
+		})};
+	}
+
+	&:active {
+		filter: brightness(75%);
+	}
 `

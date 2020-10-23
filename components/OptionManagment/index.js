@@ -9,6 +9,7 @@ import {
   ContainerOptionsManagment,
   OptionManagment as OptionManagmentComponent,
   ContainerManagment,
+  ButtonSubmit
 } from './styles'
 
 function OptionManagment({ theme }) {
@@ -95,7 +96,7 @@ function OptionManagment({ theme }) {
                 </>
               )
             })}
-            <button type="submit">Salvar</button>
+            <ButtonSubmit type="submit">Salvar</ButtonSubmit>
           </Form>
         )}
       </ContainerManagment>

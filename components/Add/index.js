@@ -9,9 +9,8 @@ import {
 import renderJSON from '../../utils/renderJSON'
 import randomID from '../../utils/randomID'
 
-export default ({children, style, styleInput, data, ...params}) => {
+export default ({children, style, styleInput, data, name = "default", ...params}) => {
   const [items, setItems] = useState([])
-
 
   const addItem = () => {
     setItems((itemsCache) => {
@@ -50,7 +49,7 @@ export default ({children, style, styleInput, data, ...params}) => {
               const newConfig = {
                 ...inputConfig,
                 key: inputKey || key,
-                name: `${inputConfig.name}.${input.id_item}`,
+                name: `${name.toLowerCase()}.${inputConfig.name}.${input.id_item}`,
               }
 
               const rendered = renderJSON(null, newConfig)
