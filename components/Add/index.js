@@ -15,31 +15,26 @@ export default ({children, style, styleInput, data, ...params}) => {
 
   const addItem = () => {
     setItems((itemsCache) => {
-      console.log(data.inputs)
-      return [...itemsCache, {
+		  return [...itemsCache, {
         ...data.inputs,
-        testeSLA: randomID()
+        id_item: randomID()
       }]
     })
   }
 
   const removeItem = (id) => {
-    setItems((itemsCache) => {
-      const index = itemsCache.findIndex((item) => item.id === id)
-      itemsCache.splice(index, 1)
-      return [...itemsCache]
-    })
+    document.getElementById(`container.${id}`).remove()
   }
 
   return (
     <>
       {(!!items[0]) && items.map((input, indexInput) => {
         return (
-          <ContainerInput key={indexInput} style={styleInput}>
+          <ContainerInput key={indexInput} style={styleInput} id={`container.${input.id_item}`}>
             <FaTrash
               size={16}
               color="#e02041"
-              onClick={() => removeItem(input.id)}
+              onClick={() => removeItem(input.id_item)}
               style={{
                 marginRight: '25px',
                 marginBottom: '5px',
@@ -48,14 +43,19 @@ export default ({children, style, styleInput, data, ...params}) => {
               }}
             />
             {Object.keys(input).map((inputKey) => {
+              if (inputKey === "id_item")
+                return;
               let inputConfig = input[inputKey]
 
-              inputConfig.key = inputKey || key
-              inputConfig.name = `${inputConfig.name}[${input.id}]`
+              const newConfig = {
+                ...inputConfig,
+                key: inputKey || key,
+                name: `${inputConfig.name}.${input.id_item}`,
+              }
 
-              const rendered = renderJSON(null, inputConfig)
+              const rendered = renderJSON(null, newConfig)
 
-              return rendered(inputConfig)
+              return rendered(newConfig)
             })}
           </ContainerInput>
         )

@@ -17,5 +17,5 @@ export default function Input({ name, ...rest }) {
     });
   }, [fieldName, registerField]);
 
-  return <InputComponent ref={inputRef} defaultValue={defaultValue} {...rest} />;
+  return <InputComponent name={name} ref={inputRef} defaultValue={defaultValue} {...rest} />;
 }
