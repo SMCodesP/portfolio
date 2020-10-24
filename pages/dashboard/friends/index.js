@@ -35,7 +35,7 @@ const Friends = () => {
 			</Head>
 
 			<Container>
-				<MenuBarDashboard />
+				<MenuBarDashboard location="friends" />
 				<ContainerInformations>
 					<h1>Seus amigos</h1>
 					<ListFriends>

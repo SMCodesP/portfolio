@@ -52,7 +52,7 @@ const Dashboard = () => {
 						<path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke: 'none', fill: 'url(#gradient)'}}></path>
 					</svg>
 				</ContainerShape>
-				<MenuBarDashboard />
+				<MenuBarDashboard location="dashboard" />
 				<ContainerInformations>
 					<h1>Informações</h1>
 					<ContainerInfos>

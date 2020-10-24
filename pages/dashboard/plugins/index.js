@@ -45,7 +45,7 @@ const Plugins = () => {
 			</Head>
 
 			<Container>
-				<MenuBarDashboard />
+				<MenuBarDashboard location="plugins" />
 
 				<ContainerInformations>
 					<ContainerLicense
