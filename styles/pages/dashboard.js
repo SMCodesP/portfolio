@@ -43,6 +43,11 @@ export const ContainerInformations = styled.div`
 		margin: 0  0 10px 0;
 	}
 
+  & h1, & h2 {
+    width: fit-content;
+    align-self: center;
+  }
+
   @media (max-width: 415px) {
     width: calc(100% - 75px);
     margin-left: 75px;

@@ -90,7 +90,8 @@ const Dashboard = () => {
 						marginTop: 25
 					}}>Histórico</h1>
 					<h2 style={{
-						margin: '0 15px'
+						margin: '0 15px',
+            textIndent: '0.75em'
 					}}>Sem nenhuma alteração feita até o momento.</h2>
 				</ContainerInformations>
 			</Container>
