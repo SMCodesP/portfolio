@@ -5,6 +5,18 @@ export const ContainerOptionsManagment = styled.div`
 	margin: 0 10px;
 	display: flex wrap;
 	align-items: flex-end;
+
+	@media (max-width: 550px) {
+		margin: 0 5px;
+	}
+
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+
+	@media (max-width: 400px) {
+		margin: 0;
+	}
 `
 
 export const OptionManagment = styled.div`
@@ -31,6 +43,21 @@ export const OptionManagment = styled.div`
 	&:hover {
 		filter: brightness(75%);
 	}
+
+	@media (max-width: 500px) {
+		width: 100%;
+		border-radius: 0;
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+		border-left: ${({selected}) => selected ? '2px' : '2px'} solid ${({theme}) => theme.colors.fifthText};
+		border-right: ${({selected}) => selected ? '2px' : '2px'} solid ${({theme}) => theme.colors.fifthText};
+		border-top: ${({selected}) => selected ? '2px' : '2px'} solid ${({theme}) => theme.colors.fifthText};
+
+		&:first-child {
+			border-top-right-radius: 5px;
+			border-top-left-radius: 5px;
+		}
+	}
 `
 
 export const ContainerManagment = styled.div`
@@ -39,14 +66,35 @@ export const ContainerManagment = styled.div`
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
-	margin-bottom: 50px;
+	margin-bottom: 50px !important;
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: 600px) {
+		padding: 5px;
+	}
+
+  @media (max-width: 550px) {
+  	margin: 0 5px;
+  }
+
+	@media (max-width: 400px) {
+		margin: 0;
+	}
+`
+
+export const ContainerButtons = styled.div`
+  align-self: flex-end;
+  margin-top: 10px;
+
+  @media (max-width: 590px) {
+  	flex-direction: column;
+  }
 `
 
 export const ButtonSubmit = styled.button`
 	min-width: 128px;
-  margin: 0 5px;
+	margin: 0 5px;
 	height: 36px;
 	opacity: .75;
 	justify-content: center;
@@ -76,4 +124,8 @@ export const ButtonSubmit = styled.button`
 	&:active {
 		filter: brightness(75%);
 	}
+
+  @media (max-width: 590px) {
+  	margin: 5px;
+  }
 `

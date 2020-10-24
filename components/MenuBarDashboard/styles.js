@@ -8,6 +8,10 @@ export const MenuBar = styled.div`
 	position: fixed;
 	display: flex;
 	flex-direction: column;
+	
+	@media (max-width: 400px) {
+		width: 40px;
+	}
 `
 
 export const ListPages = styled.ul`
@@ -34,5 +38,15 @@ export const Page = styled.li`
 
 	&:hover {
 		filter: brightness(75%);
+	}
+
+	@media (max-width: 400px) {
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		& svg {
+			width: 18px;
+			height: 18px;
+		}
 	}
 `

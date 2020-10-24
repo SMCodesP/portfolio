@@ -27,7 +27,8 @@ export default function MenuBarDashboard({location}) {
 				size={32}
 				color={theme.colors.text}
 				style={{
-					margin: 12,
+					textAlign: 'center',
+					alignSelf: 'center',
 					cursor: 'pointer'
 				}}
 			/>

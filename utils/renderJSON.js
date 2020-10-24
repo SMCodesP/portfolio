@@ -24,7 +24,10 @@ const components = {
         <label>{input.key.replaceAll('_', ' ')} »</label>
         <Input
           style={{
-            margin: '5px',
+            marginTop: '5px',
+            marginBottom: '5px',
+            marginRight: '5px',
+            marginLeft: '5px',
             paddding: '0 5px',
           }}
           {...input}

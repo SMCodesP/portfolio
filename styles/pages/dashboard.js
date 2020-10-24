@@ -52,6 +52,16 @@ export const ContainerInformations = styled.div`
       align-self: center;
     }
   }
+
+  @media (max-width: 400px) {
+    width: calc(100% - 50px);
+    margin-left: 45px;
+  }
+
+  @media (max-width: 356px) {
+    width: calc(100% - 42px);
+    margin-left: 42px;
+  }
 `
 
 export const ContainerInfos = styled.div`

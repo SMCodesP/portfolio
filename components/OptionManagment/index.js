@@ -10,7 +10,8 @@ import {
   ContainerOptionsManagment,
   OptionManagment as OptionManagmentComponent,
   ContainerManagment,
-  ButtonSubmit
+  ButtonSubmit,
+  ContainerButtons,
 } from './styles'
 
 function OptionManagment({ theme }) {
@@ -98,14 +99,11 @@ function OptionManagment({ theme }) {
                 </>
               )
             })}
-            <div style={{
-              alignSelf: 'flex-end',
-              marginTop: 10
-            }}>
+            <ContainerButtons>
               <ButtonSubmit type="submit">Baixar</ButtonSubmit>
               <ButtonSubmit type="submit">Salvar</ButtonSubmit>
               <ButtonSubmit type="submit">Salvar & reiniciar</ButtonSubmit>
-            </div>
+            </ContainerButtons>
           </Form>
         )}
       </ContainerManagment>

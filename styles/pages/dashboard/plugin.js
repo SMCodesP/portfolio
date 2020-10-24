@@ -12,6 +12,10 @@ export const ContainerDetails = styled.ul`
   @media (max-width: 690px) {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  @media (max-width: 550px) {
+  	padding: 35px 0;
+  }
 `
 
 export const Detail = styled.li`
@@ -47,5 +51,17 @@ export const Detail = styled.li`
 
 	&:hover {
 		filter: brightness(95%);
+	}
+
+	@media (max-width: 400px) {
+		margin: 5px 0;
+	}
+
+	@media (max-width: 352px) {
+		& svg {
+			padding: 5px;
+			width: 28px;
+			height: 28px;
+		}
 	}
 `

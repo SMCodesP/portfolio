@@ -9,9 +9,29 @@ export const Input = styled.input`
   border: 1px solid ${({theme}) => shade(0.25, theme.colors.secundaryBackground)};
   border-radius: 5px;
   font-size: 15px;
-  transition: border .2s;
+  transition: border .2s, width .5s;
 
   &:focus {
     border: 1px solid ${({theme}) => shade(0.5, theme.colors.secundaryBackground)};
+  }
+
+  @media (max-width: 1200px) {
+    width: 65%;
+  }
+
+  @media (max-width: 900px) {
+    width: 85%;
+  }
+
+  @media (max-width: 725px) {
+    width: 95%;
+  }
+
+  @media (max-width: 650px) {
+    ${({ style = { marginLeft: 0 } }) => {
+      console.log("styled")
+
+      return `width: calc(99% - ${style.marginLeft});`
+    }}
   }
 `
