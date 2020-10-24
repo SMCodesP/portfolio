@@ -6,6 +6,11 @@ export const ContainerPlugin = styled.li`
 	padding: 10px;
 	width: 100%;
 	margin: 2.5px;
+
+	@media (max-width: 575px) {
+		flex-direction: column;
+		align-items: center;
+	}
 `
 
 export const ImageLogo = styled.img`
@@ -20,11 +25,23 @@ export const ImageLogo = styled.img`
 		border-radius: 15px;
 		filter: brightness(75%);
 	}
+
+	@media (max-width: 575px) {
+		margin: 0;
+	}
 `
 
 export const PluginBody = styled.div`
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: 575px) {
+		& * {
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+		}
+	}
 `
 
 export const Name = styled.p`

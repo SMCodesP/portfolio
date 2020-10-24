@@ -4,10 +4,18 @@ export const ContainerDetails = styled.ul`
 	padding: 35px 5px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 925px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 690px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `
 
 export const Detail = styled.li`
-	margin: 0 5px;
+	margin: 5px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	display: flex;
 	align-items: center;

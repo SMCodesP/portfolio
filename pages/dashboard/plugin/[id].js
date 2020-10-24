@@ -167,6 +167,7 @@ function Plugin({readme, product, ...params}) {
 											color: `#${color}`
 										}}>854</h4>
 									</span>
+                  <div></div>
 								</Detail>
 							)
 						})()}
@@ -179,7 +180,6 @@ function Plugin({readme, product, ...params}) {
 			</Container>
 
 			<ReactTooltip
-				place="bottom"
 				data-text-color={theme.colors.background}
 				textColor={theme.colors.background}
 				data-background-color={theme.colors.text}
