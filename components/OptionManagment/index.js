@@ -98,7 +98,14 @@ function OptionManagment({ theme }) {
                 </>
               )
             })}
-            <ButtonSubmit type="submit">Salvar</ButtonSubmit>
+            <div style={{
+              alignSelf: 'flex-end',
+              marginTop: 10
+            }}>
+              <ButtonSubmit type="submit">Baixar</ButtonSubmit>
+              <ButtonSubmit type="submit">Salvar</ButtonSubmit>
+              <ButtonSubmit type="submit">Salvar & reiniciar</ButtonSubmit>
+            </div>
           </Form>
         )}
       </ContainerManagment>

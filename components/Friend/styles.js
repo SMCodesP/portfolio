@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { FiTrash2 } from 'react-icons/fi'
+import { shade } from 'polished'
 
 export const Friend = styled.li`
 	background: ${({theme}) => theme.colors.secundaryBackground};
@@ -11,10 +12,12 @@ export const Friend = styled.li`
 
 	transition: transform .4s, filter .4s;
 
-	&:hover {
-		transform: scale(1.035);
-		filter: brightness(95%);
-	}
+  @media (min-width: 416px) {
+	  &:hover {
+		  transform: scale(1.035);
+  		filter: brightness(95%);
+	  }
+  }
 `
 
 export const UserHeader = styled.div`
@@ -39,6 +42,10 @@ export const ListPermissions = styled.ul`
 	margin: 5px 25px;
 	display: flex;
 	flex-direction: column;
+
+  @media (max-width: 475px) {
+    margin: 5px;
+  }
 `
 
 export const Permission = styled.li`
@@ -49,6 +56,12 @@ export const Permission = styled.li`
 	& p {
 		font-size: 15pt;
 	}
+
+  @media (max-width: 400px) {
+    background: ${({theme}) => shade(0.15, theme.colors.secundaryBackground)};
+    padding: 5px;
+    border-radius: 5px;
+  }
 `
 
 export const Trash = styled(FiTrash2)`

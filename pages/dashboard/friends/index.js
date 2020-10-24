@@ -1,9 +1,7 @@
 import { useContext } from 'react'
 import Head from 'next/head'
 
-import { darken } from 'polished'
 import { ThemeContext } from 'styled-components'
-import Switch from "react-switch";
 
 import GlobalStyle from '../../../styles/GlobalStyle'
 import {

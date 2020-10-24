@@ -42,14 +42,28 @@ export const ContainerInformations = styled.div`
 		font-size: 28pt;
 		margin: 0  0 10px 0;
 	}
+
+  @media (max-width: 415px) {
+    width: calc(100% - 75px);
+    margin-left: 75px;
+  }
 `
 
 export const ContainerInfos = styled.div`
+  width: 100%;
 	margin: 10px 15px;
 
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 20px;
+
+  @media (max-width: 1150px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (max-width: 430px) {
+    margin: 10px 0;
+  }
 `
 
 export const ContainerInfo = styled.div`
@@ -77,17 +91,26 @@ export const ImageLogo = styled.img`
 	cursor: pointer;
 	position: absolute;
 
-	transition: filter .4s;
+	transition: filter .4s, opacity .4s;
 
 	&:hover {
 		filter: brightness(75%);
 	}
+
+  @media (max-width: 580px) {
+    opacity: 0;
+  }
 `
 
 export const ContainerInformationList = styled.div`
 	width: 100%;
 
 	margin: 7.5px 20px;
+
+  @media (max-width: 1150px) {
+    margin: 7.5px 0;
+    padding: 0 7.5px;
+  }
 `
 
 export const InformationList = styled.ul`
@@ -98,6 +121,10 @@ export const InformationList = styled.ul`
 export const InformationItem = styled.li`
 	font-size: 15pt;
 	margin: 5px 0 5px 5px;
+
+  @media (max-width: 475px) {
+    font-size: 12pt;
+  }
 `
 
 export const ItemKey = styled.strong`

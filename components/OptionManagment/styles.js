@@ -45,7 +45,8 @@ export const ContainerManagment = styled.div`
 `
 
 export const ButtonSubmit = styled.button`
-	width: 106px;
+	min-width: 128px;
+  margin: 0 5px;
 	height: 36px;
 	opacity: .75;
 	justify-content: center;
