@@ -8,7 +8,11 @@ export const MenuBar = styled.div`
 	position: fixed;
 	display: flex;
 	flex-direction: column;
-	
+
+	@media (max-width: 415px) {
+		width: 60px;
+  }
+
 	@media (max-width: 400px) {
 		width: 40px;
 	}
@@ -39,6 +43,13 @@ export const Page = styled.li`
 	&:hover {
 		filter: brightness(75%);
 	}
+
+	@media (max-width: 415px) {
+		& svg {
+			width: 23px;
+			height: 23px;
+		}
+  }
 
 	@media (max-width: 400px) {
 		padding-top: 10px;

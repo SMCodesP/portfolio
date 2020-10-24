@@ -44,8 +44,8 @@ export const ContainerInformations = styled.div`
 	}
 
   @media (max-width: 415px) {
-    width: calc(100% - 75px);
-    margin-left: 75px;
+    width: calc(100% - 65px);
+    margin-left: 65px;
 
     & h1, & h2 {
       width: fit-content;
