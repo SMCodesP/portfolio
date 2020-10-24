@@ -43,31 +43,26 @@ export const ContainerInformations = styled.div`
 		margin: 0  0 10px 0;
 	}
 
-  & h1, & h2 {
-    width: fit-content;
-    align-self: center;
-  }
-
   @media (max-width: 415px) {
     width: calc(100% - 75px);
     margin-left: 75px;
+
+    & h1, & h2 {
+      width: fit-content;
+      align-self: center;
+    }
   }
 `
 
 export const ContainerInfos = styled.div`
   width: 100%;
-	margin: 10px 15px;
+	margin: 10px 0;
 
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
 
   @media (max-width: 1150px) {
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  @media (max-width: 430px) {
-    margin: 10px 0;
   }
 `
 
