@@ -36,7 +36,7 @@ const Home = () => {
 						key={index}
 						items={3}
 						category={category}
-						id="navigation"
+						id="products"
 						limit={true}
 					/>
 				))}

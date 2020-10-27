@@ -1,13 +1,10 @@
-import {useContext} from 'react'
-import {ThemeContext} from 'styled-components'
 import Particles from 'react-particles-js';
 
 export default function ContainerParticles({children}) {
-	const {colors} = useContext(ThemeContext)
 
 	const config = {
 		particles: {
-			color: colors.text,
+			color: getComputedStyle(document.body).getPropertyValue('--text'),
 			number: {
 				value: 75,
 				density: {
@@ -53,7 +50,7 @@ export default function ContainerParticles({children}) {
 			line_linked: {
 				enable: true,
 				distance: 250,
-				color: colors.text,
+				color: getComputedStyle(document.body).getPropertyValue('--text'),
 				opacity: 0.4,
 				width: 1.5,
 			},
@@ -119,7 +116,7 @@ export default function ContainerParticles({children}) {
 			width="100%"
 			height="100vh"
 			style={{
-				background: colors.background
+				background: getComputedStyle(document.body).getPropertyValue('--background')
 			}}
 		>
 			{children}
