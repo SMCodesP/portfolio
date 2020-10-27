@@ -11,8 +11,8 @@ export default [
 				title: 'SMPortfolio',
 				category: 'web',
 				image: {
-					large: '/favicon.jpg',
-					small: '/favicon_min.jpg'
+					large: '/images/favicon.jpg',
+					small: '/images/favicon_min.jpg'
 				},
 				descriptionList: [
 					'**Páginas »** 4',
@@ -69,8 +69,8 @@ export default [
 				title: 'DDL-Furnace',
 				category: 'plugin',
 				image: {
-					large: '/furnace.png',
-					small: '/furnace_min.png'
+					large: '/images/furnace.png',
+					small: '/images/furnace_min.png'
 				},
 				descriptionList: [
 					'**Minecraft version »** 1.8.x',
@@ -89,8 +89,8 @@ export default [
 				title: 'DDL-Tags',
 				category: 'plugin',
 				image: {
-					large: '/name_tag.png',
-					small: '/name_tag_min.png'
+					large: '/images/name_tag.png',
+					small: '/images/name_tag_min.png'
 				},
 				descriptionList: [
 					'**Minecraft version »** 1.8.x',
@@ -109,8 +109,8 @@ export default [
 				title: 'DDL-Economy',
 				category: 'plugin',
 				image: {
-					large: '/gold.png',
-					small: '/gold_min.png'
+					large: '/images/gold.png',
+					small: '/images/gold_min.png'
 				},
 				descriptionList: [
 					'**Minecraft version »** 1.8.x',
@@ -129,8 +129,8 @@ export default [
 				title: 'DDL-Warps',
 				category: 'plugin',
 				image: {
-					large: '/barrier.png',
-					small: '/barrier_min.png'
+					large: '/images/barrier.png',
+					small: '/images/barrier_min.png'
 				},
 				descriptionList: [
 					'**Minecraft version »** 1.8.x',

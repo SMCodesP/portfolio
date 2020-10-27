@@ -1,0 +1,216 @@
+.containerPurchase {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5px 70px;
+	transition: height 2s, opacity 1s;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 18px;
+	border-radius: 50px;
+	line-height: 20px;
+	padding: 5px 25px;
+	position: relative;
+	top: 25px;
+	cursor: default;
+	transition: filter .2s;
+}
+.title:hover {
+	filter: brightness(70%);
+}
+
+.container {
+	background: var(--background);
+	height: fit-content;
+	flex: 1;
+	max-width: 360px;
+	min-width: 355px;
+	margin: 7.5px;
+	border-radius: 10px;
+	transition: box-shadow .3s, transform .3s, border .3s;
+	padding-bottom: 10px;
+	border: 1px solid var(--primary);
+	--color-var: #attr(data-color);
+	border-top: 4px solid var(--color-var);
+	box-shadow: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.container:hover {
+	border: 0;
+	box-shadow: 0 0 5px 0 var(--primary);
+	transform: scale(1.035);
+}
+
+@media only screen and (max-width: 500px) {
+	.container {
+		margin: 7.5px 0;
+		max-width: 90%;
+		min-width: 90%;
+	}
+}
+
+.imageLogo {
+	margin: 5px 0 5px 0;
+	border-radius: 5px;
+	cursor: none;
+	filter: brightness(85%);
+}
+
+.containerImage {
+	display: flex;
+	flex-direction: column-reverse;
+	width: 100%;
+	background: var(--secundaryBackground);
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0 10px 0;
+	border-bottom: 1px solid var(--primary);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	z-index: -1;
+}
+
+.newInfo {
+	color: var(--background);
+	align-self: flex-end;
+	background: var(--primary);
+	padding: 6px 6px 6px 10px;
+	border-bottom-left-radius: 10px;
+	font-size: 14px;
+	font-weight: 700;
+	/*border-bottom: 4px solid ${({theme}) => shade(0.4, theme.colors.primary)};*/
+	transition: filter .2s, padding-right .2s;
+	cursor: pointer;
+}
+
+.newInfo:hover {
+	padding-right: 20px;
+	filter: brightness(70%);
+}
+
+.descriptionList {
+	padding: 40px 40px 20px 40px;
+	user-select: text !important;
+	font-size: 16px;
+	color: var(--text);
+	list-style-position: inside;
+	line-height: 22px;
+}
+
+.descriptionList div {
+	padding: 4px;
+}
+
+.priceTitle {
+	font-weight: 500;
+	font-size: 20px;
+	color: var(--text);
+	padding: 5px;
+	align-self: flex-end;
+}
+
+.purchaseButton {
+	background: var(--secundaryBackground);
+	border: 0;
+	border-radius: 5px;
+	height: 46px;
+	width: 100%;
+	color: var(--text);
+	font-size: 15pt;
+	font-weight: 500;
+	cursor: pointer;
+	/*border-bottom: 3px solid ${({theme}) => shade(0.3, theme.colors.secundaryBackground)};*/
+	position: relative;
+	transition: filter .2s, top .2s;
+}
+
+.purchaseButton:hover {
+	filter: brightness(75%);
+}
+
+.purchaseButton:active {
+	border-bottom: 0;
+	top: 3px;
+}
+
+.details {
+	cursor: pointer;
+	color: var(--text);
+	font-size: 14pt;
+	transition: filter .5s, text-decoration .5s;
+	display: flex;
+	filter: brightness(125%);
+	flex-direction: column;
+}
+
+.details:after {
+	width: 0;
+	height: 2px;
+	background: var(--text);
+	content: '';
+	transition: width .3s;
+	margin-top: -1px;
+}
+
+.details:hover {
+	filter: brightness(50%);
+}
+
+.details:hover:after {
+	width: 100%;
+}
+
+.detailsContainer {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 5px 15px;
+}
+
+.detailsContainer a {
+	text-decoration: none;
+}
+
+.titleSkeleton {
+	/*background-color: ${({theme}) => shade(0.2, theme.colors.secundaryBackground)};*/
+	border-radius: 5px;
+	width: 45%;
+	height: 30px;
+	padding: 5px 25px;
+	position: relative;
+	top: 25px;
+	cursor: default;
+	transition: filter 2s;
+}
+
+.titleSkeleton:hover {
+	filter: brightness(70%);
+}
+
+.imageSkeleton {
+	/*background-color: ${({theme}) => shade(0.2, theme.colors.secundaryBackground)};*/
+	width: 128px;
+	height: 128px;
+	border-radius: 50%;
+}
+
+.descriptionSkeleton {
+	/*background-color: ${({theme}) => shade(0.2, theme.colors.secundaryBackground)};*/
+	/*width: ${(props) => (props.width) ? props.width : 92}px;*/
+	height: 25px;
+	margin: 10px 0 0 0;
+	border-radius: 2px;
+}
+
+.buttonSkeleton {
+	width: 100%;
+	height: 45px;
+	padding: 15px 0;
+	border-radius: 5px;
+	/*background-color: ${({theme}) => shade(0.2, theme.colors.secundaryBackground)};*/
+}

@@ -1,33 +1,28 @@
 import Link from 'next/link'
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { FiArrowRight } from "react-icons/fi";
-import { ThemeContext } from 'styled-components';
+import dynamic from 'next/dynamic'
 
-import Product from '../Product'
-import {
-	Container,
-	ContainerProducts,
-	CategoryTitle,
-	ContainerItems,
-	ContainerMoreItems,
-	MoreItem,
-} from './styles'
+const Product = dynamic(
+	() => import('../Product'),
+	{ ssr: false }
+)
+import styles from './Products.module.css'
 
 export default function Products({ items, category, limit }) {
 	const [loading, setLoading] = useState(true);
-	const {colors} = useContext(ThemeContext);
 
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false)
-		}, 10000)
+		}, 100000)
 	}, [])
 
 	return (
-		<Container>
-			<ContainerItems>
-				<CategoryTitle>{category.title}</CategoryTitle>
-				<ContainerProducts items={items}>
+		<div className={styles.container}>
+			<div className={styles.containerItems}>
+				<p className={styles.categoryTitle}>{category.title}</p>
+				<div className={styles.containerProducts} items={items}>
 				{loading ? (
 					<Product productIndex={0} product={{}} loading={true} />
 				) : category.items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).map((item, index) => {
@@ -38,16 +33,19 @@ export default function Products({ items, category, limit }) {
 						)
 					}
 				})}
-				</ContainerProducts>
+				</div>
 				{limit && (
 					<Link href={category.link}>
-						<ContainerMoreItems>
-							<MoreItem>Ver mais</MoreItem>
-							<FiArrowRight color={colors.secundary} size={28} />
-						</ContainerMoreItems>
+						<div className={styles.containerMoreItems}>
+							<p className={styles.moreItem}>Ver mais</p>
+							<FiArrowRight
+								size={28}
+								className={styles.moreIcon}
+							/>
+						</div>
 					</Link>
 				)}
-			</ContainerItems>
-		</Container>
+			</div>
+		</div>
 	)
 }

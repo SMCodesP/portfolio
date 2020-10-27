@@ -5,14 +5,16 @@ import light from './light'
 
 function Themes() {
 	const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('theme') || JSON.stringify(light)))
+	console.log(theme)
 
 	return (
 		<style global jsx>
 			{`
 				:root {
+					--name: ${theme.title};
 					--primary: ${theme.colors.primary};
-					--secundary: ${theme.colors.primary};
-					--tertiary: ${theme.colors.primary};
+					--secundary: ${theme.colors.secundary};
+					--tertiary: ${theme.colors.tertiary};
 					--fourth: ${theme.colors.fourth};
 
 					--background: ${theme.colors.background};

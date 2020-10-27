@@ -1,15 +1,9 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document'
+import Document, { Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
-
-	static getInitialProps ({ renderPage }) {
-
-		return renderPage();
-	}
-
 	render() {
 		return (
-			<Html lang="pt-BR">
+			<html lang="pt-BR">
 				<Head>
 					<link href="/fonts/fonts.css" rel="stylesheet" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,7 +21,7 @@ export default class MyDocument extends Document {
 					<Main />
 					<NextScript />
 				</body>
-			</Html>
+			</html>
 		);
 	}
 }

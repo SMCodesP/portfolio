@@ -2,9 +2,16 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 
 const Navigation = dynamic(
-  () => import('../components/Navigation/'),
-  { ssr: false }
+	() => import('../components/Navigation/'),
+	{ ssr: false }
 )
+const Footer = dynamic(
+	() => import('../components/Footer/'),
+	{ ssr: false }
+)
+import Products from '../components/Products'
+
+import products from '../utils/products'
 
 const Home = () => {
 	return (
@@ -24,6 +31,16 @@ const Home = () => {
 				</Head>
 
 				<Navigation page="/" />
+				{products.map((category, index) => (
+					<Products
+						key={index}
+						items={3}
+						category={category}
+						id="navigation"
+						limit={true}
+					/>
+				))}
+				<Footer />
 
 			</div>
 	)

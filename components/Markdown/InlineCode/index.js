@@ -8,19 +8,6 @@ import {
 	ContainerSuccess,
 } from '../../Clipoard/styles'
 
-const Container = styled.code`
-	background: ${({theme}) => theme.colors.background};
-	padding: 5px;
-	margin: 0 2px;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: filter .4s;
-
-	&:hover {
-		filter: brightness(65%);
-	}
-`
-
 export default ({value}) => {
 	const [actived, setActived] = useState(false)
 	const [display, setDisplay] = useState(false)
@@ -53,7 +40,7 @@ export default ({value}) => {
 
 	return (
 		<>
-			<Container onClick={codeCopyText}>{value}</Container>
+			<code onClick={codeCopyText}>{value}</code>
 
 			{display && (
 				<ContainerClipboard actived={actived}>
@@ -63,6 +50,20 @@ export default ({value}) => {
 					</ContainerSuccess>
 				</ContainerClipboard>
 			)}
+
+      <style jsx>{`
+      	code {
+					background: ${({theme}) => theme.colors.background};
+					padding: 5px;
+					margin: 0 2px;
+					border-radius: 5px;
+					cursor: pointer;
+					transition: filter .4s;
+      	}
+				code:hover {
+					filter: brightness(65%);
+				}
+      `}</style>
 		</>
 	)
 }

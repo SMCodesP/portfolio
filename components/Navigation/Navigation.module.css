@@ -4,13 +4,13 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .container_welcome {
 	width: 80%;
-	margin-top: 15vh;
 }
+
 .welcome {
 	font-weight: 400;
 	color: var(--text);
@@ -38,8 +38,7 @@
 	display: inline-block;
 	margin-top: 75px;
 	cursor: pointer;
-
-	transition: all .2s;
+	transition: all .4s;
 }
 
 .work_last:hover {

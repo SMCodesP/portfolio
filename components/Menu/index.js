@@ -1,39 +1,16 @@
-import { useState, useEffect, useRef, memo, useContext } from 'react'
+import { useState, memo } from 'react'
 import Link from 'next/link'
-import Modal from 'react-modal';
-import { ThemeContext } from 'styled-components'
+import Modal from 'react-modal'
+import { IoMdSettings } from 'react-icons/io'
 import { shade } from 'polished'
 
-import ThemesContext from '../../contexts/themes'
-
-import {
-	Options,
-	Title,
-	ListingPage,
-	PageCustom,
-	Page,
-	User,
-	HeadMenuFixed,
-	IconMenu,
-	UserMenu,
-	UserIcon,
-	Username,
-	Line,
-	ListOptions,
-	Option,
-	OptionTitle,
-	OptionSelect,
-} from './styles'
-
 import ModalSetting from '../ModalSetting'
+import styles from './Menu.module.css'
 
 function Menu({ page: isPage, background, color }) {
 	const [activedMobile, setActivedMobile] = useState(false)
 	const [isClose, setIsClose] = useState(false)
 	const [showModal, setShowModal] = useState(false);
-
-	const {colors, ...theme} = useContext(ThemeContext)
-	const {toggleTheme} = useContext(ThemesContext)
 
 	const list = [
 		{
@@ -63,69 +40,60 @@ function Menu({ page: isPage, background, color }) {
 		setIsClose(!isClose);
 	}
 
-	const customStyles = {
-		content: {
-			top: '50%',
-			left: '50%',
-			right: 'auto',
-			bottom: 'auto',
-			marginRight: '-50%',
-			transform: 'translate(-50%, -50%)',
-			width: '98%',
-			background: shade(0.4, colors.background),
-			border: 0,
-			padding: '3px',
-			borderRadius: '5px',
-			zIndex: 999
-		},
-		overlay: {
-			backgroundColor: `${colors.secundaryBackground}aa`,
-			zIndex: 9999
-		}
-	};
-
 	return (
 		<>
-			<Options id='title' background={background} actived={activedMobile}>
-				<HeadMenuFixed>
-					<IconMenu
+			<div
+				className={styles.options}
+				id='title'
+				style={{
+					backgroundColor: background,
+					backgroundImage: background && `url('http://api.thumbr.it/whitenoise-361x370.png?background=${background.substring(1, toString(background).length)}&noise=${`${getComputedStyle(document.body).getPropertyValue('--text') || '#333'}`.substring(1, toString(getComputedStyle(document.body).getPropertyValue('--text') || '#333').length)}&density=5&opacity=15')`,
+					boxShadow: `0 0 2px 1px ${shade(0.5, getComputedStyle(document.body).getPropertyValue('--background') || '#333')}`,
+				}}
+				actived={activedMobile}
+			>
+				<div className={styles.headMenuFixed}>
+					<button
 						onClick={closeOrOpenInMobile}
 						closed={isClose}
+						className={styles.iconMenu}
 					>
 						<span></span>
-					</IconMenu>
-					<Title color={color}>SMCodes</Title>
-					<Page
-						color={colors.text}
+					</button>
+					<p className={styles.title} color={color}>SMCodes</p>
+					<li
+						className={styles.page}
+						// color={colors.text}
 						onClick={() => setShowModal(true)}
 					>
-						<User
-							color={colors.text}
-							size={40}
+						<IoMdSettings
+							className={styles.user}
+							// color={colors.text}
+							size={24}
 						/>
-					</Page>
-				</HeadMenuFixed>
-				<ListingPage>
+					</li>
+				</div>
+				<ul className={styles.listingPage}>
 					{list.map((page) => (
 						<Link key={page.name} href={page.name}>
 							<a>
-								<Page
-									locate={(isPage == page.name)}
+								<li
+									className={styles.page}
 									color={color}
 								>
 									{page.displayed}
-								</Page>
+								</li>
 							</a>
 						</Link>
 					))}
 					<Link href="/signin">
 						<a>
-							<PageCustom>Acessar conta</PageCustom>
+							<li className={styles.pageCustom}>Acessar conta</li>
 						</a>
 					</Link>
-				</ListingPage>
-			</Options>
-			<ModalSetting showModal={showModal} setShowModal={setShowModal} />
+				</ul>
+			</div>
+			{/* <ModalSetting showModal={showModal} setShowModal={setShowModal} /> */}
 		</>
 	)
 }
