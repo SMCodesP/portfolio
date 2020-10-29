@@ -3,7 +3,6 @@ import Head from 'next/head'
 
 import { darken } from 'polished'
 import { ThemeContext } from 'styled-components'
-import { signIn, signOut, useSession } from 'next-auth/client'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 import {
