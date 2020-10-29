@@ -33,6 +33,7 @@ export const ContainerInformations = styled.div`
 
 	position: relative;
 	margin-left: 95px;
+	margin-bottom: 15px;
 	top: 40px;
 
 	display: flex;
@@ -145,4 +146,85 @@ export const ItemValue =  styled.span`
 	color: ${({theme}) => theme.colors.fourthText};
 
 	margin: 0 5px;
+`
+
+export const ContainerAlert =  styled.div`
+	background: #7289DA;
+	border: 1px solid #99AAB5;
+	border-radius: 5px;
+	padding: 15px;
+	margin-bottom: 10px;
+	flex-direction: column;
+
+	& form {
+		margin: 5px 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	& button {
+		width: 142px;
+		height: 42px;
+		background: #23272A;
+		color: #FFFFFF;
+		border: 0;
+		border-radius: 64px;
+		cursor: pointer;
+		justify-content: center;
+		align-items: center;
+		font-size: 14px;
+		transition: filter .2s, transform .5s, box-shadow .2s;
+	}
+
+	& button:hover {
+		filter: brightness(150%);
+		box-shadow: 0 0 5px 1px #2C2F33;
+		transform: scale(1.050);
+	}
+
+	& input {
+		margin: 0 20px;
+		height: 32px;
+		width: 275px;
+		padding: 5px 10px;
+		border-radius: 5px;
+		background: #2C2F33;
+		color: #99AAB5;
+		border: 1px solid #23272A;
+	}
+`
+
+export const AlertTitle = styled.p`
+	margin: 0 0 5px 0;
+	font-size: 24px;
+	font-weight: bold;
+`
+
+export const AlertDescription = styled.p`
+	font-size: 16px;
+	padding: 5px 10px;
+`
+
+export const ContainerError =  styled.div`
+	background: #e02041;
+	border: 1px solid red;
+	border-radius: 5px;
+	padding: 15px;
+	margin-bottom: 10px;
+	flex-direction: column;
+	color: #fff;
+`
+
+export const ErrorTitle = styled.p`
+	margin: 0 0 5px 0;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+`
+
+export const ErrorDescription = styled.p`
+	font-size: 16px;
+	padding: 5px 10px;
+	color: #fff;
 `

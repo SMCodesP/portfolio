@@ -27,6 +27,7 @@ import {
 import GlobalStyle from '../../styles/GlobalStyle'
 
 import useWindow from '../../utils/useWindow'
+import api from '../../utils/api'
 
 const About = () => {
 	const theme = useContext(ThemeContext)
@@ -44,6 +45,7 @@ const About = () => {
 		console.log(username)
 		console.log(password)
 		console.log(token)
+		api.defaults.headers.common['Authorization'] = `Bearer token`
 
 		router.push('/dashboard')
 	}

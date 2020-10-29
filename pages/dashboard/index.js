@@ -1,8 +1,9 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 
 import { darken } from 'polished'
 import { ThemeContext } from 'styled-components'
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 import {
@@ -16,13 +17,48 @@ import {
 	InformationList,
 	InformationItem,
 	ItemKey,
-	ItemValue
+	ItemValue,
+	ContainerAlert,
+	AlertTitle,
+	AlertDescription,
+	ContainerError,
+	ErrorTitle,
+	ErrorDescription,
 } from '../../styles/pages/dashboard'
 
 import MenuBarDashboard from '../../components/MenuBarDashboard'
+import api from '../../utils/api'
 
 const Dashboard = () => {
 	const theme = useContext(ThemeContext)
+	const [username, setUsername] = useState('')
+	const [localUsername, setLocalUsername] = useState('')
+	const [error, setError] = useState('')
+
+	useEffect(() => {
+		const storageLocalUsername = localStorage.getItem('discord_username')
+
+		if (storageLocalUsername) {
+			setLocalUsername(storageLocalUsername)
+		}
+	}, [])
+
+	async function handleUsername(event) {
+		event.preventDefault()
+
+		try {
+			await api.put('/user/discord', {
+				username,
+			})
+			
+			localStorage.setItem('discord_username', username)
+			setLocalUsername(username)
+		} catch (error) {
+			console.log(error)
+			console.log(error.response)
+			setError(`${error.response.status} - ${error.response.statusText}`)
+		}
+	}
 
 	return (
 		<div className="container">
@@ -41,24 +77,56 @@ const Dashboard = () => {
 			</Head>
 
 			<Container>
-				<ContainerShape>
-					<svg viewBox="0 0 500 150" preserveAspectRatio="xMinYMin meet">
-						<defs>
-							<linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
-							<stop offset="0%"   stop-color={darken(-0.005, theme.colors.secundaryBackground)} />
-							<stop offset="100%" stop-color={darken(0.04, theme.colors.background)} />
-							</linearGradient>
-						</defs>
-						<path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke: 'none', fill: 'url(#gradient)'}}></path>
-					</svg>
-				</ContainerShape>
+				{localUsername && (
+					<ContainerShape>
+						<svg viewBox="0 0 500 150" preserveAspectRatio="xMinYMin meet">
+							<defs>
+								<linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+								<stop offset="0%"   stop-color={darken(-0.005, theme.colors.secundaryBackground)} />
+								<stop offset="100%" stop-color={darken(0.04, theme.colors.background)} />
+								</linearGradient>
+							</defs>
+							<path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke: 'none', fill: 'url(#gradient)'}}></path>
+						</svg>
+					</ContainerShape>
+				)}
+				
 				<MenuBarDashboard location="dashboard" />
 				<ContainerInformations>
+					{error && (
+						<ContainerError>
+							<ErrorTitle>
+								Houve um erro
+							</ErrorTitle>
+							<ErrorDescription>
+								{error}
+							</ErrorDescription>
+				    </ContainerError>
+					)}
+					{!localUsername && (
+						<ContainerAlert>
+							<AlertTitle>
+								Sincronização com discord
+							</AlertTitle>
+							<AlertDescription>
+								Sua conta ainda não está ativada com nenhuma conta do discord, pedimos que sincronize sua conta do discord com nossso sistema para gerenciar suas vantagens como comprador.
+							</AlertDescription>
+							<form onSubmit={handleUsername}>
+								<input type="text" placeholder="Usuário do discord. Ex: SMCodes#4207" value={username} onChange={(e) => {
+										if (error) {
+											setError('')
+										}
+										setUsername(e.target.value)
+									}} />
+								<button>Sincronizar agora</button>
+							</form>
+				    </ContainerAlert>
+					)}
 					<h1>Informações</h1>
 					<ContainerInfos>
 						<ContainerInfo>
 							<ImageLogo src="/favicon.jpg" />
-							<h1>Suas  compras</h1>
+							<h1>Suas compras</h1>
 
 							<ContainerInformationList>
 								<InformationList>

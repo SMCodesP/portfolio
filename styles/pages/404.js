@@ -8,12 +8,12 @@ export const Container = styled.div`
 	box-shadow: 0px 0px 2px 0.5px ${({theme}) => theme.colors.text};
 	position: absolute;
 	border-radius: 5px;
-    left: 12.5%; 
-    top: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  left: 12.5%;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const noise_text = keyframes`
