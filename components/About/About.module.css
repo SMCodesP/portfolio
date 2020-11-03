@@ -1,0 +1,44 @@
+.container_about {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.infos {
+	width: 77%;
+	flex-direction: column;
+	color: var(--text);
+
+}
+
+.info_title {
+	margin-bottom: 50px;
+	font-weight: bold;
+	font-size: 24;
+	color: var(--secundaryText);
+}
+
+.info_text {
+	text-indent: 15pt;
+	margin: 15px 25px;
+	font-size: 13pt;
+}
+
+@media only screen and (max-width: 600px) {
+	.infos {
+		width: 85%;
+	}
+	.info_title {
+		margin-bottom: 15px;
+	}
+	.info_text {
+		margin: 3%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.infos {
+		width: 95%;
+	}
+}

@@ -1,12 +1,8 @@
 import {useEffect, useState} from 'react'
-import styled from 'styled-components'
 
 import copyTextToClipboard from '../../../utils/copyTextToClipboard'
 
-import {
-	Container as ContainerClipboard,
-	ContainerSuccess,
-} from '../../Clipoard/styles'
+import styles_clipoard from '../../Clipoard/styles'
 
 export default ({value}) => {
 	const [actived, setActived] = useState(false)
@@ -43,12 +39,26 @@ export default ({value}) => {
 			<code onClick={codeCopyText}>{value}</code>
 
 			{display && (
-				<ContainerClipboard actived={actived}>
-					<ContainerSuccess>
-						{text}
-						{actived && (<span></span>)}
-					</ContainerSuccess>
-				</ContainerClipboard>
+				<div
+					className={styles_clipoard.container}
+					style={{
+						opacity: actived ? 1 : 0
+					}}>
+					<div
+						className={styles_clipoard.container_success}
+						style={{
+							backgroundColor: darken(0.07, getComputedStyle(document.body).getPropertyValue('--background'))
+						}}
+					>
+ 						{success}
+						{actived && (
+							<span style={{
+								backgroundColor: darken(0.4, getComputedStyle(document.body).getPropertyValue('--background')),
+								backgroundImage: `linear-gradient(to bottom, ${darken(0.08, getComputedStyle(document.body).getPropertyValue('--background'))}, ${darken(0.5, getComputedStyle(document.body).getPropertyValue('--background'))})`,
+							}}></span>
+						)}
+					</div>
+				</div>
 			)}
 
       <style jsx>{`

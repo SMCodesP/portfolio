@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import ReactMarkdown from 'react-markdown';
 
 const CodeBlock = dynamic(() => import('../Markdown/CodeBlock'))
-import InlineCode from '../Markdown/InlineCode'
+const InlineCode = dynamic(() =>  import('../Markdown/InlineCode'))
 
 export default ({text}) => {
 	return <ReactMarkdown
