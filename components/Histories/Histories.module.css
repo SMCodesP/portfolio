@@ -1,0 +1,91 @@
+.container_histories {
+	width: 100%;
+	display: flex;
+	margin-top: 10px;
+	padding: 75px;
+}
+
+.main_histories {
+	display: flex;
+	flex-direction: column;
+}
+
+.histories_title {
+	color: var(--secundaryText);
+}
+
+.histories_sub_title {
+	/*color: ${({theme}) => shade(0.2, theme.colors.secundaryText)};*/
+	font-size: 20px;
+	margin-bottom: 40px;
+	font-weight: 500;
+
+	@media (max-width: 600px) {
+		margin-bottom: 10px;
+	}
+}
+
+.histories_text {
+	width: 100%;
+	font-size: 13pt;
+	margin: 10px 0;
+  padding: 20px;
+	text-indent: 1.30em;
+	line-height: 20px;
+	color: var(--text);
+}
+
+.container_images {
+	margin-top: 120px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 9px;
+}
+
+.image_example {
+	border-radius: 15px;
+	width: 260px;
+	cursor: not-allowed;
+	transition: transform .3s, border-radius .3s;
+	user-select: none;
+}
+
+.image_example:hover {
+	border-radius: 5px;
+	transform: scale(1.065);
+	filter: brightness(50%);
+}
+
+@media (max-width: 1100px) {
+	.container_histories {
+	  flex-direction: column;
+	  align-items: center;
+	}
+	.container_images {
+		margin-top: 40px;
+	}
+}
+
+@media (max-width: 625px) {
+	.container_images {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 600px) {
+	.container_histories {
+		padding: 15px;
+	}
+	.histories_text {
+		margin: 0;
+	}
+	.histories_sub_title {
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 400px) {
+	.container_histories, .histories_text {
+		padding: 10px;
+	}
+}
