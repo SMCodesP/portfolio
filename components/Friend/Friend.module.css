@@ -1,0 +1,71 @@
+.friend {
+	background: var(--secundaryBackground);
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 8px;
+	border-radius: 5px;
+	transition: transform .4s, filter .4s;
+}
+
+.friend:hover {
+	transform: scale(1.035);
+	filter: brightness(95%);
+}
+
+.userHeader {
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+}
+
+.userAvatar {
+	width: 42px;
+	height: 42px;
+	border-radius: 21px;
+	cursor: pointer;
+}
+
+.username {
+	margin: 0 5px;
+	margin-inline-end: auto;
+}
+
+.listPermissions {
+	margin: 5px 25px;
+	display: flex;
+	flex-direction: column;
+}
+
+.permission {
+	display: flex;
+	align-items: center;
+	margin: 2.5px 0;
+}
+
+.permission p {
+	font-size: 15pt;
+}
+
+.trash {
+	cursor: pointer;
+	transition: filter .5s;
+}
+
+.trash:hover {
+	filter: brightness(75%);
+}
+
+.confirm_configure {
+	align-self: flex-end;
+	margin-right: 10px;
+}
+
+.confirm_configure svg {
+	margin: 5px;
+	cursor: pointer;
+	transition: filter .2s;
+}
+
+.confirm_configure svg:hover {
+	filter: brightness(75%) blur(0);
+}

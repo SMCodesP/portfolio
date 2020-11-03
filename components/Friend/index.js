@@ -4,17 +4,9 @@ import Switch from 'react-switch'
 import { ThemeContext } from 'styled-components'
 import { BsCheckAll } from 'react-icons/bs'
 import { FiX } from 'react-icons/fi'
+import { FiTrash2 } from 'react-icons/fi'
 
-import {
-	Friend,
-	UserHeader,
-	Username,
-	UserAvatar,
-	ListPermissions,
-	Permission,
-	Trash,
-	ConfirmConfigure,
-} from './styles'
+import styles from './Friend.module.css'
 
 const DEFAULT_STATES = {
 	permissionView: false,
@@ -44,17 +36,22 @@ const FriendComponent = () => {
 
 	return (
 		<>
-			<Friend>
-				<UserHeader>
-					<UserAvatar src="/favicon.jpg" alt="User avatar" />
-					<Username>SMCodes</Username>
-					<Trash
+			<li className={styles.friend}>
+				<div className={styles.user_header}>
+					<img
+						src="/favicon.jpg"
+						alt="User avatar"
+						className={styles.user_avatar}
+					/>
+					<h2 className={styles.username}>SMCodes</h2>
+					<FiTrash2
 						size={24}
 						color="#e02041"
+						className={styles.trash}
 					/>
-				</UserHeader>
-				<ListPermissions>
-					<Permission>
+				</div>
+				<ul className={styles.list_permissions}>
+					<li className={styles.permission}>
 						<p style={{
 							margin: '0 7px 0 0'
 						}}>Ver produtos comprados</p>
@@ -65,14 +62,14 @@ const FriendComponent = () => {
 							onHandleColor={theme.colors.tertiary}
 							offColor={theme.colors.background}
 							onColor={theme.colors.primary}
-						    handleDiameter={20}
-						    boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-						    activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
-						    height={17}
-						    width={35}
+							handleDiameter={20}
+							boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+							activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
+							height={17}
+							width={35}
 						/>
-					</Permission>
-					<Permission>
+					</li>
+					<li className={styles.permission}>
 						<p style={{
 							margin: '0 7px 0 0'
 						}}>Ver licenças</p>
@@ -83,14 +80,14 @@ const FriendComponent = () => {
 							onHandleColor={theme.colors.tertiary}
 							offColor={theme.colors.background}
 							onColor={theme.colors.primary}
-						    handleDiameter={20}
-						    boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-						    activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
-						    height={17}
-						    width={35}
+							handleDiameter={20}
+							boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+							activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
+							height={17}
+							width={35}
 						/>
-					</Permission>
-					<Permission>
+					</li>
+					<li className={styles.permission}>
 						<p style={{
 							margin: '0 7px 0 0'
 						}}>Gerenciar utilizadores</p>
@@ -101,14 +98,14 @@ const FriendComponent = () => {
 							onHandleColor={theme.colors.tertiary}
 							offColor={theme.colors.background}
 							onColor={theme.colors.primary}
-						    handleDiameter={20}
-						    boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-						    activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
-						    height={17}
-						    width={35}
+							handleDiameter={20}
+							boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+							activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
+							height={17}
+							width={35}
 						/>
-					</Permission>
-					<Permission>
+					</li>
+					<li className={styles.permission}>
 						<p style={{
 							margin: '0 7px 0 0'
 						}}>Configurar informações</p>
@@ -119,16 +116,16 @@ const FriendComponent = () => {
 							onHandleColor={theme.colors.tertiary}
 							offColor={theme.colors.background}
 							onColor={theme.colors.primary}
-						    handleDiameter={20}
-						    boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-						    activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
-						    height={17}
-						    width={35}
+							handleDiameter={20}
+							boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+							activeBoxShadow="0px 0px 1px 5px rgba(0, 0, 0, 0.2)"
+							height={17}
+							width={35}
 						/>
-					</Permission>
-				</ListPermissions>
+					</li>
+				</ul>
 				{confirmStates && (
-					<ConfirmConfigure>
+					<div className={styles.confirm_configure}>
 						<BsCheckAll
 							color="#20e066"
 							size={26}
@@ -137,9 +134,9 @@ const FriendComponent = () => {
 							color="#e02041"
 							size={26}
 						/>
-					</ConfirmConfigure>
+					</div>
 				)}
-			</Friend>
+			</li>
 		</>
 	)
 }
