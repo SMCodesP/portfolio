@@ -12,13 +12,13 @@
 	filter: brightness(95%);
 }
 
-.userHeader {
+.user_header {
 	display: flex;
 	flex-direction: row;
 	margin: 10px;
 }
 
-.userAvatar {
+.user_avatar {
 	width: 42px;
 	height: 42px;
 	border-radius: 21px;
@@ -30,7 +30,7 @@
 	margin-inline-end: auto;
 }
 
-.listPermissions {
+.list_permissions {
 	margin: 5px 25px;
 	display: flex;
 	flex-direction: column;
