@@ -5,6 +5,7 @@ import 'react-medium-image-zoom/dist/styles.css'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 import {ThemesProvider} from '../contexts/themes'
+import {AuthProvider} from '../contexts/auth'
 
 import dark from '../styles/themes/dark'
 
@@ -15,7 +16,9 @@ function Main(props) {
 
 	return (
 		<ThemesProvider>
-			<Component {...pageProps} />
+			<AuthProvider>
+				<Component {...pageProps} />
+			</AuthProvider>
 		</ThemesProvider>
 	)
 }

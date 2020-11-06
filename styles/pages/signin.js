@@ -195,3 +195,19 @@ export const NotHaveAccount = styled(ForgotPassword)`
 	align-self: initial;
 	margin: 5px;
 `
+
+export const ContainerError = styled.div`
+	background: red;
+	border: 2px solid #e02041;
+	padding: 10px;
+	margin: 5px 5px 0 5px;
+	border-radius: 5px;
+	justify-content: center;
+	align-items: center;
+`
+
+export const TextError = styled.p`
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+`

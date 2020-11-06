@@ -1,12 +1,20 @@
-import { useContext, useRef, useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
+import { useContext, useRef, useEffect, useState } from 'react'
+
 import {ThemeContext} from 'styled-components'
+import {useAuth} from '../../contexts/auth'
+
 import { RiMapPinUserLine, RiLockPasswordLine } from 'react-icons/ri'
-import ReCAPTCHA from "react-google-recaptcha"
 import { FiArrowLeft } from "react-icons/fi";
+
+const ReCAPTCHA = dynamic(
+	() => import("react-google-recaptcha"),
+	{ ssr: false }
+)
 
 import {
 	Container,
@@ -22,6 +30,8 @@ import {
 	ForgotPassword,
 	ButtonSubmit,
 	NotHaveAccount,
+	ContainerError,
+	TextError,
 } from '../../styles/pages/signin'
 
 import GlobalStyle from '../../styles/GlobalStyle'
@@ -31,24 +41,31 @@ import api from '../../utils/api'
 
 const About = () => {
 	const theme = useContext(ThemeContext)
+	const {signIn} = useAuth()
 	const recaptchaRef = useRef()
 	const router = useRouter()
 	const window = useWindow()
 
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
-	const [token, setToken] = useState(null)
+	const [captcha, setCaptcha] = useState(null)
+	const [error, setError] = useState('')
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault()
-		
-		console.log(username)
-		console.log(password)
-		console.log(token)
-		api.defaults.headers.common['Authorization'] = `Bearer token`
 
-		router.push('/dashboard')
+		signIn({
+			username,
+			password,
+			captcha,
+			setError,
+			router
+		})
 	}
+
+	useEffect(() => {
+		setError('')
+	}, [username, password, captcha])
 
 	return (
 		<div className="container">
@@ -83,6 +100,11 @@ const About = () => {
 					</a>
 				</Link>
 				<ContainerLogin>
+					{!!error && (
+						<ContainerError>
+							<TextError>{error}</TextError>
+						</ContainerError>
+					)}
 					<ContainerHeader>
 						<Title>Acesse sua conta</Title>
 					</ContainerHeader>
@@ -97,6 +119,7 @@ const About = () => {
 									placeholder="Digite o username de sua conta"
 									value={username}
 									onChange={(event) => setUsername(event.target.value)}
+									required
 								/>
 							</InputContainer>
 							<LabelInput>Informe sua senha</LabelInput>
@@ -107,6 +130,7 @@ const About = () => {
 									type="password"
 									placeholder="Digite a senha de sua conta"
 									onChange={(event) => setPassword(event.target.value)}
+									required
 								/>
 							</InputContainer>
 							<Link href="/forgot">
@@ -120,9 +144,10 @@ const About = () => {
 								}}
 								size={(window.width < 450) ? "compact" : "normal"}
 								ref={recaptchaRef}
-								onChange={(value) => setToken(value)}
+								onChange={(value) => setCaptcha(value)}
 								theme={theme.title.toLowerCase()}
-								sitekey="6LeeksgZAAAAAMl-CX7LZSZ_wDopPC2zQDKRtefa"
+								sitekey="6Lccy98ZAAAAAFqc_m2sG5m29skJ9SwfVAYrPCDx"
+								required
 							/>
 							<ButtonSubmit type="submit">Entrar</ButtonSubmit>
 							<Link href="signup">
