@@ -12,7 +12,7 @@ import RenderMarkdown from '../RenderMarkdown/'
 import {
 	Container,
 	ContainerImage,
-	Image as ImageLogo,
+	ImageLogo,
 	NewInfo,
 	Title,
 	DescriptionList,
@@ -50,8 +50,8 @@ function Product({loading, product, productIndex}) {
 			) : (
 				<ImageLogo
 					style={{
-						width: loading ? 128 : 'auto',
-						height: loading ? 128 : 'auto',
+						width: loading ? 128 : '128px',
+						height: loading ? 128 : '128px',
 						filter: loading ? 'blur(10px)' : ''
 					}}
 					not_auto={false}
@@ -71,7 +71,14 @@ function Product({loading, product, productIndex}) {
 						: <Title>{product.title}</Title>}
 					{loading
 						? <ImageSkeleton />
-						: <ImageIconProduct />}
+						: <ImageLogo
+								width={128}
+								height={128}
+								loading="lazy"
+								not_auto={false}
+								src={src}
+								alt={`${product.title} logo image`}
+							/>}
 					{(loading && moment.unix(moment().unix()).diff(moment.unix(product.timestamp), 'days') <= 7) && <NewInfo title="Esse produto teve seu lançamento em menos de uma semana, então foi categorizado como novo.">Novo</NewInfo>}
 				</ContainerImage>
 				<DescriptionList>
