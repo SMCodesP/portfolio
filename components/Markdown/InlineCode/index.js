@@ -21,7 +21,7 @@ const Container = styled.code`
 	}
 `
 
-export default ({value}) => {
+const InlineCode = ({value}) => {
 	const [actived, setActived] = useState(false)
 	const [display, setDisplay] = useState(false)
 	const [text, setText] = useState('')
@@ -66,3 +66,5 @@ export default ({value}) => {
 		</>
 	)
 }
+
+export default InlineCode

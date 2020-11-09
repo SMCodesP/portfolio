@@ -19,11 +19,10 @@ export default class MyDocument extends Document {
 
 	render() {
 		return (
-			<html lang="pt-BR">
+			<Html lang="pt-BR">
 				<Head>
 					<link href="/fonts/fonts.css" rel="stylesheet" />
 					{this.props.styleTags}
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta charSet="utf-8" />
 					<link rel="icon" href="/favicon.jpg" />
 					<meta name="googlebot" content="all" />
@@ -38,7 +37,7 @@ export default class MyDocument extends Document {
 					<Main />
 					<NextScript />
 				</body>
-			</html>
+			</Html>
 		);
 	}
 }

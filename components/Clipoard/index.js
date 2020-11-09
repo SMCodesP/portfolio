@@ -6,7 +6,7 @@ import {
 	ContainerSuccess,
 } from './styles'
 
-export default ({text, children, success}) => {
+const Clipoard = ({text, children, success}) => {
 	const [actived, setActived] = useState(false)
 	const [display, setDisplay] = useState(false)
 
@@ -46,3 +46,5 @@ export default ({text, children, success}) => {
 		</>
 	)
 }
+
+export default Clipoard

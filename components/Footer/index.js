@@ -18,7 +18,7 @@ import {
 	Documentation,
 } from './styles'
 
-export default () => (
+const Footer = () => (
 	<>
 		<BorderCustom />
 		<Container>
@@ -72,3 +72,5 @@ export default () => (
 		</Container>
 	</>
 )
+
+export default Footer
