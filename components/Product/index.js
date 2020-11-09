@@ -38,6 +38,8 @@ function Product({loading, product, productIndex}) {
 		>
 			{(src, loading) => product.image.size ? (
 				<ImageLogo
+					width={product.image.size.width || 128}
+					height={product.image.size.height || 128}
 					style={{
 						width: product.image.size.width || 128,
 						height: product.image.size.height || 128,
@@ -49,9 +51,11 @@ function Product({loading, product, productIndex}) {
 				/>
 			) : (
 				<ImageLogo
+					width={128}
+					height={128}
 					style={{
-						width: loading ? 128 : '128px',
-						height: loading ? 128 : '128px',
+						width: loading ? 128 : 'auto',
+						height: loading ? 128 : 'auto',
 						filter: loading ? 'blur(10px)' : ''
 					}}
 					not_auto={false}
@@ -71,14 +75,7 @@ function Product({loading, product, productIndex}) {
 						: <Title>{product.title}</Title>}
 					{loading
 						? <ImageSkeleton />
-						: <ImageLogo
-								width={128}
-								height={128}
-								loading="lazy"
-								not_auto={false}
-								src={product.image.large}
-								alt={`${product.title} logo image`}
-							/>}
+						: <ImageIconProduct />}
 					{(loading && moment.unix(moment().unix()).diff(moment.unix(product.timestamp), 'days') <= 7) && <NewInfo title="Esse produto teve seu lançamento em menos de uma semana, então foi categorizado como novo.">Novo</NewInfo>}
 				</ContainerImage>
 				<DescriptionList>
