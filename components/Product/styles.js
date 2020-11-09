@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import styled, { keyframes } from 'styled-components';
 import { shade, getLuminance } from 'polished';
 
@@ -65,9 +63,9 @@ export const Container = styled.div`
 	}
 `;
 
-export const ImageLogo = styled(Image)`
+export const ImageLogo = styled.img`
 	margin: 5px 0 5px 0;
-	${({not_auto}) => not_auto ? '' : `
+	${({not_auto}) => (not_auto === "true") ? '' : `
 		max-width: 132px;
 		max-height: 132px;
 	`}

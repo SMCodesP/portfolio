@@ -14,14 +14,8 @@ import {
 } from './styles'
 
 export default function Products({ items, category, limit }) {
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	const {colors} = useContext(ThemeContext);
-
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false)
-		}, 10000)
-	}, [])
 
 	return (
 		<Container>

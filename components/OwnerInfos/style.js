@@ -38,7 +38,7 @@ export const ImageContainer = styled.img`
 	border-radius: 20px;
 	cursor: pointer;
 	transition: filter 1s;
-  	margin-top: 15px;
+  margin-top: 15px;
 
 	&:hover {
 		filter: brightness(65%);
