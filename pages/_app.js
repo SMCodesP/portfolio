@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { useContext } from 'react'
 
 import App from 'next/app'
@@ -15,11 +17,16 @@ function Main(props) {
 	console.log(pageProps)
 
 	return (
-		<ThemesProvider>
-			<AuthProvider>
-				<Component {...pageProps} />
-			</AuthProvider>
-		</ThemesProvider>
+		<>
+			<Head>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+			</Head>
+			<ThemesProvider>
+				<AuthProvider>
+					<Component {...pageProps} />
+				</AuthProvider>
+			</ThemesProvider>
+		</>
 	)
 }
 
