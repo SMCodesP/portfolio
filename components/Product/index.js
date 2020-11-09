@@ -76,7 +76,7 @@ function Product({loading, product, productIndex}) {
 								height={128}
 								loading="lazy"
 								not_auto={false}
-								src={src}
+								src={product.image.large}
 								alt={`${product.title} logo image`}
 							/>}
 					{(loading && moment.unix(moment().unix()).diff(moment.unix(product.timestamp), 'days') <= 7) && <NewInfo title="Esse produto teve seu lançamento em menos de uma semana, então foi categorizado como novo.">Novo</NewInfo>}
