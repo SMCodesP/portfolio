@@ -9,7 +9,7 @@ import light from '../styles/themes/light'
 const ThemesContext = createContext({})
 
 function ThemesProvider({ children }) {
-	const [theme, setTheme] = usePersistedState('theme', dark, light)
+	const [theme, setTheme] = usePersistedState('theme', light)
 
 	const toggleTheme = () => {
 	    setTheme((theme.title.toLowerCase() === 'light') ? dark : light)
