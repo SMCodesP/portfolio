@@ -1,11 +1,13 @@
-import { useContext } from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
+
+import { useContext } from 'react'
 
 import {ThemeContext} from 'styled-components'
 
-import Navigation from '../components/Navigation/'
-import Products from '../components/Products'
-import Footer from '../components/Footer'
+const Navigation = dynamic(() => import('../components/Navigation/'))
+const Products = dynamic(() => import('../components/Products'))
+const Footer = dynamic(() => import('../components/Footer'))
 
 import GlobalStyle from '../styles/GlobalStyle'
 
@@ -63,4 +65,3 @@ const Home = () => {
 }
 
 export default Home;
-
