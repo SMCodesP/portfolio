@@ -1,12 +1,14 @@
-import { useContext } from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
+
+import { useContext } from 'react'
 import {ThemeContext} from 'styled-components'
 
-import Menu from '../../components/Menu/'
-import AboutComponent from '../../components/About/'
-import OwnerInfos from '../../components/OwnerInfos/'
-import Histories from '../../components/Histories/'
-import Footer from '../../components/Footer/'
+const Menu = dynamic(() => import('../../components/Menu/'))
+const AboutComponent = dynamic(() => import('../../components/About/'))
+const OwnerInfos = dynamic(() => import('../../components/OwnerInfos/'))
+const Histories = dynamic(() => import('../../components/Histories/'))
+const Footer = dynamic(() => import('../../components/Footer/'))
 
 import GlobalStyle from '../../styles/GlobalStyle'
 
