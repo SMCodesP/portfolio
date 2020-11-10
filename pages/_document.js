@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
 					<meta property="og:image" content="/favicon.jpeg" />
 					<meta name="keywords" content="HTML,CSS,JavaScript,Java,Plugin minecraft,Minecraft,Minecraft servidor,ReactNative,ReactJS,Discord.js,Node.js,Kotlin,SMCodes,Portfolio" />
 					<meta name="copyright" content="© 2020 Samuel Pereira da Silva" />
-					<link href="/fonts/fonts.css" rel="stylesheet" />
+					{/** <link href="/fonts/fonts.css" rel="stylesheet" /> **/}
 				</Head>
 				<body>
 					<Main />
