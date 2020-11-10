@@ -5,7 +5,7 @@ import { useContext } from 'react'
 
 import {ThemeContext} from 'styled-components'
 
-const Navigation = dynamic(() => import('../components/Navigation/'))
+import Navigation from '../components/Navigation/'
 const Products = dynamic(() => import('../components/Products'))
 const Footer = dynamic(() => import('../components/Footer'))
 
