@@ -11,15 +11,13 @@ const Footer = dynamic(() => import('../components/Footer'))
 
 import GlobalStyle from '../styles/GlobalStyle'
 
-import products from '../utils/products'
-
 import {
 	ContainerLicense,
 	Description,
 	Title,
 } from '../styles/pages/index'
 
-const Home = () => {
+const Home = ({ categoriesOptimze }) => {
 	const theme = useContext(ThemeContext)
 
 	return (
@@ -42,7 +40,7 @@ const Home = () => {
 
 				<br />
 				<div id="products" />
-				{products.map((category, index) => (
+				{categoriesOptimze.map((category, index) => (
 					<Products
 						key={index}
 						items={3}
@@ -62,6 +60,26 @@ const Home = () => {
 				<GlobalStyle />
 			</div>
 	)
+}
+
+Home.getInitialProps = async () => {
+	const moment = (await import('moment')).default
+	const categories = (await import('../utils/products')).default
+	const newCategoryOfSetIsNewProduct = categories.map((category) => {
+		return {
+			...category,
+			items: category.items.map((product) => {
+				return {
+					...product,
+					isNew: moment.unix(moment().unix()).diff(moment.unix(product.timestamp), 'days') <= 7
+				}
+			})
+		}
+	})
+
+	return {
+		categoriesOptimze: newCategoryOfSetIsNewProduct
+	}
 }
 
 export default Home;

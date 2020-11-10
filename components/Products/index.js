@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { FiArrowRight } from "react-icons/fi";
 import { ThemeContext } from 'styled-components';
 

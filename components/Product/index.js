@@ -3,9 +3,6 @@ import {memo, useContext} from 'react'
 import {getColor} from 'get-color-sm'
 import ProgressiveImage from 'react-progressive-graceful-image'
 import {ThemeContext} from 'styled-components'
-import moment from 'moment'
-import {shade} from 'polished'
-import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 
 import RenderMarkdown from '../RenderMarkdown/'
 
@@ -29,7 +26,6 @@ import {
 
 function Product({loading, product, productIndex}) {
 	const color = getColor()
-	const {colors} = useContext(ThemeContext)
 
 	const ImageIconProduct = () => (
 		<ProgressiveImage
@@ -72,7 +68,7 @@ function Product({loading, product, productIndex}) {
 					{loading
 						? <ImageSkeleton />
 						: <ImageIconProduct />}
-					{(loading && moment.unix(moment().unix()).diff(moment.unix(product.timestamp), 'days') <= 7) && <NewInfo title="Esse produto teve seu lançamento em menos de uma semana, então foi categorizado como novo.">Novo</NewInfo>}
+					{(loading && product.isNew) && <NewInfo title="Esse produto teve seu lançamento em menos de uma semana, então foi categorizado como novo.">Novo</NewInfo>}
 				</ContainerImage>
 				<DescriptionList>
 					{loading ? (
