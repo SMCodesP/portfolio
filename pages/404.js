@@ -1,12 +1,13 @@
 import Head from 'next/head'
-import Error from 'next/error';
+import Error from 'next/error'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 
 import {useContext} from 'react'
 
 import {ThemeContext, createGlobalStyle} from 'styled-components'
 
-import ContainerParticles from '../components/ContainerParticles/'
+const ContainerParticles = dynamic(() => import('../components/ContainerParticles/'))
 
 import GlobalStyle from '../styles/GlobalStyle'
 import {
@@ -24,7 +25,7 @@ const CustomStyles = createGlobalStyle`
 
 export default function Error404() {
 	const {colors} = useContext(ThemeContext)
-	
+
 	return (
 		<>
 			<Head>

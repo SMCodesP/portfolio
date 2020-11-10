@@ -22,7 +22,7 @@ export default () => {
 		<Container>
 			<ContainerList>
 				{[].concat(...products.map(category => category.items)).map((product, index) => {
-					return ( 
+					return (
 						<ResumeProduct key={product.id} loading={loading} product={product} productIndex={index} />
 					)
 				})}

@@ -1,21 +1,14 @@
+import Head from 'next/head'
+import dynamic from 'next/dynamic'
+
 import {useContext} from 'react'
 import {ThemeContext} from 'styled-components'
-import Head from 'next/head'
 
-import Footer from '../../components/Footer'
-import Menu from '../../components/Menu'
-import ResumeListItems from '../../components/ResumeListItems'
+const Footer = dynamic(() => import('../../components/Footer'))
+const Menu = dynamic(() => import('../../components/Menu'))
+const ResumeListItems = dynamic(() => import('../../components/ResumeListItems'))
 
 import GlobalStyle from '../../styles/GlobalStyle'
-
-import products from '../../utils/products'
-
-import {
-	Container,
-	ImageLogo,
-	Title,
-	SubTitle
-} from '../../styles/pages/plugins'
 
 export default () => {
 	const {colors} = useContext(ThemeContext);
@@ -40,9 +33,7 @@ export default () => {
 				<Menu page="/all" background={colors.background} />
 			</div>
 
-
 			<ResumeListItems />
-
 
 			<Footer />
 
