@@ -6,7 +6,7 @@ function usePersistedState(key, initialState) {
 
 	useEffect(() => {
 		if (localStorage.getItem(key)) {
-			if (JSON.parse(localStorage.getItem(state)).title === state.title) {
+			if (JSON.parse(localStorage.getItem(key)).title === state.title) {
 				setState(JSON.parse(localStorage.getItem(key)))
 			}
 		}
