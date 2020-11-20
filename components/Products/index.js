@@ -23,12 +23,22 @@ export default function Products({ items, category, limit }) {
 				<CategoryTitle>{category.title}</CategoryTitle>
 				<ContainerProducts items={items}>
 				{loading ? (
-					<Product productIndex={0} product={{}} loading={true} />
-				) : category.items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).map((item, index) => {
+					<Product
+						productIndex={0}
+						product={{}}
+						loading={true}
+					/>
+				) : category.products.map((item, index) => {
 					if (limit && index > 2) {
 					} else {
 						return (
-							<Product key={index} productIndex={index} product={item} loading={loading} />
+							<Product
+								key={index}
+								productIndex={index}
+								product={item}
+								category={category}
+								loading={loading}
+							/>
 						)
 					}
 				})}

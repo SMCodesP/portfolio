@@ -6,6 +6,7 @@ import { useContext } from 'react'
 import {ThemeContext} from 'styled-components'
 
 import Navigation from '../components/Navigation/'
+import api from '../utils/api'
 const Products = dynamic(() => import('../components/Products'))
 const Footer = dynamic(() => import('../components/Footer'))
 
@@ -17,7 +18,7 @@ import {
 	Title,
 } from '../styles/pages/index'
 
-const Home = ({ categoriesOptimze }) => {
+const Home = ({ categories }) => {
 	const theme = useContext(ThemeContext)
 
 	return (
@@ -40,7 +41,7 @@ const Home = ({ categoriesOptimze }) => {
 
 				<br />
 				<div id="products" />
-				{categoriesOptimze.map((category, index) => (
+				{categories.map((category, index) => (
 					<Products
 						key={index}
 						items={3}
@@ -65,10 +66,14 @@ const Home = ({ categoriesOptimze }) => {
 Home.getInitialProps = async () => {
 	const moment = (await import('moment')).default
 	const categories = (await import('../utils/products')).default
-	const newCategoryOfSetIsNewProduct = categories.map((category) => {
+
+	const { data } = await api.get('/categories?all=true')
+
+
+	const newCategoryOfSetIsNewProduct = data.map((category) => {
 		return {
 			...category,
-			items: category.items.map((product) => {
+			products: category.products.map((product) => {
 				return {
 					...product,
 					isNew: moment.unix(moment().unix()).diff(moment.unix(product.timestamp), 'days') <= 7
@@ -78,7 +83,7 @@ Home.getInitialProps = async () => {
 	})
 
 	return {
-		categoriesOptimze: newCategoryOfSetIsNewProduct
+		categories: newCategoryOfSetIsNewProduct
 	}
 }
 

@@ -24,26 +24,15 @@ import {
 	ButtonSkeleton,
 } from './styles'
 
-function Product({loading, product, productIndex}) {
+function Product({loading, product, category, productIndex}) {
 	const color = getColor()
 
 	const ImageIconProduct = () => (
 		<ProgressiveImage
-			src={product.image.large}
-			placeholder={product.image.small}
+			src={product.image_large}
+			placeholder={product.image_small}
 		>
-			{(src, loadingImage) => product.image.size ? (
-				<ImageLogo
-					style={{
-						width: product.image.size.width || 128,
-						height: product.image.size.height || 128,
-						filter: loading ? 'blur(5px)' : 'blur(0px)'
-					}}
-					not_auto="true"
-					src={src}
-					alt={`${product.title} logo image`}
-				/>
-			) : (
+			{(src, loadingImage) => (
 				<ImageLogo
 					style={{
 						width: 128,
@@ -80,25 +69,30 @@ function Product({loading, product, productIndex}) {
 							<DescriptionSkeleton width={20} />
 							<DescriptionSkeleton width={200} />
 						</>
-					) : product.descriptionList.map((description, index) => <RenderMarkdown key={index} text={description} />)}
+					) : <RenderMarkdown text={product.description} />}
 				</DescriptionList>
 				<ContainerPurchase>
 					{loading ? <ButtonSkeleton />
-						: (product.price <= 0) ? (
+						: (product.money <= 0) ? (
 							<a href={product.button_link} tartget="_blank" style={{ width: '100%' }} download>
 								<PurchaseButton>Baixar</PurchaseButton>
 							</a>
 						) : (
 							<>
 								<PurchaseButton>Comprar</PurchaseButton>
-								<PriceTitle>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</PriceTitle>
+								<PriceTitle>{new Intl.NumberFormat('pt-BR', {
+										style: 'currency',
+										currency: 'BRL'
+									})
+									.format(product.money)}
+								</PriceTitle>
 							</>
 						)
 					}
 				</ContainerPurchase>
 				{(!loading) && (
 					<DetailsContainer>
-						<Link href={`/${product.category}/[id]`} as={`/${product.category}/${productIndex}`}>
+						<Link href={`/${category.id}/[id]`} as={`/${category.id}/${productIndex}`}>
 							<a>
 								<Details>Detalhes</Details>
 							</a>
