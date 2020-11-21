@@ -5,6 +5,7 @@ import { ThemeContext } from 'styled-components'
 import { shade } from 'polished'
 
 import ThemesContext from '../../contexts/themes'
+import getCategories from '../../utils/getCategories'
 
 import {
 	Options,
@@ -26,8 +27,9 @@ import {
 } from './styles'
 
 import ModalSetting from '../ModalSetting'
+import DropDownMenu from '../DropDownMenu'
 
-function Menu({ page: isPage, background, color }) {
+function Menu({ page: isPage, background, categories, color }) {
 	const [activedMobile, setActivedMobile] = useState(false)
 	const [isClose, setIsClose] = useState(false)
 	const [showModal, setShowModal] = useState(false);
@@ -35,7 +37,7 @@ function Menu({ page: isPage, background, color }) {
 	const {colors, ...theme} = useContext(ThemeContext)
 	const {toggleTheme} = useContext(ThemesContext)
 
-	const list = [
+	let list = [
 		{
 			name: '/',
 			displayed: 'Início',
@@ -45,17 +47,18 @@ function Menu({ page: isPage, background, color }) {
 			displayed: 'Sobre',
 		},
 		{
-			name: '/sites',
-			displayed: 'Sites',
-		},
-		{
-			name: '/plugins',
-			displayed: 'Plugins',
-		},
-		{
 			name: '/all',
 			displayed: 'Todos',
 		},
+		{
+			displayed: 'Products',
+			items: categories.map((category) => {
+				return {
+					name: category.link,
+					displayed: category.title,
+				}
+			})
+		}
 	]
 
 	function closeOrOpenInMobile() {
@@ -106,7 +109,15 @@ function Menu({ page: isPage, background, color }) {
 					</Page>
 				</HeadMenuFixed>
 				<ListingPage>
-					{list.map((page) => (
+					{list.map((page) => page.items ? (
+							<DropDownMenu
+								locate={(isPage == page.name)}
+								color={color}
+								{...page}
+							>
+								{page.displayed}
+							</DropDownMenu>
+						) : (
 						<Link key={page.name} href={page.name}>
 							<a>
 								<Page

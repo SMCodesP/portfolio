@@ -13,12 +13,12 @@ import {
 	Down,
 } from './styles'
 
-const Navigation = ({ page, scrollingToRef }) => {
+const Navigation = ({ page, scrollingToRef, categories }) => {
 	const {colors} = useContext(ThemeContext)
 
 	return (
 		<Container>
-			<Menu page={page} />
+			<Menu page={page} categories={categories} />
 			<ContainerWelcome>
 				<Welcome ><strong>Oi</strong>, seja muito bem-vindo!</Welcome>
 				<SubWelcome>Me chamo Samuel e é um prazer encontra-lo em meu portfólio.</SubWelcome>
