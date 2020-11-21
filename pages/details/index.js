@@ -92,17 +92,17 @@ export async function getStaticProps({params}) {
 	
 	const res = await fetch(product.text)
 	const readme = await res.text()
+	const { categories } = await getCategories()
 
   return {
 		props: {
 			readme,
+			categories,
 			product: product,
 			quantity: products[0].items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).length,
 			id: 0
 		}
 	}
 }
-
-DetailsProduct.getInitialProps = getCategories
 
 export default DetailsProduct;

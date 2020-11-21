@@ -10,6 +10,7 @@ import Menu from '../../components/Menu/'
 import GlobalStyle from '../../styles/GlobalStyle'
 
 import products from '../../utils/products'
+import getCategories from '../../utils/getCategories'
 
 import {
 	Container,
@@ -18,7 +19,7 @@ import {
 	SubTitle
 } from '../../styles/pages/plugins'
 
-export default () => {
+function Sites({ categories }) {
 	const {colors} = useContext(ThemeContext);
 
 	return (
@@ -38,7 +39,7 @@ export default () => {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/sites" background={colors.background} />
+				<Menu page="/sites" categories={categories} background={colors.background} />
 			</div>
 
 			<Container>
@@ -58,7 +59,7 @@ export default () => {
 				<SubTitle>Sites otimizados e seguros de acordo com a usabilidade de seus clientes.</SubTitle>
 			</Container>
 
-			{[products.find((category) => category.name === "web")].map((category, index) => (
+			{categories.map((category, index) => (
 				<Products
 					key={index}
 					items={3}
@@ -74,3 +75,7 @@ export default () => {
 		</div>
 	)
 }
+
+Sites.getInitialProps = getCategories
+
+export default Sites

@@ -59,7 +59,7 @@ function Plugins({ categories }) {
 				<SubTitle>Plugins otimizados para seu servidor.</SubTitle>
 			</Container>
 
-			{[products.find((category) => category.name === "plugin")].map((category, index) => (
+			{categories.map((category, index) => (
 				<Products
 					key={index}
 					items={3}

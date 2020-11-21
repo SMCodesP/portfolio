@@ -11,7 +11,7 @@ import {
 	ProductPage,
 } from './style.js'
 
-export default ({product, ...params}) => {
+function ListingPages({product, ...params}) {
 	const {colors} = useContext(ThemeContext)
 
 	const listPagesQuantity = Array.from(Array(params.quantity).keys())
@@ -54,3 +54,5 @@ export default ({product, ...params}) => {
 		</ContainerNextPrevious>
 	)
 }
+
+export default ListingPages

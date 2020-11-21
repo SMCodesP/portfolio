@@ -105,10 +105,11 @@ export async function getStaticProps({params}) {
 
 	const res = await fetch(product.text)
 	const readme = await res.text()
+	const { categories } = await getCategories()
 
 	return {
 		props: {
-			categories: await getCategories(),
+			categories,
 			readme,
 			product,
 			quantity: products.find((category) => category.name === "bot").items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).length,
