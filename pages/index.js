@@ -21,6 +21,8 @@ import {
 } from '../styles/pages/index'
 
 const Home = ({ categories }) => {
+	console.log(categories)
+
 	const theme = useContext(ThemeContext)
 
 	return (
@@ -67,6 +69,8 @@ const Home = ({ categories }) => {
 
 export async function getStaticProps() {
 	const {categories} = await getCategories()
+
+	console.log(categories)
 
 	return {
 		props: {

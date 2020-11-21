@@ -29,14 +29,14 @@ function ListingPages({product, ...params}) {
 			) : (<span />)}
 			<ContainerListPages>
 				<ListProductsPages>
-					{listPages.map((productId) => (productId != params.id) ? (
-						<Link href={`/${product.category}/[id]`} as={`/${product.category}/${productId}`} key={productId}>
+					{listPages.map((productId, index) => (productId != params.id) ? (
+						<Link href={`/${product.category}/[id]`} as={`/${product.category}/${productId}`} key={index.toString()}>
 							<a href={`/${product.category}/${productId}`}>
 								<ProductPage>{productId}</ProductPage>
 							</a>
 						</Link>
 					) : (
-						<ProductPage key={productId} style={{
+						<ProductPage key={index.toString()} style={{
 							cursor: 'not-allowed',
 							filter: 'brightness(80%)'
 						}}>{productId}</ProductPage>
