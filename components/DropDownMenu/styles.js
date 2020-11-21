@@ -1,7 +1,33 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const activeDropDown = keyframes`
+	0% {
+		opacity: 0.75;
+		transform: scale(0.90);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+`
 
 export const ContainerDropDownMenu = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 7.5px;
+	
+	& div svg {
+		transition: .5s transform;
+	}
 
+	${({showMenuHover}) => {
+		return showMenuHover ? `
+			& div svg {
+				transform: rotateZ(-180deg);
+			}
+		` : ``
+	}}
 `
 
 export const Page = styled.li`
@@ -34,6 +60,8 @@ export const ListDropPage = styled.ul`
 	flex-direction: column;
 	position: absolute;
 	list-style: none;
+	top: 60px;
+	animation: ${activeDropDown} .25s linear;
 
 	& a {
 		margin: 0 !important;
@@ -56,6 +84,8 @@ export const DropPage = styled.li`
 	padding: 7.5px 15px;
 	cursor: pointer;
 	transition: .2s filter;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 
 	&:hover {
 		filter: brightness(75%);
