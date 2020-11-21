@@ -10,9 +10,11 @@ const OwnerInfos = dynamic(() => import('../../components/OwnerInfos/'))
 const Histories = dynamic(() => import('../../components/Histories/'))
 const Footer = dynamic(() => import('../../components/Footer/'))
 
+import getCategories from '../../utils/getCategories'
+
 import GlobalStyle from '../../styles/GlobalStyle'
 
-const About = () => {
+const About = ({categories}) => {
 	const {colors} = useContext(ThemeContext);
 
 	return (
@@ -32,7 +34,7 @@ const About = () => {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/about" background={colors.background} />
+				<Menu page="/about" categories={categories} background={colors.background} />
 			</div>
 
 			<AboutComponent />
@@ -45,5 +47,7 @@ const About = () => {
 		</div>
 	)
 }
+
+About.getInitialProps = getCategories
 
 export default About;

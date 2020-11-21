@@ -10,6 +10,7 @@ import Menu from '../../components/Menu/'
 import GlobalStyle from '../../styles/GlobalStyle'
 
 import products from '../../utils/products'
+import getCategories from '../../utils/getCategories'
 
 import {
 	Container,
@@ -18,7 +19,7 @@ import {
 	SubTitle
 } from '../../styles/pages/plugins'
 
-export default () => {
+function Plugins({ categories }) {
 	const {colors} = useContext(ThemeContext);
 
 	return (
@@ -38,7 +39,7 @@ export default () => {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/plugins" background={colors.background} />
+				<Menu page="/plugins" categories={categories} background={colors.background} />
 			</div>
 
 			<Container>
@@ -74,3 +75,7 @@ export default () => {
 		</div>
 	)
 }
+
+Plugins.getInitialProps = getCategories
+
+export default Plugins

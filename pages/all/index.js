@@ -8,9 +8,10 @@ const Footer = dynamic(() => import('../../components/Footer'))
 const Menu = dynamic(() => import('../../components/Menu'))
 const ResumeListItems = dynamic(() => import('../../components/ResumeListItems'))
 
+import getCategories from '../../utils/getCategories'
 import GlobalStyle from '../../styles/GlobalStyle'
 
-export default () => {
+function All({categories}) {
 	const {colors} = useContext(ThemeContext);
 
 	return (
@@ -30,7 +31,7 @@ export default () => {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/all" background={colors.background} />
+				<Menu page="/all" categories={categories} background={colors.background} />
 			</div>
 
 			<ResumeListItems />
@@ -42,3 +43,7 @@ export default () => {
 		</div>
 	)
 }
+
+All.getInitialProps = getCategories
+
+export default All

@@ -10,6 +10,7 @@ import ListingPages from '../../components/ListingPages/'
 
 import GlobalStyle from '../../styles/GlobalStyle'
 import products from '../../utils/products'
+import getCategories from '../../utils/getCategories'
 
 import {
 	Container,
@@ -23,7 +24,7 @@ import {
 	ProductTitle,
 } from '../../styles/pages/details'
 
-function DetailsProduct({readme, product, ...params}) {
+function DetailsProduct({readme, product, categories, ...params}) {
 	const {colors} = useContext(ThemeContext)
 
 	return (
@@ -43,7 +44,7 @@ function DetailsProduct({readme, product, ...params}) {
 			</Head>
 
 			<div style={{width: "100%"}}>
-				<Menu page="/details" background={colors.background} />
+				<Menu page="/details" categories={categories} background={colors.background} />
 			</div>
 
 			<Container>
@@ -142,5 +143,7 @@ export async function getStaticPaths() {
 		fallback: false,
 	}
 }
+
+DetailsProduct.getInitialProps = getCategories
 
 export default DetailsProduct
