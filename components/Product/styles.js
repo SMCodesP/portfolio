@@ -113,6 +113,7 @@ export const DescriptionList = styled.ul`
 	color: ${({theme}) => theme.colors.text};
 	list-style-position: inside;
 	line-height: 22px;
+	white-space: pre-wrap;
 
 	& div {
 		padding: 4px;
