@@ -108,6 +108,7 @@ export async function getStaticProps({params}) {
 
 	return {
 		props: {
+			categories: await getCategories(),
 			readme,
 			product,
 			quantity: products.find((category) => category.name === "plugin").items.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1).length,
@@ -130,7 +131,5 @@ export async function getStaticPaths() {
 		fallback: false,
 	}
 }
-
-DetailsProduct.getInitialProps = getCategories
 
 export default DetailsProduct

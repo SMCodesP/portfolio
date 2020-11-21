@@ -2,10 +2,8 @@ import api from './api'
 
 async function getCategories() {
 	const moment = (await import('moment')).default
-	const categories = (await import('../utils/products')).default
 
 	const { data } = await api.get('/categories?all=true')
-
 
 	const newCategoryOfSetIsNewProduct = data.map((category) => {
 		return {
