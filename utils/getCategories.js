@@ -5,13 +5,6 @@ async function getCategories() {
 
 	const { data } = await api.get('https://portfolio-backend-sm.herokuapp.com/categories?all=true')
 
-	console.log("")
-	console.log("")
-	console.log("data")
-	console.log(data)
-	console.log("")
-	console.log("")
-
 	const newCategoryOfSetIsNewProduct = data.map((category) => {
 		return {
 			...category,
@@ -23,13 +16,6 @@ async function getCategories() {
 			})
 		}
 	})
-
-	console.log("")
-	console.log("")
-	console.log("newCategoryOfSetIsNewProduct")
-	console.log(newCategoryOfSetIsNewProduct)
-	console.log("")
-	console.log("")
 
 	return {
 		categories: newCategoryOfSetIsNewProduct

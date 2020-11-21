@@ -23,23 +23,15 @@ import {
 export async function getStaticProps() {
 	const {categories} = await getCategories()
 
-	console.log("")
-	console.log("")
-	console.log("categories")
-	console.log(categories)
-	console.log("")
-	console.log("")
-
 	return {
 		props: {
 			categories,
 		},
-    revalidate: 1
+    	revalidate: 1
 	}
 }
 
 export default function Home({ categories }) {
-	console.log(categories)
 
 	const theme = useContext(ThemeContext)
 

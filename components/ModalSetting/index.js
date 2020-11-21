@@ -18,7 +18,6 @@ import {
 } from './styles'
 
 export default function ModalSetting({ setShowModal, showModal }) {
-	console.log(showModal)
 	const theme = useContext(ThemeContext)
 	const {toggleTheme} = useContext(ThemesContext)
 

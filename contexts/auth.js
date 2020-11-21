@@ -7,9 +7,6 @@ const AuthContext = createContext({})
 function AuthProvider({ children }) {
 
 	async function signIn({username, password, captcha, setError, router}) {
-		console.log(username)
-		console.log(password)
-		console.log(captcha)
 		try {
 			const { data } = await api.post('/session', {
 				username,

@@ -14,8 +14,6 @@ import dark from '../styles/themes/dark'
 function Main(props) {
 	const { Component, pageProps } = props
 
-	console.log(pageProps)
-
 	return (
 		<>
 			<Head>

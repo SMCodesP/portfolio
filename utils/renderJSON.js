@@ -67,8 +67,7 @@ const components = {
   )},
   "object_inputs": (data, key) => {
     const { inputs } = data
-    console.log(data)
-
+    
     return (
       <div
         style={{

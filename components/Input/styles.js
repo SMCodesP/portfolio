@@ -28,10 +28,6 @@ export const Input = styled.input`
   }
 
   @media (max-width: 650px) {
-    ${({ style = { marginLeft: 0 } }) => {
-      console.log("styled")
-
-      return `width: calc(99% - ${style.marginLeft});`
-    }}
+    ${({ style = { marginLeft: 0 } }) => `width: calc(99% - ${style.marginLeft});`}
   }
 `
