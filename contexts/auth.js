@@ -7,6 +7,8 @@ const AuthContext = createContext({})
 function AuthProvider({ children }) {
 
 	async function signIn({username, password, captcha, setError, router}) {
+		console.log(username)
+		console.log(password)
 		console.log(captcha)
 		try {
 			const { data } = await api.post('/session', {
@@ -21,6 +23,7 @@ function AuthProvider({ children }) {
 			router.push('/dashboard')
 		} catch (err) {
 			console.log(err)
+			console.log(err.response)
 			setError((err.response) ? err.response.data.error.message || 'Houve um erro desconhecido.' : 'Houve um erro desconhecido.')
 		}
 	}
