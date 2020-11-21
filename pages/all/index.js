@@ -44,6 +44,15 @@ function All({categories}) {
 	)
 }
 
-All.getInitialProps = getCategories
+export async function getStaticProps() {
+	const {categories} = await getCategories()
+
+	return {
+		props: {
+			categories,
+		},
+		revalidate: 100,
+	}
+}
 
 export default All

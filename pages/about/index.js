@@ -48,6 +48,15 @@ const About = ({categories}) => {
 	)
 }
 
-About.getInitialProps = getCategories
+export async function getStaticProps() {
+	const {categories} = await getCategories()
+
+	return {
+		props: {
+			categories,
+		},
+		revalidate: 100,
+	}
+}
 
 export default About;

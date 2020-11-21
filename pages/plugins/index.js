@@ -76,6 +76,15 @@ function Plugins({ categories }) {
 	)
 }
 
-Plugins.getInitialProps = getCategories
+export async function getStaticProps() {
+	const {categories} = await getCategories()
+
+	return {
+		props: {
+			categories,
+		},
+		revalidate: 100,
+	}
+}
 
 export default Plugins
