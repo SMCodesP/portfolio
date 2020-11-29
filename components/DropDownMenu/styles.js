@@ -62,19 +62,21 @@ export const ListDropPage = styled.ul`
 	list-style: none;
 	top: 60px;
 	animation: ${activeDropDown} .25s linear;
+	border: 1px solid ${({theme}) => theme.colors.text};
+	border-radius: 4px;
 
 	& a {
 		margin: 0 !important;
 	}
 
 	& a:first-child li {
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
 	}
 
 	& a:last-child li {
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
 	}
 `
 
