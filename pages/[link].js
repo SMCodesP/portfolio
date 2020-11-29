@@ -3,31 +3,32 @@ import Head from 'next/head'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
 
-import Products from '../../components/Products'
-import Footer from '../../components/Footer'
-import Menu from '../../components/Menu/'
+import Products from '../components/Products'
+import Footer from '../components/Footer'
+import Menu from '../components/Menu/'
 
-import GlobalStyle from '../../styles/GlobalStyle'
+import GlobalStyle from '../styles/GlobalStyle'
 
-import products from '../../utils/products'
-import getCategories from '../../utils/getCategories'
+import products from '../utils/products'
+import getCategories from '../utils/getCategories'
+import getCategorie from '../utils/getCategorie'
 
 import {
 	Container,
 	ImageLogo,
 	Title,
 	SubTitle
-} from '../../styles/pages/plugins'
+} from '../styles/pages/plugins'
 
-function Plugins({ categories }) {
+function Plugins({ categories, category }) {
 	const {colors} = useContext(ThemeContext);
 
 	return (
 		<div>
 			<Head>
-				<title>SMCodes - Plugins</title>
-				<meta property="og:title" content="SMCodes - Plugins" key="title" />
-				<meta name="twitter:title" content="SMCodes - Plugins" />
+				<title>{`SMCodes - ${category.title}`}</title>
+				<meta property="og:title" content={`SMCodes - ${category.title}`} key="title" />
+				<meta name="twitter:title" content={`SMCodes - ${category.title}`} />
 				<meta name="description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
 				<meta property="og:description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
 				<meta name="description" content="Venha comprar meus plugins, contamos com alto desempenho, sistemas inovadores, suporte rápido e api fácil para novas integrações." />
@@ -55,19 +56,17 @@ function Plugins({ categories }) {
 						/>
 					)}
 				</ProgressiveImage>
-				<Title>SMPlugins</Title>
+				<Title>{category.title}</Title>
 				<SubTitle>Plugins otimizados para seu servidor.</SubTitle>
 			</Container>
 
-			{categories.map((category, index) => (
-				<Products
-					key={index}
-					items={3}
-					category={category}
-					id="navigation"
-					limit={false}
-				/>
-			))}
+			<Products
+				items={3}
+				category={category}
+				id="navigation"
+				limit={false}
+			/>
+
 			<Footer />
 
 			<GlobalStyle />
@@ -76,14 +75,35 @@ function Plugins({ categories }) {
 	)
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({params}) {
 	const {categories} = await getCategories()
+
+	console.log(categories)
 
 	return {
 		props: {
 			categories,
-		},
-		revalidate: 1,
+			category: categories.find((category) => category.link === `/${params.link}`),
+		}
+	}
+}
+
+export async function getStaticPaths() {
+	let data = await getCategories()
+
+	data = data.categories.map((category, index) => {
+		return {
+			params: {
+				link: category.link.substring(1),
+			},
+		}
+	})
+
+	console.log(data)
+
+	return {
+		paths: data,
+		fallback: false,
 	}
 }
 
