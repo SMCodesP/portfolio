@@ -3,7 +3,7 @@ import api from './api'
 async function getCategories() {
 	const moment = (await import('moment')).default
 
-	const { data } = await api.get('https://portfolio-backend-sm.herokuapp.com/categories?all=true')
+	const { data } = await api.get('/categories?all=true')
 
 	const newCategoryOfSetIsNewProduct = data.map((category) => {
 		return {
