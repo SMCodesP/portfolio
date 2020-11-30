@@ -49,7 +49,7 @@ function Plugins({ categories, category }) {
 						loading={false}
 						alt="Construction picture image logo"
 					/>
-				<Title>{category.title}</Title>
+				<Title>{category.title} ({category.products.length})</Title>
 				<SubTitle>{category.description}</SubTitle>
 			</Container>
 
@@ -77,7 +77,8 @@ export async function getStaticProps({params}) {
 		props: {
 			categories,
 			category: categories.find((category) => category.link === `/${params.link}`),
-		}
+		},
+		revalidate: 120,
 	}
 }
 

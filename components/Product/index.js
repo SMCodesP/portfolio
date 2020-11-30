@@ -35,8 +35,7 @@ function Product({loading, product, category, productIndex}) {
 			{(src, loadingImage) => (
 				<ImageLogo
 					style={{
-						width: 128,
-						height: 128,
+						width: '25%',
 						filter: loading ? 'blur(5px)' : 'blur(0px)'
 					}}
 					not_auto="false"
@@ -48,60 +47,67 @@ function Product({loading, product, category, productIndex}) {
 	)
 
 	return (
-		<Container color={color}>
-			<>
-				<ContainerImage>
-					{loading
-						? <TitleSkeleton />
-						: <Title>{product.title}</Title>}
-					{loading
-						? <ImageSkeleton />
-						: <ImageIconProduct />}
-					{(loading && product.isNew) && <NewInfo title="Esse produto teve seu lançamento em menos de uma semana, então foi categorizado como novo.">Novo</NewInfo>}
-				</ContainerImage>
-				<DescriptionList>
-					{loading ? (
-						<>
-							<DescriptionSkeleton width={225} />
-							<DescriptionSkeleton width={180} />
-							<DescriptionSkeleton width={50} />
-							<DescriptionSkeleton width={150} />
-							<DescriptionSkeleton width={20} />
-							<DescriptionSkeleton width={200} />
-						</>
-					) : <RenderMarkdown text={product.description} />}
-				</DescriptionList>
-				<ContainerPurchase>
-					{loading ? <ButtonSkeleton />
-						: (product.money <= 0) ? (
-							<a href={product.button_link} tartget="_blank" style={{ width: '100%' }} download>
-								<PurchaseButton>Baixar</PurchaseButton>
-							</a>
-						) : (
+		<div style={{
+			margin: 0,
+			display: 'flex',
+			marginBottom: '10px',
+			breakInside: 'avoid'
+		}}>
+			<Container color={color}>
+				<>
+					<ContainerImage>
+						{loading
+							? <TitleSkeleton />
+							: <Title>{product.title}</Title>}
+						{loading
+							? <ImageSkeleton />
+							: <ImageIconProduct />}
+						{(loading && product.isNew) && <NewInfo title="Esse produto teve seu lançamento em menos de uma semana, então foi categorizado como novo.">Novo</NewInfo>}
+					</ContainerImage>
+					<DescriptionList>
+						{loading ? (
 							<>
-								<PurchaseButton>Comprar</PurchaseButton>
-								<PriceTitle>{new Intl.NumberFormat('pt-BR', {
-										style: 'currency',
-										currency: 'BRL'
-									})
-									.format(product.money)}
-								</PriceTitle>
+								<DescriptionSkeleton width={225} />
+								<DescriptionSkeleton width={180} />
+								<DescriptionSkeleton width={50} />
+								<DescriptionSkeleton width={150} />
+								<DescriptionSkeleton width={20} />
+								<DescriptionSkeleton width={200} />
 							</>
-						)
-					}
-				</ContainerPurchase>
-				{(!loading) && (
-					<DetailsContainer>
-						<Link href={`/products${category.link}/[id]`} as={`/products${category.link}/${product.id}`}>
-							<a>
-								<Details>Detalhes</Details>
-							</a>
-						</Link>
-						<span />
-					</DetailsContainer>
-				)}
-			</>
-		</Container>
+						) : <RenderMarkdown text={product.description} />}
+					</DescriptionList>
+					<ContainerPurchase>
+						{loading ? <ButtonSkeleton />
+							: (product.money <= 0) ? (
+								<a href={product.button_link} tartget="_blank" style={{ width: '100%' }} download>
+									<PurchaseButton>Baixar</PurchaseButton>
+								</a>
+							) : (
+								<>
+									<PurchaseButton>Comprar</PurchaseButton>
+									<PriceTitle>{new Intl.NumberFormat('pt-BR', {
+											style: 'currency',
+											currency: 'BRL'
+										})
+										.format(product.money)}
+									</PriceTitle>
+								</>
+							)
+						}
+					</ContainerPurchase>
+					{(!loading) && (
+						<DetailsContainer>
+							<Link href={`/products${category.link}/[id]`} as={`/products${category.link}/${product.id}`}>
+								<a>
+									<Details>Detalhes</Details>
+								</a>
+							</Link>
+							<span />
+						</DetailsContainer>
+					)}
+				</>
+			</Container>
+		</div>
 	);
 }
 

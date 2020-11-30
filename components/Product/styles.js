@@ -28,11 +28,8 @@ export const Title = styled.p`
 
 export const Container = styled.div`
 	background: ${({theme}) => theme.colors.background};
+	width: 100%;
 	height: fit-content;
-	flex: 1;
-	max-width: 360px;
-	min-width: 355px;
-	margin: 7.5px;
 	border-radius: 10px;
 	transition: box-shadow .3s, transform .3s, border .3s;
 	padding-bottom: 10px;
@@ -51,9 +48,7 @@ export const Container = styled.div`
 	}
 
 	&:hover {
-		border: 0;
 		box-shadow: 0 0 5px 0 ${({theme}) => theme.colors.primary};
-		transform: scale(1.035);
 	}
 
 	@media (max-width: 500px) {
@@ -65,10 +60,6 @@ export const Container = styled.div`
 
 export const ImageLogo = styled.img`
 	margin: 5px 0 5px 0;
-	${({not_auto}) => (not_auto === "true") ? '' : `
-		max-width: 132px;
-		max-height: 132px;
-	`}
 	border-radius: 5px;
 	cursor: none;
 	filter: brightness(85%);

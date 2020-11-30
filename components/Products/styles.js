@@ -60,15 +60,14 @@ export const ContainerMoreItems = styled.div`
 `
 
 export const ContainerProducts = styled.div`
-	width: 100%;
 	overflow-x: auto; /* Hide horizontal scrollbar */
 	overflow-y: hidden; /* Add vertical scrollbar */
 	padding: 20px;
 	margin-top: 5px;
-	display: flex;
-	position: relative;
 	margin-bottom: 15px;
-	flex-flow: row wrap;
+
+	column-count: 3;
+	column-gap: 10px;
 
 	@media (max-width: 975px) {
 		grid-template-columns: repeat(2, 1fr);
