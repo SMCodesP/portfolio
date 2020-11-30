@@ -48,9 +48,8 @@ function Product({loading, product, category, productIndex}) {
 
 	return (
 		<div style={{
-			margin: 0,
+			margin: '10px 0 0 0',
 			display: 'flex',
-			marginBottom: '10px',
 			breakInside: 'avoid'
 		}}>
 			<Container color={color}>
