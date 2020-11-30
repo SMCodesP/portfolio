@@ -48,7 +48,7 @@ function Product({loading, product, category, productIndex}) {
 
 	return (
 		<div style={{
-			margin: '10px 0 0 0',
+			padding: '5px',
 			display: 'flex',
 			breakInside: 'avoid'
 		}}>
