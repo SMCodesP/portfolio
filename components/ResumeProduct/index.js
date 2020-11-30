@@ -16,7 +16,7 @@ import {
 	Title,
 } from './styles'
 
-export default ({product, productIndex, loading}) => {
+function ResumeProduct({product, productIndex, loading}) {
 	const {colors} = useContext(ThemeContext)
 
 	return (
@@ -31,7 +31,8 @@ export default ({product, productIndex, loading}) => {
 						borderRadius: '5px',
 					}} />
 					<br />
-					<Skeleton width={132} height={12} duration={2} style={{
+					<Skeleton width={142} height={12} duration={2} style={{
+						marginTop: '5px',
 						padding: '10px',
 						borderRadius: '5px',
 					}} />
@@ -76,3 +77,5 @@ export default ({product, productIndex, loading}) => {
 		</Container>
 	)
 }
+
+export default ResumeProduct

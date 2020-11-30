@@ -4,9 +4,9 @@ import dynamic from 'next/dynamic'
 import { useContext } from 'react'
 import {ThemeContext} from 'styled-components'
 
-const Menu = dynamic(() => import('../../components/Menu/'))
-const AboutComponent = dynamic(() => import('../../components/About/'))
-const OwnerInfos = dynamic(() => import('../../components/OwnerInfos/'))
+import Menu from '../../components/Menu/'
+import AboutComponent from '../../components/About/'
+import OwnerInfos from '../../components/OwnerInfos/'
 const Histories = dynamic(() => import('../../components/Histories/'))
 const Footer = dynamic(() => import('../../components/Footer/'))
 
@@ -55,7 +55,7 @@ export async function getStaticProps() {
 		props: {
 			categories,
 		},
-		revalidate: 1,
+		revalidate: 120,
 	}
 }
 

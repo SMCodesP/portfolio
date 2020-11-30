@@ -4,9 +4,9 @@ import dynamic from 'next/dynamic'
 import {useContext} from 'react'
 import {ThemeContext} from 'styled-components'
 
-const Footer = dynamic(() => import('../../components/Footer'))
-const Menu = dynamic(() => import('../../components/Menu'))
-const ResumeListItems = dynamic(() => import('../../components/ResumeListItems'))
+import Footer from '../../components/Footer'
+import Menu from '../../components/Menu'
+import ResumeListItems from '../../components/ResumeListItems'
 
 import getCategories from '../../utils/getCategories'
 import GlobalStyle from '../../styles/GlobalStyle'
@@ -51,7 +51,7 @@ export async function getStaticProps() {
 		props: {
 			categories,
 		},
-		revalidate: 1,
+		revalidate: 120,
 	}
 }
 

@@ -1,6 +1,6 @@
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image';
-
-import Graph from './graph/'
 
 import {
 	ContainerOwner,
@@ -8,12 +8,12 @@ import {
 	TitleContainer,
 	ImageContainer,
 	ContainerInfos,
-	InfosItem,
-	InfosKey,
 	InfosValue
 } from './style'
 
 export default function OwnerInfos() {
+	const theme = useContext(ThemeContext)
+
 	return (
 		<ContainerOwner>
 			<ContainerOwnerInfos>
@@ -35,11 +35,10 @@ export default function OwnerInfos() {
 				</ProgressiveImage>
 			</ContainerOwnerInfos>
 			<ContainerInfos>
-				<InfosItem>
-					<InfosKey>Projetos</InfosKey>
-				</InfosItem>
-				<br/>
-				<Graph />
+				<img align="center" src={`https://github-readme-stats.vercel.app/api?username=SMCodesP&show_icons=true&theme=${(theme.title.toLowerCase() === "dark") ? 'dracula' : 'buefy'}&count_private=true&hide_border=true&custom_title=Meus%20status%20no%20github`} />
+				<br />
+				<img align="center" src={`https://github-readme-stats.vercel.app/api/top-langs/?username=SMCodesP&theme=${(theme.title.toLowerCase() === "dark") ? 'dracula' : 'buefy'}&layout=compact&langs_count=10&hide_border=true&custom_title=Linguagens%20que%20eu%20mais%20uso`} />
+				{/* <Graph /> */}
 			</ContainerInfos>
 		</ContainerOwner>
 	)
