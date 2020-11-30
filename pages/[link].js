@@ -1,7 +1,6 @@
 import {useContext} from 'react'
 import Head from 'next/head'
 import {ThemeContext} from 'styled-components'
-import ProgressiveImage from 'react-progressive-graceful-image'
 
 import Products from '../components/Products'
 import Footer from '../components/Footer'
@@ -9,9 +8,7 @@ import Menu from '../components/Menu/'
 
 import GlobalStyle from '../styles/GlobalStyle'
 
-import products from '../utils/products'
 import getCategories from '../utils/getCategories'
-import getCategorie from '../utils/getCategorie'
 
 import {
 	Container,
@@ -49,7 +46,7 @@ function Plugins({ categories, category }) {
 						loading={false}
 						alt="Construction picture image logo"
 					/>
-				<Title>{category.title} ({category.products.length})</Title>
+				<Title>{category.title}</Title>
 				<SubTitle>{category.description}</SubTitle>
 			</Container>
 

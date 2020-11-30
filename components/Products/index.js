@@ -20,7 +20,7 @@ export default function Products({ items, category, limit }) {
 	return (
 		<Container>
 			<ContainerItems>
-				<CategoryTitle>{category.title}</CategoryTitle>
+				<CategoryTitle>{category.title} ({category.products.length})</CategoryTitle>
 				<ContainerProducts items={items}>
 				{loading ? (
 					<Product
