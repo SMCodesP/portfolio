@@ -57,7 +57,6 @@ export const ListProductsPages = styled.ul`
 	padding: 0 15px;
 	display: grid;
 	grid-auto-flow: column;
-	gap: 0 10px;
 
 	& a {
 		text-decoration: none;
@@ -74,6 +73,7 @@ export const ProductPage = styled.li`
 	list-style: none;
 	user-select: none;
 
+	margin: 0 5px;
 	padding: 7.5px;
 	border-radius: 4px;
 

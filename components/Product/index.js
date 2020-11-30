@@ -92,7 +92,7 @@ function Product({loading, product, category, productIndex}) {
 				</ContainerPurchase>
 				{(!loading) && (
 					<DetailsContainer>
-						<Link href={`${category.link}/[id]`} as={`${category.link}/${productIndex}`}>
+						<Link href={`/products${category.link}/[id]`} as={`/products${category.link}/${product.id}`}>
 							<a>
 								<Details>Detalhes</Details>
 							</a>

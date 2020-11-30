@@ -1,4 +1,4 @@
-![Icone](https://spetacularnetwork.xyz/gold.png)
+![Icone](https://smcodes.tk/gold.png)
 
 
 # **DDL-Economy**

@@ -69,18 +69,13 @@ export const ProductInformations = styled.div`
 `
 
 export const ImageLogo = styled.img`
-	${({not_auto}) => not_auto ? '' : `
-		max-width: 132px;
-		max-height: 132px;
-	`}
+	max-width: 124px;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	${({loading}) => (loading == "true") && 'filter: blur(5px);'}
-	padding: 10px;
 	transition: padding .4s, filter .4s, border-radius .4s;
 	cursor: pointer;
 
 	&:hover {
-		padding: 5px;
 		border-radius: 15px;
 		filter: brightness(60%);
 	}
@@ -94,6 +89,7 @@ export const DescriptionList = styled.ul`
 	line-height: 18px;
 	align-self: flex-start;
 	line-height: 20pt;
+	white-space: pre-wrap;
 
 	& div {
 		padding: 4px;

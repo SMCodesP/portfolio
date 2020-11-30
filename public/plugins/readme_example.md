@@ -1,4 +1,4 @@
-![Icone](https://www.spetacularnetwork.xyz/barrier.png)
+![Icone](https://smcodes.tk/barrier.png)
 
 
 # **Plugin Name**

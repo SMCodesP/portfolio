@@ -1,4 +1,4 @@
-![Icone](https://spetacularnetwork.xyz/name_tag.png)
+![Icone](https://smcodes.tk/name_tag.png)
 
 
 # **DDL-Tags**

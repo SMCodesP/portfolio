@@ -14,14 +14,14 @@ import {
 function ListingPages({product, ...params}) {
 	const {colors} = useContext(ThemeContext)
 
-	const listPagesQuantity = Array.from(Array(params.quantity).keys())
-	const listPages = listPagesQuantity.filter((value) => value < params.id+6 && value > params.id-6)
+	const prevProduct = params.products_of_category.find((product_finded) => product_finded.id === product.id-1)
+	const nextProduct = params.products_of_category.find((product_finded) => product_finded.id === product.id+1)
 	
 	return (
 		<ContainerNextPrevious>
-			{(Number(params.id)-1 >= 0) ? (
-				<Link href={`/${product.category}/[id]`} as={`/${product.category}/${params.id-1}`}>
-					<TextPrevNext href={`/${product.category}/${params.id-1}`}>
+			{(prevProduct) ? (
+				<Link href={`/products${product.category.link}/[product]`} as={`/products${product.category.link}/${prevProduct.id}`}>
+					<TextPrevNext href={`/products${product.category.link}/${prevProduct.id}`}>
 						<FiChevronLeft color={colors.primary} size={24} />
 						<span>Anterior</span>
 					</TextPrevNext>
@@ -29,23 +29,23 @@ function ListingPages({product, ...params}) {
 			) : (<span />)}
 			<ContainerListPages>
 				<ListProductsPages>
-					{listPages.map((productId, index) => (productId != params.id) ? (
-						<Link href={`/${product.category}/[id]`} as={`/${product.category}/${productId}`} key={index.toString()}>
-							<a href={`/${product.category}/${productId}`}>
-								<ProductPage>{productId}</ProductPage>
+					{params.products_of_category.map((product_maping, index) => (product_maping.id !== product.id) ? (
+						<Link href={`/products${product.category.link}/[product]`} as={`/products${product.category.link}/${product_maping.id}`} key={index.toString()}>
+							<a href={`/products${product.category.link}/${product_maping.id}`}>
+								<ProductPage>{product_maping.id}</ProductPage>
 							</a>
 						</Link>
 					) : (
 						<ProductPage key={index.toString()} style={{
 							cursor: 'not-allowed',
 							filter: 'brightness(80%)'
-						}}>{productId}</ProductPage>
+						}}>{product_maping.id}</ProductPage>
 					))}
 				</ListProductsPages>
 			</ContainerListPages>
-			{(params.quantity > Number(params.id)+1) ? (
-				<Link href={`/${product.category}/[id]`} as={`/${product.category}/${Number(params.id)+1}`}>
-					<TextPrevNext href={`/${product.category}/${Number(params.id)+1}`}>
+			{(nextProduct) ? (
+				<Link href={`/products${product.category.link}/[product]`} as={`/products${product.category.link}/${nextProduct.id}`}>
+					<TextPrevNext href={`/products${product.category.link}/${nextProduct.id}`}>
 						<span>Próximo</span>
 						<FiChevronRight color={colors.primary} size={24} />
 					</TextPrevNext>
