@@ -196,7 +196,7 @@ export const Options = styled.div`
 	justify-content: space-between;
 	background-color: ${({ background = "transparent" }) => background};
 	${({background, theme}) => background ? `
-		background-image : url('http://api.thumbr.it/whitenoise-361x370.png?background=${background.substring(1, toString(background).length)}&noise=${theme.colors.text.substring(1, toString(theme.colors.text).length)}&density=5&opacity=15');
+		background-image : url('/menu_${theme.title.toLowerCase()}.webp');
 	` : ``}
 	box-shadow: 0 0 2px 1px ${({theme}) => shade(0.5, theme.colors.background)};
 	transition: all .2s;
@@ -212,7 +212,7 @@ export const Options = styled.div`
 		${(props) => props.actived ? `
 			position: fixed;
 			top: 0;
-			background-color: #7159c1;
+			background: #7159c1 !important;
 			justify-content: flex-start !important;
 			height: 100vh;
 
