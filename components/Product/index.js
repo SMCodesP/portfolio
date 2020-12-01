@@ -35,7 +35,7 @@ function Product({loading, product, category, productIndex}) {
 			{(src, loadingImage) => (
 				<ImageLogo
 					style={{
-						width: '25%',
+						height: '135px',
 						filter: loading ? 'blur(5px)' : 'blur(0px)'
 					}}
 					not_auto="false"

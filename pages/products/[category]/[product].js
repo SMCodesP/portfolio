@@ -9,7 +9,6 @@ import RenderMarkdown from '../../../components/RenderMarkdown/'
 import ListingPages from '../../../components/ListingPages/'
 
 import GlobalStyle from '../../../styles/GlobalStyle'
-import products from '../../../utils/products'
 import getCategories from '../../../utils/getCategories'
 import api from '../../../utils/api'
 
@@ -99,7 +98,6 @@ function DetailsProduct({readme, categories, product, ...params}) {
 }
 
 export async function getStaticProps({params}) {
-	console.log(params)
 	const {data: product} = await api.get(`/products?all=true&id=${params.product}`)
 
 	const res = await fetch(product.documentation_link)

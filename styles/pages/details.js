@@ -69,7 +69,7 @@ export const ProductInformations = styled.div`
 `
 
 export const ImageLogo = styled.img`
-	max-width: 124px;
+	max-width: 50%;
 	background: ${({theme}) => theme.colors.secundaryBackground};
 	${({loading}) => (loading == "true") && 'filter: blur(5px);'}
 	transition: padding .4s, filter .4s, border-radius .4s;

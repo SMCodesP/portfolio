@@ -68,8 +68,6 @@ function Plugins({ categories, category }) {
 export async function getStaticProps({params}) {
 	const {categories} = await getCategories()
 
-	console.log(categories)
-
 	return {
 		props: {
 			categories,
@@ -89,8 +87,6 @@ export async function getStaticPaths() {
 			},
 		}
 	})
-
-	console.log(data)
 
 	return {
 		paths: data,

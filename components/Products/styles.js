@@ -70,11 +70,11 @@ export const ContainerProducts = styled.div`
 	column-gap: 10px;
 
 	@media (max-width: 975px) {
-		grid-template-columns: repeat(2, 1fr);
+		column-count: 2;
 	}
 
 	@media (max-width: 615px) {
-		grid-template-columns: repeat(1, 1fr);
+		column-count: 1;
 	}
 
 	@media (max-width: 475px) {
