@@ -39,8 +39,8 @@ function ResumeProduct({product, productIndex, loading}) {
 				</SkeletonTheme>
 			) : (
 				<>
-					<Link href={`/${product.category}/[id]`} as={`/${product.category}/${productIndex}`}>
-						<a href={`/${product.category}/${productIndex}`}>
+					<Link href={`/products/${product.category}/[id]`} as={`/products/${product.category}/${productIndex}`}>
+						<a href={`/products/${product.category}/${productIndex}`}>
 							<ProgressiveImage
 								src={product.image.large}
 								placeholder={product.image.small}
