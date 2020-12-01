@@ -34,7 +34,14 @@ function All({categories}) {
 				<Menu page="/all" categories={categories} background={colors.background} />
 			</div>
 
-			<ResumeListItems />
+			<ResumeListItems
+				products={[].concat(...categories.map((category) => category.products.map((product) => {
+					return {
+						...product,
+						category
+					}
+				})))}
+			/>
 
 			<Footer />
 

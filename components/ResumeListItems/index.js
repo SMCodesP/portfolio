@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react'
-
-import products from '../../utils/products'
+import { useState } from 'react'
 
 import ResumeProduct  from '../ResumeProduct'
 
@@ -9,24 +7,24 @@ import {
 	ContainerList,
 } from './styles'
 
-export default () => {
-	const [loading, setLoading] = useState(true)
-
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false)
-		}, 2500)
-	}, [])
+function ResumeListItems({ products }) {
 
 	return (
 		<Container>
 			<ContainerList>
-				{[].concat(...products.map(category => category.items)).map((product, index) => {
+				{products.map((product, index) => {
 					return (
-						<ResumeProduct key={product.id} loading={loading} product={product} productIndex={index} />
+						<ResumeProduct
+							key={product.id}
+							loading={loading}
+							product={product}
+							productIndex={index}
+						/>
 					)
 				})}
 			</ContainerList>
 		</Container>
 	)
 }
+
+export default ResumeListItems

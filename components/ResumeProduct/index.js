@@ -8,15 +8,13 @@ import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 
 import RenderMarkdown from '../RenderMarkdown/'
 
-import products from '../../utils/products'
-
 import {
 	Container,
 	ImageLogo,
 	Title,
 } from './styles'
 
-function ResumeProduct({product, productIndex, loading}) {
+function ResumeProduct({product, loading}) {
 	const {colors} = useContext(ThemeContext)
 
 	return (
@@ -39,17 +37,16 @@ function ResumeProduct({product, productIndex, loading}) {
 				</SkeletonTheme>
 			) : (
 				<>
-					<Link href={`/products/${product.category}/[id]`} as={`/products/${product.category}/${productIndex}`}>
-						<a href={`/products/${product.category}/${productIndex}`}>
+					<Link href={`/products${product.category.link}/[id]`} as={`/products${product.category.link}/${product.id}`}>
+						<a href={`/products${product.category.link}/${product.id}`}>
 							<ProgressiveImage
-								src={product.image.large}
-								placeholder={product.image.small}
+								src={product.image_large}
+								placeholder={product.image_small}
 							>
-								{(src, loading) => product.image.size ? (
+								{(src, loading) => product.image_size ? (
 									<ImageLogo
 										style={{
-											width: product.image.size.width || 128,
-											height: product.image.size.height || 128,
+											width: 142,
 											filter: loading ? 'blur(5px)' : ''
 										}}
 										not_auto={true}
@@ -59,8 +56,7 @@ function ResumeProduct({product, productIndex, loading}) {
 								) : (
 									<ImageLogo
 										style={{
-											width: loading ? 128 : '100%',
-											height: loading ? 128 : 'auto',
+											width: 142,
 											filter: loading ? 'blur(10px)' : ''
 										}}
 										not_auto={false}
