@@ -8,7 +8,6 @@ import {
 } from './styles'
 
 function ResumeListItems({ products }) {
-
 	return (
 		<Container>
 			<ContainerList>
@@ -16,7 +15,6 @@ function ResumeListItems({ products }) {
 					return (
 						<ResumeProduct
 							key={product.id}
-							loading={loading}
 							product={product}
 							productIndex={index}
 						/>
