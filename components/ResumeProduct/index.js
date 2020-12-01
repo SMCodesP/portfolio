@@ -24,7 +24,7 @@ function ResumeProduct({product}) {
 							{(src, loading) => product.image_size ? (
 								<ImageLogo
 									style={{
-										width: 142,
+										height: 142,
 										filter: loading ? 'blur(5px)' : ''
 									}}
 									not_auto={true}
@@ -34,7 +34,7 @@ function ResumeProduct({product}) {
 							) : (
 								<ImageLogo
 									style={{
-										width: 142,
+										height: 142,
 										filter: loading ? 'blur(10px)' : ''
 									}}
 									not_auto={false}
