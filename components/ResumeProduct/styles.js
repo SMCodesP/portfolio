@@ -22,9 +22,6 @@ export const Container = styled.li`
 `
 
 export const ImageLogo = styled.img`
-	${({not_auto}) => not_auto ? '' : `
-		max-width: 132px;
-	`}
 	cursor: pointer;
 	padding: 10px;
 	border-radius: 5px;

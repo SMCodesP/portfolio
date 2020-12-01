@@ -7,7 +7,6 @@ import RenderMarkdown from '../RenderMarkdown/'
 import {
 	Container,
 	ImageLogo,
-	Title,
 } from './styles'
 
 function ResumeProduct({product}) {
