@@ -149,7 +149,7 @@ const Cart = ({categories}) => {
 								currency: 'BRL'
 							})
 							.format(products.reduce((acumulador, valorAtual) => {
-								return acumulador + valorAtual.money;
+								return Number(acumulador) + Number(valorAtual.money);
 							}, 0))}</span>
 						</div>
 						<FinishPayment>Finalizar compra</FinishPayment>

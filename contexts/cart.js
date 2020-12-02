@@ -6,7 +6,11 @@ import usePersistedState from '../utils/usePersistedState'
 const CartContext = createContext({})
 
 function CartProvider({ children }) {
-    const [products, setProducts] = usePersistedState('products', [])
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        setProducts(JSON.parse(localStorage.getItem('products') || '[]'))
+    }, [])
 
     function addCart(product) {
         setProducts([...products, product])
