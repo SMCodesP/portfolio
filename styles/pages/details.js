@@ -110,7 +110,7 @@ export const ContainerButton = styled.div`
 `
 
 export const PurchaseButton = styled.button`
-	background: ${({theme}) => shade(0.1, theme.colors.secundaryBackground)};
+	background: #ff79c6;
 	border: 0;
 	border-radius: 5px;
 	height: 46px;
@@ -119,18 +119,23 @@ export const PurchaseButton = styled.button`
 	font-weight: 500;
 	cursor: pointer;
 	margin: 10px 0;
-	border-bottom: 3px solid ${({theme}) => shade(0.3, theme.colors.secundaryBackground)};
+	border-right: 3px solid ${shade(0.2, '#ff79c6')};
+    border-bottom: 3px solid ${shade(0.2, '#ff79c6')};
 	position: relative;
 	transition: filter .2s, top .2s;
 
 	&:hover {
 		filter: brightness(75%);
 	}
-
-	&:active {
-		border-bottom: 0;
-		top: 3px;
-	}
+	
+    &:active {
+        position: relative;
+        top: 3px;
+        left: 3px;
+        border: 0;
+        margin-right: 3px;
+        margin-bottom: 3px;
+    }
 `
 
 export const Price = styled.p`

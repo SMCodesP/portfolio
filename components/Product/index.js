@@ -27,7 +27,7 @@ import {
 
 function Product({loading, product, category, productIndex}) {
 	const color = getColor()
-	const {addCart} = useCart()
+	const {addCart, products} = useCart()
 
 	const ImageIconProduct = () => (
 		<ProgressiveImage
@@ -85,7 +85,17 @@ function Product({loading, product, category, productIndex}) {
 								</a>
 							) : (
 								<>
-									<PurchaseButton onClick={() => addCart(product)}>Comprar</PurchaseButton>
+									{products.find((productPred) => productPred.id === product.id) ? (
+										<Link href="/cart">
+											<a style={{
+												width: '100%'
+											}}>
+												<PurchaseButton>No carrinho</PurchaseButton>
+											</a>
+										</Link>
+									) : (
+										<PurchaseButton onClick={() => addCart(product)}>Comprar</PurchaseButton>
+									)}
 									<PriceTitle>{new Intl.NumberFormat('pt-BR', {
 											style: 'currency',
 											currency: 'BRL'

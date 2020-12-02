@@ -13,6 +13,9 @@ function CartProvider({ children }) {
     }, [])
 
     function addCart(product) {
+        if (products.find((productPred) => productPred.id === product.id))
+            return;
+
         setProducts((productsState) => {
             localStorage.setItem('products', JSON.stringify([...productsState, product]))
 

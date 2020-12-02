@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState, useContext } from 'react';
+import { useState, useContext, memo } from 'react';
 import { FiArrowRight } from "react-icons/fi";
 import { ThemeContext } from 'styled-components';
 
@@ -13,7 +13,7 @@ import {
 	MoreItem,
 } from './styles'
 
-export default function Products({ items, category, limit }) {
+function Products({ items, category, limit }) {
 	const [loading, setLoading] = useState(false);
 	const {colors} = useContext(ThemeContext);
 
@@ -55,3 +55,5 @@ export default function Products({ items, category, limit }) {
 		</Container>
 	)
 }
+
+export default memo(Products)

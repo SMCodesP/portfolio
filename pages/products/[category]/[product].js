@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Link from 'next/link'
+
 import {useContext} from 'react'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
@@ -7,6 +9,8 @@ import Footer from '../../../components/Footer/'
 import Menu from '../../../components/Menu/'
 import RenderMarkdown from '../../../components/RenderMarkdown/'
 import ListingPages from '../../../components/ListingPages/'
+
+import {useCart} from '../../../contexts/cart'
 
 import GlobalStyle from '../../../styles/GlobalStyle'
 import getCategories from '../../../utils/getCategories'
@@ -26,6 +30,7 @@ import {
 
 function DetailsProduct({readme, categories, product, ...params}) {
 	const {colors} = useContext(ThemeContext)
+	const {addCart, products} = useCart()
 
 	return (
 		<div>
@@ -75,7 +80,17 @@ function DetailsProduct({readme, categories, product, ...params}) {
 						) : (
 							<>
 								<Price>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.money)}</Price>
-								<PurchaseButton>Comprar</PurchaseButton>
+								{products.find((productPred) => productPred.id === product.id) ? (
+									<Link href="/cart">
+										<a style={{
+											width: '100%'
+										}}>
+											<PurchaseButton>No carrinho</PurchaseButton>
+										</a>
+									</Link>
+								) : (
+									<PurchaseButton onClick={() => addCart(product)}>Comprar</PurchaseButton>
+								)}
 							</>
 						)}
 					</ContainerButton>
