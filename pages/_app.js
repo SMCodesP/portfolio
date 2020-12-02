@@ -1,15 +1,11 @@
 import Head from 'next/head'
 
-import { useContext } from 'react'
-
-import App from 'next/app'
 import 'react-medium-image-zoom/dist/styles.css'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 import {ThemesProvider} from '../contexts/themes'
 import {AuthProvider} from '../contexts/auth'
-
-import dark from '../styles/themes/dark'
+import {CartProvider} from '../contexts/cart'
 
 function Main(props) {
 	const { Component, pageProps } = props
@@ -21,7 +17,9 @@ function Main(props) {
 			</Head>
 			<ThemesProvider>
 				<AuthProvider>
-					<Component {...pageProps} />
+					<CartProvider>
+						<Component {...pageProps} />
+					</CartProvider>
 				</AuthProvider>
 			</ThemesProvider>
 		</>

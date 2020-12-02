@@ -3,9 +3,9 @@ import { useState, useEffect, useRef, memo, useContext } from 'react'
 import Modal from 'react-modal';
 import { ThemeContext } from 'styled-components'
 import { shade } from 'polished'
+import { TiShoppingCart } from 'react-icons/ti'
 
 import ThemesContext from '../../contexts/themes'
-import getCategories from '../../utils/getCategories'
 
 import {
 	Options,
@@ -16,14 +16,6 @@ import {
 	User,
 	HeadMenuFixed,
 	IconMenu,
-	UserMenu,
-	UserIcon,
-	Username,
-	Line,
-	ListOptions,
-	Option,
-	OptionTitle,
-	OptionSelect,
 } from './styles'
 
 import ModalSetting from '../ModalSetting'
@@ -34,8 +26,7 @@ function Menu({ page: isPage, background, categories, color }) {
 	const [isClose, setIsClose] = useState(false)
 	const [showModal, setShowModal] = useState(false);
 
-	const {colors, ...theme} = useContext(ThemeContext)
-	const {toggleTheme} = useContext(ThemesContext)
+	const {colors} = useContext(ThemeContext)
 
 	let list = [
 		{
@@ -58,7 +49,14 @@ function Menu({ page: isPage, background, categories, color }) {
 					displayed: category.title,
 				}
 			})
-		}
+		},
+		{
+			name: '/cart',
+			displayed: <TiShoppingCart
+				color={colors.text}
+				size={24}
+			/>
+		},
 	]
 
 	function closeOrOpenInMobile() {

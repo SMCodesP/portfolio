@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import {memo, useContext} from 'react'
+import {memo} from 'react'
 import {getColor} from 'get-color-sm'
 import ProgressiveImage from 'react-progressive-graceful-image'
-import {ThemeContext} from 'styled-components'
 
 import RenderMarkdown from '../RenderMarkdown/'
+
+import {useCart} from '../../contexts/cart'
 
 import {
 	Container,
@@ -26,6 +27,7 @@ import {
 
 function Product({loading, product, category, productIndex}) {
 	const color = getColor()
+	const {addCart} = useCart()
 
 	const ImageIconProduct = () => (
 		<ProgressiveImage
@@ -36,7 +38,7 @@ function Product({loading, product, category, productIndex}) {
 				<ImageLogo
 					style={{
 						height: '135px',
-						filter: loading ? 'blur(5px)' : 'blur(0px)'
+						filter: loadingImage ? 'blur(5px)' : 'blur(0px)'
 					}}
 					not_auto="false"
 					src={src}
@@ -83,7 +85,7 @@ function Product({loading, product, category, productIndex}) {
 								</a>
 							) : (
 								<>
-									<PurchaseButton>Comprar</PurchaseButton>
+									<PurchaseButton onClick={() => addCart(product)}>Comprar</PurchaseButton>
 									<PriceTitle>{new Intl.NumberFormat('pt-BR', {
 											style: 'currency',
 											currency: 'BRL'
