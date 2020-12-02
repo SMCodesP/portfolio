@@ -77,6 +77,10 @@ const Cart = ({categories}) => {
 			{(products.length > 0) ? (
 				<>
 					<ProductsShopping>
+						<h1 style={{
+							marginTop: 10,
+							marginLeft: 15
+						}}>Produtos selecionados</h1>
 						{products.map((product) => (
 							<Product>
 								<ImageIconProduct
@@ -144,7 +148,9 @@ const Cart = ({categories}) => {
 							padding: '15px 5px'
 						}}>
 							<p>Total</p>
-							<span>{new Intl.NumberFormat('pt-BR', {
+							<span style={{
+								fontWeight: 'bold'
+							}}>{new Intl.NumberFormat('pt-BR', {
 								style: 'currency',
 								currency: 'BRL'
 							})

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { shade } from "polished";
 
 export const ContainerPage = styled.div`
     display: flex;
@@ -41,9 +42,18 @@ export const ConclusionPurchase = styled.div`
 export const Product = styled.li`
     display: flex;
     margin: 15px;
+    margin-left: 25px;
     padding: 5px;
     border-radius: 5px;
     background: ${({theme}) => theme.colors.background};
+
+    & svg {
+        transition: filter .2s;
+    }
+
+    & svg:hover {
+        filter: brightness(75%);
+    }
 `
 
 export const ImageLogo = styled.img`
@@ -73,6 +83,8 @@ export const FinishPayment = styled.button`
     font-weight: bold;
     width: fit-content;
     border: 0;
+    border-right: 3px solid ${shade(0.2, '#ff79c6')};
+    border-bottom: 3px solid ${shade(0.2, '#ff79c6')};
     border-radius: 5px;
     padding: 10px 25px;
     cursor: pointer;
@@ -81,5 +93,14 @@ export const FinishPayment = styled.button`
 
     &:hover {
         filter: brightness(75%);
+    }
+
+    &:active {
+        position: relative;
+        top: 3px;
+        left: 3px;
+        border: 0;
+        margin-right: 3px;
+        margin-bottom: 3px;
     }
 `

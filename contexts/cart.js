@@ -13,13 +13,19 @@ function CartProvider({ children }) {
     }, [])
 
     function addCart(product) {
-        setProducts([...products, product])
-        localStorage.setItem('products', JSON.stringify(products))
+        setProducts((productsState) => {
+            localStorage.setItem('products', JSON.stringify([...productsState, product]))
+
+            return [...productsState, product]
+        })
     }
 
     function removeCart(product) {
-        setProducts(products.filter((productState) => (productState.id !== product.id)))
-        localStorage.setItem('products', JSON.stringify(products))
+        setProducts((productsState) => {
+            localStorage.setItem('products', JSON.stringify(productsState.filter((productState) => (productState.id !== product.id))))
+            
+            return productsState.filter((productState) => (productState.id !== product.id))
+        })
     }
 
     async function payCart() {
