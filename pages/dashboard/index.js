@@ -4,7 +4,6 @@ import Head from 'next/head'
 import { darken } from 'polished'
 import { ThemeContext } from 'styled-components'
 
-import GlobalStyle from '../../styles/GlobalStyle'
 import {
 	Container,
 	ContainerShape,
@@ -158,12 +157,10 @@ const Dashboard = () => {
 					}}>Histórico</h1>
 					<h2 style={{
 						margin: '0 15px',
-            textIndent: '0.75em'
+			            textIndent: '0.75em'
 					}}>Sem nenhuma alteração feita até o momento.</h2>
 				</ContainerInformations>
 			</Container>
-
-			<GlobalStyle />
 
 		</div>
 	)

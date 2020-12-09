@@ -37,12 +37,16 @@ function CartProvider({ children }) {
                 items: products.map((product) => product.id)
             })
 
-            console.log(response)
-
             return response
         } catch (err) {
             alert(err)
+            return err
         }
+    }
+
+    function clearCart() {
+        setProducts([])
+        localStorage.setItem('products', '[]')
     }
 
 	return (
@@ -51,6 +55,7 @@ function CartProvider({ children }) {
                 addCart,
                 removeCart,
                 payCart,
+                clearCart,
                 products
             }}
         >

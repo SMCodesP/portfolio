@@ -1,10 +1,11 @@
-import {createContext, useContext} from 'react'
+import {createContext, useContext, useEffect, useState} from 'react'
 
 import api from '../utils/api'
 
 const AuthContext = createContext({})
 
 function AuthProvider({ children }) {
+	const [token, setToken] = useState('')
 
 	async function signIn({username, password, captcha, setError, router}) {
 		try {
@@ -14,10 +15,18 @@ function AuthProvider({ children }) {
 				'g-recaptcha-response': captcha
 			})
 
-			console.log(data)
+			setToken(data.token)
+			localStorage.setItem('token', data.token)
 			api.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
 
-			router.push('/dashboard')
+			const query = router.query || {}
+			console.log(query)
+
+			if (router.query.backurl) {
+				router.push(router.query.backurl)
+			} else {
+				router.push('/dashboard')
+			}
 		} catch (err) {
 			console.log(err)
 			console.log(err.response)
@@ -25,10 +34,20 @@ function AuthProvider({ children }) {
 		}
 	}
 
+	useEffect(() => {
+		const localToken = localStorage.getItem('token')
+
+		if (localToken) {
+			api.defaults.headers.common['Authorization'] = `Bearer ${localToken}`
+			setToken(localToken)
+		}
+	}, [])
+
 	return (
 		<AuthContext.Provider
 			value={{
-				signIn
+				signIn,
+				token
 			}}
 		>
 			{children}

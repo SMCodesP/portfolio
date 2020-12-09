@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-import {useContext} from 'react'
+import {useContext, useState, useEffect} from 'react'
 import {ThemeContext} from 'styled-components'
 import ProgressiveImage from 'react-progressive-graceful-image'
 import {FaTrashAlt} from 'react-icons/fa'
@@ -12,7 +12,7 @@ import RenderMarkdown from '../../components/RenderMarkdown/'
 
 import getCategories from '../../utils/getCategories'
 
-import GlobalStyle from '../../styles/GlobalStyle'
+import {useAuth} from '../../contexts/auth'
 import {useCart} from '../../contexts/cart'
 
 import {
@@ -28,8 +28,27 @@ import {
 } from '../../styles/pages/cart'
 
 const Cart = ({categories}) => {
+	const [loadingCart, setLoadingCart] = useState(true)
+	const [mp, setMP] = useState(null)
+
 	const {colors} = useContext(ThemeContext);
-	const {products, removeCart} = useCart()
+	const {products, removeCart, payCart} = useCart()
+	const {token} = useAuth()
+
+	useEffect(() => {
+		if (token.length !== 0) {
+			(async () => {
+				setLoadingCart(true)
+				try {
+					const mpResponse = await payCart()
+					setMP(mpResponse)
+					setLoadingCart(false)
+				} catch (error) {
+					setLoadingCart(true)
+				}
+			})()
+		}
+	}, [products, token])
 
 	const ImageIconProduct = ({product}) => {
 		console.log(product)
@@ -158,7 +177,34 @@ const Cart = ({categories}) => {
 								return Number(acumulador) + Number(valorAtual.money);
 							}, 0))}</span>
 						</div>
-						<FinishPayment>Finalizar compra</FinishPayment>
+						
+						{!loadingCart ? (
+							<>
+								<center>
+									<a href={mp.init_point} name="MP-Checkout">
+										<FinishPayment>Finalizar compra</FinishPayment>
+									</a>
+								</center>
+								<script
+									src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
+									data-preference-id={mp.id}
+								>
+								</script>
+							</>
+						) : (token.length === 0) ? (
+							<center>
+								<Link href={{
+									pathname: "/signin",
+									query: {
+										keyword: "backurl=/cart"
+									}
+								}}>
+									<a>
+										<FinishPayment>Entrar</FinishPayment>
+									</a>
+								</Link>
+							</center>
+						) : <FinishPayment>Carregando...</FinishPayment>}
 					</ConclusionPurchase>
 				</>
 			) : (
@@ -185,8 +231,6 @@ const Cart = ({categories}) => {
 			</ContainerPage>
 
 			<Footer />
-
-			<GlobalStyle />
 
 		</div>
 	)

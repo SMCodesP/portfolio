@@ -12,8 +12,6 @@ import api from '../utils/api'
 const Products = dynamic(() => import('../components/Products'))
 const Footer = dynamic(() => import('../components/Footer'))
 
-import GlobalStyle from '../styles/GlobalStyle'
-
 import {
 	ContainerLicense,
 	Description,
@@ -71,8 +69,6 @@ export default function Home({ categories }) {
 				</Description>
 			</ContainerLicense>
 			<Footer />
-
-			<GlobalStyle />
 		</div>
 	)
 }

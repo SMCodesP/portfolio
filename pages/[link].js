@@ -6,8 +6,6 @@ import Products from '../components/Products'
 import Footer from '../components/Footer'
 import Menu from '../components/Menu/'
 
-import GlobalStyle from '../styles/GlobalStyle'
-
 import getCategories from '../utils/getCategories'
 
 import {
@@ -58,8 +56,6 @@ function Plugins({ categories, category }) {
 			/>
 
 			<Footer />
-
-			<GlobalStyle />
 
 		</div>
 	)

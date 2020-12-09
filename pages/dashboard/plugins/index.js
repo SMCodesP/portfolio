@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 import { ThemeContext } from 'styled-components'
 
-import GlobalStyle from '../../../styles/GlobalStyle'
 import {
 	Container,
 	ContainerInformations,
@@ -88,8 +87,6 @@ const Plugins = () => {
 					</ListPlugins>
 				</ContainerInformations>
 			</Container>
-
-			<GlobalStyle />
 
 		</div>
 	)

@@ -34,8 +34,6 @@ import {
 	TextError,
 } from '../../styles/pages/signin'
 
-import GlobalStyle from '../../styles/GlobalStyle'
-
 import useWindow from '../../utils/useWindow'
 import api from '../../utils/api'
 
@@ -158,7 +156,6 @@ const About = () => {
 				</ContainerLogin>
 			</Container>
 
-			<GlobalStyle />
 
 		</div>
 	)

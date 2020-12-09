@@ -9,7 +9,6 @@ import Menu from '../../components/Menu'
 import ResumeListItems from '../../components/ResumeListItems'
 
 import getCategories from '../../utils/getCategories'
-import GlobalStyle from '../../styles/GlobalStyle'
 
 function All({categories}) {
 	const {colors} = useContext(ThemeContext);
@@ -44,8 +43,6 @@ function All({categories}) {
 			/>
 
 			<Footer />
-
-			<GlobalStyle />
 
 		</div>
 	)

@@ -12,7 +12,6 @@ import ListingPages from '../../../components/ListingPages/'
 
 import {useCart} from '../../../contexts/cart'
 
-import GlobalStyle from '../../../styles/GlobalStyle'
 import getCategories from '../../../utils/getCategories'
 import api from '../../../utils/api'
 
@@ -105,8 +104,6 @@ function DetailsProduct({readme, categories, product, ...params}) {
 			<ListingPages product={product} {...params} />
 
 			<Footer />
-
-			<GlobalStyle />
 
 		</div>
 	)

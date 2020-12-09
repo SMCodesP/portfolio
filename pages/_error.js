@@ -8,7 +8,6 @@ import {ThemeContext, createGlobalStyle} from 'styled-components'
 
 import ContainerParticles from '../components/ContainerParticles/'
 
-import GlobalStyle from '../styles/GlobalStyle'
 import {
 	Container,
 	TextError,
@@ -42,7 +41,6 @@ function Error404({ statusCode }) {
 
       		<Error statusCode={404} title="Página não encontrada!"></Error>
 			<CustomStyles />
-			<GlobalStyle />
 		</>
 	)
 }

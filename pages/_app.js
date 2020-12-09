@@ -3,6 +3,8 @@ import Head from 'next/head'
 import 'react-medium-image-zoom/dist/styles.css'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
+import GlobalStyle from '../styles/GlobalStyle'
+
 import {ThemesProvider} from '../contexts/themes'
 import {AuthProvider} from '../contexts/auth'
 import {CartProvider} from '../contexts/cart'
@@ -19,6 +21,8 @@ function Main(props) {
 				<AuthProvider>
 					<CartProvider>
 						<Component {...pageProps} />
+
+						<GlobalStyle />
 					</CartProvider>
 				</AuthProvider>
 			</ThemesProvider>
