@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { darken } from 'polished'
 import { ThemeContext } from 'styled-components'
 
+import GlobalStyle from '../../styles/GlobalStyle'
 import {
 	Container,
 	ContainerShape,
@@ -162,6 +163,7 @@ const Dashboard = () => {
 				</ContainerInformations>
 			</Container>
 
+			<GlobalStyle />
 		</div>
 	)
 }

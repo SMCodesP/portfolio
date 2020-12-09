@@ -5,6 +5,7 @@ import Head from 'next/head'
 
 import { useContext, useRef, useEffect, useState } from 'react'
 
+import GlobalStyle from '../../styles/GlobalStyle'
 import {ThemeContext} from 'styled-components'
 import {useAuth} from '../../contexts/auth'
 
@@ -37,15 +38,13 @@ import {
 import useWindow from '../../utils/useWindow'
 import api from '../../utils/api'
 
-const About = () => {
+const SignIn = (props) => {
 	const theme = useContext(ThemeContext)
 	const {signIn} = useAuth()
 	const recaptchaRef = useRef()
 	const router = useRouter()
 	const window = useWindow()
-
-	console.log(router.query)
-
+	
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
 	const [captcha, setCaptcha] = useState(null)
@@ -158,9 +157,9 @@ const About = () => {
 				</ContainerLogin>
 			</Container>
 
-
+			<GlobalStyle />
 		</div>
 	)
 }
 
-export default About
+export default SignIn

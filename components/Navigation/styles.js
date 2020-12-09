@@ -22,6 +22,7 @@ export const Welcome = styled.h1`
 	font-size: 10vh;
 
 	& > strong {
+		color: ${({theme}) => theme.colors.text};
 		font-weight: 600 !important;
 	}
 

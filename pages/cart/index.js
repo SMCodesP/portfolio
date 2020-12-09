@@ -15,6 +15,7 @@ import getCategories from '../../utils/getCategories'
 import {useAuth} from '../../contexts/auth'
 import {useCart} from '../../contexts/cart'
 
+import GlobalStyle from '../../styles/GlobalStyle'
 import {
 	ContainerPage,
 	ProductsShopping,
@@ -231,6 +232,8 @@ const Cart = ({categories}) => {
 			</ContainerPage>
 
 			<Footer />
+
+			<GlobalStyle />
 
 		</div>
 	)

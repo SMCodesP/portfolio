@@ -1,33 +1,40 @@
+import App from "next/app";
 import Head from 'next/head'
+import cookies from "next-cookies";
 
 import 'react-medium-image-zoom/dist/styles.css'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
-
-import GlobalStyle from '../styles/GlobalStyle'
 
 import {ThemesProvider} from '../contexts/themes'
 import {AuthProvider} from '../contexts/auth'
 import {CartProvider} from '../contexts/cart'
 
-function Main(props) {
-	const { Component, pageProps } = props
+import themes from '../styles/themes'
 
-	return (
-		<>
-			<Head>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-			</Head>
-			<ThemesProvider>
-				<AuthProvider>
-					<CartProvider>
-						<Component {...pageProps} />
+export default class Main extends App {
+	static async getInitialProps({ Component, ctx }) {
+	  	let pageProps = {};
+  
+	  	if (Component.getInitialProps) {
+			pageProps = await Component.getInitialProps(ctx);
+	  	}
+  
+	  	return { pageProps, cookiesCtx: cookies(ctx) };
+	}
+  
+	render() {
+		const { Component, pageProps, cookiesCtx } = this.props;
 
-						<GlobalStyle />
-					</CartProvider>
-				</AuthProvider>
-			</ThemesProvider>
-		</>
-	)
+		return (
+			<>
+				<ThemesProvider initialTheme={themes[cookiesCtx.theme.toLowerCase() || 'light'] || themes['light']}>
+					<AuthProvider>
+						<CartProvider>
+							<Component {...pageProps} />
+						</CartProvider>
+					</AuthProvider>
+				</ThemesProvider>
+			</>
+	  	);
+	}
 }
-
-export default Main

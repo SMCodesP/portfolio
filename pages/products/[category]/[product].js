@@ -15,6 +15,8 @@ import {useCart} from '../../../contexts/cart'
 import getCategories from '../../../utils/getCategories'
 import api from '../../../utils/api'
 
+import GlobalStyle from '../../styles/GlobalStyle'
+
 import {
 	Container,
 	ProductPurchase,
@@ -105,6 +107,7 @@ function DetailsProduct({readme, categories, product, ...params}) {
 
 			<Footer />
 
+			<GlobalStyle />
 		</div>
 	)
 }

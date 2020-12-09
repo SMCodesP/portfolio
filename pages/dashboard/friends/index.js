@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import { ThemeContext } from 'styled-components'
 
+import GlobalStyle from '../../../styles/GlobalStyle'
 import {
 	Container,
 	ContainerInformations,
@@ -54,6 +55,7 @@ const Friends = () => {
 				</ContainerInformations>
 			</Container>
 
+			<GlobalStyle />
 		</div>
 	)
 }

@@ -10,6 +10,8 @@ import * as animationPending from '../../public/animations/17277-payment-pending
 
 import {useCart} from '../../contexts/cart'
 
+import GlobalStyle from '../../styles/GlobalStyle'
+
 import {
     Button
 } from '../../styles/pages/paid'
@@ -86,22 +88,27 @@ function Paid() {
     }, [status])
 
     return (
-        <div
-            style={{
-                width: "100%",
-                height: "100vh",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center"
-            }}
-        >
-            <div id="paid-container">
+        <>
+            <div
+                style={{
+                    width: "100%",
+                    height: "100vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}
+            >
+                <div id="paid-container">
+                </div>
+                <Link href="/cart">
+                    <Button>Voltar ao carrinho</Button>
+                </Link>
+
             </div>
-            <Link href="/cart">
-                <Button>Voltar ao carrinho</Button>
-            </Link>
-        </div>
+            
+            <GlobalStyle />
+        </>
     )
 }
 

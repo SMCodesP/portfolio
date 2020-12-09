@@ -1,4 +1,4 @@
-import {createContext, useContext} from 'react'
+import {createContext, useContext, useState} from 'react'
 import {ThemeProvider} from 'styled-components'
 
 import usePersistedState from '../utils/usePersistedState'
@@ -8,12 +8,12 @@ import light from '../styles/themes/light'
 
 const ThemesContext = createContext({})
 
-function ThemesProvider({ children }) {
-	const [theme, setTheme] = usePersistedState('theme', light)
+function ThemesProvider({ initialTheme, children }) {
+	const [theme, setTheme] = useState(initialTheme)
 
 	const toggleTheme = () => {
-    setTheme((theme.title.toLowerCase() === 'light') ? dark : light)
-    localStorage.setItem('theme', JSON.stringify((theme.title.toLowerCase() === "light") ? dark : light))
+		document.cookie = `theme=${(theme.title.toLowerCase() === "light") ? dark.title : light.title}; path=/`;
+		setTheme((theme.title.toLowerCase() === 'light') ? dark : light)
 	}
 
 	return (

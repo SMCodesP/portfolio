@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import dynamic from 'next/dynamic'
 
 import { useContext } from 'react'
 
@@ -7,10 +6,11 @@ import {ThemeContext} from 'styled-components'
 
 import Navigation from '../components/Navigation/'
 import getCategories from '../utils/getCategories'
-import api from '../utils/api'
 
-const Products = dynamic(() => import('../components/Products'))
-const Footer = dynamic(() => import('../components/Footer'))
+import GlobalStyle from '../styles/GlobalStyle'
+
+import Products from '../components/Products'
+import Footer from '../components/Footer'
 
 import {
 	ContainerLicense,
@@ -69,6 +69,8 @@ export default function Home({ categories }) {
 				</Description>
 			</ContainerLicense>
 			<Footer />
+
+			<GlobalStyle />
 		</div>
 	)
 }

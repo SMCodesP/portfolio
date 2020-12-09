@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 
 import {
 	ContainerDropDownMenu,

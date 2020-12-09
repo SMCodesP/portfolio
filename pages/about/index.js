@@ -11,6 +11,8 @@ const Histories = dynamic(() => import('../../components/Histories/'))
 const Footer = dynamic(() => import('../../components/Footer/'))
 import getCategories from '../../utils/getCategories'
 
+import GlobalStyle from '../../styles/GlobalStyle'
+
 const About = ({categories}) => {
 	const {colors} = useContext(ThemeContext);
 
@@ -38,6 +40,8 @@ const About = ({categories}) => {
 			<OwnerInfos />
 			<Histories />
 			<Footer />
+
+			<GlobalStyle />
 
 		</div>
 	)

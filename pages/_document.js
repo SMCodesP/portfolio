@@ -7,14 +7,17 @@ export default class MyDocument extends Document {
 	    const sheet = new ServerStyleSheet();
 
 	    function handleCollectStyles(App) {
-	      return props => {
-	        return sheet.collectStyles(<App {...props} />);
-	      };
+			return props => {
+				return sheet.collectStyles(<App {...props} />);
+			}
 	    }
 
 	    const page = renderPage(App => handleCollectStyles(App));
 	    const styleTags = sheet.getStyleElement();
-	    return { ...page, styleTags };
+	    return {
+			...page,
+			styleTags,
+		};
 	}
 
 	render() {
@@ -35,6 +38,7 @@ export default class MyDocument extends Document {
 				</Head>
 				<body>
 					<Main />
+
 					<NextScript />
 				</body>
 			</Html>

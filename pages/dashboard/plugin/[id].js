@@ -12,6 +12,7 @@ import { BiRefresh } from 'react-icons/bi'
 
 import {getColor} from 'get-color-sm'
 
+import GlobalStyle from '../../../styles/GlobalStyle'
 import {
 	Container,
 	ContainerInformations,
@@ -184,8 +185,9 @@ function Plugin({readme, product, ...params}) {
 				backgroundColor={theme.colors.text}
 				effect="solid"
 			/>
-		</div>
 
+			<GlobalStyle />
+		</div>
 	)
 
 }
