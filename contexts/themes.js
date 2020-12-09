@@ -12,7 +12,7 @@ function ThemesProvider({ initialTheme, children }) {
 	const [theme, setTheme] = useState(initialTheme)
 
 	const toggleTheme = () => {
-		document.cookie = `theme=${(theme.title.toLowerCase() === "light") ? dark.title : light.title}; path=/`;
+		document.cookie = `theme=${(theme.title.toLowerCase() === "light") ? dark.title.toLowerCase() : light.title.toLowerCase()}; path=/`;
 		setTheme((theme.title.toLowerCase() === 'light') ? dark : light)
 	}
 

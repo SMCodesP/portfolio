@@ -27,7 +27,7 @@ export default class Main extends App {
 
 		return (
 			<>
-				<ThemesProvider initialTheme={themes[cookiesCtx.theme.toLowerCase() || 'light'] || themes['light']}>
+				<ThemesProvider initialTheme={themes[cookiesCtx.theme || 'light'] || themes['light']}>
 					<AuthProvider>
 						<CartProvider>
 							<Component {...pageProps} />
