@@ -110,7 +110,7 @@ function DetailsProduct({readme, categories, product, ...params}) {
 }
 
 export async function getStaticProps({params}) {
-	const {data: product} = await api.get(`/products?all=true&id=${params.product}`)
+	const {data: product} = await api.get(`${process.env.API_HOST}/products?all=true&id=${params.product}`)
 
 	const res = await fetch(product.documentation_link)
 	const readme = await res.text()
@@ -129,7 +129,7 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() {
-	const {data: products} = await api.get('/products?all=true')
+	const {data: products} = await api.get(`${process.env.API_HOST}/products?all=true`)
 
 	const paths = products.map((product) => {
 		return {

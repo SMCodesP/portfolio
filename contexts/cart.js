@@ -33,7 +33,7 @@ function CartProvider({ children }) {
 
     async function payCart() {
         try {
-            const {data: response} = await api.post('/mercadopago', {
+            const {data: response} = await api.post(`${process.env.API_HOST}/mercadopago`, {
                 items: products.map((product) => product.id)
             })
 
