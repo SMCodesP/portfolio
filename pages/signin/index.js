@@ -44,6 +44,8 @@ const About = () => {
 	const router = useRouter()
 	const window = useWindow()
 
+	console.log(router.query)
+
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
 	const [captcha, setCaptcha] = useState(null)

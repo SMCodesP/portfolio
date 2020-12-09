@@ -30,13 +30,13 @@ function ListingPages({product, ...params}) {
 			<ContainerListPages>
 				<ListProductsPages>
 					{params.products_of_category.map((product_maping, index) => (product_maping.id !== product.id) ? (
-						<Link href={`/products${product.category.link}/[product]`} as={`/products${product.category.link}/${product_maping.id}`} key={index.toString()}>
+						<Link href={`/products${product.category.link}/[product]`} as={`/products${product.category.link}/${product_maping.id}`} key={`product_page_${index}`}>
 							<a href={`/products${product.category.link}/${product_maping.id}`}>
 								<ProductPage>{product_maping.id}</ProductPage>
 							</a>
 						</Link>
 					) : (
-						<ProductPage key={index.toString()} style={{
+						<ProductPage key={`product_custom_page_${index}`} style={{
 							cursor: 'not-allowed',
 							filter: 'brightness(80%)'
 						}}>{product_maping.id}</ProductPage>

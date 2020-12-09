@@ -17,18 +17,18 @@ import {
 function Paid() {
     const {query} = useRouter()
     const {clearCart} = useCart()
-    const status = query.status || "failure"
+    const status = query.back_url_status || "failure"
 
     const optionsStatus = {
-        "approved": () => {
+        "success": () => {
             clearCart()
             return (
                 <>
                     <Lottie
-                        width={116}
-                        height={116}
+                        width={180}
+                        height={180}
                         options={{
-                            loop: false,
+                            loop: true,
                             autoplay: true,
                             animationData: animationSuccess.default,
                             rendererSettings: {
@@ -36,7 +36,6 @@ function Paid() {
                             }
                         }}
                     />
-                    <br />
                     <h2>Pagamento feito com sucesso!</h2>
                 </>
             )
@@ -44,10 +43,10 @@ function Paid() {
         "failure": () => (
             <>
                 <Lottie
-                    width={116}
-                    height={116}
+                    width={180}
+                    height={180}
                     options={{
-                        loop: false,
+                        loop: true,
                         autoplay: true,
                         animationData: animationError.default,
                         rendererSettings: {
@@ -55,7 +54,6 @@ function Paid() {
                         }
                     }}
                 />
-                <br />
                 <h2>Houve um erro no pagamento!</h2>
             </>
         ),

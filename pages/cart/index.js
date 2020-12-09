@@ -36,7 +36,7 @@ const Cart = ({categories}) => {
 	const {token} = useAuth()
 
 	useEffect(() => {
-		if (token.length !== 0) {
+		if (token.length !== 0 && products.length !== 0) {
 			(async () => {
 				setLoadingCart(true)
 				try {
@@ -196,7 +196,7 @@ const Cart = ({categories}) => {
 								<Link href={{
 									pathname: "/signin",
 									query: {
-										keyword: "backurl=/cart"
+										backurl: "/cart"
 									}
 								}}>
 									<a>

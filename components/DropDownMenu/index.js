@@ -48,7 +48,7 @@ function DropDownMenu({ children, items, ...props}) {
 					onMouseLeave={closeDropMenuHover}
 				>
 					{items.map(({name, displayed}, index) => (
-						<Link key={index.toString()} href={name}>
+						<Link key={`drop_page_${index}`} href={name}>
 							<a>
 								<DropPage>{displayed}</DropPage>
 							</a>
