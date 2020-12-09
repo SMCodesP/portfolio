@@ -45,7 +45,7 @@ const Dashboard = () => {
 		event.preventDefault()
 
 		try {
-			await api.put(`${process.env.API_HOST}/user/discord`, {
+			await api.put(`/user/discord`, {
 				username,
 			})
 			

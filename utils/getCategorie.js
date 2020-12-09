@@ -3,7 +3,7 @@ import api from './api'
 async function getCategorie(link) {
 	const moment = (await import('moment')).default
 
-	const { data } = await api.get(`${process.env.API_HOST}/categories?all=true&link=${link}`)
+	const { data } = await api.get(`nk=${link}`)
 
 	return {
 		...data,

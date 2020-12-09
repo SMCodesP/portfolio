@@ -9,7 +9,7 @@ function AuthProvider({ children }) {
 
 	async function signIn({username, password, captcha, setError, router}) {
 		try {
-			const { data } = await api.post(`${process.env.API_HOST}/session`, {
+			const { data } = await api.post(`/session`, {
 				username,
 				password,
 				'g-recaptcha-response': captcha
