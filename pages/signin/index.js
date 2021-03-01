@@ -85,12 +85,12 @@ const SignIn = (props) => {
 			<Container>
 				<Link href="/">
 					<a style={{
-					    position: 'absolute',
+						position: 'absolute',
 						left: 0,
-					    right: 0,
-					    margin: 20,
-					    width: 'fit-content',
-					    textDecoration: 'none',
+						right: 0,
+						margin: 20,
+						width: 'fit-content',
+						textDecoration: 'none',
 					}}>
 						<BackHome>
 							<FiArrowLeft size={32} color={theme.colors.secundary} />

@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { shade } from 'polished'
+import { createGlobalStyle } from "styled-components";
+import { shade } from "polished";
 
 const GlobalStyle = createGlobalStyle`
 	* {
@@ -9,14 +9,14 @@ const GlobalStyle = createGlobalStyle`
 		outline: 0;
 		font-family: 'Roboto', sans-serif !important;
 		transition: background .2s, background-color .2s, color .2s;
-		color: ${({theme}) => theme.colors.text};
 	}
 
 	html, body {
-		background: ${({theme}) => theme.colors.background};
+		background: ${({ theme }) => theme.colors.background};
 		width: 100%;
 		height: 100vh;
 		scroll-behavior: smooth;
+		color: ${({ theme }) => theme.colors.text};
 	}
 
 	::-webkit-scrollbar {
@@ -25,16 +25,16 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	::-webkit-scrollbar-track {
-		background: ${({theme}) => theme.colors.tertiary};
+		background: ${({ theme }) => theme.colors.tertiary};
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: ${({theme}) => theme.colors.secundary};
+		background: ${({ theme }) => theme.colors.secundary};
 		border-radius: 7px;
 	}
 
 	::-webkit-scrollbar-thumb:hover {
-		background: ${({theme}) => shade(0.3, theme.colors.secundary)};
+		background: ${({ theme }) => shade(0.3, theme.colors.secundary)};
 	}
 
 	.ReactModal__Overlay {
