@@ -1,77 +1,126 @@
-# SMPortfolio
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/26466516/141659551-d7ba5630-7200-46fe-863b-87818dae970a.png" alt="Next.js TypeScript Starter">
+</p>
 
-[![Online version](https://img.shields.io/badge/Wecolme%20by%20project-1.2-282a36?style=for-the-badge)](https://smcodes.tk)
-[![Created by](https://img.shields.io/badge/Discord-SMCodes%234207-ff79c6)](https://discord.com/users/360247173356584960)
+<br />
 
-![Preview](https://raw.githubusercontent.com/SMCodesP/portfolio/master/readme.png)
+<div align="center"><strong>Non-opinionated TypeScript starter for Next.js</strong></div>
+<div align="center">Highly scalable foundation with the best DX. All the tools you need to build your next project.</div>
 
-### Click [here](https://smcodes.tk/images) view more images about for website
----
+<br />
 
-## Description about this project
+<div align="center">
+  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=flat-square&color=5e17eb&labelColor=000000" alt="PRs welcome!" />
 
+  <img alt="License" src="https://img.shields.io/github/license/jpedroschmitz/typescript-nextjs-starter?style=flat-square&color=5e17eb&labelColor=000000">
 
-This project was created for me to learn next.js technology for static websites, my goal is to have a good SEO, in no other project of mine I focused on SEO so a personal project is excellent to encourage me to working with SEO methods. So I I will have to rank my site in a good way, to have a good active and captivated audience.
+  <a href="https://twitter.com/intent/follow?screen_name=jpedroschmitz">
+    <img src="https://img.shields.io/twitter/follow/jpedroschmitz?style=flat-square&color=5e17eb&labelColor=000000" alt="Follow @jpedroschmitz" />
+  </a>
+</div>
 
-I would really like someone to contribute to this project, because I have a lot of doubts about next.js, several items that are not optimized enough in my opinion, as the menu animation is not compatible with all devices and when I reached this conclusion, i realized that on very specific devices they are not compatible with states, even using google chrome the device does not run.
+<div align="center">
+  <sub>Created by <a href="https://twitter.com/jpedroschmitz">João Pedro</a> with the help of many <a href="https://github.com/jpedroschmitz/typescript-nextjs-starter/graphs/contributors">wonderful contributors</a>.</sub>
+</div>
 
+<br />
 
-## Installation
-### Download
+## Features
 
-#### Open terminal emulator
+- ⚡️ Next.js 12
+- ⚛️ React 18
+- ⛑ TypeScript
+- 📏 ESLint — To find and fix problems in your code
+- 💖 Prettier — Code Formatter for consistent style
+- 🐶 Husky — For running scripts before committing
+- 📄 Commitizen — To define a standard way of committing rules
+- 🚓 Commitlint — To make sure your commit messages follow the convention
+- 🖌 Renovate — To keep your dependencies up to date
+- 🚫 lint-staged — Run ESLint and Prettier against staged Git files
+- 👷 PR Workflow — Run Type Check & Linters on Pull Requests
+- ⚙️ EditorConfig - Consistent coding styles across editors and IDEs
+- 🗂 Path Mapping — Import components or images using the `@` prefix
 
-#### Send command
-`git clone https://github.com/SMCodesP/portfolio`
+## Quick Start
 
-`cd portfolio`
+The best way to start with this template is using [Create Next App](https://nextjs.org/docs/api-reference/create-next-app).
 
-`npm install` or `yarn`
+```
+yarn create next-app -e https://github.com/jpedroschmitz/typescript-nextjs-starter
+# or
+npx create-next-app -e https://github.com/jpedroschmitz/typescript-nextjs-starter
+```
 
-### Start
+### Development
 
-`yarn dev`
+To start the project locally, run:
 
-Success is starting!
+```bash
+yarn dev
+```
 
-## Build and Deploy
+Open `http://localhost:3000` with your browser to see the result.
 
-### Build
+## Testimonials
 
-#### Send command in terminal
+> [**“This starter is by far the best TypeScript starter for Next.js. Feature packed but un-opinionated at the same time!”**](https://github.com/jpedroschmitz/typescript-nextjs-starter/issues/87#issue-789642190)<br>
+> — Arafat Zahan
 
-`npm run build` or `yarn build`
+> [**“I can really recommend the Next.js Typescript Starter repo as a solid foundation for your future Next.js projects.”**](https://corfitz.medium.com/create-a-custom-create-next-project-command-2a6b35a1c8e6)<br>
+> — Corfitz
 
-You can start locally in production mode for a preview, using this command
-`npm run start` or `yarn start`
+> [**“Brilliant work!”**](https://github.com/jpedroschmitz/typescript-nextjs-starter/issues/87#issuecomment-769314539)<br>
+> — Soham Dasgupta
 
+## Showcase
 
-**Warn:** This command need execute after build
+List of websites that started off with Next.js TypeScript Starter:
 
-### Deploy
+- [dowhile.io](https://dowhile.io)
+- [graphcms.com](https://graphcms.com)
+- [mobg.com.br](https://mobg.com.br)
+- [nextlevelweek.com](https://nextlevelweek.com)
+- [rocketseat.com.br](https://www.rocketseat.com.br)
 
-#### Send these commands
+## Documentation
 
-I'm will use in this example vercel-cli, if you not installed use this command
-`npm install -g vercel-cli` or `yarn global add vercel`
+### Requirements
 
-For deploy using this command
-`vercel` This command initialized stage first configure account and project for next deploy
+- Node.js >= 12.22.0
+- Yarn 1 (Classic)
 
-For do deploy in production mode a domain custom, configure in website vercel.com and execute and command deployment prod mode, to use flag `prod` in behind command
-`vercel --prod`
+### Directory Structure
 
-## Contribute this project
-### Forked project
+- [`.github`](.github) — GitHub configuration including the CI workflow.<br>
+- [`.husky`](.husky) — Husky configuration and hooks.<br>
+- [`public`](./public) — Static assets such as robots.txt, images, and favicon.<br>
+- [`src`](./src) — Application source code, including pages, components, styles.
 
-#### For that step you need have a knowledge in github
+### Scripts
 
-First step fork my project, and changes this project in you way, after create a pull request or more, because I would like to understand the reason for the changes, I would really like you to contribute to this project.
+- `yarn dev` — Starts the application in development mode at `http://localhost:3000`.
+- `yarn build` — Creates an optimized production build of your application.
+- `yarn start` — Starts the application in production mode.
+- `yarn type-check` — Validate code using TypeScript compiler.
+- `yarn lint` — Runs ESLint for all files in the `src` directory.
+- `yarn format` — Runs Prettier for all files in the `src` directory.
+- `yarn commit` — Run commitizen. Alternative to `git commit`.
 
-There is not much to explain the changes of each one so you can do whatever you want.
+### Path Mapping
 
----
+TypeScript are pre-configured with custom path mappings. To import components or files, use the `@` prefix.
 
-# Licensing
+```tsx
+import { Button } from '@/components/Button';
 
-Samuel Pereira da Silva is licensed under the Apache License, Version 2.0. See [LICENSE](https://github.com/SMCodesP/portfolio/blob/master/LICENSE.md) for the full license text.
+// To import images or other files from the public folder
+import avatar from '@/public/avatar.png';
+```
+
+### Switch to npm
+
+This starter uses Yarn 1 (Classic) by default, but this choice is yours. If you'd like to switch to npm, delete the `yarn.lock` file, install the dependencies with `npm i`, change the CI workflow, and Husky Git hooks to use npm commands.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
