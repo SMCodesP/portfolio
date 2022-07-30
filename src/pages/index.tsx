@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import dynamic from 'next/dynamic';
+import Head from 'next/head';
 
 import { loadFull } from 'tsparticles';
 
@@ -28,6 +28,10 @@ import { particlesOptions } from '@/utils/particlesOptions';
 import { ListIframe } from '@/components/Skill/styles';
 import { useTheme } from 'styled-components';
 import Skill from '@/components/Skill';
+
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
+import { toast } from 'react-toastify';
 
 const skills = [
   {
@@ -77,115 +81,137 @@ const Home: NextPage = () => {
   };
 
   return (
-    <ContainerHome>
-      <HeaderHome>
-        <Menu myLocation="home" />
-        <div
-          style={{
-            flex: 1,
-            zIndex: 0,
-            position: `absolute`,
-            width: `100%`,
-          }}
-        >
-          <ParticlesContainer
-            id="tsparticles"
-            init={particlesInit}
-            options={particlesOptions}
-          />
-        </div>
-        <ContainerContent>
-          <ContainerSpace>
-            <Title>
-              Pode me chamar de <span>SMCodes</span>. E eu irei desenvolver os
-              softwares ideais para seu negócio.
-            </Title>
-            <div
-              style={{
-                display: `flex`,
-                flexDirection: `column`,
-                alignItems: `center`,
-                gap: 15,
-              }}
-            >
-              <Skills>
-                <Skill
-                  skill={{
-                    name: `SMCodesP`,
-                    id: `sT83HNt`,
-                    Content: () => (
-                      <img
-                        src="https://github-readme-stats.vercel.app/api?username=SMCodesP&show_icons=true&theme=omni&count_private=true&hide_border=true&locale=pt-br&card_width=500"
-                        width={500}
-                        height={200}
-                      />
-                    ),
-                  }}
-                />
-              </Skills>
-              <Skills>
-                {skills.map((skill) => (
+    <>
+      <Head>
+        <title>Página Inicial - Portifólio SMCodes</title>
+      </Head>
+      <ContainerHome>
+        <HeaderHome>
+          <Menu myLocation="home" />
+          <div
+            style={{
+              flex: 1,
+              zIndex: 0,
+              position: `absolute`,
+              width: `100%`,
+            }}
+          >
+            <ParticlesContainer
+              id="tsparticles"
+              init={particlesInit}
+              options={particlesOptions}
+            />
+          </div>
+          <ContainerContent>
+            <ContainerSpace>
+              <Title>
+                Pode me chamar de <span>SMCodes</span>. E eu irei desenvolver os
+                softwares ideais para seu negócio.
+              </Title>
+              <div
+                style={{
+                  display: `flex`,
+                  flexDirection: `column`,
+                  alignItems: `center`,
+                  gap: 15,
+                }}
+              >
+                <Skills>
                   <Skill
-                    key={skill.id}
                     skill={{
-                      ...skill,
+                      name: `SMCodesP`,
+                      id: `sT83HNt`,
                       Content: () => (
-                        <ListIframe>
-                          {skill.projects?.map((project) => (
-                            <img
-                              key={project}
-                              src={`https://github-readme-stats.vercel.app/api/pin?username=SMCodesP&repo=${project}&show_owner=true&show_icons=true&theme=omni&hide_border=true&locale=pt-br&card_width=400`}
-                              width={420}
-                            />
-                          ))}
-                        </ListIframe>
+                        <img
+                          src="https://github-readme-stats.vercel.app/api?username=SMCodesP&show_icons=true&theme=omni&count_private=true&hide_border=true&locale=pt-br&card_width=500"
+                          width={500}
+                          height={200}
+                        />
                       ),
                     }}
                   />
-                ))}
-              </Skills>
-            </div>
-            <BottomNetwork>
-              <Network>
-                <NetworkLogo>
-                  <SiLinkedin color={theme.currentLine} size={52} />
-                </NetworkLogo>
-                <NetworkContent>
-                  <NetworkTitle>LinkedIn</NetworkTitle>
-                  <NetworkDescription>
-                    Fique por dentro de meus novos projetos.
-                  </NetworkDescription>
-                </NetworkContent>
-              </Network>
-              <Network>
-                <NetworkLogo>
-                  <SiGithub color={theme.currentLine} size={52} />
-                </NetworkLogo>
-                <NetworkContent>
-                  <NetworkTitle>Github</NetworkTitle>
-                  <NetworkDescription>
-                    Explore todos meus projetos públicos.
-                  </NetworkDescription>
-                </NetworkContent>
-              </Network>
-              <Network>
-                <NetworkLogo>
-                  <SiDiscord color={theme.currentLine} size={52} />
-                </NetworkLogo>
-                <NetworkContent>
-                  <NetworkTitle>Discord</NetworkTitle>
-                  <NetworkDescription>
-                    Entre em contato comigo em qualquer horário.
-                  </NetworkDescription>
-                </NetworkContent>
-              </Network>
-            </BottomNetwork>
-          </ContainerSpace>
-        </ContainerContent>
-      </HeaderHome>
+                </Skills>
+                <Skills>
+                  {skills.map((skill) => (
+                    <Skill
+                      key={skill.id}
+                      skill={{
+                        ...skill,
+                        Content: () => (
+                          <ListIframe>
+                            {skill.projects?.map((project) => (
+                              <img
+                                key={project}
+                                src={`https://github-readme-stats.vercel.app/api/pin?username=SMCodesP&repo=${project}&show_owner=true&show_icons=true&theme=omni&hide_border=true&locale=pt-br&card_width=400`}
+                                width={420}
+                              />
+                            ))}
+                          </ListIframe>
+                        ),
+                      }}
+                    />
+                  ))}
+                </Skills>
+              </div>
+              <BottomNetwork>
+                <a
+                  href="https://www.linkedin.com/in/samuel-pereira-da-silva-947bb31a5"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Network>
+                    <NetworkLogo>
+                      <SiLinkedin color={theme.currentLine} size={52} />
+                    </NetworkLogo>
+                    <NetworkContent>
+                      <NetworkTitle>LinkedIn</NetworkTitle>
+                      <NetworkDescription>
+                        Fique por dentro de meus novos projetos.
+                      </NetworkDescription>
+                    </NetworkContent>
+                  </Network>
+                </a>
+                <a
+                  href="https://github.com/SMCodesP"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Network>
+                    <NetworkLogo>
+                      <SiGithub color={theme.currentLine} size={52} />
+                    </NetworkLogo>
+                    <NetworkContent>
+                      <NetworkTitle>Github</NetworkTitle>
+                      <NetworkDescription>
+                        Explore todos meus projetos públicos.
+                      </NetworkDescription>
+                    </NetworkContent>
+                  </Network>
+                </a>
+                <CopyToClipboard
+                  text="SMCodes#6874"
+                  onCopy={() => toast(`Usuário do discord copiado!`)}
+                >
+                  <Network>
+                    <NetworkLogo>
+                      <SiDiscord color={theme.currentLine} size={52} />
+                    </NetworkLogo>
+                    <NetworkContent>
+                      <NetworkTitle>Discord</NetworkTitle>
+                      <NetworkDescription>
+                        Entre em contato comigo em qualquer horário.
+                      </NetworkDescription>
+                    </NetworkContent>
+                  </Network>
+                </CopyToClipboard>
+              </BottomNetwork>
+            </ContainerSpace>
+          </ContainerContent>
+        </HeaderHome>
 
-      <ContainerMain></ContainerMain>
-    </ContainerHome>
+        <ContainerMain></ContainerMain>
+      </ContainerHome>
+    </>
   );
 };
 

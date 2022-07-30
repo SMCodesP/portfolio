@@ -67,6 +67,10 @@ export const BottomNetwork = styled.ul`
   display: flex;
   justify-content: space-around;
   list-style: none;
+
+  & a {
+    text-decoration: none;
+  }
 `;
 
 export const Network = styled.li`
