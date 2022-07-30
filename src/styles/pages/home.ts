@@ -13,6 +13,7 @@ export const HeaderHome = styled.header`
 
 export const ContainerContent = styled.div`
   flex: 1;
+  width: 100%;
   padding: 75px 0;
   position: relative;
   overflow: hidden;
@@ -31,6 +32,7 @@ export const ParticlesContainer = styled(Particles)`
 
 export const ContainerSpace = styled.div`
   flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

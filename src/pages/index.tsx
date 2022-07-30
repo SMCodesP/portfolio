@@ -27,10 +27,7 @@ import { particlesOptions } from '@/utils/particlesOptions';
 
 import { ListIframe } from '@/components/Skill/styles';
 import { useTheme } from 'styled-components';
-
-const Skill = dynamic(() => import(`@/components/Skill`), {
-  ssr: false,
-});
+import Skill from '@/components/Skill';
 
 const skills = [
   {
@@ -83,6 +80,20 @@ const Home: NextPage = () => {
     <ContainerHome>
       <HeaderHome>
         <Menu myLocation="home" />
+        <div
+          style={{
+            flex: 1,
+            zIndex: 0,
+            position: `absolute`,
+            width: `100%`,
+          }}
+        >
+          <ParticlesContainer
+            id="tsparticles"
+            init={particlesInit}
+            options={particlesOptions}
+          />
+        </div>
         <ContainerContent>
           <ContainerSpace>
             <Title>
@@ -170,11 +181,6 @@ const Home: NextPage = () => {
               </Network>
             </BottomNetwork>
           </ContainerSpace>
-          <ParticlesContainer
-            id="tsparticles"
-            init={particlesInit}
-            options={particlesOptions}
-          />
         </ContainerContent>
       </HeaderHome>
 
