@@ -3,7 +3,7 @@ import { GlobalStyle } from '@/styles/Global';
 import { ThemeProvider } from 'styled-components';
 import dark from '@/themes/dark';
 import Head from 'next/head';
-
+import 'rc-tooltip/assets/bootstrap.css';
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500;700&family=Rubik:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
       </Head>
