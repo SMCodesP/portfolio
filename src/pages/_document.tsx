@@ -48,7 +48,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500;700&family=Rubik:wght@400;500;700&display=swap"
             rel="stylesheet"
           />
-          <link rel="shortcut icon" href="/smcodes.png" type="image/png" />
+          <link
+            rel="shortcut icon"
+            href="/smcodes_round.png"
+            type="image/png"
+          />
         </Head>
         <body>
           <Main />

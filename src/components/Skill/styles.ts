@@ -8,6 +8,7 @@ export const SkillContainer = styled.li`
   font-family: 'Rubik';
   padding: 2px 20px;
   background-color: ${({ theme }) => theme.foreground};
+  box-shadow: 0 0 12px ${({ theme }) => theme.cyan}56;
   color: ${({ theme }) => theme.background};
   cursor: pointer;
   filter: brightness(80%);

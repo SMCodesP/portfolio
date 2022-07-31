@@ -33,6 +33,9 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import { toast } from 'react-toastify';
 
+import axios from 'axios';
+import Product from '@/components/Product';
+
 const skills = [
   {
     name: `Node.JS`,
@@ -73,7 +76,9 @@ const skills = [
   { name: `NestJS`, id: `22335`, projects: [`HugulosaoAPI`] },
 ];
 
-const Home: NextPage = () => {
+const Home: NextPage<{
+  products: TProduct[];
+}> = ({ products }) => {
   const theme = useTheme();
 
   const particlesInit = async (main: any) => {
@@ -209,10 +214,29 @@ const Home: NextPage = () => {
           </ContainerContent>
         </HeaderHome>
 
-        <ContainerMain></ContainerMain>
+        <ContainerMain>
+          {products.map((product, index) => (
+            <Product
+              key={product.id}
+              product={product}
+              inverse={index % 2 === 1}
+            />
+          ))}
+        </ContainerMain>
       </ContainerHome>
     </>
   );
 };
+
+export async function getServerSideProps() {
+  const { data } = await axios.get(`${process.env.DOMAIN}/api/products`);
+  console.log(data);
+
+  return {
+    props: {
+      products: data.slice(0, 2),
+    },
+  };
+}
 
 export default Home;

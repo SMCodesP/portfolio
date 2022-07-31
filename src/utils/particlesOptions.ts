@@ -26,10 +26,10 @@ export const particlesOptions: ISourceOptions = {
   },
   particles: {
     color: {
-      value: `#E1E1E6`,
+      value: `#988BC7`,
     },
     links: {
-      color: `#E1E1E6`,
+      color: `#483C67`,
       distance: 150,
       enable: true,
       opacity: 0.5,
@@ -44,22 +44,22 @@ export const particlesOptions: ISourceOptions = {
       outModes: {
         default: `bounce`,
       },
-      random: false,
+      random: true,
       speed: 4,
       straight: false,
     },
     number: {
       density: {
         enable: true,
-        area: 800,
+        area: 30,
       },
-      value: 40,
+      value: 2,
     },
     opacity: {
       value: 0.5,
     },
     shape: {
-      type: `circle`,
+      type: `square`,
     },
     size: {
       value: { min: 1, max: 5 },
