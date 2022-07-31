@@ -1,0 +1,58 @@
+[
+  {
+    "id": 406,
+    "title": "Portfólio",
+    "documentation_link": "https://raw.githubusercontent.com/SMCodesP/portfolio/master/README.md",
+    "image_small": "/images/projects/smcodes.jpg",
+    "image_large": "/images/projects/smcodes.jpg",
+    "description": "Este projeto foi criado para me aprofundar na tecnologia next.js fazendo um site estático, meu objetivo era ter um bom SEO, foi meu primeiro projeto com foco em SEO e uma boa experiêcia de usuário com um atrativo."
+  },
+  {
+    "id": 412,
+    "title": "SMEconomy",
+    "documentation_link": "https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-economy.md",
+    "image_small": "/images/projects/gold_min.png",
+    "image_large": "/images/projects/gold.png",
+    "description": "Primeiramente um sistema de economia para servidores de minecraft, uma base completa para seu servidor com suporte a diversos sistemas como bolsa de valores, descontos, uma extensão web para o monitoramento de usuários via um portal web, uma integração a entrada via nLogin, e visualmente agradável."
+  },
+  {
+    "id": 407,
+    "title": "BotGame",
+    "documentation_link": "https://raw.githubusercontent.com/SMCodesP/BotGame/master/README.md",
+    "image_small": "/bot_min.png",
+    "image_large": "/bot.png",
+    "description": "**Comandos »** 37\n**Open source »** Sim\n**Licença »** Apache 2.0\n**Contém sistemas de »** Mineração, economia, cargos, emprego, skills e configuração de servidores\n**Feito por »** `SMCodes`"
+  },
+  {
+    "id": 409,
+    "title": "DDL-NSA",
+    "documentation_link": "https://raw.githubusercontent.com/SMCodesP/DDL-NSA/master/README.md",
+    "image_small": "/products/ddl-nsa/small.webp",
+    "image_large": "/products/ddl-nsa/large.webp",
+    "description": "**Páginas »** 4\n**Open source »** Sim\n**Licença »** [MIT](https://github.com/SMCodesP/DDL-NSA/blob/master/LICENSE.md)\n**Preview »** [Clique aqui](https://samuel-nsa.netlify.app/)\n**Repositório »** [Clique aqui](https://github.com/SMCodesP/DDL-NSA)\n**Site feito para »** `Estudos`\n**Criador »** SMCodes"
+  },
+  {
+    "id": 410,
+    "title": "DDL-Furnace",
+    "documentation_link": "https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-furnace.md",
+    "image_small": "/furnace_min.png",
+    "image_large": "/furnace.png",
+    "description": "**Minecraft version »** 1.8.x\n**API »** Bukkit Spigot\n**Funcionalidade »** Esquentar minérios\n**Inovação »** Construir fornalhas com dificuldade\n**Criador »** SMCodes\n**A pedido de »** Ninguém"
+  },
+  {
+    "id": 411,
+    "title": "DDL-Tags",
+    "documentation_link": "https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/documentation/ddl-tags.md",
+    "image_small": "/name_tag_min.png",
+    "image_large": "/name_tag.png",
+    "description": "**Minecraft version »** 1.8.x\n**API »** Bukkit Spigot\n**Funcionalidade »** Sistema de tags\n**Inovação »** Uma api robusta e um gerenciamento web\n**Criador »** SMCodes\n**A pedido de »** Ninguém"
+  },
+  {
+    "id": 413,
+    "title": "DDL-Warps",
+    "documentation_link": "https://raw.githubusercontent.com/SMCodesP/portfolio/master/public/plugins/readme_example.md",
+    "image_small": "/barrier_min.png",
+    "image_large": "/barrier.png",
+    "description": "**Minecraft version »** 1.8.x\n**API »** Bukkit Spigot\n**Funcionalidade »** Gerenciamento de warps\n**Inovação »** Sistema em GUI automatizado\n**Criador »** SMCodes\n**A pedido de »** Ninguém"
+  }
+]

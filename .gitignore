@@ -5,23 +5,29 @@
 /.pnp
 .pnp.js
 
+# JetBrains IDE files
+.idea/
+
 # testing
 /coverage
 
 # next.js
 /.next/
+/out/
 
 # production
 /build
-/out
 
 # misc
 .DS_Store
+*.pem
+tsconfig.tsbuildinfo
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
 # local env files
 .env
@@ -30,14 +36,5 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-/.vercel
-
-
+# vercel
 .vercel
-
-# Editor
-
-*.komodoproject
-Porfolio.komodoproject
-/*.komodoproject
-/Porfolio.komodoproject
