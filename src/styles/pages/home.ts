@@ -41,13 +41,16 @@ export const ContainerSpace = styled.div`
 `;
 
 export const Title = styled.h1`
+  font-size: 38px;
   font-weight: 600;
   text-align: center;
   padding: 0 20%;
   margin-top: 120px;
 
   & span {
+    font-family: 'Press Start 2P';
     font-weight: bold;
+    font-size: 26px;
     color: ${({ theme }) => theme.purple};
     text-decoration: underline;
   }
