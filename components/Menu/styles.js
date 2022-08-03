@@ -1,37 +1,38 @@
-import styled from 'styled-components'
-import { IoMdSettings } from 'react-icons/io';
+import styled from "styled-components";
+import { IoMdSettings } from "react-icons/io";
 import Switch from "react-switch";
-import { shade } from 'polished'
+import { shade } from "polished";
 
 export const ListingPage = styled.ul`
 	height: auto;
 	opacity: 1;
 	display: flex;
-	transition: all .2s;
+	transition: all 0.2s;
 
-	@media(max-width: 890px) {
+	@media (max-width: 890px) {
 		flex-direction: column;
 	}
 
 	& a {
 		text-decoration: none;
+		color: ${({ theme }) => theme.colors.text};
 		margin: 8px !important;
 	}
-`
+`;
 
 export const Title = styled.p`
 	display: flex;
-    align-items: center;
+	align-items: center;
 	height: auto;
 	opacity: 1;
 
 	color: ${({ color, theme }) => color || theme.colors.text};
 	font-size: 26px;
 	font-weight: 600;
-	transition: all .2s;
+	transition: all 0.2s;
 	user-select: none;
 	margin: 0 10px;
-`
+`;
 
 export const IconMenu = styled.button`
 	position: relative;
@@ -73,7 +74,7 @@ export const IconMenu = styled.button`
 		height: 8px;
 		background-color: #e02041;
 		border-radius: 0.57143rem;
-		content:"";
+		content: "";
 	}
 
 	& span::before {
@@ -90,7 +91,8 @@ export const IconMenu = styled.button`
 		-webkit-transition: background 0s 0.3s;
 		transition: background 0s 0.3s;
 	}
-	& span::before, & span::after {
+	& span::before,
+	& span::after {
 		-webkit-transition-duration: 0.3s, 0.3s;
 		transition-duration: 0.3s, 0.3s;
 	}
@@ -103,7 +105,9 @@ export const IconMenu = styled.button`
 		transition-property: bottom, transform;
 	}
 
-	${props => props.closed ? `
+	${(props) =>
+		props.closed
+			? `
 		& {
 			background: none;
 		}
@@ -124,12 +128,13 @@ export const IconMenu = styled.button`
 			transform: rotate(-45deg);
 			visibility: visible;
 		}
-	` : ``}
+	`
+			: ``}
 
 	@media (min-width:890px) {
 		display: none;
 	}
-`
+`;
 
 export const Page = styled.li`
 	opacity: 1;
@@ -143,40 +148,34 @@ export const Page = styled.li`
 	cursor: pointer;
 	color: ${({ color, theme }) => color || theme.colors.text};
 	font-size: 18px;
-	font-weight: ${(props) => props.locate
-		? '900'
-		: ''};
-	transition: transform .2s, filter .2s;
+	font-weight: ${(props) => (props.locate ? "900" : "")};
+	transition: transform 0.2s, filter 0.2s;
 
-	@media(min-width: 890px) {
+	@media (min-width: 890px) {
 		&:hover {
 			filter: brightness(75%);
-			transform: ${(props) => props.locate
-				? 'scale(1)'
-				: 'scale(1.1)'};
+			transform: ${(props) => (props.locate ? "scale(1)" : "scale(1.1)")};
 		}
 	}
-`
+`;
 
 export const PageCustom = styled(Page)`
 	padding: 5px 20px;
-	border: 1px solid ${({theme}) => theme.colors.text};
+	border: 1px solid ${({ theme }) => theme.colors.text};
 	border-radius: 23px;
 
 	&:hover {
-		transform: ${(props) => props.locate
-			? 'scale(1)'
-			: 'scale(1.05)'};
+		transform: ${(props) => (props.locate ? "scale(1)" : "scale(1.05)")};
 		text-decoration: underline;
-		background: ${({theme}) => theme.colors.text};
-		box-shadow: 0 0 5px 0 ${({theme}) => theme.colors.primary};
-		color: ${({theme}) => theme.colors.inverseText};
+		background: ${({ theme }) => theme.colors.text};
+		box-shadow: 0 0 5px 0 ${({ theme }) => theme.colors.primary};
+		color: ${({ theme }) => theme.colors.inverseText};
 	}
-`
+`;
 
-export const User = styled(IoMdSettings).attrs(({theme}) => ({
+export const User = styled(IoMdSettings).attrs(({ theme }) => ({
 	color: theme.colors.text,
-	size: 20
+	size: 20,
 }))`
 	stroke-width: 3px;
 	box-sizing: content-box;
@@ -184,32 +183,35 @@ export const User = styled(IoMdSettings).attrs(({theme}) => ({
 	transition: transform 1s;
 
 	&:hover {
-    	transform: none;
+		transform: none;
 		transform: rotate(180deg);
 	}
-`
-
+`;
 
 export const Options = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	background-color: ${({ background = "transparent" }) => background};
-	${({background, theme}) => background ? `
+	${({ background, theme }) =>
+		background
+			? `
 		background-image : url('/menu_${theme.title.toLowerCase()}.webp');
-	` : ``}
-	box-shadow: 0 0 2px 1px ${({theme}) => shade(0.5, theme.colors.background)};
-	transition: all .2s;
+	`
+			: ``}
+	box-shadow: 0 0 2px 1px ${({ theme }) => shade(0.5, theme.colors.background)};
+	transition: all 0.2s;
 	padding: 25px 90px;
 
-	@media(max-width: 890px) {
-
+	@media (max-width: 890px) {
 		flex-direction: column;
 		padding: 10px 70px 10px 70px;
 		z-index: 999;
-		transition: all .2s;
+		transition: all 0.2s;
 
-		${(props) => props.actived ? `
+		${(props) =>
+			props.actived
+				? `
 			position: fixed;
 			top: 0;
 			background: #7159c1 !important;
@@ -233,7 +235,8 @@ export const Options = styled.div`
 			a:hover ${Page} {
 				filter: brightness(75%);
 			}
-		` : `
+		`
+				: `
 			a {
 				display: none;
 			}
@@ -242,16 +245,19 @@ export const Options = styled.div`
 		${ListingPage},
 		${Title},
 		${Page} {
-			${(props) => props.actived ? `
+			${(props) =>
+				props.actived
+					? `
 				margin: 15px;
-			` : `
+			`
+					: `
 				height: 0;
 				opacity: 0;
 			`}
 		}
-  }
+	}
 
-	@media(max-width: 530px) {
+	@media (max-width: 530px) {
 		padding: 15px 25px 15px 25px !important;
 
 		${Title} {
@@ -259,31 +265,26 @@ export const Options = styled.div`
 		}
 	}
 
-	@media(max-width: 430px) {
+	@media (max-width: 430px) {
 		padding: 5px 10px 5px 10px !important;
 	}
-`
+`;
 
 export const OpenIsMenuMobile = styled.div`
 	width: 100%;
-`
+`;
 
 export const OptionsFixed = styled.div`
 	width: 100%;
-	transition: height .4s;
-	height: ${(props) => props.fixed
-		? '80px'
-		: '0'
-	};
+	transition: height 0.4s;
+	height: ${(props) => (props.fixed ? "80px" : "0")};
 	display: flex;
 	position: fixed;
 	justify-content: space-between;
 	align-items: center;
-	background: ${({theme}) => theme.colors.primary};
-	border-bottom: ${(props) => props.fixed
-		? `2px solid ${shade(0.2, props.theme.colors.primary)}`
-		: ''
-	};
+	background: ${({ theme }) => theme.colors.primary};
+	border-bottom: ${(props) =>
+		props.fixed ? `2px solid ${shade(0.2, props.theme.colors.primary)}` : ""};
 	padding: 0 80px;
 	z-index: 2;
 
@@ -293,79 +294,73 @@ export const OptionsFixed = styled.div`
 
 	${Title} {
 		color: #333333 !important;
-		display: ${(props) => props.fixed
-			? 'flex'
-			: 'none'
-		};
+		display: ${(props) => (props.fixed ? "flex" : "none")};
 	}
 
 	${Page} {
 		color: #333333 !important;
-		display: ${(props) => props.fixed
-			? 'flex'
-			: 'none'
-		};
+		display: ${(props) => (props.fixed ? "flex" : "none")};
 	}
 
-	@media(max-width: 530px) {
+	@media (max-width: 530px) {
 		justify-content: center;
 		${Title} {
 			display: none;
 		}
 	}
-`
+`;
 
 export const HeadMenuFixed = styled.div`
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: space-between;
-`
+`;
 
 export const UserMenu = styled.div`
 	border-radius: 5px;
-	background: ${({theme}) => theme.colors.background};
+	background: ${({ theme }) => theme.colors.background};
 	width: 100%;
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-`
+	align-self: flex-end;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+`;
 
 export const UserIcon = styled.img`
 	width: 64px;
 	height: 64px;
 	cursor: pointer;
-	transition: filter .3s;
+	transition: filter 0.3s;
 
 	&:hover {
 		filter: brightness(80%);
 	}
-`
+`;
 
 export const Username = styled.p`
-	color: ${({theme}) => theme.colors.text};
+	color: ${({ theme }) => theme.colors.text};
 	font-size: 14pt;
 	font-weight: medium;
 	margin: 5px 0;
-`
+`;
 
 export const Line = styled.hr`
 	display: block;
 	height: 1px;
 	border: 0;
-	border-top: 2px solid ${({theme}) => shade(0.4, theme.colors.background)};
+	border-top: 2px solid ${({ theme }) => shade(0.4, theme.colors.background)};
 	filter: blur(1px);
-    margin: 1em 0;
-    padding: 0;
+	margin: 1em 0;
+	padding: 0;
 	width: 100%;
-`
+`;
 
 export const ListOptions = styled.ul`
 	margin: 25px;
 	width: 100%;
 	padding: 0 15px;
-`
+`;
 
 export const Option = styled.li`
 	padding: 10px;
@@ -375,11 +370,11 @@ export const Option = styled.li`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	background: ${({theme}) => theme.colors.secundaryBackground};
-`
+	background: ${({ theme }) => theme.colors.secundaryBackground};
+`;
 
 export const OptionTitle = styled.p`
-	color: ${({theme}) => theme.colors.secundaryText};
+	color: ${({ theme }) => theme.colors.secundaryText};
 	font-size: 14pt;
 	line-height: 15pt;
 
@@ -387,6 +382,6 @@ export const OptionTitle = styled.p`
 		cursor: pointer;
 		text-decoration: underline;
 	}
-`
+`;
 
-export const OptionSelect = styled(Switch)``
+export const OptionSelect = styled(Switch)``;

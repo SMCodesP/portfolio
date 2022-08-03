@@ -3,30 +3,37 @@
 [![Online version](https://img.shields.io/badge/Wecolme%20by%20project-1.2-282a36?style=for-the-badge)](https://smcodes.tk)
 [![Created by](https://img.shields.io/badge/Discord-SMCodes%234207-ff79c6)](https://discord.com/users/360247173356584960)
 
-![Preview](https://raw.githubusercontent.com/SMCodesP/portfolio/master/readme.png)
+![Preview](https://old.smcodes.tk/readme.png)
 
-### Click [here](https://smcodes.tk/images) view more images about for website
+### Click [here](https://old.smcodes.tk/images) view more images about for website
+
 ---
 
 ## Description about this project
-
 
 This project was created for me to learn next.js technology for static websites, my goal is to have a good SEO, in no other project of mine I focused on SEO so a personal project is excellent to encourage me to working with SEO methods. So I I will have to rank my site in a good way, to have a good active and captivated audience.
 
 I would really like someone to contribute to this project, because I have a lot of doubts about next.js, several items that are not optimized enough in my opinion, as the menu animation is not compatible with all devices and when I reached this conclusion, i realized that on very specific devices they are not compatible with states, even using google chrome the device does not run.
 
-
 ## Installation
+
 ### Download
 
 #### Open terminal emulator
 
 #### Send command
+
 `git clone https://github.com/SMCodesP/portfolio`
 
 `cd portfolio`
 
 `npm install` or `yarn`
+
+```json
+{
+	"teste": "123"
+}
+```
 
 ### Start
 
@@ -45,7 +52,6 @@ Success is starting!
 You can start locally in production mode for a preview, using this command
 `npm run start` or `yarn start`
 
-
 **Warn:** This command need execute after build
 
 ### Deploy
@@ -62,6 +68,7 @@ For do deploy in production mode a domain custom, configure in website vercel.co
 `vercel --prod`
 
 ## Contribute this project
+
 ### Forked project
 
 #### For that step you need have a knowledge in github

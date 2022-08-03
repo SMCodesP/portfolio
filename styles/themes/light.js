@@ -1,24 +1,25 @@
 export default {
-	title: 'Light',
+	title: "Light",
 
 	colors: {
-		primary: '#DEC0F1',
-		secundary: '#957FEF',
-		tertiary: '#EFD9CE',
-		fourth: '#EFD9CE',
+		primary: "#DEC0F1",
+		secundary: "#957FEF",
+		tertiary: "#EFD9CE",
+		fourth: "#EFD9CE",
 
-		background: '#fafafa',
-		secundaryBackground: '#e0e0e0',
+		background: "#fafafa",
+		secundaryBackground: "#e0e0e0",
 
-		text: '#333333',
-		secundaryText: '#282a36',
-		tertiaryText: '#e0e0e0',
-		fourthText: '#e02041',
-		fifthText: '#957FEF',
-		inverseText: '#f8f8f2',
+		text: "#333333",
+		secundaryText: "#282a36",
+		tertiaryText: "#e0e0e0",
+		fourthText: "#e02041",
+		fifthText: "#957FEF",
+		inverseText: "#f8f8f2",
+		pink: "#FF79C6",
 
-		light: '#fafafa',
-		dark: '#282a36',
-		darkTwo: '#44475a',
-	}
-}
+		light: "#fafafa",
+		dark: "#282a36",
+		darkTwo: "#44475a",
+	},
+};

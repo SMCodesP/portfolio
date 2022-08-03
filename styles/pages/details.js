@@ -1,5 +1,5 @@
-import { shade } from 'polished';
-import styled from 'styled-components'
+import { shade } from "polished";
+import styled from "styled-components";
 
 export const Container = styled.div`
 	display: flex;
@@ -9,25 +9,25 @@ export const Container = styled.div`
 	@media (max-width: 1000px) {
 		flex-direction: column;
 	}
-`
+`;
 
 export const ProductPurchase = styled.div`
 	flex: 1;
 	height: 100%;
 	margin: 10px;
 	border-radius: 10px;
-	background: ${({theme}) => theme.colors.secundaryBackground};
+	background: ${({ theme }) => theme.colors.secundaryBackground};
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 20px 10px;
-`
+`;
 
 export const ProductInformations = styled.div`
 	flex: 2;
 	margin: 10px;
 	border-radius: 10px;
-	background: ${({theme}) => theme.colors.secundaryBackground};
+	background: ${({ theme }) => theme.colors.secundaryBackground};
 	height: fit-content;
 	padding: 25px 15px;
 	line-height: 20pt;
@@ -60,18 +60,18 @@ export const ProductInformations = styled.div`
 		align-self: center;
 		max-width: 95%;
 		cursor: pointer;
-		transition: filter .4s;
+		transition: filter 0.4s;
 	}
 
 	& img:hover {
 		filter: brightness(60%);
 	}
-`
+`;
 
 export const ImageLogo = styled.img`
 	max-width: 50%;
-	background: ${({theme}) => theme.colors.secundaryBackground};
-	${({loading}) => (loading == "true") && 'filter: blur(5px);'}
+	background: ${({ theme }) => theme.colors.secundaryBackground};
+	${({ loading }) => loading == "true" && "filter: blur(5px);"}
 	transition: padding .4s, filter .4s, border-radius .4s;
 	cursor: pointer;
 
@@ -79,7 +79,7 @@ export const ImageLogo = styled.img`
 		border-radius: 15px;
 		filter: brightness(60%);
 	}
-`
+`;
 
 export const DescriptionList = styled.ul`
 	padding: 25px 25px 10px 25px;
@@ -98,7 +98,7 @@ export const DescriptionList = styled.ul`
 	@media (max-width: 400px) {
 		padding: 25px 0 5px 5px;
 	}
-`
+`;
 
 export const ContainerButton = styled.div`
 	width: 55%;
@@ -107,7 +107,7 @@ export const ContainerButton = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-end;
-`
+`;
 
 export const PurchaseButton = styled.button`
 	background: #ff79c6;
@@ -119,31 +119,31 @@ export const PurchaseButton = styled.button`
 	font-weight: 500;
 	cursor: pointer;
 	margin: 10px 0;
-	border-right: 3px solid ${shade(0.2, '#ff79c6')};
-    border-bottom: 3px solid ${shade(0.2, '#ff79c6')};
+	border-right: 3px solid ${shade(0.2, "#ff79c6")};
+	border-bottom: 3px solid ${shade(0.2, "#ff79c6")};
 	position: relative;
-	transition: filter .2s, top .2s;
+	transition: filter 0.2s, top 0.2s;
 
 	&:hover {
 		filter: brightness(75%);
 	}
-	
-    &:active {
-        position: relative;
-        top: 3px;
-        left: 3px;
-        border: 0;
-        margin-right: 3px;
-        margin-bottom: 3px;
-    }
-`
+
+	&:active {
+		position: relative;
+		top: 3px;
+		left: 3px;
+		border: 0;
+		margin-right: 3px;
+		margin-bottom: 3px;
+	}
+`;
 
 export const Price = styled.p`
 	font-size: 14pt;
-`
+`;
 
 export const ProductTitle = styled.h1`
 	font-size: 22pt;
 	line-height: 36pt;
 	padding: 5px;
-`
+`;

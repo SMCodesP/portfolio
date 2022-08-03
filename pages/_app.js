@@ -1,6 +1,9 @@
 import Head from "next/head";
 
 import "react-medium-image-zoom/dist/styles.css";
+import "react-toastify/dist/ReactToastify.css";
+
+import { ToastContainer } from "react-toastify";
 
 import { ThemesProvider } from "../contexts/themes";
 import { AuthProvider } from "../contexts/auth";
@@ -14,10 +17,7 @@ function Main(props) {
 	return (
 		<>
 			<Head>
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1"
-				/>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
 			</Head>
 
 			<ThemesProvider initialTheme={themes["light"]}>
@@ -26,6 +26,8 @@ function Main(props) {
 						<Component {...pageProps} />
 					</CartProvider>
 				</AuthProvider>
+
+				<ToastContainer theme="light" />
 			</ThemesProvider>
 		</>
 	);

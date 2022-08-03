@@ -49,6 +49,10 @@ const GlobalStyle = createGlobalStyle`
 	.ReactModal__Overlay--before-close{
 	    opacity: 0;
 	}
+
+	& a {
+		color: ${({ theme }) => theme.colors.fifthText};
+	}
 `;
 
 export default GlobalStyle;

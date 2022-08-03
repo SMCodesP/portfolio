@@ -42,10 +42,7 @@ function DetailsProduct({ readme, categories, product, ...params }) {
 					content={`SMCodes - ${product.title}`}
 					key="title"
 				/>
-				<meta
-					name="twitter:title"
-					content={`SMCodes - ${product.title}`}
-				/>
+				<meta name="twitter:title" content={`SMCodes - ${product.title}`} />
 				<meta
 					name="description"
 					content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`}
@@ -105,12 +102,7 @@ function DetailsProduct({ readme, categories, product, ...params }) {
 					</DescriptionList>
 					<ContainerButton>
 						{product.money <= 0 ? (
-							<a
-								href=""
-								tartget="_blank"
-								style={{ width: "100%" }}
-								download
-							>
+							<a href="" tartget="_blank" style={{ width: "100%" }} download>
 								<PurchaseButton>Baixar</PurchaseButton>
 							</a>
 						) : (
@@ -122,8 +114,7 @@ function DetailsProduct({ readme, categories, product, ...params }) {
 									}).format(product.money)}
 								</Price>
 								{products.find(
-									(productPred) =>
-										productPred.id === product.id
+									(productPred) => productPred.id === product.id
 								) ? (
 									<Link href="/cart">
 										<a
@@ -131,15 +122,11 @@ function DetailsProduct({ readme, categories, product, ...params }) {
 												width: "100%",
 											}}
 										>
-											<PurchaseButton>
-												No carrinho
-											</PurchaseButton>
+											<PurchaseButton>No carrinho</PurchaseButton>
 										</a>
 									</Link>
 								) : (
-									<PurchaseButton
-										onClick={() => addCart(product)}
-									>
+									<PurchaseButton onClick={() => addCart(product)}>
 										Comprar
 									</PurchaseButton>
 								)}

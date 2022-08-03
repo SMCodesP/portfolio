@@ -1,70 +1,41 @@
-import {useEffect, useState} from 'react'
-import styled from 'styled-components'
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import styled, { useTheme } from "styled-components";
 
-import copyTextToClipboard from '../../../utils/copyTextToClipboard'
-
-import {
-	Container as ContainerClipboard,
-	ContainerSuccess,
-} from '../../Clipoard/styles'
+import copyTextToClipboard from "../../../utils/copyTextToClipboard";
 
 const Container = styled.code`
-	background: ${({theme}) => theme.colors.background};
+	background: ${({ theme }) => theme.colors.background};
 	padding: 5px;
 	margin: 0 2px;
 	border-radius: 5px;
 	cursor: pointer;
-	transition: filter .4s;
+	transition: filter 0.4s;
 
 	&:hover {
 		filter: brightness(65%);
 	}
-`
+`;
 
-const InlineCode = ({value}) => {
-	const [actived, setActived] = useState(false)
-	const [display, setDisplay] = useState(false)
-	const [text, setText] = useState('')
-
-	useEffect(() => {
-		if (actived) {
-			setTimeout(() => {
-				setActived(false)
-				clearTimeout()
-				setTimeout(() => {
-					setDisplay(false)
-					clearTimeout()
-				}, 500)
-			}, 5000)
-		}
-	}, [actived])
+const InlineCode = ({ children }) => {
+	const theme = useTheme();
 
 	async function codeCopyText() {
-		if (actived === true || display === true)
-			return;
+		const res = await copyTextToClipboard(children);
 
-		const res = await copyTextToClipboard(value)
+		console.log(theme.title);
 
-		setText(res)
-
-		setActived(true)
-		setDisplay(true)
+		toast("Texto copiado com sucesso!", {
+			autoClose: 2500,
+			theme: theme.title.toLowerCase(),
+		});
 	}
 
 	return (
 		<>
-			<Container onClick={codeCopyText}>{value}</Container>
-
-			{display && (
-				<ContainerClipboard actived={actived}>
-					<ContainerSuccess>
-						{text}
-						{actived && (<span></span>)}
-					</ContainerSuccess>
-				</ContainerClipboard>
-			)}
+			<Container onClick={codeCopyText}>{children}</Container>
 		</>
-	)
-}
+	);
+};
 
-export default InlineCode
+export default InlineCode;
