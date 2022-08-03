@@ -1,9 +1,9 @@
-import {useContext} from 'react'
-import {ThemeContext} from 'styled-components'
-import Particles from 'react-particles-js';
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
+import Particles from "tsparticles";
 
-export default function ContainerParticles({children}) {
-	const {colors} = useContext(ThemeContext)
+export default function ContainerParticles({ children }) {
+	const { colors } = useContext(ThemeContext);
 
 	const config = {
 		particles: {
@@ -119,10 +119,10 @@ export default function ContainerParticles({children}) {
 			width="100%"
 			height="100vh"
 			style={{
-				background: colors.background
+				background: colors.background,
 			}}
 		>
 			{children}
 		</Particles>
-	)
+	);
 }

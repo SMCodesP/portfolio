@@ -1,9 +1,9 @@
-import api from './api'
+import api from "./api";
 
 async function getCategories() {
-	const moment = (await import('moment')).default
+	const moment = (await import("moment")).default;
 
-	const { data } = await api.get(`/categories?all=true`)
+	const { data } = await api.get(`/categories?all=true`);
 
 	const newCategoryOfSetIsNewProduct = data.map((category) => {
 		return {
@@ -11,15 +11,18 @@ async function getCategories() {
 			products: category.products.map((product) => {
 				return {
 					...product,
-					isNew: moment.unix(moment().unix()).diff(moment.unix(product.timestamp), 'days') <= 7
-				}
-			})
-		}
-	})
+					isNew:
+						moment
+							.unix(moment().unix())
+							.diff(moment.unix(product.timestamp), "days") <= 7,
+				};
+			}),
+		};
+	});
 
 	return {
-		categories: newCategoryOfSetIsNewProduct
-	}
+		categories: newCategoryOfSetIsNewProduct,
+	};
 }
 
-export default getCategories
+export default getCategories;

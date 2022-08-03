@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
 	width: 100%;
@@ -9,24 +9,24 @@ export const Container = styled.div`
 	@media (max-width: 475px) {
 		padding: 15px 0;
 	}
-`
+`;
 
 export const ContainerItems = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	margin-top: 10px;
-`
+`;
 
 export const MoreItem = styled.p`
 	text-align: end;
-	color: ${({theme}) => theme.colors.secundary};
+	color: ${({ theme }) => theme.colors.secundary};
 	font-size: 21pt;
 	font-weight: 600;
-	transition: margin-right .2s;
+	transition: margin-right 0.2s;
 	margin-right: 5px;
 	align-items: center;
-`
+`;
 
 export const ContainerMoreItems = styled.div`
 	align-self: flex-end;
@@ -34,7 +34,7 @@ export const ContainerMoreItems = styled.div`
 	align-items: center;
 	flex-direction: row;
 	cursor: pointer;
-	transition: filter .2s, opacity .2s;
+	transition: filter 0.2s, opacity 0.2s;
 	user-select: none;
 
 	&:hover {
@@ -42,7 +42,7 @@ export const ContainerMoreItems = styled.div`
 	}
 
 	& svg {
-		transition: padding-left .2s;
+		transition: padding-left 0.2s;
 		stroke-width: 3px;
 	}
 
@@ -57,7 +57,7 @@ export const ContainerMoreItems = styled.div`
 	&:active {
 		opacity: 0;
 	}
-`
+`;
 
 export const ContainerProducts = styled.div`
 	overflow-x: auto; /* Hide horizontal scrollbar */
@@ -66,7 +66,7 @@ export const ContainerProducts = styled.div`
 	margin-top: 5px;
 	margin-bottom: 15px;
 
-	column-count: 3;
+	column-count: 5;
 	column-gap: 10px;
 
 	@media (max-width: 975px) {
@@ -82,15 +82,14 @@ export const ContainerProducts = styled.div`
 		padding: 20px 0;
 		justify-content: center;
 	}
-`
+`;
 
 export const CategoryTitle = styled.p`
 	font-weight: 900;
 	font-size: 24pt;
-	color: ${({theme}) => theme.colors.text};
+	color: ${({ theme }) => theme.colors.text};
 
 	@media (max-width: 475px) {
 		text-align: center;
 	}
-`
-
+`;

@@ -1,24 +1,26 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import 'react-medium-image-zoom/dist/styles.css'
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
+import "react-medium-image-zoom/dist/styles.css";
 
-import {ThemesProvider} from '../contexts/themes'
-import {AuthProvider} from '../contexts/auth'
-import {CartProvider} from '../contexts/cart'
+import { ThemesProvider } from "../contexts/themes";
+import { AuthProvider } from "../contexts/auth";
+import { CartProvider } from "../contexts/cart";
 
-import themes from '../styles/themes'
+import themes from "../styles/themes";
 
 function Main(props) {
-	const { Component, pageProps } = props
+	const { Component, pageProps } = props;
 
 	return (
 		<>
 			<Head>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1"
+				/>
 			</Head>
 
-			<ThemesProvider initialTheme={themes['light']}>
+			<ThemesProvider initialTheme={themes["light"]}>
 				<AuthProvider>
 					<CartProvider>
 						<Component {...pageProps} />
@@ -26,7 +28,7 @@ function Main(props) {
 				</AuthProvider>
 			</ThemesProvider>
 		</>
-	)
+	);
 }
 
-export default Main
+export default Main;
