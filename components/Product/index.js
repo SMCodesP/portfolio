@@ -26,8 +26,8 @@ import {
 } from "./styles";
 
 function Product({ loading, product, category, productIndex }) {
-	const color = getColor();
 	const { addCart, products } = useCart();
+	const color = getColor();
 
 	const ImageIconProduct = () => (
 		<ProgressiveImage
@@ -82,7 +82,7 @@ function Product({ loading, product, category, productIndex }) {
 								<DescriptionSkeleton width={200} />
 							</>
 						) : (
-							<RenderMarkdown text={product.description} />
+							<RenderMarkdown children={product.description} />
 						)}
 					</DescriptionList>
 					<ContainerPurchase>

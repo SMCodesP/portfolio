@@ -1,9 +1,14 @@
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import { ThemeContext } from "styled-components";
-import Particles from "tsparticles";
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
 
 export default function ContainerParticles({ children }) {
 	const { colors } = useContext(ThemeContext);
+
+	const customInit = useCallback(async (engine) => {
+		await loadFull(engine);
+	});
 
 	const config = {
 		particles: {
@@ -121,6 +126,7 @@ export default function ContainerParticles({ children }) {
 			style={{
 				background: colors.background,
 			}}
+			init={customInit}
 		>
 			{children}
 		</Particles>

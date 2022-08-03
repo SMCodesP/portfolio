@@ -145,7 +145,7 @@ const Cart = ({ categories }) => {
 										<Title>{product.title}</Title>
 										<Description>
 											<RenderMarkdown
-												text={product.description}
+												children={product.description}
 											/>
 										</Description>
 									</div>

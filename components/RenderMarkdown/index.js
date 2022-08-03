@@ -3,11 +3,11 @@ import ReactMarkdown from "react-markdown";
 import CodeBlock from "../Markdown/CodeBlock";
 import InlineCode from "../Markdown/InlineCode";
 
-const RenderMarkdown = ({ text }) => {
+const RenderMarkdown = ({ children }) => {
 	return (
 		<ReactMarkdown
-			children={text}
-			renderers={{ code: CodeBlock, inlineCode: InlineCode }}
+			children={children}
+			components={{ code: CodeBlock, inlineCode: InlineCode }}
 		/>
 	);
 };

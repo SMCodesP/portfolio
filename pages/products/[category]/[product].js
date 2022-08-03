@@ -1,21 +1,21 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
 
-import {useContext} from 'react'
-import {ThemeContext} from 'styled-components'
-import ProgressiveImage from 'react-progressive-graceful-image'
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
+import ProgressiveImage from "react-progressive-graceful-image";
 
-import Footer from '../../../components/Footer/'
-import Menu from '../../../components/Menu/'
-import RenderMarkdown from '../../../components/RenderMarkdown/'
-import ListingPages from '../../../components/ListingPages/'
+import Footer from "../../../components/Footer/";
+import Menu from "../../../components/Menu/";
+import RenderMarkdown from "../../../components/RenderMarkdown/";
+import ListingPages from "../../../components/ListingPages/";
 
-import {useCart} from '../../../contexts/cart'
+import { useCart } from "../../../contexts/cart";
 
-import getCategories from '../../../utils/getCategories'
-import api from '../../../utils/api'
+import getCategories from "../../../utils/getCategories";
+import api from "../../../utils/api";
 
-import GlobalStyle from '../../../styles/GlobalStyle'
+import GlobalStyle from "../../../styles/GlobalStyle";
 
 import {
 	Container,
@@ -27,30 +27,62 @@ import {
 	PurchaseButton,
 	Price,
 	ProductTitle,
-} from '../../../styles/pages/details'
+} from "../../../styles/pages/details";
 
-function DetailsProduct({readme, categories, product, ...params}) {
-	const {colors} = useContext(ThemeContext)
-	const {addCart, products} = useCart()
+function DetailsProduct({ readme, categories, product, ...params }) {
+	const { colors } = useContext(ThemeContext);
+	const { addCart, products } = useCart();
 
 	return (
 		<div>
 			<Head>
 				<title>SMCodes - {product.title}</title>
-				<meta property="og:title" content={`SMCodes - ${product.title}`} key="title" />
-				<meta name="twitter:title" content={`SMCodes - ${product.title}`} />
-				<meta name="description" content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`} />
-				<meta property="og:description" content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`} />
-				<meta name="description" content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`} />
-				<meta name="Description" content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`} />
-				<meta name="twitter:description" content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`} />
+				<meta
+					property="og:title"
+					content={`SMCodes - ${product.title}`}
+					key="title"
+				/>
+				<meta
+					name="twitter:title"
+					content={`SMCodes - ${product.title}`}
+				/>
+				<meta
+					name="description"
+					content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`}
+				/>
+				<meta
+					property="og:description"
+					content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`}
+				/>
+				<meta
+					name="description"
+					content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`}
+				/>
+				<meta
+					name="Description"
+					content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`}
+				/>
+				<meta
+					name="twitter:description"
+					content={`Venha baixar bots do discord em português, ${product.title} com uma alta performance e uma grande qualidade de configuração.`}
+				/>
 				<meta name="theme-color" content={colors.background} />
-				<meta name="apple-mobile-web-app-status-bar-style" content={colors.background} />
-				<meta name="msapplication-navbutton-color" content={colors.background} />
+				<meta
+					name="apple-mobile-web-app-status-bar-style"
+					content={colors.background}
+				/>
+				<meta
+					name="msapplication-navbutton-color"
+					content={colors.background}
+				/>
 			</Head>
 
-			<div style={{width: "100%"}}>
-				<Menu page="/details" categories={categories} background={colors.background} />
+			<div style={{ width: "100%" }}>
+				<Menu
+					page="/details"
+					categories={categories}
+					background={colors.background}
+				/>
 			</div>
 
 			<Container>
@@ -69,37 +101,54 @@ function DetailsProduct({readme, categories, product, ...params}) {
 						)}
 					</ProgressiveImage>
 					<DescriptionList>
-						<RenderMarkdown
-							text={product.description}
-						/>
+						<RenderMarkdown children={product.description} />
 					</DescriptionList>
 					<ContainerButton>
-						{(product.money <= 0 ) ? (
-							<a href="" tartget="_blank" style={{ width: '100%' }} download>
+						{product.money <= 0 ? (
+							<a
+								href=""
+								tartget="_blank"
+								style={{ width: "100%" }}
+								download
+							>
 								<PurchaseButton>Baixar</PurchaseButton>
 							</a>
 						) : (
 							<>
-								<Price>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.money)}</Price>
-								{products.find((productPred) => productPred.id === product.id) ? (
+								<Price>
+									{new Intl.NumberFormat("pt-BR", {
+										style: "currency",
+										currency: "BRL",
+									}).format(product.money)}
+								</Price>
+								{products.find(
+									(productPred) =>
+										productPred.id === product.id
+								) ? (
 									<Link href="/cart">
-										<a style={{
-											width: '100%'
-										}}>
-											<PurchaseButton>No carrinho</PurchaseButton>
+										<a
+											style={{
+												width: "100%",
+											}}
+										>
+											<PurchaseButton>
+												No carrinho
+											</PurchaseButton>
 										</a>
 									</Link>
 								) : (
-									<PurchaseButton onClick={() => addCart(product)}>Comprar</PurchaseButton>
+									<PurchaseButton
+										onClick={() => addCart(product)}
+									>
+										Comprar
+									</PurchaseButton>
 								)}
 							</>
 						)}
 					</ContainerButton>
 				</ProductPurchase>
 				<ProductInformations>
-					<RenderMarkdown
-						text={readme}
-    			/>
+					<RenderMarkdown children={readme} />
 				</ProductInformations>
 			</Container>
 
@@ -109,15 +158,17 @@ function DetailsProduct({readme, categories, product, ...params}) {
 
 			<GlobalStyle />
 		</div>
-	)
+	);
 }
 
-export async function getStaticProps({params}) {
-	const {data: product} = await api.get(`/products?all=true&id=${params.product}`)
+export async function getStaticProps({ params }) {
+	const { data: product } = await api.get(
+		`/products?all=true&id=${params.product}`
+	);
 
-	const res = await fetch(product.documentation_link)
-	const readme = await res.text()
-	const { categories } = await getCategories()
+	const res = await fetch(product.documentation_link);
+	const readme = await res.text();
+	const { categories } = await getCategories();
 
 	return {
 		props: {
@@ -125,28 +176,32 @@ export async function getStaticProps({params}) {
 			readme,
 			product,
 			id: product.id,
-			products_of_category: categories.find((category) => (category.id === product.category.id)).products,
-			quantity: categories.find((category) => (category.id === product.category.id)).products.length
-		}
-	}
+			products_of_category: categories.find(
+				(category) => category.id === product.category.id
+			).products,
+			quantity: categories.find(
+				(category) => category.id === product.category.id
+			).products.length,
+		},
+	};
 }
 
 export async function getStaticPaths() {
-	const {data: products} = await api.get(`/products?all=true`)
+	const { data: products } = await api.get(`/products?all=true`);
 
 	const paths = products.map((product) => {
 		return {
 			params: {
 				category: product.category.link.substring(1),
-				product: String(product.id)
+				product: String(product.id),
 			},
-		}
-	})
+		};
+	});
 
 	return {
 		paths: paths,
 		fallback: false,
-	}
+	};
 }
 
-export default DetailsProduct
+export default DetailsProduct;
