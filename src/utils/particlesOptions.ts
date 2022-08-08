@@ -6,7 +6,7 @@ export const particlesOptions: ISourceOptions = {
     height: `900px`,
     top: `125px`,
   },
-  fpsLimit: 120,
+  fpsLimit: 75,
   interactivity: {
     events: {
       onHover: {
@@ -36,7 +36,7 @@ export const particlesOptions: ISourceOptions = {
       width: 1,
     },
     collisions: {
-      enable: true,
+      enable: false,
     },
     move: {
       direction: `none`,
@@ -45,8 +45,8 @@ export const particlesOptions: ISourceOptions = {
         default: `bounce`,
       },
       random: true,
-      speed: 4,
-      straight: false,
+      speed: 3,
+      straight: true,
     },
     number: {
       density: {
@@ -65,5 +65,5 @@ export const particlesOptions: ISourceOptions = {
       value: { min: 1, max: 5 },
     },
   },
-  detectRetina: true,
+  detectRetina: false,
 };
