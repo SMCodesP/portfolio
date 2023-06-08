@@ -21,7 +21,7 @@ const Animation: React.FC = () => {
         id="tsparticles"
         loaded={particlesLoaded as any}
         init={particlesInit}
-        options={particlesOptions}
+        options={particlesOptions as any}
       />
       <AnimationGlobalStyle />
     </>

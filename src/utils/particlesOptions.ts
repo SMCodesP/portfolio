@@ -1,6 +1,4 @@
-import type { ISourceOptions } from 'tsparticles-engine';
-
-export const particlesOptions: ISourceOptions = {
+export const particlesOptions = {
   style: {
     position: `absolute`,
     height: `900px`,

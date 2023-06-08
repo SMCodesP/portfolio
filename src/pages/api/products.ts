@@ -13,9 +13,4 @@ export const config = {
   runtime: `edge`,
 };
 
-export default router.handler({
-  onError: (err, req, res) => {
-    console.error(err.stack);
-    res.status(err.statusCode || 500).end(err.message);
-  },
-});
+export default router.handler();

@@ -35,6 +35,7 @@ import { toast } from 'react-toastify';
 
 import axios from 'axios';
 import Product from '@/components/Product';
+import Image from 'next/image';
 
 const skills = [
   {
@@ -104,7 +105,7 @@ const Home: NextPage<{
             <ParticlesContainer
               id="tsparticles"
               init={particlesInit}
-              options={particlesOptions}
+              options={particlesOptions as any}
             />
           </div>
           <ContainerContent>
@@ -127,8 +128,9 @@ const Home: NextPage<{
                       name: `SMCodesP`,
                       id: `sT83HNt`,
                       Content: () => (
-                        <img
+                        <Image
                           src="https://github-readme-stats.vercel.app/api?username=SMCodesP&show_icons=true&theme=omni&count_private=true&hide_border=true&locale=pt-br&card_width=500"
+                          alt="User stats SMCodesP"
                           width={500}
                           height={200}
                         />
@@ -145,10 +147,12 @@ const Home: NextPage<{
                         Content: () => (
                           <ListIframe>
                             {skill.projects?.map((project) => (
-                              <img
+                              <Image
                                 key={project}
                                 src={`https://github-readme-stats.vercel.app/api/pin?username=SMCodesP&repo=${project}&show_owner=true&show_icons=true&theme=omni&hide_border=true&locale=pt-br&card_width=400`}
-                                width={420}
+                                alt="Project stats SMCodesP"
+                                width={400}
+                                height={150}
                               />
                             ))}
                           </ListIframe>
